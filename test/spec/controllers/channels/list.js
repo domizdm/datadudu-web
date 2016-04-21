@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: ChannelslistCtrl', function () {
+describe('Controller: ChannelsListCtrl', function () {
 
   // load the controller's module
   beforeEach(module('dataduduR3App'));
@@ -11,13 +11,12 @@ describe('Controller: ChannelslistCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ChannelslistCtrl = $controller('ChannelslistCtrl', {
+    ChannelslistCtrl = $controller('ChannelsListCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ChannelslistCtrl.awesomeThings.length).toBe(3);
-  });
+  //it('should attach a list of awesomeThings to the scope', function () {
+  //});
 });
