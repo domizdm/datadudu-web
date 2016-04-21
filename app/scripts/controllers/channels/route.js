@@ -6,7 +6,7 @@
  * @description
  * # dataduduR3App
  *
- * Main module of the application.
+ * Route module of the application.
  */
 angular.module('dataduduR3App')
 .config(function ($routeProvider) {

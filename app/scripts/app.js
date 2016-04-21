@@ -17,6 +17,7 @@ angular
   'ngResource',
   'ngRoute',
   'ngSanitize',
+  'ngStorage',
   'ngTouch'
 ])
 .config(function ($routeProvider, $httpProvider) {//, $locationProvider, utils
@@ -29,16 +30,6 @@ angular
   $httpProvider.defaults.headers.post = {
     'Content-Type': 'application/x-www-form-urlencoded'
   };
-  //$httpProvider.interceptors.push(function($log, $httpParamSerializerJQLike) {//
-  //  return {
-  //    'request': function(config) {
-  //      if(/post/i.test(config.method)) {
-  //        config.data = $httpParamSerializerJQLike(config.data);
-  //      }
-  //      return config;
-  //    },
-  //  };
-  //});
 
   $httpProvider.interceptors.push('RequestNormalizeInterceptor');
 

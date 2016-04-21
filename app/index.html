@@ -20,10 +20,12 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="dataduduR3App" class="hold-transition skin-blue sidebar-mini">
+  <body ng-app="dataduduR3App" ng-controller="MainCtrl"
+        class="hold-transition skin-blue sidebar-mini" ng-cloak>
 
-  <div class="wrapper" ng-controller="MainCtrl">
+  <ng-include ng-if="!isLoggedIn" src="'views/login.html'"></ng-include>
 
+  <div class="wrapper" ng-if="isLoggedIn">
     <header class="main-header">
       <!-- Logo -->
       <a href="#/" class="logo">
@@ -271,7 +273,7 @@
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="" ng-click="logout()" class="btn btn-default btn-flat">Sign out</a>
                   </div>
                 </li>
               </ul>
@@ -529,6 +531,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/AdminLTE/dist/js/app.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -544,6 +547,7 @@
         <script src="scripts/services/config.js"></script>
         <script src="scripts/services/utils.js"></script>
         <script src="scripts/services/request-normalize-interceptor.js"></script>
+        <script src="scripts/services/auth.js"></script>
         <!-- endbuild -->
 </body>
 </html>
