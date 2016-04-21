@@ -1,0 +1,98 @@
+body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  }
+.navbar{
+  background-color:#22262E;
+}
+.main-header{
+  background-color:#000000;}
+.main-header{
+  background-color:#30353E;
+}
+.main-header a{
+  color:#5B616E;
+}
+.main-header a:hover{
+  color: #ffffff;
+}
+.main-sidebar{
+  background-color:#1B1E24;
+
+}
+.sidebar-toggle{
+  background-image: url("./images/brand.png");
+}
+.language{
+  background-color:#2F3541;
+  border: 1px solid #505868;
+  color: #ffffff;
+}
+.nav-top{float:right;}
+.nav-top ul li {
+  display:inline-block;
+}
+/**/
+.nav-top li{
+  line-height:51px;
+  padding-right: 20px;
+  color: #656C7A;
+}
+.nav-top .dropdown-menu{
+
+  line-height:30px;
+}
+.pull-left{
+  color: #ffffff;
+}
+
+.user-message{
+  margin:20px 10px;
+  font-size: medium;
+
+}
+.user-info{
+  color: #ffffff;
+  display: inline-block;
+  line-height: 15px;
+  max-width: 100px;
+  position: relative;
+  text-align: left;
+  text-overflow: ellipsis;
+  top: 1px;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+.user-info a{
+  color:#ffffff;
+}
+.sidebar-menu a{
+  color:#8B91A0;
+}
+.sidebar-menu a:hover{
+  color:#ffffff;
+}
+.sidebar-menu li a:hover {
+  background-color:#3BB878;
+}
+.sidebar-menu li.active > a,.sidebar-menu li > a:hover {
+  background: #3BB878;
+  color: #ffffff;
+}
+.treeview-menu li{
+  padding-left: 0px;
+
+}
+.treeview-menu li a{
+  margin-top: 1px;
+  border-bottom: 1px solid #31351b;
+  background:#262A31;
+
+}
+.treeview-menu i{
+  margin-left: 15px;
+  padding-right:15px;
+}
+.sidebar-menu .treeview-menu{
+  line-height:34px;
+  padding-left: 0px;
+}
