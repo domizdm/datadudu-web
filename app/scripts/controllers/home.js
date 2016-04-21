@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name dataduduR3App.controller:MainCtrl
+ * @name dataduduR3App.controller:HomeCtrl
  * @description
- * # MainCtrl
+ * # HomeCtrl
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')

@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name dataduduR3App.controller:ChannelslistCtrl
+ * @name dataduduR3App.controller:ChannelsMainCtrl
  * @description
- * # ChannelslistCtrl
+ * # ChannelsMainCtrl
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
