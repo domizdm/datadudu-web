@@ -1,11 +1,19 @@
+<!--<nav ng-if="numPages && pages.length >= 2">-->
+  <!--<ul class="pagination">-->
+    <!--<li><a href="" ng-click="selectPage(currentPage-1)">Previous</a></li>-->
+    <!--<li ng-repeat="page in pages" ng-class="{active: page==currentPage}">-->
+      <!--<a href="" ng-click="selectPage(page)">{{page}}</a>-->
+    <!--</li>-->
+    <!--<li><a href="" ng-click="selectPage(currentPage+1)">Next</a></li>-->
+  <!--</ul>-->
+<!--</nav>-->
+
 <nav ng-if="numPages && pages.length >= 2">
   <ul class="pagination">
-    <li><a href="" ng-click="selectPage(currentPage-1)">Previous</a></li>
+    <li class="Previous"><a href="" ng-click="selectPage(currentPage-1)">&larr;Previous</a></li>
     <li ng-repeat="page in pages" ng-class="{active: page==currentPage}">
       <a href="" ng-click="selectPage(page)">{{page}}</a>
     </li>
-    <li><a href="" ng-click="selectPage(currentPage+1)">Next</a></li>
+    <li class="Next"><a href=""   ng-click="selectPage(currentPage+1)">Next&rarr;</a></li>
   </ul>
 </nav>
-
-
