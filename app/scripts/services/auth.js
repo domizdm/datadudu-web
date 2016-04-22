@@ -12,10 +12,25 @@ angular.module('dataduduR3App')
 
   return {
     login: function(username, password) {
-      $localStorage.me = {
-        username: username,
-        password: password
-      };
+      return $q(function(resolve, reject){
+        var payload =  {username: username, password:password};
+
+        return account.login(null, payload)
+          .$promise
+          .then(function(resp){
+            $localStorage.me = resp;
+            resolve(resp);
+          })
+          .catch(function(err){
+            reject(err);
+          });
+      });
+    },
+    me: function() {
+      return $localStorage.me;
+    },
+    tokenId: function() {
+      return $localStorage.me ? $localStorage.me.token_id : null;
     },
     logout: function() {
       delete $localStorage.me;
@@ -25,10 +40,9 @@ angular.module('dataduduR3App')
     },
     isLoggedInAsync: function() {
       return $q(function(resolve, reject){
-        account.login(null, {
-            username:'wangmao',
-            password:'wangmao'
-          })
+        var query =  {'token_id': $localStorage.me.token_id};
+
+        account.me(query)
           .$promise
           .then(function(){//resp
             resolve(true);

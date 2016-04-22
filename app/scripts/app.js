@@ -18,9 +18,10 @@ angular
   'ngRoute',
   'ngSanitize',
   'ngStorage',
+  'smart-table',
   'ngTouch'
 ])
-.config(function ($routeProvider, $httpProvider) {//, $locationProvider, utils
+.config(function ($routeProvider, $httpProvider, stConfig) {//, $locationProvider, utils
 
   // 没server端重定向,太难调试,暂时屏蔽
   //$locationProvider.html5Mode({ enabled: true, requireBase: true });
@@ -32,6 +33,9 @@ angular
   };
 
   $httpProvider.interceptors.push('RequestNormalizeInterceptor');
+
+  // override smart-table pagination template
+  stConfig.pagination.template = 'components/pagination-tmpl.html';
 
   $routeProvider
     .when('/', {
