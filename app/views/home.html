@@ -1,4 +1,31 @@
-<div ng-if="">
+<div>
 welcome barabara
+
+  <table st-safe-src="channels" st-table="displayCollection">
+    <thead>
+      <tr>
+        <th>first name</th>
+        <th st-sort="name">name</th>
+        <th st-sort="usage">usage</th>
+        <th st-sort="created_at">created_at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="channel in displayCollection">
+        <td>Buttons</td>
+        <td><a ng-href="#channel/{{channel.channel_id}}">{{channel.name}}</a></td>
+        <td>{{channel.usage}}</td>
+        <td>{{channel.created_at}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" class="text-center">
+          <div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
 </div>
 

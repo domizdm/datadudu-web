@@ -8,7 +8,6 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsListCtrl', function (Auth) {//, $httpParamSerializerJQLike
-  Auth.isLoggedInAsync()
-    .then();
+.controller('ChannelsListCtrl', function ($scope, $log, channel, Auth) {
+  angular.noop(Auth);
 });
