@@ -16,8 +16,7 @@ angular.module('dataduduR3App')
 
   $scope.channels = null;
 
-  var query = {token_id: Auth.tokenId()};
-  channel.list(query)
+  channel.list()
     .$promise
     .then(function(resp){
       $scope.channels = resp.channels;

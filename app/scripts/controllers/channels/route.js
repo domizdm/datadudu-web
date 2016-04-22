@@ -15,6 +15,10 @@ angular.module('dataduduR3App')
       templateUrl: 'views/channels/list.html',
       controller: 'ChannelsListCtrl'
     })
+    .when('/channels/new', {
+      templateUrl: 'views/channels/create.html',
+      controller: 'ChannelsCreateCtrl'
+    })
     .when('/channels/:subview', {
       templateUrl: function(urlattr){
         console.log(urlattr);

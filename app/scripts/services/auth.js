@@ -40,7 +40,7 @@ angular.module('dataduduR3App')
     },
     isLoggedInAsync: function() {
       return $q(function(resolve, reject){
-        var query =  {'token_id': $localStorage.me.token_id};
+        var query =  {'token_id': ($localStorage.me ? $localStorage.me.token_id : null)};
 
         account.me(query)
           .$promise

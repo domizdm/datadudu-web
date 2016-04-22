@@ -19,6 +19,7 @@ angular
   'ngSanitize',
   'ngStorage',
   'smart-table',
+  'ngNotify',
   'ngTouch'
 ])
 .config(function ($routeProvider, $httpProvider, stConfig) {//, $locationProvider, utils
@@ -32,11 +33,16 @@ angular
     'Content-Type': 'application/x-www-form-urlencoded'
   };
 
+  // authorization interceptor
+  $httpProvider.interceptors.push('AuthorizationInterceptor');
+
+  // normalize post request payload format as traditional
   $httpProvider.interceptors.push('RequestNormalizeInterceptor');
 
   // override smart-table pagination template
   stConfig.pagination.template = 'components/pagination-tmpl.html';
 
+  // main router, others refer to **/route.js
   $routeProvider
     .when('/', {
       templateUrl: 'views/home.html',

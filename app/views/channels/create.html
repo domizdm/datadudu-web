@@ -1,0 +1,42 @@
+<form class="form-inline">
+  <table>
+    <tr><td>Name:</td><td><input ng-model="channel.name" class="form-control"></td></tr>
+    <tr><td>Description:</td><td><textarea ng-model="channel.description" class="form-control"></textarea></td></tr>
+    <tr ng-repeat="fidx in [1,2,3,4,5,6,7,8] track by $index" ng-init="$parent.channel['field1-enabled']=true">
+      <td>Feild {{fidx}}:</td>
+      <td>
+        <input ng-model="$parent.channel['field'+fidx]" ng-disabled="!$parent.channel['field'+fidx+'-enabled']"
+               class="form-control" placeholder="Fill in field name...">
+        <input type="checkbox" ng-model="$parent.channel['field'+fidx+'-enabled']">
+      </td>
+    </tr>
+    <tr><td>Metadata:</td><td><textarea ng-model="channel.metadata" class="form-control"></textarea></td></tr>
+    <tr><td>Tags:</td><td><input ng-model="channel.tags" class="form-control"></td></tr>
+    <tr><td>latitude:</td><td><input ng-model="channel.latitude" class="form-control"></td></tr>
+    <tr><td>longitude:</td><td><input ng-model="channel.longitude" class="form-control"></td></tr>
+    <tr><td>elevation:</td><td><input ng-model="channel.elevation" type="number" class="form-control"></td></tr>
+    <tr><td>make public?</td><td><input ng-model="channel.public_flag" type="checkbox"></td></tr>
+    <tr><td>url:</td><td><input ng-model="channel.url" class="form-control"></td></tr>
+    <tr>
+      <td>videoId:</td>
+      <td>
+        <input ng-model="channel.videoId" class="form-control">
+
+        <label>
+          <input ng-model="channel.video_type" type="radio" value="youtube">
+          YouTube
+        </label>
+
+        <label>
+          <input ng-model="channel.video_type" type="radio" value="vimeo">
+          Vimeo
+        </label>
+      </td>
+    </tr>
+  </table>
+
+  <div>
+    <button class="btn btn-default" ng-click="saveChannel(channel)">Save Channel</button>
+  </div>
+
+</form>

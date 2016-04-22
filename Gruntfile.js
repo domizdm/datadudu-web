@@ -15,7 +15,8 @@ module.exports = function (grunt) {
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
-    ngtemplates: 'grunt-angular-templates',
+    // TODO: 以后需要修复ngtemplates的功能, 将copy views去掉
+    //ngtemplates: 'grunt-angular-templates',
     //cdnify: 'grunt-google-cdn'
   });
 
@@ -379,6 +380,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '*.html',
+            'views/{,*/}*.html',
             'components/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
