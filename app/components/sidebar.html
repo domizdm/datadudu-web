@@ -19,27 +19,27 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="active">
-        <a href="#">
+        <a href="">
           <i class="fa fa-home"></i>
-          Home
+          <span>Home</span>
         </a>
       </li>
       <li class="treeview">
-        <a href="">  
+        <a href="">
           <i class="fa fa-bookmark-o"></i> <span>Channels</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
           <li class="active"><a ng-href="#/channels"><i class="fa fa-circle-o"></i>My Channels</a></li>
-          <li><a href="#"><i class="fa fa-user-md"></i>Professional</a></li>
-          <li><a href="#"><i class="icon-map-marker"></i>Hospital</a></li>
-          <li><a href="#"><i class="fa fa-ambulance"></i>Transportation</a></li>
-          <li><a href="#"><i class="fa fa-heart-o"></i>Home Care</a></li>
-          <li><a href="#"><i class="fa fa-building-o"></i>Office</a></li>
-          <li><a href="#"><i class="fa fa-medkit"></i>Home Monitoring</a></li>
+          <li><a href=""><i class="fa fa-user-md"></i>Professional</a></li>
+          <li><a href=""><i class="fa fa-map-marker"></i>Hospital</a></li>
+          <li><a href=""><i class="fa fa-ambulance"></i>Transportation</a></li>
+          <li><a href=""><i class="fa fa-heart-o"></i>Home Care</a></li>
+          <li><a href=""><i class="fa fa-building-o"></i>Office</a></li>
+          <li><a href=""><i class="fa fa-medkit"></i>Home Monitoring</a></li>
         </ul>
       </li>
       <li class="treeview">
-        <a href="#">
+        <a href="">
           <i class="fa fa-files-o"></i>
           <span>Layout Options</span>
           <span class="label label-primary pull-right">4</span>
@@ -50,6 +50,33 @@
           <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
           <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
         </ul>
+      </li>
+      <li class="treeview">
+        <a href="">
+          <i class="fa fa-desktop"></i>
+          <span>Devices</span><i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href=""><i class="fa fa-circle-o"></i> Devices</a></li>
+
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="">
+          <i class="fa fa-user"></i>
+          <span>Account</span><i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href=""><i class="fa fa-user"></i> Account</a></li>
+        </ul>
+      </li>
+
+      <li class="">
+        <a href="" ng-click="logout()">
+          <i class="fa fa-power-off"></i>
+          <span>Sign Out</span>
+        </a>
       </li>
     </ul>
   </section>

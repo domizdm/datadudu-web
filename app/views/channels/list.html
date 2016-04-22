@@ -1,48 +1,132 @@
-<table class="table table-bordered">
-  <tr>
-    <th style="width: 10px">#</th>
-    <th>Task</th>
-    <th>Progress</th>
-    <th style="width: 40px">Label</th>
-  </tr>
-  <tr>
-    <td>1.</td>
-    <td>Update software</td>
-    <td>
-      <div class="progress progress-xs">
-        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-      </div>
-    </td>
-    <td><span class="badge bg-red">55%</span></td>
-  </tr>
-  <tr>
-    <td>2.</td>
-    <td>Clean database</td>
-    <td>
-      <div class="progress progress-xs">
-        <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-      </div>
-    </td>
-    <td><span class="badge bg-yellow">70%</span></td>
-  </tr>
-  <tr>
-    <td>3.</td>
-    <td>Cron job running</td>
-    <td>
-      <div class="progress progress-xs progress-striped active">
-        <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-      </div>
-    </td>
-    <td><span class="badge bg-light-blue">30%</span></td>
-  </tr>
-  <tr>
-    <td>4.</td>
-    <td>Fix and squish bugs</td>
-    <td>
-      <div class="progress progress-xs progress-striped active">
-        <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-      </div>
-    </td>
-    <td><span class="badge bg-green">90%</span></td>
-  </tr>
-</table>
+<div class="main">
+  <!--表格内容start-->
+  <div class="table-content">
+
+    <form class="search form-search ">
+      <select class="select-style">
+        <option value="">ALL</option>
+        <option value=""></option>
+      </select>
+      <input type="text" class="input-style" placeholder="Search here...">
+      <button type="submit" class="btn btn-search">Search</button>
+    </form>
+
+    <div class="page-header">
+      <h1 style="display: inline">My Channels</h1>
+
+      <a class="btn btn-default btn-new" href="">New Channel</a>
+      <h5 class="usedspace-style">Total Used Space:2MB</h5>
+    </div>
+
+
+    <div class="border-table">
+      <table class="table table-bordered table-striped  myTable">
+        <thead class="tblHeader">
+        <tr>
+          <th class="th-left">name</th>
+          <th>last updata</th>
+          <th>public or private</th>
+          <th>used space</th>
+          <th>created</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="td-left">
+            <h5>Testing-ID:1001</h5>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/shou2.png">Privete</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/2.png">Charts</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/3.png">Settings</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/code.png">API key</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/5.png">Data import/Export</button></a>
+          </td>
+          <td><a href="#">19.02.2016</a></td>
+          <td><a href="#"><img src="./img/group.png">public</a></td>
+          <td><a href="#">2MB</a></td>
+          <td><a href="#">2016/16/15</a></td>
+
+        </tr>
+
+        <tr>
+          <td class="td-left">
+            <h5>Testing-ID:1001</h5>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/shou2.png">Privete</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/2.png">Charts</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/3.png">Settings</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/code.png">API key</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/5.png">Data import/Export</button></a>
+          </td>
+          <td><a href="#">19.02.2016</a></td>
+          <td><a href="#"><img src="./img/shou.png">public</a></td>
+          <td><a href="#">2MB</a></td>
+          <td><a href="#">2016/16/15</a></td>
+
+        </tr>
+
+        <tr>
+          <td class="td-left">
+            <h5>Testing-ID:1001</h5>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/shou2.png">Privete</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/2.png">Charts</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/3.png">Settings</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/code.png">API key</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/5.png">Data import/Export</button></a>
+          </td>
+          <td><a href="#">19.02.2016</a></td>
+          <td><a href="#"><img src="./img/shou.png">public</a></td>
+          <td><a href="#">2MB</a></td>
+          <td><a href="#">2016/16/15</a></td>
+
+        </tr>
+
+        <tr>
+          <td class="td-left">
+            <h5>Testing-ID:1001</h5>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/shou2.png">Privete</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/2.png">Charts</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/3.png">Settings</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/code.png">API key</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/5.png">Data import/Export</button></a>
+          </td>
+          <td><a href="#">19.02.2016</a></td>
+          <td><a href="#"><img src="./img/shou.png">public</a></td>
+          <td><a href="#">2MB</a></td>
+          <td><a href="#">2016/16/15</a></td>
+
+        </tr>
+
+        <tr>
+          <td class="td-left">
+            <h5>Testing-ID:1001</h5>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/shou2.png">Privete</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/2.png">Charts</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/3.png">Settings</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/code.png">API key</button></a>
+            <a hreft="#"><button class="btn btn-default"><img src="./img/5.png">Data import/Export</button></a>
+          </td>
+          <td><a href="#">19.02.2016</a></td>
+          <td><a href="#"><img src="./img/shou.png">public</a></td>
+          <td><a href="#">2MB</a></td>
+          <td><a href="#">2016/16/15</a></td>
+
+        </tr>
+        </tbody>
+      </table>
+
+      <ul class="pagination">
+        <li class="Previous"><a href="#">&larr;Previous</a></li>
+        <li><a href="#">1<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li class="Next"><a href="#">Next&rarr;</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!--表格内容END-->
+
+</div>
