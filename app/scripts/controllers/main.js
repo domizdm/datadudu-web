@@ -15,10 +15,6 @@ angular.module('dataduduR3App')
   $scope.routeParams = $routeParams;
   $scope.itemsByPage = 10;
 
-  $scope.path = function(target){
-    $location.path(target);
-  };
-
   $scope.login = function() {
     Auth.login('wangmao', 'wangmao')
       .then(function(){

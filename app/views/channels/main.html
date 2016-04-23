@@ -18,7 +18,7 @@
 <div class="nav-tabs-custom">
   <ul class="nav nav-tabs">
     <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
-      <a ng-click="path('/channels/'+routeParams.id+'/'+tab.key)">{{tab.text}}</a>
+      <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
     </li>
   </ul>
 
