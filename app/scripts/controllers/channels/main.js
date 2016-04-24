@@ -29,19 +29,4 @@ angular.module('dataduduR3App')
     });
 
 
-})
-.controller('ChannelsPrivateCtrl', function($scope){
-  $scope.durations = [
-    {label:'1 hour', value:'1'},
-    {label:'2 hours', value:'2'},
-    {label:'4 hours', value:'4'},
-    {label:'8 hours', value:'8'},
-    {label:'24 hours', value:'24'}
-  ];
-
-  $scope.query = {
-    begin: new Date(),
-    duration: $scope.durations[0]
-  };
-
 });

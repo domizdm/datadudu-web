@@ -62,6 +62,13 @@ angular
   //moment.locale('en-gb');//zh-cn
   amMoment.changeLocale('en-gb');
 
+  Highcharts.setOptions({
+    global: {
+      timezoneOffset: (-new Date().getTimezoneOffset()/60),
+      useUTC: false
+    }
+  });
+
 })
 .constant('angularMomentConfig', {
   //timezone: 'Asia/Shanghai'

@@ -11,7 +11,7 @@
       <td>Created</td><td><span am-time-ago="channel.created_at"></span></td>
     </tr>
     <tr>
-      <td>Updated</td><td><span am-time-ago="channel.updated_at"></td>
+      <td>Updated</td><td><span am-time-ago="channel.updated_at"></span></td>
     </tr>
     <tr>
       <td>Used Space</td><td>{{channel.usage | bytes}}</td>
@@ -35,39 +35,33 @@
 
   <div>
     <div class="form-group">
-      <div class="col-sm-1 col-md-1">
+      <div class="col-sm-2 col-md-2">
         <label>From</label>
       </div>
-      <div class="col-sm-5 col-md-4">
+      <div class="col-sm-10 col-md-4">
         <div class='input-group date' datetimepicker="query.begin"></div>
       </div>
-      <div class="col-sm-1 col-md-1">
-        <label>Length</label>
+      <div class="col-sm-2 col-md-2">
+        <label>Scale</label>
       </div>
-      <div class="col-sm-5 col-md-4">
+      <div class="col-sm-10 col-md-4">
         <select class="form-control" ng-options="item.label for item in durations" ng-model="query.duration"></select>
       </div>
-      <div class="col-sm-6 col-md-2">
-        <button class="btn btn-default">Refresh</button>
-      </div>
-      <div class="col-sm-6 col-md-12 text-right">
+      <div class="col-sm-6 col-md-6">
         <span>
           Live Data: <button class="btn btn-default">Off</button>
         </span>
       </div>
+      <div class="col-sm-6 col-md-6 text-right">
+        <button class="btn btn-default">Refresh</button>
+      </div>
     </div>
   </div>
 
-  <p>Exactly like the original bootstrap tabs except you should use
-    the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-  A wonderful serenity has taken possession of my entire soul,
-  like these sweet mornings of spring which I enjoy with my whole heart.
-  I am alone, and feel the charm of existence in this spot,
-  which was created for the bliss of souls like mine. I am so happy,
-  my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-  that I neglect my talents. I should be incapable of drawing a single stroke
-  at the present moment; and yet I feel that I never was a greater artist than now.
 
+  <div class="col-md-12" ng-repeat="(key,val) in channelsFeeds" ng-if="val.text">
+    <div render-channel-chart="val"></div>
+  </div>
 </div>
 
 
