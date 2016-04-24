@@ -12,10 +12,10 @@ angular.module('dataduduR3App')
     template: '<div></div>',
     restrict: 'AE',
     scope: {
-      'data': '=renderChannelChart'// data should be sorted before binding
+      'data': '=renderChannelChart',// data should be sorted before binding
+      'color': '@renderChannelChartColor'
     },
     link: function postLink(scope, element, attrs) {
-
       var maxPointsThreshold = 5000;
       var pool = [];
       var setupWatcher = function(chart){
@@ -95,6 +95,7 @@ angular.module('dataduduR3App')
         series: [{
           name: 'Random data',
           turboThreshold: 10000,
+          color: scope.color,
           data: []
         }]
       });

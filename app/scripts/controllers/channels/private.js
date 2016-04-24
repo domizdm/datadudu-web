@@ -137,4 +137,11 @@ angular.module('dataduduR3App')
     }
   }, true);
 
+
+  $scope.pickColor = function(seed){
+    var colors = ['#00f','#f00','#0f0', '#740', '#047', '#074', '#44f', '#4f4', '#f44'];
+    var colorIndex = seed % colors.length;
+    return colors[colorIndex];
+  };
+
 });

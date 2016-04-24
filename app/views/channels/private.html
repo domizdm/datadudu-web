@@ -60,7 +60,7 @@
 
 
   <div class="col-md-12" ng-repeat="(key,val) in channelsFeeds" ng-if="val.text">
-    <div render-channel-chart="val"></div>
+    <div render-channel-chart="val" render-channel-chart-color="{{pickColor($index)}}"></div>
   </div>
 </div>
 
