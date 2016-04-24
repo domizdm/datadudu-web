@@ -21,9 +21,12 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+    <style>[ng-cloak] {display:none;}</style>
+
   </head>
   <body ng-app="dataduduR3App" ng-controller="MainCtrl"
-        class="hold-transition skin-blue sidebar-mini fixed " ng-cloak>
+        class="hold-transition skin-blue sidebar-mini fixed" ng-cloak>
 
   <ng-include ng-if="!isLoggedIn" src="'views/login.html'"></ng-include>
 
