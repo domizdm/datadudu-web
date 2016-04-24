@@ -1,16 +1,16 @@
 
 <table>
   <tr>
-    <td>Channel ID:</td><td>{{channel.channel_id}}</td>
+    <td>Channel ID:</td><td><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
   </tr>
   <tr>
-    <td>Author:</td><td>{{channel.username}}</td>
+    <td>Author:</td><td><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
   </tr>
   <tr>
-    <td>Access:</td><td>{{channel.public_flag==='true' ? 'public' : 'private'}}</td>
+    <td>Access:</td><td><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span></td>
   </tr>
   <tr>
-    <td>Tags:</td><td>{{channel.tags}}</td>
+    <td>Tags:</td><td><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
   </tr>
 </table>
 

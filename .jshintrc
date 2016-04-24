@@ -12,6 +12,7 @@
   "unused": false,
   "globals": {
     "angular": false,
-    "_": false
+    "_": false,
+    "moment": false
   }
 }
