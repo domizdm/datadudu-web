@@ -15,15 +15,20 @@ angular.module('dataduduR3App')
   $scope.routeParams = $routeParams;
   $scope.itemsByPage = 10;
 
-  $scope.login = function() {
-    Auth.login('wangmao', 'wangmao')
+  $scope.loginForm = {
+    username: 'wangmao',
+    password: 'wangmao',
+    message: null
+  };
+  $scope.login = function(form) {
+    Auth.login(form.username, form.password)
       .then(function(){
         // we should reload page to trigger AdminLTE re-layout
         $window.location.reload();
       })
       .catch(function(err){
-        // TODO: show login failed message
-        $log.log(err);
+        // show login failed message
+        $scope.loginForm.message = (err && err.data && err.data.desp) || 'Unknown error';
       });
   };
 
