@@ -20,6 +20,8 @@ angular
   'ngStorage',
   'smart-table',
   'ngNotify',
+  'ui.bootstrap',
+  'angularMoment',
   'ngTouch'
 ])
 .config(function ($routeProvider, $httpProvider, stConfig) {//, $locationProvider, utils
@@ -52,4 +54,23 @@ angular
     .otherwise({
       redirectTo: '/'
     });
+})
+.run(function(amMoment){
+  // 有bug
+  //moment.tz.setDefault('UTC');
+
+  //moment.locale('en-gb');//zh-cn
+  amMoment.changeLocale('en-gb');
+
+  Highcharts.setOptions({
+    global: {
+      timezoneOffset: (-new Date().getTimezoneOffset()/60),
+      useUTC: false
+    }
+  });
+
+})
+.constant('angularMomentConfig', {
+  //timezone: 'Asia/Shanghai'
+  //timezone: 'UTC'
 });

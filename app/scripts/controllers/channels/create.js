@@ -10,10 +10,6 @@
 angular.module('dataduduR3App')
 .controller('ChannelsCreateCtrl', function ($scope, $log, $location, ngNotify, Auth, channel) {
   $scope.saveChannel = function(entity){
-    $log.log(entity);
-
-    //var query = {token_id: Auth.tokenId()};
-
     channel.create(null, entity)
       .$promise
       .then(function(resp){

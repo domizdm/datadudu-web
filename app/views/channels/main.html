@@ -1,5 +1,37 @@
 
+<table>
+  <tr>
+    <td>Channel ID:</td><td><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+  </tr>
+  <tr>
+    <td>Author:</td><td><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+  </tr>
+  <tr>
+    <td>Access:</td><td><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span></td>
+  </tr>
+  <tr>
+    <td>Tags:</td><td><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
+  </tr>
+</table>
 
-my channels page
 
-sfsafsf
+<div class="nav-tabs-custom">
+  <ul class="nav nav-tabs">
+    <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
+      <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" ng-if="tab.key==routeParams.subview" ng-repeat="tab in tabs">
+      <ng-include src="tab.template"></ng-include>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+

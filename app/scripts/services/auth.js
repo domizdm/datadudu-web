@@ -32,6 +32,9 @@ angular.module('dataduduR3App')
     tokenId: function() {
       return $localStorage.me ? $localStorage.me.token_id : null;
     },
+    username: function() {
+      return $localStorage.me && $localStorage.me.account ? $localStorage.me.account.username : null;
+    },
     logout: function() {
       delete $localStorage.me;
     },

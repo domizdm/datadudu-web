@@ -8,20 +8,18 @@
  * Factory in the dataduduR3App.
  */
 angular.module('dataduduR3App')
-.factory('AuthorizationInterceptor', function ($q, $log, $localStorage) {
-  // Service logic
-  // ...
+.factory('AuthorizationInterceptor', function ($q, $log, $localStorage, config) {
   return {
-    request: function(config) {
-      if($localStorage.me) {
-        config.params = config.params ? config.params : {};
-        config.params.token_id = $localStorage.me.token_id;
+    request: function(cfg) {
+      if($localStorage.me && cfg.url.startsWith(config.END_POINT)) {
+        cfg.params = cfg.params ? cfg.params : {};
+        cfg.params.token_id = $localStorage.me.token_id;
       }
 
-      return config;
+      return cfg;
     },
-    response: function(config) {
-      return config;
+    response: function(cfg) {
+      return cfg;
     },
     responseError: function(response) {
       if(response.status === 400) {

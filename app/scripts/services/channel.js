@@ -101,6 +101,28 @@ angular.module('dataduduR3App')
      */
     remove: {
       method: 'DELETE'
+    },
+    /**
+     * http://api.datadudu.com/channels/CHANNEL_ID/feeds
+     *
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API.
+     results (integer) Number of entries to retrieve, 8000 max (optional)
+     start (datetime) Start date in format YYYY-MM-DD%20HH:NN:SS (optional)
+     end (datetime) End date in format YYYY-MM-DD%20HH:NN:SS (optional)
+     status (true/false) Include status updates in feed by setting "status=true" (optional)
+     timezone (string) Identifier from Time Zones Reference for this request (optional)
+     min (decimal) Minimum value to include in response (optional)
+     max (decimal) Maximum value to include in response (optional)
+     sum (integer or string) Get sum of this many minutes, valid values: 10, 15, 20, 30, 60, 240, 720, 1440, "daily" (optional)
+     round (integer) Round to this many decimal places (optional)
+     average (integer or string) Get average of this many minutes, valid values: 10, 15, 20, 30, 60, 240, 720, 1440, "daily" (optional)
+     callback (string) Function name to be used for JSONP cross-domain requests (optional)
+     */
+    fetchFeeds: {
+      method: 'GET',
+      params: {
+        type: 'feeds'
+      }
     }
   });
 });

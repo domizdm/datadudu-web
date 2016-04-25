@@ -9,11 +9,6 @@
  */
 angular.module('dataduduR3App')
 .controller('ChannelsListCtrl', function ($scope, $log, channel, Auth) {
-  angular.noop(Auth);
-
-  Auth.isLoggedInAsync()
-    .then();
-
   $scope.channels = null;
 
   channel.list()
