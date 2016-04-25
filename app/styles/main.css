@@ -33,9 +33,7 @@ input,select,textarea:focus {outline: none;}
   color: #ffffff;
 }
 .nav-top{float:right;}
-.user-menu{
-  padding-top: 14px;
-}
+
 .nav-top ul li {
   display:inline-block;
 }
@@ -229,4 +227,6 @@ table.myTable td,table.myTable th{height:55px;
 .nav-top span a{
   margin-left:5px;
 }
+
+
 
