@@ -119,7 +119,7 @@ angular.module('dataduduR3App')
     $scope.channelsFeeds = null;
 
     var begin = $scope.query.begin ? new Date($scope.query.begin) : null;
-    begin = (null==begin || isNaN(begin.getTime())) ? null : begin;
+    begin = (null==begin || isNaN(begin.getTime())) ? null : begin; 
     var scale = begin ? parseInt($scope.query.duration.value, 10) : null;
 
     if(null != channel) {
