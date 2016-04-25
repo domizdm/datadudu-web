@@ -1,0 +1,61 @@
+
+<div class="container-fluid" ng-controller="ChannelsRealtimeCtrl">
+
+<div class="col-md-4 col-sm-12">
+
+  <table>
+    <tr>
+      <td colspan="2"><label>Channel Status</label></td>
+    </tr>
+    <tr>
+      <td>Created</td><td><span am-time-ago="channel.created_at"></span></td>
+    </tr>
+    <tr>
+      <td>Updated</td><td><span am-time-ago="channel.updated_at"></span></td>
+    </tr>
+    <tr>
+      <td>Used Space</td><td>{{channel.usage | bytes}}</td>
+    </tr>
+    <tr>
+      <td>Last Entry Date</td><td>{{channel.last_entry_date}}</td>
+    </tr>
+    <tr>
+      <td>Last Entry ID</td><td>{{channel.last_entry_id}}</td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="col-md-8 col-sm-12">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 text-right">
+      <form class="form-inline">
+        <span>
+          Frequency:
+          <select class="form-control" ng-options="item.label for item in frequencies" ng-model="liveFreq"></select>
+        </span>
+        <span>
+          Live Data:
+          <button class="btn btn-default" ng-class="{'btn-danger' : !liveData, 'btn-success': liveData}"
+                  ng-click="toggleLiveData()">{{liveData ? 'On' : 'Off'}}</button>
+        </span>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="col-md-12" ng-repeat="(key,val) in channelsFields" ng-if="val.text">
+    <div render-channel-chart="channelsFeeds[key]"
+      render-channel-chart-max-points="chartMaxPoints"
+      render-channel-chart-color="{{pickColor($index)}}"
+      render-channel-chart-api="chartsApi[$index]"
+      render-channel-chart-title="{{val.text}}">
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+

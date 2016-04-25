@@ -2,55 +2,38 @@
 
 /**
  * @ngdoc function
- * @name dataduduR3App.controller:ChannelsPrivateCtrl
+ * @name dataduduR3App.controller:ChannelsRealtimeCtrl
  * @description
- * # ChannelsPrivateCtrl
+ * # ChannelsRealtimeCtrl
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsPrivateCtrl', function($scope, $q, $filter, $timeout, $interval, $log, ngNotify, channel){
-  $scope.durations = [
-    {label:'1 hour', value:'60'},
-    {label:'2 hours', value:'120'},
-    {label:'4 hours', value:'240'},
-    {label:'8 hours', value:'480'},
-    {label:'1 day', value:'1440'},
-    {label:'3 days', value:'4320'},
-    {label:'7 days', value:'10080'}
+.controller('ChannelsRealtimeCtrl', function($scope, $q, $filter, $timeout, $interval, $log, channel){
+
+  $scope.chartMaxPoints = 300;
+  $scope.frequencies = [
+    {label:'1s',value:1000},
+    {label:'2s',value:2000},
+    {label:'5s',value:5000},
+    {label:'10s',value:10000},
+    {label:'30s',value:30000}
   ];
-
-  var defaultDuration = $scope.durations[0];
-  var defaultBegin = null;//new Date();// FIXME: hard code date for debug '2016-04-22 18:00'
-  //defaultBegin.setMinutes(defaultBegin.getMinutes() - parseInt(defaultDuration.value, 10));
-  $scope.query = {
-    begin: defaultBegin,
-    duration: defaultDuration
-  };
-
-  $scope.$on('$destroy', function(){
-  });
+  $scope.liveFreq = $scope.frequencies[2];
 
   /**
    *
    * @param channelId
    * @param begin Date
-   * @param scale in minutes
    * @returns {Date}
      */
-  var loadData = function(channelId, begin, scale){
+  var loadData = function(channelId, begin){
     var timezone = 'GMT+08:00';//FIXME: 目测server上不填timezone的情况下会自动减8?
     var serverFormat = 'yyyy-MM-dd HH:mm:ss';
-    var begin = begin!=null ? new Date(begin) : null;
-    var end = scale!=null ? new Date(begin) : null;
-    if(end) {
-      end.setMinutes(end.getMinutes() + scale);
-    }
 
     var query = {
       id: channelId,
-      //timezone: '+08:00',
       start: begin !== null ? $filter('date')(begin, serverFormat, timezone) : undefined,
-      end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined
+      results: 300//threshold in page for render-channel-chart should be same
     };
 
     return $q(function(resolve, reject){
@@ -96,7 +79,7 @@ angular.module('dataduduR3App')
             //$log.log(channelsMap);
           }
 
-          resolve({channelsFeeds: channelsMap, raw: resp, end:new Date(resp.end)});
+          resolve({channelsFeeds: channelsMap, raw:resp, end:new Date(resp.end)});
         })
         .catch(function(err){
           reject(err);
@@ -105,11 +88,50 @@ angular.module('dataduduR3App')
   };
 
   var lastTick = null;// timeout promise
+  var lastEnd = null;// 上次数据end time
+  $scope.liveData = true;// 持续加载数据
   $scope.channelsFeeds = null;
   $scope.channelsFields = null;
   $scope.chartsApi = {};
 
-  $scope.reloadData = function(channel) {
+  /**
+   *
+   * @param channelId
+   * @param end
+   * @param scale in minutes
+   * @param interval in milliseconds
+   * @param forced force reload, cancel the existed timer
+   */
+  var nextTick = function(channelId, end, interval, forced){
+    $timeout.cancel(lastTick);
+
+    lastTick = $timeout(function() {
+      // load data while force reload or live data switch on
+      if(forced || $scope.liveData) {
+        loadData(channelId, end==null ? null : new Date(end))
+          .then(function(resp){
+            $scope.channelsFeeds = resp.channelsFeeds;
+            //$log.log($scope.channelsFeeds);
+
+            var lastFeed = _.last(resp.raw.feeds);
+            if(lastFeed) {
+              lastEnd = new Date(lastFeed.created_at);
+            }
+            nextTick(channelId, new Date(lastEnd));// 1h data per live fetch
+          })
+          .catch(function(err){
+            nextTick(channelId, new Date(lastEnd));// 1h data per live fetch
+          });
+      }else{
+        nextTick(channelId, new Date(lastEnd));
+      }
+    }, interval===undefined ? $scope.liveFreq.value : interval);
+  };
+
+  $scope.reloadData = function(channel, latest) {
+
+    $scope.liveData = true;
+
     // clear all points in highcharts
     _.each($scope.chartsApi, function(v,k){
       v.clear();
@@ -118,33 +140,25 @@ angular.module('dataduduR3App')
     // 必须置null触发render-channel-chart的watch
     $scope.channelsFeeds = null;
 
-    var begin = $scope.query.begin ? new Date($scope.query.begin) : null;
-    begin = (null==begin || isNaN(begin.getTime())) ? null : begin;
-    var scale = begin ? parseInt($scope.query.duration.value, 10) : null;
-
     if(null != channel) {
-      loadData(channel.channel_id, begin, scale)
-        .then(function(resp){
-          $scope.channelsFeeds = resp.channelsFeeds;
-          //$log.log($scope.channelsFeeds);
-
-          // set time back
-          // 如果有数据, 理论上第一个点的时间应该跟查询吻合
-          var firstPoint = _.first(resp.raw.feeds);
-          if(firstPoint){
-            var feedbackDate=new Date(new Date(firstPoint.created_at));
-            $scope.query.begin = feedbackDate;
-          }
-        })
-        .catch(function(err){
-          ngNotify.set(err.statusText, 'error');
-        });
+      if(!latest) {
+        $log.log($scope.query.begin);
+        lastEnd = new Date($scope.query.begin);
+        nextTick(channel.channel_id, lastEnd, parseInt($scope.query.duration.value, 10), 0, true);// 0 for fetch immediately
+      }else{
+        nextTick(channel.channel_id, null, null, 0, true);// 0 for fetch immediately
+      }
     }
   };
 
+  $scope.toggleLiveData = function() {
+    $scope.liveData = !$scope.liveData;
+  };
+
   $scope.$watch('channel', function(newChannel){
+    lastEnd = null;
     // start tick task
-    $scope.reloadData(newChannel);
+    $scope.reloadData(newChannel, true);
 
     if($scope.channel) {
       $scope.channelsFields = {};
