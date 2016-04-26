@@ -7,7 +7,7 @@
  * # datetimepicker
  */
 angular.module('dataduduR3App')
-.directive('datetimepicker', function (moment) {
+.directive('datetimepicker', function ($log, $timeout, moment) {
   return {
     template:
       '<div class="input-group date">' +
@@ -29,12 +29,29 @@ angular.module('dataduduR3App')
       var datetimepicker = element.datetimepicker({
         locale: moment.locale(),
         format:'MM/DD/YYYY HH:mm (zzZZ)',
-        ignoreReadonly: true
+        ignoreReadonly: true,
+        useCurrent:false
       });
-      datetimepicker.data('DateTimePicker').date(new Date());
+
+      if(scope.datetime) {
+        datetimepicker.data('DateTimePicker').date(scope.datetime);
+      }else{
+        // FIXME: 不设的话会变为UTC+0
+        datetimepicker.data('DateTimePicker').date(new Date());
+      }
+
+      scope.$watch('datetime', function(newValue){
+        if(newValue) {
+          $timeout(function(){
+            datetimepicker.data('DateTimePicker').date(new Date(newValue));
+          });
+        }
+      });
 
       element.on('dp.change', function (e) {
-        scope.datetime = e.date;
+        scope.$apply(function(){
+          scope.datetime = new Date(e.date);
+        });
       });
     }
   };

@@ -14,6 +14,7 @@ angular.module('dataduduR3App')
 
   $scope.tabs = [
     {key:'private',text:'Private View',template:'views/channels/private.html'},
+    {key:'realtime',text:'Real Time',template:'views/channels/realtime.html'},
     {key:'public',text:'Public View',template:'views/channels/public.html'},
     {key:'settings',text:'Settings',template:'views/channels/settings.html'},
     {key:'apikeys',text:'API Keys',template:'views/channels/apikeys.html'},
