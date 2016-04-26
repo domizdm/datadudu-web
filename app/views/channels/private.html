@@ -5,7 +5,8 @@
 
   <table>
     <tr>
-      <td>Channel Status</td><td><button class="btn btn-default">Add a Data Point</button></td>
+      <td><label>Channel Status</label></td>
+      <td><button class="btn btn-default" ng-click="openModalAddPoint()">Add a Data Point</button></td>
     </tr>
     <tr>
       <td>Created</td><td><span am-time-ago="channel.created_at"></span></td>
@@ -30,7 +31,6 @@
 
   <div class="row">
     <label>Data Charts</label>
-    <button class="btn btn-primary pull-right">Download</button>
   </div>
 
   <div class="row">
@@ -50,7 +50,11 @@
       </div>
 
       <div class="col-sm-12 col-md-12 text-right">
-        <button class="btn btn-default" ng-click="reloadData(channel)">Refresh</button>
+        <button class="btn btn-primary" ng-click="download(channel)">Download</button>
+        <button class="btn btn-default" ng-click="reloadData(channel)" ng-disabled="loading">
+          Refresh
+          <i class="fa fa-refresh" ng-show="loading" ng-class="{'fa-spin': loading}"></i>
+        </button>
       </div>
     </div>
   </div>

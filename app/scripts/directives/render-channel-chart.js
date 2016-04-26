@@ -90,9 +90,7 @@ angular.module('dataduduR3App')
                 clear: function(){
                   if(chart.series && chart.series[0]){
                     chart.series[0].setData([]);
-                    while(pool.length) {
-                      pool.shift();
-                    }
+                    pool.splice(0);
                   }
                 }
               };

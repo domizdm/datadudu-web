@@ -8,7 +8,10 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsPrivateCtrl', function($scope, $q, $filter, $timeout, $interval, $log, ngNotify, channel){
+.controller('ChannelsPrivateCtrl', function($scope, $q, $filter, $window, $timeout, $log,
+                                            $httpParamSerializer, config, $uibModal, ngNotify, channel){
+  $scope.loading = false;
+
   $scope.durations = [
     {label:'1 hour', value:'60'},
     {label:'2 hours', value:'120'},
@@ -104,7 +107,6 @@ angular.module('dataduduR3App')
     });
   };
 
-  var lastTick = null;// timeout promise
   $scope.channelsFeeds = null;
   $scope.channelsFields = null;
   $scope.chartsApi = {};
@@ -119,12 +121,16 @@ angular.module('dataduduR3App')
     $scope.channelsFeeds = null;
 
     var begin = $scope.query.begin ? new Date($scope.query.begin) : null;
-    begin = (null==begin || isNaN(begin.getTime())) ? null : begin; 
+    begin = (null==begin || isNaN(begin.getTime())) ? null : begin;
     var scale = begin ? parseInt($scope.query.duration.value, 10) : null;
 
     if(null != channel) {
+      $scope.loading = true;
+
       loadData(channel.channel_id, begin, scale)
         .then(function(resp){
+          $scope.loading = false;
+
           $scope.channelsFeeds = resp.channelsFeeds;
           //$log.log($scope.channelsFeeds);
 
@@ -137,6 +143,7 @@ angular.module('dataduduR3App')
           }
         })
         .catch(function(err){
+          $scope.loading = false;
           ngNotify.set(err.statusText, 'error');
         });
     }
@@ -160,15 +167,57 @@ angular.module('dataduduR3App')
 
   }, true);
 
-  $scope.$on('$destroy', function(){
-    $log.log('on destroy, cancel all timer');
-    $timeout.cancel(lastTick);
-  });
-
   $scope.pickColor = function(seed){
     var colors = ['#00f','#f00','#0f0', '#740', '#047', '#074', '#44f', '#4f4', '#f44'];
     var colorIndex = seed % colors.length;
     return colors[colorIndex];
+  };
+
+  $scope.download = function(channel) {
+    if(channel) {
+      var timezone = 'GMT+08:00';//FIXME: 目测server上不填timezone的情况下会自动减8?
+      var serverFormat = 'yyyy-MM-dd HH:mm:ss';
+
+      var begin = $scope.query.begin ? new Date($scope.query.begin) : null;
+      begin = (null==begin || isNaN(begin.getTime())) ? null : begin;
+      var scale = begin ? parseInt($scope.query.duration.value, 10) : null;
+      var end = scale!=null ? new Date(begin) : null;
+      if(end) {
+        end.setMinutes(end.getMinutes() + scale);
+      }
+
+      var query = {
+        //timezone: '+08:00',
+        start: begin !== null ? $filter('date')(begin, serverFormat, timezone) : undefined,
+        end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined
+      };
+
+      var url=config.END_POINT+'/channels/'+channel.channel_id+'/feeds.csv?'+$httpParamSerializer(query);
+
+      $window.open(url, '_blank');
+    }
+  };
+
+
+  $scope.openModalAddPoint = function(){
+    if($scope.channel) {
+      $uibModal.open({
+          templateUrl: 'views/channels/particle/modalAddPoint.html',
+          controller: 'ChannelsAddPointCtrl',
+          resolve: {
+            fields: function(){
+              return $scope.channelsFields
+            },
+            writeKey: $scope.channel.write_key
+          }
+        })
+        .result
+        .then(function(form){
+          $log.log(form);
+        }, function(){
+          $log.log('modal result 2');
+        });
+    }
   };
 
 });

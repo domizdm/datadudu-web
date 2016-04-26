@@ -123,6 +123,12 @@ angular.module('dataduduR3App')
       params: {
         type: 'feeds'
       }
+    },
+    updateFeed: {
+      method: 'POST',
+      params: {
+
+      }
     }
   });
 });
