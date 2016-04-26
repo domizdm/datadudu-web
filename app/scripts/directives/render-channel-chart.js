@@ -14,6 +14,7 @@ angular.module('dataduduR3App')
     scope: {
       'title': '@renderChannelChartTitle',
       'color': '@renderChannelChartColor',
+      'easing': '@?renderChannelChartAutoEasing',
 
       'data': '=renderChannelChart',// data should be sorted before binding
       'api': '=renderChannelChartApi',
@@ -53,12 +54,31 @@ angular.module('dataduduR3App')
 
               // if larger than threshold, shift data array
               var shouldShift = pool.length >= maxPoints ? true : false;
+
               if(shouldShift) {pool.shift();}
               if(i < newVal.data.length - 1) {
                 series.addPoint(newPoint,false,shouldShift);
               }else{
                 series.addPoint(newPoint,true,shouldShift);
               }
+            }
+          }
+
+          if(scope.easing == 'true'){
+            var latestPoint = _.last(pool);
+            var firstPoint = _.first(pool);
+            if(latestPoint) {
+              var upper = new Date(latestPoint.x);
+              var lower = new Date(firstPoint.x);
+
+              var maxScale = 60 * 60 * 1000; // in ms
+              if(upper.getTime() - lower.getTime() > maxScale) {// in ms
+                lower = new Date(upper);
+                lower.setMilliseconds(lower.getMilliseconds() - maxScale);
+              }
+
+              var xAxis = chart.xAxis[0];
+              xAxis.setExtremes(lower, upper);
             }
           }
         }
@@ -74,7 +94,7 @@ angular.module('dataduduR3App')
       // ref: http://www.highcharts.com/demo/dynamic-master-detail
       element.highcharts({
         chart: {
-          type: 'line',//spline
+          type: 'spline',//spline
           animation: Highcharts.svg, // don't animate in old IE
           marginRight: 10,
           events: {
