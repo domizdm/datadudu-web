@@ -9,12 +9,18 @@
  */
 angular.module('dataduduR3App')
 .controller('ChannelsAddPointCtrl', function($scope, $q, $filter, $window, $timeout, $log,
-                                             config, $uibModal, $uibModalInstance, ngNotify, fields){
+                                             config, $uibModal, $uibModalInstance, ngNotify,
+                                             channel, fields, writeKey){
 
   $scope.fields = fields;
+  $scope.form = {
+    created_at: new Date()
+  };
+
+  $log.log(writeKey);
 
   $scope.ok = function () {
-    $uibModalInstance.close($scope.selected.item);
+    $uibModalInstance.close($scope.form);
   };
 
   $scope.cancel = function () {

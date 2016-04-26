@@ -5,26 +5,26 @@
   <div class="row">
     <span class="col-sm-3">Create At</span>
     <span class="col-sm-9">
-        <div class='input-group date' datetimepicker="createdAt"></div>
+        <div class='input-group date' datetimepicker="form.created_at"></div>
     </span>
   </div>
   <div class="row" ng-repeat="field in fields" ng-if="!!field.text">
     <span class="col-sm-3">{{field.text}}</span>
-    <span class="col-sm-9"><input class="form-control" /></span>
+    <span class="col-sm-9"><input class="form-control" ng-model="form[field.key]" /></span>
   </div>
   <div class="row">
     <span class="col-xs-3 col-sm-3">Latitude</span>
-    <span class="col-xs-9 col-sm-3"><input class="form-control" /></span>
+    <span class="col-xs-9 col-sm-3"><input class="form-control" ng-model="form.latitude" /></span>
     <span class="col-xs-3 col-sm-3">Longitude</span>
-    <span class="col-xs-9 col-sm-3"><input class="form-control" /></span>
+    <span class="col-xs-9 col-sm-3"><input class="form-control" ng-model="form.longitude" /></span>
   </div>
   <div class="row">
     <span class="col-sm-3">Elevation</span>
-    <span class="col-sm-9"><input class="form-control" /></span>
+    <span class="col-sm-9"><input class="form-control" ng-model="form.elevation" /></span>
   </div>
   <div class="row">
     <span class="col-sm-3">Status</span>
-    <span class="col-sm-9"><textarea class="form-control"></textarea></span>
+    <span class="col-sm-9"><textarea class="form-control" ng-model="form.status"></textarea></span>
   </div>
 </div>
 <div class="modal-footer">
