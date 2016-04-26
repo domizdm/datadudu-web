@@ -1,0 +1,33 @@
+<div class="modal-header">
+  <h3 class="modal-title">Add Data Point</h3>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <span class="col-sm-3">Create At</span>
+    <span class="col-sm-9">
+        <div class='input-group date' datetimepicker="createdAt"></div>
+    </span>
+  </div>
+  <div class="row" ng-repeat="field in fields" ng-if="!!field.text">
+    <span class="col-sm-3">{{field.text}}</span>
+    <span class="col-sm-9"><input class="form-control" /></span>
+  </div>
+  <div class="row">
+    <span class="col-xs-3 col-sm-3">Latitude</span>
+    <span class="col-xs-9 col-sm-3"><input class="form-control" /></span>
+    <span class="col-xs-3 col-sm-3">Longitude</span>
+    <span class="col-xs-9 col-sm-3"><input class="form-control" /></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-3">Elevation</span>
+    <span class="col-sm-9"><input class="form-control" /></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-3">Status</span>
+    <span class="col-sm-9"><textarea class="form-control"></textarea></span>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
