@@ -1,5 +1,5 @@
 body{font-family: "Times New Roman";
-  font-size: 16px;
+  font-size: 12px;
   }
 
 @media (max-width: 992px) {
@@ -295,8 +295,36 @@ float: right;
 .navbar-custom-menu li a:hover {
   background-color:#3BB878;
 }
-@media (max-width: 991px){
-  .navbar-custom-menu .navbar-nar{
-    background-color: #00A000;
-  }
+
+
+/*表格内容数据界面样式*/
+.table-data{
+  margin: 10px 10px;
 }
+.table-data table{
+  width: 50%;
+}
+.table-data i{
+  margin-right: 10px;
+
+}
+.table-data .nav-tabs-custom > .nav-tabs > li:hover {
+
+  border-top-color: #3c8dbc;
+
+}
+.table-data .nav-tabs-custom > .nav-tabs > li a:hover{
+  background-color:#DBDBDB;
+
+}
+
+.table-data .nav-tabs-custom > .nav-tabs > li:hover{
+  border-top-color: #3BB878;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color:#3BB878 ;
+}
+
+
+/*表格内容数据界面样式END*/
