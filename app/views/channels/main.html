@@ -22,7 +22,7 @@
       <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
     </li>
   </ul>
-
+<hr style="border: solid 1px #3BB878">
   <div class="tab-content">
     <div class="tab-pane active" ng-if="tab.key==routeParams.subview" ng-repeat="tab in tabs">
       <ng-include src="tab.template"></ng-include>
@@ -30,6 +30,7 @@
   </div>
 
 </div>
+
   </div>
   </div>
 

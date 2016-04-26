@@ -1,5 +1,5 @@
-body{font-family: "Times New Roman";
-  font-size: 12px;
+body{font-family: "'Source Sans Pro', sans-serif";
+  font-size: 14px;
   }
 
 @media (max-width: 992px) {
@@ -53,18 +53,20 @@ input,select,textarea:focus {outline: none;}
   color: #ffffff;
 }
 
-
+.user-panel >.image > img {
+  height: auto;
+  max-width: 85px;
+  width: 100%;
+}
 .user-info{
   color: #ffffff;
   display: inline-block;
-  line-height: 15px;
-  max-width: 100px;
   position: relative;
-  text-align: left;
+  text-align:center;
   text-overflow: ellipsis;
   top: 1px;
   vertical-align: bottom;
-  white-space: nowrap;
+ margin-left: 10px;
 }
 .user-info a{
   color:#ffffff;
@@ -72,13 +74,17 @@ input,select,textarea:focus {outline: none;}
 .sidebar-menu a{
   color:#8B91A0;
 }
+
+.sidebar-menu li a{
+  background-color:#1B1E24;
+}
 .sidebar-menu a:hover{
   color:#ffffff;
 }
 .sidebar-menu li a:hover {
   background-color:#3BB878;
 }
-.sidebar-menu li.active > a,.sidebar-menu li > a:hover {
+.sidebar-menu li a:active ,.sidebar-menu li > a:hover {
   background: #3BB878;
   color: #ffffff;
 }
@@ -220,6 +226,10 @@ table.myTable td,table.myTable th{height:55px;
 .navbar-customs-menu .nav > li > a {
   padding:20px 0px 0px 0px ;
 }
+.navbar-customs-menu .navbar-nav i{
+  margin-right: 10px;
+ vertical-align: middle;
+}
 .navbar-customs-menu .nav > li > a:hover,.navbar-customs-menu .nav > li > a:active, .nav > li > a:focus {
   color: #444;
   background:#22262E;
@@ -280,12 +290,12 @@ float: right;
   background-color: #0c0c0c;
 }
 
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: #0c0c0c;
-}
-.navbar-custom-menu a:hover{
-  background-color: #00A000;
-}
+/*.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {*/
+  /*background-color: #0c0c0c;*/
+/*}*/
+/*.navbar-custom-menu a:hover{*/
+  /*background-color: #00A000;*/
+/*}*/
 .navbar-custom-menu .user-header{
   background-color: #3BB878;
 }
@@ -303,6 +313,10 @@ float: right;
 }
 .table-data table{
   width: 50%;
+}
+.table-data .table-data-info table{
+  width:100%;
+
 }
 .table-data i{
   margin-right: 10px;
@@ -326,5 +340,12 @@ float: right;
   border-top-color:#3BB878 ;
 }
 
+.table-data .table-data-info  .btn-add{
 
+  background-color:#3BB878;
+ border-radius: 5px;
+}
+.table-data .table-data-info  .btn-add:hover{
+  background-color: #22A05F;
+}
 /*表格内容数据界面样式END*/

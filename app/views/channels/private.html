@@ -2,11 +2,11 @@
 <div class="container-fluid" ng-controller="ChannelsPrivateCtrl">
 
 <div class="col-md-4 col-sm-12">
-
-  <table>
+<div class="table-data-info">
+  <table class="table table-striped table-bordered table-hover ">
     <tr>
       <td><label>Channel Status</label></td>
-      <td><button class="btn btn-default" ng-click="openModalAddPoint()">Add a Data Point</button></td>
+      <td><button class="btn btn-primary btn-add" ng-click="openModalAddPoint()">Add a Data Point</button></td>
     </tr>
     <tr>
       <td>Created</td><td><span am-time-ago="channel.created_at"></span></td>
@@ -24,6 +24,7 @@
       <td>Last Entry ID</td><td>{{channel.last_entry_id}}</td>
     </tr>
   </table>
+  </div>
 </div>
 
 
