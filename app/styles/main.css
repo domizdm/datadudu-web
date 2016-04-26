@@ -289,3 +289,14 @@ float: right;
 .navbar-custom-menu .user-header{
   background-color: #3BB878;
 }
+.navbar-custom-menu span{
+  color:#ffffff;
+}
+.navbar-custom-menu li a:hover {
+  background-color:#3BB878;
+}
+@media (max-width: 991px){
+  .navbar-custom-menu .navbar-nar{
+    background-color: #00A000;
+  }
+}
