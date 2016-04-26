@@ -133,6 +133,76 @@ angular.module('dataduduR3App')
         type: 'api_keys',
         action: 'list'
       }
+    },
+    /**
+     * Generate New Channel Write KEY
+
+     To generate and replace the write_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=generate_write_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=generate_write_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     */
+    generateWriteKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'generate_write_key'
+      }
+    },
+    /**
+     * Update a Channel READ KEY (add note)
+
+     To add note to a read_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=update_read_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=update_read_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     read_key (string) – the read_key that you want to delete (required).
+     note (string) – the description or note of the read_key (required)
+
+     */
+    updateReadKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'update_read_key'
+      }
+    },
+    /**
+     * Delete a Channel READ KEY
+
+     To delete a read_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=delete_read_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=delete_read_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     read_key (string) – the read_key that you want to delete (required).
+     */
+    deleteReadKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'delete_read_key'
+      }
+    },
+    /**
+     * Generate New Channel READ KEY
+
+     To generate a new read_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=generate_read_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=generate_read_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     note (string): note or description of the read_key (optional)
+     */
+    generateReadKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'generate_read_key'
+      }
     }
+
   });
 });

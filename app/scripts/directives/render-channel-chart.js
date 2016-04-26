@@ -64,7 +64,7 @@ angular.module('dataduduR3App')
             }
           }
 
-          if(scope.easing == 'true'){
+          if(/true/i.test(scope.easing)){
             var latestPoint = _.last(pool);
             var firstPoint = _.first(pool);
             if(latestPoint) {
@@ -116,6 +116,9 @@ angular.module('dataduduR3App')
               };
             }
           }
+        },
+        credits: {
+          enabled: false
         },
         title: {
           text: 'Chart ' + scope.title

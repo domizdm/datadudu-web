@@ -1,0 +1,41 @@
+
+<div ng-controller="ChannelsApiKeysCtrl">
+
+  <div ng-if="form">
+    <table>
+      <tr><td colspan="2">Write API Key</td></tr>
+      <tr><td><label>Key:</label></td><td>{{form.writeKey}}</tr>
+      <tr><td></td><td><button ng-click="generateWriteKey(form)">Generate New Write API Key</button></button></td></tr>
+
+
+      <tr ng-repeat-start="item in form.readKeys">
+        <td colspan="2">Read API Key</td>
+      </tr>
+      <tr><td><label>Key:</label></td><td>{{item.read_key}}</tr>
+      <tr>
+        <td><label>Note:</label></td>
+        <td><textarea ng-model="item.note"></textarea></td>
+      </tr>
+      <tr ng-repeat-end>
+        <td></td>
+        <td>
+          <button ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save Notes</button>
+          <button ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td>
+          <button ng-click="generateReadKey(form.channel_id)">Generate Read API Key</button>
+        </td>
+      </tr>
+
+
+    </table>
+  </div>
+
+</div>
+
+
+

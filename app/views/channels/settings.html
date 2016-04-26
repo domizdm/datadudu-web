@@ -1,11 +1,53 @@
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-It has survived not only five centuries, but also the leap into electronic typesetting,
-remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-like Aldus PageMaker including versions of Lorem Ipsum.
+<div ng-controller="ChannelsSettingsCtrl">
+
+  <div ng-if="form">
+    <table>
+      <tr><td><label>Name:</label></td><td><input ng-model="form.name" class="form-control"></td></tr>
+      <tr><td>Description:</td><td><textarea ng-model="form.description" class="form-control"></textarea></td></tr>
+
+      <tr ng-repeat="fidx in [1,2,3,4,5,6,7,8] track by $index">
+        <td>Feild {{fidx}}:</td>
+        <td>
+          <input ng-model="$parent.form['field'+fidx]" ng-disabled="!$parent.form['field'+fidx+'-enabled']"
+                 class="form-control" placeholder="Fill in field name...">
+          <input type="checkbox" ng-model="$parent.form['field'+fidx+'-enabled']"
+                 ng-init="$parent.form['field'+fidx+'-enabled']=!!$parent.form['field'+fidx]">
+        </td>
+      </tr>
+      <tr><td>Metadata:</td><td><textarea ng-model="form.metadata" class="form-control"></textarea></td></tr>
+      <tr><td>Tags:</td><td><input ng-model="form.tags" class="form-control"></td></tr>
+      <tr><td>latitude:</td><td><input ng-model="form.latitude" class="form-control"></td></tr>
+      <tr><td>longitude:</td><td><input ng-model="form.longitude" class="form-control"></td></tr>
+      <tr><td>elevation:</td><td><input ng-model="form.elevation" type="number" class="form-control"></td></tr>
+      <tr><td>make public?</td><td><input ng-model="form.public_flag" type="checkbox"></td></tr>
+      <tr><td>url:</td><td><input ng-model="form.url" class="form-control"></td></tr>
+      <tr>
+        <td>videoId:</td>
+        <td>
+          <input ng-model="form.videoId" class="form-control">
+
+          <label>
+            <input ng-model="form.video_type" type="radio" value="youtube">
+            YouTube
+          </label>
+
+          <label>
+            <input ng-model="form.video_type" type="radio" value="vimeo">
+            Vimeo
+          </label>
+        </td>
+      </tr>
+    </table>
+
+    <div>
+      <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)">Save Channel</button>
+      <button class="btn btn btn-default" ng-click="clearFeed(form)">Clear Feed</button>
+      <button class="btn btn btn-default" ng-click="deleteChannel(form)">Delete Channel</button>
+    </div>
+  </div>
+
+</div>
 
 
 
