@@ -1,5 +1,5 @@
-body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+body{font-family: "Times New Roman";
+  font-size: 12px;
   }
 
 @media (max-width: 992px) {
@@ -7,6 +7,7 @@ body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: none;
   }
 }
+
 input,select,textarea:focus {outline: none;}
 .navbar{
   background-color:#22262E;
@@ -33,9 +34,7 @@ input,select,textarea:focus {outline: none;}
   color: #ffffff;
 }
 .nav-top{float:right;}
-.user-menu{
-  padding-top: 14px;
-}
+
 .nav-top ul li {
   display:inline-block;
 }
@@ -49,19 +48,12 @@ input,select,textarea:focus {outline: none;}
   padding-right: 15px;
   color: #656C7A;
 }
-.nav-top .dropdown-menu{
 
-  line-height:30px;
-}
 .pull-left{
   color: #ffffff;
 }
 
-.user-message{
-  margin:20px 10px;
-  font-size: medium;
 
-}
 .user-info{
   color: #ffffff;
   display: inline-block;
@@ -115,7 +107,10 @@ input,select,textarea:focus {outline: none;}
 
 }
 .table-content{
-  padding: 0px 45px 15px;
+  padding: 0px 35px 15px;
+}
+.border-table table tr td{
+  vertical-align: middle;
 }
 .btn-search{
   width: 10%;
@@ -167,8 +162,6 @@ table.myTable td img, table.myTable th img{
 }
 table.myTable td a,table.myTable th a{
   color: #000;
-  line-height:55px;
-
 }
 table.myTable td,table.myTable th{height:55px;
 }
@@ -206,12 +199,7 @@ table.myTable td,table.myTable th{height:55px;
   margin-right: 10px;
 }
 
-.pagination .Previous a{
-  border-radius: 150px 0px 0px 150px;
-}
-.pagination .Next a{
-  border-radius:0px  150px 150px 0px;
-}
+
 .btn-new {
 
   background: #3bb878 none repeat scroll 0 0;
@@ -229,4 +217,114 @@ table.myTable td,table.myTable th{height:55px;
 .nav-top span a{
   margin-left:5px;
 }
+.navbar-customs-menu .nav > li > a {
+  padding:20px 0px 0px 0px ;
+}
+.navbar-customs-menu .nav > li > a:hover,.navbar-customs-menu .nav > li > a:active, .nav > li > a:focus {
+  color: #444;
+  background:#22262E;
+}
 
+/*create-table-style*/
+
+.channel-main{
+  margin-left: 40px;
+}
+.channel-main td{
+  padding-top: 10px;
+}
+.channel-main td .form-control{
+  width: 94%;
+  border: 2px solid #BCBCBC;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.save-btn{
+  background-color: #3BB878;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;;
+}
+
+/*login -style*/
+.login-top-right{
+float: right;
+  display:inline-block;;
+  line-height: 51px;
+}
+.login-top-right li{
+  display: inline;
+}
+.login-page .login-box{
+  margin-top: 100px;
+}
+.login-top-right li{
+  margin-right: 20px;
+
+}
+@media (max-width: 780px) {
+  .navbar-header{
+    text-align:center;
+  }
+}
+.navbar-fixed-bottom {
+  text-align: center;
+}
+.navbar-fixed-bottom span{
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 50px;
+}
+.navbar-custom-menu .open > a, .open > a:hover, .nav .open > a:focus{
+  background-color: #0c0c0c;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #0c0c0c;
+}
+.navbar-custom-menu a:hover{
+  background-color: #00A000;
+}
+.navbar-custom-menu .user-header{
+  background-color: #3BB878;
+}
+.navbar-custom-menu span{
+  color:#ffffff;
+}
+.navbar-custom-menu li a:hover {
+  background-color:#3BB878;
+}
+
+
+/*表格内容数据界面样式*/
+.table-data{
+  margin: 10px 10px;
+}
+.table-data table{
+  width: 50%;
+}
+.table-data i{
+  margin-right: 10px;
+
+}
+.table-data .nav-tabs-custom > .nav-tabs > li:hover {
+
+  border-top-color: #3c8dbc;
+
+}
+.table-data .nav-tabs-custom > .nav-tabs > li a:hover{
+  background-color:#DBDBDB;
+
+}
+
+.table-data .nav-tabs-custom > .nav-tabs > li:hover{
+  border-top-color: #3BB878;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color:#3BB878 ;
+}
+
+
+/*表格内容数据界面样式END*/

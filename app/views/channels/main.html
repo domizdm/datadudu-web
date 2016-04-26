@@ -1,16 +1,17 @@
-
-<table>
+<div class="container-fluid">
+  <div class="table-data">
+<table class="table table-striped table-bordered table-hover table-condensed">
   <tr>
-    <td>Channel ID:</td><td><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+    <td><i class="fa fa-eye"></i>Channel ID:</td><td><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
   </tr>
   <tr>
-    <td>Author:</td><td><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+    <td><i class="fa fa-user"></i>Author:</td><td><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
   </tr>
   <tr>
-    <td>Access:</td><td><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span></td>
+    <td><i class="fa fa-hand-o-right"></i>Access:</td><td><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span></td>
   </tr>
   <tr>
-    <td>Tags:</td><td><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
+    <td><i class="fa fa-tag"></i>Tags:</td><td><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
   </tr>
 </table>
 
@@ -29,6 +30,8 @@
   </div>
 
 </div>
+  </div>
+  </div>
 
 
 
