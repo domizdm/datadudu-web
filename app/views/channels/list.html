@@ -18,9 +18,8 @@
       <h5 class="usedspace-style">Total Used Space:2MB</h5>
     </div>
 
-
     <div class="border-table">
-      <table class="table table-bordered table-striped myTable"  st-safe-src="channels" st-table="displayCollection">
+      <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channels" st-table="displayCollection">
         <thead class="tblHeader">
         <tr>
           <th st-sort="name" class="th-left">name</th>
@@ -33,18 +32,17 @@
         <tbody>
         <tr ng-repeat="channel in displayCollection">
           <td class="td-left">
-            <h5>Testing-ID:1001</h5>
-            <a ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a>
-            <a hreft="#"><button class="btn btn-default"><img src="./img/shou2.png">Privete</button></a>
-            <a hreft="#"><button class="btn btn-default"><img src="./img/2.png">Charts</button></a>
-            <a hreft="#"><button class="btn btn-default"><img src="./img/3.png">Settings</button></a>
-            <a hreft="#"><button class="btn btn-default"><img src="./img/code.png">API key</button></a>
-            <a hreft="#"><button class="btn btn-default"><img src="./img/5.png">Data import/Export</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/privete.png">Privete</button></a>
+            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/charts.png">Charts</button></a>
+            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/settings.png">Settings</button></a>
+            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/apikey.png">API key</button></a>
+            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/data.png">Data import/Export</button></a>
           </td>
           <td></td>
-          <td><a href="#"><img src="./img/group.png">public</a></td>
+          <td><a href=""><img src="./images/icoimage/privete-ico.png">public</a></td>
           <td>{{channel.usage | bytes}}</td>
-          <td><a href="#">{{channel.created_at}}</a></td>
+          <td><a href="">{{channel.created_at}}</a></td>
         </tr>
         </tbody>
         <tfoot>
