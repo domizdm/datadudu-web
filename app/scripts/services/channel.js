@@ -9,7 +9,7 @@
  */
 angular.module('dataduduR3App')
 .service('channel', function ($resource, config) {
-  return $resource(config.END_POINT+'/:controller/:action/:item/:id/:type', {
+  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:type', {
     id: '@_id',
     controller: 'channels'
   },{
@@ -28,7 +28,7 @@ angular.module('dataduduR3App')
     listPublic: {
       method: 'GET',
       params: {
-        action: 'public'
+        _action: 'public'
       }
     },
     /**
@@ -124,10 +124,14 @@ angular.module('dataduduR3App')
         type: 'feeds'
       }
     },
-    updateFeed: {
-      method: 'POST',
+    /**
+     * http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=list
+     */
+    listAPIKeys: {
+      method: 'GET',
       params: {
-
+        type: 'api_keys',
+        action: 'list'
       }
     }
   });

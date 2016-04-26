@@ -10,7 +10,7 @@
 angular.module('dataduduR3App')
 .controller('ChannelsRealtimeCtrl', function($scope, $q, $filter, $timeout, $interval, $log, channel){
 
-  $scope.chartMaxPoints = 300;
+  $scope.chartMaxPoints = 50;
   $scope.frequencies = [
     {label:'1s',value:1000},
     {label:'2s',value:2000},
@@ -33,7 +33,7 @@ angular.module('dataduduR3App')
     var query = {
       id: channelId,
       start: begin !== null ? $filter('date')(begin, serverFormat, timezone) : undefined,
-      results: 300//threshold in page for render-channel-chart should be same
+      results: $scope.chartMaxPoints//threshold in page for render-channel-chart should be same
     };
 
     return $q(function(resolve, reject){

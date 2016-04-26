@@ -201,21 +201,29 @@ angular.module('dataduduR3App')
 
   $scope.openModalAddPoint = function(){
     if($scope.channel) {
-      $uibModal.open({
-          templateUrl: 'views/channels/particle/modalAddPoint.html',
-          controller: 'ChannelsAddPointCtrl',
-          resolve: {
-            fields: function(){
-              return $scope.channelsFields
-            },
-            writeKey: $scope.channel.write_key
-          }
+
+      channel.listAPIKeys({id:$scope.channel.channel_id})
+        .$promise
+        .then(function(resp){
+          var writeKey = resp.write_key;
+
+          $uibModal.open({
+              templateUrl: 'views/channels/particle/modalAddPoint.html',
+              controller: 'ChannelsAddPointCtrl',
+              resolve: {
+                fields: function(){
+                  return $scope.channelsFields;
+                },
+                writeKey: function(){
+                  return writeKey;
+                }
+              }
+            })
+            .result
+            .then(function(form){}, function(){/*dismiss*/});
         })
-        .result
-        .then(function(form){
-          $log.log(form);
-        }, function(){
-          $log.log('modal result 2');
+        .catch(function(err){
+          ngNotify.set(err.statusText, 'error');
         });
     }
   };
