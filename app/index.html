@@ -28,7 +28,7 @@
   <body ng-app="dataduduR3App" ng-controller="MainCtrl"
         class="hold-transition skin-blue sidebar-mini fixed" ng-cloak>
 
-  <ng-include ng-if="!isLoggedIn" src="'views/login.html'"></ng-include>
+  <ng-include ng-show="!isLoggedIn" src="'views/login.html'"></ng-include>
 
   <div class="wrapper" ng-if="isLoggedIn">
     <header class="main-header">
@@ -71,7 +71,7 @@
                     <a href="" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="" class="btn btn-default btn-flat" ng-click="logout()">Sign out</a>
                   </div>
                 </li>
               </ul>
