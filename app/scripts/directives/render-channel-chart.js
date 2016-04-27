@@ -7,18 +7,17 @@
  * # renderChannelChart
  */
 angular.module('dataduduR3App')
-.directive('renderChannelChart', function ($log) {
+.directive('renderChannelChart', function ($log, $timeout) {
   return {
     template: '<div></div>',
     restrict: 'AE',
     scope: {
       'title': '@renderChannelChartTitle',
       'color': '@renderChannelChartColor',
-      'easing': '@?renderChannelChartAutoEasing',
 
       'data': '=renderChannelChart',// data should be sorted before binding
       'api': '=renderChannelChartApi',
-      'maxPoints': '=?renderChannelChartMaxPoint'
+      'scale': '=?renderChannelChartScale'
     },
     link: function postLink(scope, element, attrs) {
 
@@ -29,16 +28,18 @@ angular.module('dataduduR3App')
         data: []
       };
 
-
-      var pool = [];
-
       var redraw = function(chart, newVal) {
 
-        var maxPoints = parseInt(scope.maxPoints, 10) || 5000;//5000
+        var series = chart.series[0];
 
         if(newVal) {
-          var lastPointOfPool = _.last(pool);
+          var lastPointOfPool = _.last(series.data);
           var firstPointOfNewData = _.first(newVal.data);
+
+          // 没办法,先这样
+          if(scope.scale) {
+            chart.xAxis[0].setExtremes(new Date().getTime() - scope.scale, null, true, false);
+          }
 
           // it has been sorted by outer controller
           var indexStart = (lastPointOfPool && (_.findIndex(newVal.data, {x:lastPointOfPool.x}) + 1)) || 0;
@@ -46,39 +47,16 @@ angular.module('dataduduR3App')
           if(indexStart !== 0 || !lastPointOfPool ||
             (lastPointOfPool && firstPointOfNewData && lastPointOfPool.x<firstPointOfNewData.x)) {
 
-            var series = chart.series[0];
-
             for(var i=indexStart; i<newVal.data.length; i++) {
               var newPoint = newVal.data[i];
-              pool.push(newPoint);
 
-              // if larger than threshold, shift data array
-              var shouldShift = pool.length >= maxPoints ? true : false;
+              var shouldShift = false;
 
-              if(shouldShift) {pool.shift();}
               if(i < newVal.data.length - 1) {
-                series.addPoint(newPoint,false,shouldShift);
+                series.addPoint(newPoint,false, shouldShift);
               }else{
-                series.addPoint(newPoint,true,shouldShift);
+                series.addPoint(newPoint,true, shouldShift);
               }
-            }
-          }
-
-          if(/true/i.test(scope.easing)){
-            var latestPoint = _.last(pool);
-            var firstPoint = _.first(pool);
-            if(latestPoint) {
-              var upper = new Date(latestPoint.x);
-              var lower = new Date(firstPoint.x);
-
-              var maxScale = 60 * 60 * 1000; // in ms
-              if(upper.getTime() - lower.getTime() > maxScale) {// in ms
-                lower = new Date(upper);
-                lower.setMilliseconds(lower.getMilliseconds() - maxScale);
-              }
-
-              var xAxis = chart.xAxis[0];
-              xAxis.setExtremes(lower, upper);
             }
           }
         }
@@ -90,11 +68,10 @@ angular.module('dataduduR3App')
         }, true);
       };
 
-
       // ref: http://www.highcharts.com/demo/dynamic-master-detail
       element.highcharts({
         chart: {
-          type: 'spline',//spline
+          type: 'line',//spline
           animation: Highcharts.svg, // don't animate in old IE
           marginRight: 10,
           events: {
@@ -110,7 +87,6 @@ angular.module('dataduduR3App')
                 clear: function(){
                   if(chart.series && chart.series[0]){
                     chart.series[0].setData([]);
-                    pool.splice(0);
                   }
                 }
               };

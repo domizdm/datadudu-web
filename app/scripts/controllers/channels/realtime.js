@@ -10,7 +10,8 @@
 angular.module('dataduduR3App')
 .controller('ChannelsRealtimeCtrl', function($scope, $q, $filter, $timeout, $interval, $log, channel){
 
-  $scope.chartMaxPoints = 50;
+  $scope.chartScale = 10 * 60 * 1000;
+  $scope.chartMaxPoints = 2000;
   $scope.frequencies = [
     {label:'1s',value:1000},
     {label:'2s',value:2000},

@@ -43,7 +43,10 @@ angular.module('dataduduR3App')
       scope.$watch('datetime', function(newValue){
         if(newValue) {
           $timeout(function(){
-            datetimepicker.data('DateTimePicker').date(new Date(newValue));
+            var dp = datetimepicker.data('DateTimePicker');
+            if(dp) {
+              dp.date(new Date(newValue));
+            }
           });
         }
       });

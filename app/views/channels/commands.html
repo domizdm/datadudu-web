@@ -1,0 +1,33 @@
+
+<div ng-controller="ChannelsCommandsCtrl">
+
+  <div ng-if="form">
+    <table>
+      <thead>
+        <tr><th>position</th><th>command_id</th><th>command_string</th><th></th></tr>
+      </thead>
+      <tr ng-repeat="command in form.commands">
+        <td>{{command.position}}</td>
+        <td>{{command.command_id}}</td>
+        <td>{{command.command_string}}</td>
+        <td><button ng-click="deleteCommand(form, command)">Delete</button></td>
+      </tr>
+    </table>
+
+    <div><button ng-click="deleteAllCommands(form)">Delete All</button></div>
+
+    <div ng-if="!showNewCommand"><button ng-click="toggleShowNewCommand()">New Command</button></div>
+
+    <div ng-if="showNewCommand" ng-controller="ChannelsAddNewCommandCtrl">
+      <input ng-model="newCommand.position">
+      <input ng-model="newCommand.command_string">
+      <button ng-click="addNewCommand(form, newCommand)">Save</button>
+      <button ng-click="toggleShowNewCommand()">Cancel</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+
