@@ -18,7 +18,7 @@ angular.module('dataduduR3App')
     {key:'public',text:'Public View',template:'views/channels/public.html'},
     {key:'settings',text:'Settings',template:'views/channels/settings.html'},
     {key:'apikeys',text:'API Keys',template:'views/channels/apikeys.html'},
-    {key:'commands',text:'API Keys',template:'views/channels/commands.html'},
+    {key:'commands',text:'Commands',template:'views/channels/commands.html'},
     {key:'rules',text:'Rules',template:'views/channels/rules.html'},
     {key:'dataio',text:'Data Import/Export',template:'views/channels/dataio.html'}
   ];

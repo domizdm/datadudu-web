@@ -1,0 +1,18 @@
+
+<div ng-controller="ChannelsDataIOCtrl">
+
+  <div ng-if="form">
+    <table>
+      <tr><td><label>Name:</label></td><td><input ng-model="form.name" class="form-control"></td></tr>
+
+    </table>
+
+    <div>
+      <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)">Save Channel</button>
+    </div>
+  </div>
+
+</div>
+
+
+

@@ -14,12 +14,11 @@ angular.module('dataduduR3App')
       .$promise
       .then(function(resp){
         $location.path('/channels');
+        ngNotify.set('Channel added', 'success');
       })
       .catch(function(err){
         // TODO: more error info
         ngNotify.set('Errors happened', 'error');
       });
-
-    ngNotify.set('channel added', 'success');
   };
 });

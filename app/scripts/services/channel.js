@@ -9,7 +9,7 @@
  */
 angular.module('dataduduR3App')
 .service('channel', function ($resource, config) {
-  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:type', {
+  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:type/:type_id', {
     id: '@_id',
     controller: 'channels'
   },{
@@ -133,6 +133,140 @@ angular.module('dataduduR3App')
         type: 'api_keys',
         action: 'list'
       }
+    },
+    /**
+     * Generate New Channel Write KEY
+
+     To generate and replace the write_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=generate_write_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=generate_write_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     */
+    generateWriteKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'generate_write_key'
+      }
+    },
+    /**
+     * Update a Channel READ KEY (add note)
+
+     To add note to a read_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=update_read_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=update_read_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     read_key (string) – the read_key that you want to delete (required).
+     note (string) – the description or note of the read_key (required)
+
+     */
+    updateReadKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'update_read_key'
+      }
+    },
+    /**
+     * Delete a Channel READ KEY
+
+     To delete a read_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=delete_read_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=delete_read_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     read_key (string) – the read_key that you want to delete (required).
+     */
+    deleteReadKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'delete_read_key'
+      }
+    },
+    /**
+     * Generate New Channel READ KEY
+
+     To generate a new read_key of the channel, send GET/POST request to http://api.datadudu.com/channels/CHANNEL_ID/api_keys?action=generate_read_key replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     action=generate_read_key
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     note (string): note or description of the read_key (optional)
+     */
+    generateReadKey: {
+      method: 'POST',
+      params: {
+        type: 'api_keys',
+        action: 'generate_read_key'
+      }
+    },
+    /**
+     * List All of a Channel’s Commands
+
+     To show all of a channel’s commands, send an HTTP GET to http://api.datadudu.com/channels/CHANNEL_ID/commands
+     replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API.
+     */
+    listCommands: {
+      method: 'GET',
+      params: {
+        type: 'commands'
+      }
+    },
+    /**
+     * Add a Channel Command
+
+     To add a channel command, send an HTTP POST to http://api.datadudu.com/channels/CHANNEL_ID/commands
+     replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API.
+     command_string:  (string) - Command to be sent to your device. There is a limit of 255 characters per command_string.
+     position (integer) - The position you want this command to appear in. Any previous commands at or after this position will be shifted down. If the position is left blank, the command will automatically be added to the end of the queue (with the highest position).
+     */
+    addCommand: {
+      method: 'POST',
+      params: {
+        type: 'commands'
+      }
+    },
+    /**
+     * Delete a Channel Command
+
+     To delete a channel’s single command by command_id, send an HTTP DELETE request to http://api.datadudu.com/channels/CHANNEL_ID/commands/COMMAND_ID
+     replacing CHANNEL_ID with the ID of your channel and COMMAND_ID with the ID of the command.
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API.
+
+     */
+    deleteCommand: {
+      method: 'DELETE',
+      params: {
+        type: 'commands'
+        //type_id: ''
+      }
+    },
+    /**
+     * Delete All of a Channel’s Commands
+
+     To delete all of a channel’s commands, send an HTTP DELETE to http://api.datadudu.com/channels/CHANNEL_ID/commands
+     replacing CHANNEL_ID with the ID of your channel.
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API.
+     */
+    deleteAllCommands: {
+      method: 'DELETE',
+      params: {
+        type: 'commands'
+      }
     }
+
   });
 });
