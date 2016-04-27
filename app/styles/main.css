@@ -28,6 +28,12 @@ input,select,textarea:focus {outline: none;}
 
 }
 
+/*.sidebar-left .default-color a{*/
+/*color: #FFFFFF;*/
+  /*visibility:visible;*/
+  /*background-color:#3BB878;*/
+/*}*/
+
 .language{
   background-color:#2F3541;
   border: 1px solid #505868;
@@ -78,16 +84,17 @@ input,select,textarea:focus {outline: none;}
 .sidebar-menu li a{
   background-color:#1B1E24;
 }
-.sidebar-menu a:hover{
-  color:#ffffff;
-}
+
+
 .sidebar-menu li a:hover {
+  color:#ffffff;
   background-color:#3BB878;
 }
-.sidebar-menu li a:active ,.sidebar-menu li > a:hover {
-  background: #3BB878;
-  color: #ffffff;
+.sidebar-left li.active >a{
+  color: #FFFFFF;
+  background-color:#3BB878;
 }
+/*鼠标点击之后的颜色*/
 .treeview-menu li{
   padding-left: 0px;
 
@@ -137,13 +144,16 @@ input,select,textarea:focus {outline: none;}
   border-radius: 15px;
 
 }
-
-
-
+/*分页样式部分*/
 .pagination{
   float: right;
 
 }
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  color: #fff;
+  background-color: #3BB878;
+}
+/* border-color: #337ab7; */
 table.myTable .td-left, table.myTable .th-left {
   text-align: left;
 
