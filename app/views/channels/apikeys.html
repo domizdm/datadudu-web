@@ -3,127 +3,49 @@
 
   <div ng-if="form">
 
-    <div class="container">
+    <div class="table-apikey-style">
+      <div class="container">
+        <div class="col-md-6">
+          <table>
+            <tr><td colspan="2"><h3>Write API Key</h3></td></tr>
+            <tr><td><label>Key:</label></td><td><pre>{{form.writeKey}}</pre></td></tr>
+            <tr><td></td><td><button class="btn btn-warning" ng-click="generateWriteKey(form)">Generate New Write API Key</button></button></td></tr>
 
-      <div class="col-md-6 col-sm-6">
-        <div class="write-form">
-          <h3>Write API Key</h3>
-          <form class="">
-            <div class="form-group">
-              <label class="col-sm-3 col-xs-12 api-label">Key</label>
-              <div class="col-sm-9 col-xs-12"><pre class="large ">705daa213a1d8cb02e0fca28dc99fb66</pre></div>
-            </div>
-            <div class="form-group"><div class="col-sm-3"></div>
-              <div class="col-sm-9 col-xs-12">
-                <button class="btn btn-warning" type="submit" ng-click="genrateNewWriteKey();" style="float:left;">Generate New Write API Key</button></div>
-            </div>
-          </form>
-        </div>
 
-        <div class="write-form">
-          <h3>Read API Keys</h3>
-       <form  class="ng-pristine ng-valid ng-scope">
-          <div class="form-group">
-            <label class="col-sm-3 col-xs-12 api-label">Key</label>
-            <div class="col-sm-9 col-xs-12"><pre class="large ng-binding">56ab22d649f94614afba5ad73a545849</pre></div>
-          </div>
-          <div class="form-group"><label class="col-sm-3 col-xs-12 api-label">Note</label>
-            <div class="col-sm-9 col-xs-12">
-              <textarea class="form-control ng-pristine ng-untouched ng-valid ng-empty" ></textarea></div>
-          </div>
+            <tr ng-repeat-start="item in form.readKeys">
+              <td colspan="2"><h3>Read API Key</h3></td>
+            </tr>
+            <tr><td><label>Key:</label></td><td><pre>{{item.read_key}}</pre></tr>
+            <tr>
+              <td><label>Note:</label></td>
+              <td><textarea ng-model="item.note"></textarea></td>
+            </tr>
+            <tr ng-repeat-end>
+              <td></td>
+              <td>
+                <button class="btn btn-success" ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save Notes</button>
+                <button class="btn btn-danger" ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key</button>
+              </td>
+            </tr>
 
-          <div class="form-group">
-            <label class="col-sm-3 api-label"></label>
-            <div class="col-sm-9 col-xs-12"> <button class="btn btn-success" ng-click="updateReadKey(readKey.read_key,readKey.note)" type="submit">Save Notes</button>
-              <button class="btn btn-danger" type="button" ng-click="deleteReadKey(readKey.read_key)">Delete API Key</button></div>
-
-          </div>
-        </form><!-- end ngRepeat: readKey in APIKeysData.read_keys --><form  class="ng-pristine ng-valid ng-scope">
-          <div class="form-group">
-            <label class="col-sm-3 col-xs-12 api-label">Key</label>
-            <div class="col-sm-9 col-xs-12"><pre class="large ng-binding">d9f3f25bed634b57b94535f901b2f2c5</pre></div>
-          </div>
-          <div class="form-group"><label class="col-sm-3 col-xs-12 api-label">Note</label>
-            <div class="col-sm-9 col-xs-12">
-              <textarea class="form-control ng-pristine ng-untouched ng-valid ng-empty" ></textarea></div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-3 api-label"></label>
-            <div class="col-sm-9 col-xs-12"> <button class="btn btn-success" ng-click="updateReadKey(readKey.read_key,readKey.note)" type="submit">Save Notes</button>
-              <button class="btn btn-danger" type="button" ng-click="deleteReadKey(readKey.read_key)">Delete API Key</button></div>
+            <tr>
+              <td></td>
+              <td>
+                <button class="btn btn-warning" ng-click="generateReadKey(form.channel_id)">Generate Read API Key</button>
+              </td>
+            </tr>
+          </table>
 
           </div>
-        </form><!-- end ngRepeat: readKey in APIKeysData.read_keys --><form ng-repeat="readKey in APIKeysData.read_keys" class="ng-pristine ng-valid ng-scope">
-          <div class="form-group">
-            <label class="col-sm-3 col-xs-12 api-label">Key</label>
-            <div class="col-sm-9 col-xs-12"><pre class="large ng-binding">e3a67c92e53e4b1793524c0008d1ceb6</pre></div>
-          </div>
-          <div class="form-group"><label class="col-sm-3 col-xs-12 api-label">Note</label>
-            <div class="col-sm-9 col-xs-12">
-              <textarea class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="readKey.note"></textarea></div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-3 api-label"></label>
-            <div class="col-sm-9 col-xs-12"> <button class="btn btn-success" ng-click="updateReadKey(readKey.read_key,readKey.note)" type="submit">Save Notes</button>
-              <button class="btn btn-danger" type="button" ng-click="deleteReadKey(readKey.read_key)">Delete API Key</button></div>
-
-          </div>
-        </form><!-- end ngRepeat: readKey in APIKeysData.read_keys -->
-          <div class="col-sm-3"></div>
-          <div class="col-sm-9 col-xs-12">
-            <button class="btn btn-warning" type="submit" style="float:left;" ng-click="genrateNewReadAPIKey()">Generate New Read API Key</button></div>
-        </div>
-
-
-
-      </div>
 
       <div class="col-md-6 col-sm-6">
         <h3>Help</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
       </div>
 
-    </div>
-
-
-
-
-    <div class="table-apikey-style">
-    <table>
-      <tr><td colspan="2">Write API Key</td></tr>
-      <tr><td><label>Key:</label></td><td>{{form.writeKey}}</tr>
-      <tr><td></td><td><button ng-click="generateWriteKey(form)">Generate New Write API Key</button></button></td></tr>
-
-
-      <tr ng-repeat-start="item in form.readKeys">
-        <td colspan="2">Read API Key</td>
-      </tr>
-      <tr><td><label>Key:</label></td><td>{{item.read_key}}</tr>
-      <tr>
-        <td><label>Note:</label></td>
-        <td><textarea ng-model="item.note"></textarea></td>
-      </tr>
-      <tr ng-repeat-end>
-        <td></td>
-        <td>
-          <button ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save Notes</button>
-          <button ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td></td>
-        <td>
-          <button ng-click="generateReadKey(form.channel_id)">Generate Read API Key</button>
-        </td>
-      </tr>
-
-
-    </table>
       </div>
   </div>
+    </div>
 
 </div>
 

@@ -8,6 +8,12 @@ body{font-family: "'Source Sans Pro', sans-serif";
   }
 }
 
+@media (max-width:767px) {
+  .navbar-custom-menu{
+    margin-top: 12px;
+  }
+
+}
 input,select,textarea:focus {outline: none;}
 .navbar{
   background-color:#22262E;
@@ -122,6 +128,15 @@ input,select,textarea:focus {outline: none;}
 .table-content{
   padding: 0px 35px 15px;
 }
+.table-content .table-list table {
+  border-radius: 20px;
+  background-color:#3BB878;
+}
+.table-content .table-list table tbody{
+  background-color:#FFFFFF;
+}.table-content .table-list table tfoot {
+  background-color:#FFFFFF;
+}
 .border-table table tr td{
   vertical-align: middle;
 }
@@ -138,7 +153,6 @@ input,select,textarea:focus {outline: none;}
 
 .tblHeader{
   color: white;
-  background-color:#3BB878;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
@@ -328,11 +342,17 @@ float: right;
 }
 .table-data .table-data-info table{
   width:100%;
-
+  background-color: #00acd6;
+  border-radius: 10px;
 }
+.table-data .table-data-info
 .table-data i{
   margin-right: 10px;
 
+}
+.table-data table i{
+
+  margin-right: 10px;
 }
 .table-data .nav-tabs-custom > .nav-tabs > li:hover {
 
@@ -340,9 +360,10 @@ float: right;
 
 }
 .table-data .nav-tabs-custom > .nav-tabs > li a:hover{
-  background-color:#DBDBDB;
-
+  color: #FFFFFF;
+  background-color:#3BB878;
 }
+
 
 .table-data .nav-tabs-custom > .nav-tabs > li:hover{
   border-top-color: #3BB878;
@@ -363,5 +384,42 @@ float: right;
 
 
 /*table-apikey-style*/
+.table-apikey-style .container{
+  margin-left: 0px;
+}
 
+.table-apikey-style textarea{
+  border-radius:5px;
+  border: 1px solid #C0C0C0;
+  width: 300px;
+}
+.table-apikey-style .btn-warning{
+  margin-top: 20px;
+}
+
+
+.table-commands-style .container{
+  margin-left: 0px;
+}
+.table-commands-style input{
+  border-radius:5px;
+  border: 1px solid #C0C0C0;
+  width: 300px;
+}
+.table-commands-style table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+
+}
+.table-commands-style table{
+  background-color: #3ABB78;
+  border-radius: 10px;
+}
+.table-commands-style table >thead{
+  color: #FFFFFF;
+}
+.table-commands-style .btn-success{
+  margin-top: 20px;
+}
 /*表格内容数据界面样式END*/

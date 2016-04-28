@@ -1,8 +1,9 @@
-
+<div class="table-commands-style">
+<div class="container">
+  <div class="col-md-6">
 <div ng-controller="ChannelsCommandsCtrl">
-
   <div ng-if="form">
-    <table>
+    <table class="table table-striped table-bordered table-condensed">
       <thead>
         <tr><th>position</th><th>command_id</th><th>command_string</th><th></th></tr>
       </thead>
@@ -10,24 +11,31 @@
         <td>{{command.position}}</td>
         <td>{{command.command_id}}</td>
         <td>{{command.command_string}}</td>
-        <td><button ng-click="deleteCommand(form, command)">Delete</button></td>
+        <td><button class="btn btn-default" ng-click="deleteCommand(form, command)">Delete</button></td>
       </tr>
     </table>
+    <tbody>
+    <tr><td colspan="4"></td>
+    </tr>
+    </tbody>
 
-    <div><button ng-click="deleteAllCommands(form)">Delete All</button></div>
+    <div><button class="btn btn-danger" ng-click="deleteAllCommands(form)">Delete All</button></div>
 
-    <div ng-if="!showNewCommand"><button ng-click="toggleShowNewCommand()">New Command</button></div>
+    <div ng-if="!showNewCommand"><button class="btn btn-success" ng-click="toggleShowNewCommand()">New Command</button></div>
 
     <div ng-if="showNewCommand" ng-controller="ChannelsAddNewCommandCtrl">
       <input ng-model="newCommand.position">
       <input ng-model="newCommand.command_string">
-      <button ng-click="addNewCommand(form, newCommand)">Save</button>
-      <button ng-click="toggleShowNewCommand()">Cancel</button>
+      <button class="btn btn-success" ng-click="addNewCommand(form, newCommand)">Save</button>
+      <button class="btn btn-danger" ng-click="toggleShowNewCommand()">Cancel</button>
+    </div>
+  </div>
+</div>
     </div>
 
+  <div class="col-md-6 col-sm-6">
+    <h3>Help</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
   </div>
-
 </div>
-
-
-
+</div>
