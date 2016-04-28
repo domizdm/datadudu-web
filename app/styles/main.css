@@ -250,18 +250,25 @@ table.myTable td,table.myTable th{height:55px;
 .channel-main{
   margin-left: 40px;
 }
-.channel-main td{
+.channel-main td, .channel-main-setting td{
   padding-top: 10px;
 }
-.channel-main td .form-control{
-  width: 94%;
+ .channel-main td .form-control{
+   width: 94%;
+   border: 2px solid #BCBCBC;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+ }
+.channel-main-setting .channel-form-setting input,.channel-main-setting .channel-form-setting textarea{
   border: 2px solid #BCBCBC;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
+
 .save-btn{
-  background-color: #3BB878;
+
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;;
@@ -300,12 +307,7 @@ float: right;
   background-color: #0c0c0c;
 }
 
-/*.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {*/
-  /*background-color: #0c0c0c;*/
-/*}*/
-/*.navbar-custom-menu a:hover{*/
-  /*background-color: #00A000;*/
-/*}*/
+
 .navbar-custom-menu .user-header{
   background-color: #3BB878;
 }
@@ -358,4 +360,8 @@ float: right;
 .table-data .table-data-info  .btn-add:hover{
   background-color: #22A05F;
 }
+
+
+/*table-apikey-style*/
+
 /*表格内容数据界面样式END*/
