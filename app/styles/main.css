@@ -1,4 +1,4 @@
-body{font-family: "'Source Sans Pro', sans-serif";
+body{font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   }
 
@@ -46,7 +46,9 @@ input,select,textarea:focus {outline: none;}
   color: #ffffff;
 }
 .nav-top{float:right;}
-
+.navbar-customs-menu i{
+  font-size: 18px;
+}
 .nav-top ul li {
   display:inline-block;
 }
@@ -270,15 +272,15 @@ table.myTable td,table.myTable th{height:55px;
  .channel-main td .form-control{
    width: 94%;
    border: 2px solid #BCBCBC;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   border-radius: 10px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
  }
 .channel-main-setting .channel-form-setting input,.channel-main-setting .channel-form-setting textarea{
   border: 2px solid #BCBCBC;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .save-btn{
