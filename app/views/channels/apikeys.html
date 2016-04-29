@@ -2,38 +2,50 @@
 <div ng-controller="ChannelsApiKeysCtrl">
 
   <div ng-if="form">
-    <table>
-      <tr><td colspan="2">Write API Key</td></tr>
-      <tr><td><label>Key:</label></td><td>{{form.writeKey}}</tr>
-      <tr><td></td><td><button ng-click="generateWriteKey(form)">Generate New Write API Key</button></button></td></tr>
+
+    <div class="table-apikey-style">
+      <div class="container">
+        <div class="col-md-6">
+          <table>
+            <tr><td colspan="2"><h3>Write API Key</h3></td></tr>
+            <tr><td><label>Key:</label></td><td><pre>{{form.writeKey}}</pre></td></tr>
+            <tr><td></td><td><button class="btn btn-warning" ng-click="generateWriteKey(form)">Generate New Write API Key</button></button></td></tr>
 
 
-      <tr ng-repeat-start="item in form.readKeys">
-        <td colspan="2">Read API Key</td>
-      </tr>
-      <tr><td><label>Key:</label></td><td>{{item.read_key}}</tr>
-      <tr>
-        <td><label>Note:</label></td>
-        <td><textarea ng-model="item.note"></textarea></td>
-      </tr>
-      <tr ng-repeat-end>
-        <td></td>
-        <td>
-          <button ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save Notes</button>
-          <button ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key</button>
-        </td>
-      </tr>
+            <tr ng-repeat-start="item in form.readKeys">
+              <td colspan="2"><h3>Read API Key</h3></td>
+            </tr>
+            <tr><td><label>Key:</label></td><td><pre>{{item.read_key}}</pre></tr>
+            <tr>
+              <td><label>Note:</label></td>
+              <td><textarea ng-model="item.note"></textarea></td>
+            </tr>
+            <tr ng-repeat-end>
+              <td></td>
+              <td>
+                <button class="btn btn-success" ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save Notes</button>
+                <button class="btn btn-danger" ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key</button>
+              </td>
+            </tr>
 
-      <tr>
-        <td></td>
-        <td>
-          <button ng-click="generateReadKey(form.channel_id)">Generate Read API Key</button>
-        </td>
-      </tr>
+            <tr>
+              <td></td>
+              <td>
+                <button class="btn btn-warning" ng-click="generateReadKey(form.channel_id)">Generate Read API Key</button>
+              </td>
+            </tr>
+          </table>
 
+          </div>
 
-    </table>
+      <div class="col-md-6 col-sm-6">
+        <h3>Help</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+      </div>
+
+      </div>
   </div>
+    </div>
 
 </div>
 

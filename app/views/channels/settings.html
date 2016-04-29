@@ -1,13 +1,15 @@
 
+<div class="row channel-main-setting">
+  <div class="col-md-12 channel-form-setting">
 <div ng-controller="ChannelsSettingsCtrl">
 
   <div ng-if="form">
     <table>
       <tr><td><label>Name:</label></td><td><input ng-model="form.name" class="form-control"></td></tr>
-      <tr><td>Description:</td><td><textarea ng-model="form.description" class="form-control"></textarea></td></tr>
+      <tr><td><label>Description:</label></td><td><textarea ng-model="form.description" class="form-control"></textarea></td></tr>
 
       <tr ng-repeat="fidx in [1,2,3,4,5,6,7,8] track by $index">
-        <td>Feild {{fidx}}:</td>
+        <td><label>Feild:</label> {{fidx}}:</td>
         <td>
           <input ng-model="$parent.form['field'+fidx]" ng-disabled="!$parent.form['field'+fidx+'-enabled']"
                  class="form-control" placeholder="Fill in field name...">
@@ -15,15 +17,15 @@
                  ng-init="$parent.form['field'+fidx+'-enabled']=!!$parent.form['field'+fidx]">
         </td>
       </tr>
-      <tr><td>Metadata:</td><td><textarea ng-model="form.metadata" class="form-control"></textarea></td></tr>
-      <tr><td>Tags:</td><td><input ng-model="form.tags" class="form-control"></td></tr>
-      <tr><td>latitude:</td><td><input ng-model="form.latitude" class="form-control"></td></tr>
-      <tr><td>longitude:</td><td><input ng-model="form.longitude" class="form-control"></td></tr>
-      <tr><td>elevation:</td><td><input ng-model="form.elevation" type="number" class="form-control"></td></tr>
-      <tr><td>make public?</td><td><input ng-model="form.public_flag" type="checkbox"></td></tr>
-      <tr><td>url:</td><td><input ng-model="form.url" class="form-control"></td></tr>
+      <tr><td><label>Metadata:</label></td><td><textarea ng-model="form.metadata" class="form-control"></textarea></td></tr>
+      <tr><td><label>Tags:</label></td><td><input ng-model="form.tags" class="form-control"></td></tr>
+      <tr><td><label>latitude:</label></td><td><input ng-model="form.latitude" class="form-control"></td></tr>
+      <tr><td><label>longitude:</label></td><td><input ng-model="form.longitude" class="form-control"></td></tr>
+      <tr><td><label>elevation:</label></td><td><input ng-model="form.elevation" type="number" class="form-control"></td></tr>
+      <tr><td><label>make public</label></td><td><input ng-model="form.public_flag" type="checkbox"></td></tr>
+      <tr><td><label>url:</label></td><td><input ng-model="form.url" class="form-control"></td></tr>
       <tr>
-        <td>videoId:</td>
+        <td><label>videoId:</label></td>
         <td>
           <input ng-model="form.videoId" class="form-control">
 
@@ -42,12 +44,13 @@
 
     <div>
       <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)">Save Channel</button>
-      <button class="btn btn btn-default" ng-click="clearFeed(form)">Clear Feed</button>
-      <button class="btn btn btn-default" ng-click="deleteChannel(form)">Delete Channel</button>
+      <button class="btn btn btn-warning save-btn" ng-click="clearFeed(form)">Clear Feed</button>
+      <button class="btn btn btn-danger save-btn" ng-click="deleteChannel(form)">Delete Channel</button>
     </div>
   </div>
 
 </div>
-
+    </div>
+</div>
 
 

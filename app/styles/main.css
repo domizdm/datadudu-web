@@ -1,5 +1,5 @@
-body{font-family: "Times New Roman";
-  font-size: 12px;
+body{font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
   }
 
 @media (max-width: 992px) {
@@ -8,6 +8,12 @@ body{font-family: "Times New Roman";
   }
 }
 
+@media (max-width:767px) {
+  .navbar-custom-menu{
+    margin-top: 12px;
+  }
+
+}
 input,select,textarea:focus {outline: none;}
 .navbar{
   background-color:#22262E;
@@ -28,13 +34,21 @@ input,select,textarea:focus {outline: none;}
 
 }
 
+/*.sidebar-left .default-color a{*/
+/*color: #FFFFFF;*/
+  /*visibility:visible;*/
+  /*background-color:#3BB878;*/
+/*}*/
+
 .language{
   background-color:#2F3541;
   border: 1px solid #505868;
   color: #ffffff;
 }
 .nav-top{float:right;}
-
+.navbar-customs-menu i{
+  font-size: 18px;
+}
 .nav-top ul li {
   display:inline-block;
 }
@@ -53,18 +67,20 @@ input,select,textarea:focus {outline: none;}
   color: #ffffff;
 }
 
-
+.user-panel >.image > img {
+  height: auto;
+  max-width: 85px;
+  width: 100%;
+}
 .user-info{
   color: #ffffff;
   display: inline-block;
-  line-height: 15px;
-  max-width: 100px;
   position: relative;
-  text-align: left;
+  text-align:center;
   text-overflow: ellipsis;
   top: 1px;
   vertical-align: bottom;
-  white-space: nowrap;
+ margin-left: 10px;
 }
 .user-info a{
   color:#ffffff;
@@ -72,16 +88,21 @@ input,select,textarea:focus {outline: none;}
 .sidebar-menu a{
   color:#8B91A0;
 }
-.sidebar-menu a:hover{
-  color:#ffffff;
+
+.sidebar-menu li a{
+  background-color:#1B1E24;
 }
+
+
 .sidebar-menu li a:hover {
+  color:#ffffff;
   background-color:#3BB878;
 }
-.sidebar-menu li.active > a,.sidebar-menu li > a:hover {
-  background: #3BB878;
-  color: #ffffff;
+.sidebar-left li.active >a{
+  color: #FFFFFF;
+  background-color:#3BB878;
 }
+/*鼠标点击之后的颜色*/
 .treeview-menu li{
   padding-left: 0px;
 
@@ -109,6 +130,15 @@ input,select,textarea:focus {outline: none;}
 .table-content{
   padding: 0px 35px 15px;
 }
+.table-content .table-list table {
+  border-radius: 20px;
+  background-color:#3BB878;
+}
+.table-content .table-list table tbody{
+  background-color:#FFFFFF;
+}.table-content .table-list table tfoot {
+  background-color:#FFFFFF;
+}
 .border-table table tr td{
   vertical-align: middle;
 }
@@ -125,19 +155,21 @@ input,select,textarea:focus {outline: none;}
 
 .tblHeader{
   color: white;
-  background-color:#3BB878;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
 
 }
-
-
-
+/*分页样式部分*/
 .pagination{
   float: right;
 
 }
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  color: #fff;
+  background-color: #3BB878;
+}
+/* border-color: #337ab7; */
 table.myTable .td-left, table.myTable .th-left {
   text-align: left;
 
@@ -220,6 +252,10 @@ table.myTable td,table.myTable th{height:55px;
 .navbar-customs-menu .nav > li > a {
   padding:20px 0px 0px 0px ;
 }
+.navbar-customs-menu .navbar-nav i{
+  margin-right: 10px;
+ vertical-align: middle;
+}
 .navbar-customs-menu .nav > li > a:hover,.navbar-customs-menu .nav > li > a:active, .nav > li > a:focus {
   color: #444;
   background:#22262E;
@@ -230,18 +266,25 @@ table.myTable td,table.myTable th{height:55px;
 .channel-main{
   margin-left: 40px;
 }
-.channel-main td{
+.channel-main td, .channel-main-setting td{
   padding-top: 10px;
 }
-.channel-main td .form-control{
-  width: 94%;
+ .channel-main td .form-control{
+   width: 94%;
+   border: 2px solid #BCBCBC;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+ }
+.channel-main-setting .channel-form-setting input,.channel-main-setting .channel-form-setting textarea{
   border: 2px solid #BCBCBC;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
+
 .save-btn{
-  background-color: #3BB878;
+
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;;
@@ -280,12 +323,7 @@ float: right;
   background-color: #0c0c0c;
 }
 
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: #0c0c0c;
-}
-.navbar-custom-menu a:hover{
-  background-color: #00A000;
-}
+
 .navbar-custom-menu .user-header{
   background-color: #3BB878;
 }
@@ -304,9 +342,19 @@ float: right;
 .table-data table{
   width: 50%;
 }
+.table-data .table-data-info table{
+  width:100%;
+  background-color: #00acd6;
+  border-radius: 10px;
+}
+.table-data .table-data-info
 .table-data i{
   margin-right: 10px;
 
+}
+.table-data table i{
+
+  margin-right: 10px;
 }
 .table-data .nav-tabs-custom > .nav-tabs > li:hover {
 
@@ -314,9 +362,10 @@ float: right;
 
 }
 .table-data .nav-tabs-custom > .nav-tabs > li a:hover{
-  background-color:#DBDBDB;
-
+  color: #FFFFFF;
+  background-color:#3BB878;
 }
+
 
 .table-data .nav-tabs-custom > .nav-tabs > li:hover{
   border-top-color: #3BB878;
@@ -326,5 +375,53 @@ float: right;
   border-top-color:#3BB878 ;
 }
 
+.table-data .table-data-info  .btn-add{
 
+  background-color:#3BB878;
+ border-radius: 5px;
+}
+.table-data .table-data-info  .btn-add:hover{
+  background-color: #22A05F;
+}
+
+
+/*table-apikey-style*/
+.table-apikey-style .container{
+  margin-left: 0px;
+}
+
+.table-apikey-style textarea{
+  border-radius:5px;
+  border: 1px solid #C0C0C0;
+  width: 300px;
+}
+.table-apikey-style .btn-warning{
+  margin-top: 20px;
+}
+
+
+.table-commands-style .container{
+  margin-left: 0px;
+}
+.table-commands-style input{
+  border-radius:5px;
+  border: 1px solid #C0C0C0;
+  width: 300px;
+}
+.table-commands-style table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+
+}
+.table-commands-style table{
+  background-color: #3ABB78;
+  border-radius: 10px;
+}
+.table-commands-style table >thead{
+  color: #FFFFFF;
+}
+.table-commands-style .btn-success{
+  margin-top: 20px;
+}
 /*表格内容数据界面样式END*/

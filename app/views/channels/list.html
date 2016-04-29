@@ -18,7 +18,7 @@
       <h5 class="usedspace-style">Total Used Space:2MB</h5>
     </div>
 
-    <div class="border-table">
+    <div class="border-table table-list">
       <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channels" st-table="displayCollection">
         <thead class="tblHeader">
         <tr>
@@ -33,11 +33,11 @@
         <tr ng-repeat="channel in displayCollection">
           <td class="td-left">
             <a ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
-            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/privete.png">Privete</button></a>
-            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/charts.png">Charts</button></a>
-            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/settings.png">Settings</button></a>
-            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/apikey.png">API key</button></a>
-            <a hreft=""><button class="btn btn-default btn-xs"><img src="./images/icoimage/data.png">Data import/Export</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-xs"><img src="./images/icoimage/privete.png">Privete</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-xs"><img src="./images/icoimage/charts.png">Charts</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-xs"><img src="./images/icoimage/settings.png">Settings</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-xs"><img src="./images/icoimage/apikey.png">API key</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-xs"><img src="./images/icoimage/data.png">Data import/Export</button></a>
           </td>
           <td></td>
           <td><a href=""><img src="./images/icoimage/privete-ico.png">public</a></td>
@@ -47,8 +47,8 @@
         </tbody>
         <tfoot>
         <tr>
-          <td colspan="4" class="text-center">
-            <div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+          <td colspan="5" class="text-center">
+            <div class="paging-style" st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
           </td>
         </tr>
         </tfoot>
