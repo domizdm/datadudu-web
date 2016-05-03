@@ -1,6 +1,14 @@
-body{font-family: 'Source Sans Pro', sans-serif;
-  font-size: 14px;
-  }
+/** {font-family: 'roboto-black';*/
+  /*font-size: 14px;*/
+  /*}*/
+
+@font-face {
+  font-family: 'robotoCondensed-light';
+  src:  url('fonts/RobotoCondensed-Light.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @media (max-width: 992px) {
   .nav-top span {
@@ -344,7 +352,7 @@ float: right;
 }
 .table-data .table-data-info table{
   width:100%;
-  background-color: #00acd6;
+  background-color:#D4EDF4;
   border-radius: 10px;
 }
 .table-data .table-data-info
