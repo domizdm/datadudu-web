@@ -1,0 +1,62 @@
+<div class="login-main">
+  <div class="container">
+
+    <div class="row account-main">
+      <div class="signup-outer ">
+        <form>
+          <div class="row">
+            <div class="col-sm-4 hidden-sm">
+
+            </div>
+            <div class="col-sm-8">
+              <h4 class="defaultColor">Edit Public Profile</h4>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4 hidden-sm">
+
+            </div>
+            <div class="col-sm-8">
+              <label><input name="user" ng-model="publicProfile.public_flag" type="checkbox" >&nbsp;Make Public?</label>
+
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-4">
+              <label class="pull-right">Website</label>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" ng-model="publicProfile.website" class="form-control">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <label class="pull-right">Bio</label>
+            </div>
+            <div class="col-sm-8">
+              <textarea type="text" ng-model="publicProfile.bio" class="form-control"></textarea>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4 hidden-sm">
+
+            </div>
+            <div class="col-sm-8">
+              <button type="submit" ng-click="updateUserProfile()" class="btn btn-new">Update Profile</button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
