@@ -1,0 +1,187 @@
+<div class="login-main">
+<div class="container">
+
+<div class="row channel-main">
+<div class="col-md-12">
+<h2>My Devices</h2>
+
+<a href="javascript:void(0)" ng-click="OpenDevicePopup()" class="btn btn_add btn-new ng-binding add_serial"><i class="fa fa-plus"></i> Attach a Device</a>
+<div class="row device_mg">
+<!-- <div class="col-md-3 col-sm-3">
+<div class="device_one"><a href="#">One</a></div>
+</div>
+
+<div class="col-md-3 col-sm-3">
+<div class="device_one"><a href="#">One</a></div>
+</div> -->
+
+<table class="table table-bordered table-hover">
+    <thead class="tblHeader">
+      <tr>
+	  <th>Channel Id</th>
+        <th>Serial Number</th>
+		<th>Product Name</th>
+		<th>Product Id</th>
+		<th>Activation Code</th>
+        <th>Created At</th>
+		 <th>Attached At</th>
+		  <th>Activated At</th>
+		  <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr dir-paginate="dv in myDevices| orderBy:'created_at':true | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="myDevicePagination" >
+	  <td><a href="#channels/{{dv.channel_id}}">{{dv.channel_id}}<a></td>
+        <td>{{dv.serial}}</td>
+		<td>{{dv.name}}</td>
+		<td>{{dv.product_id}}</td>
+		<td>{{dv.activation_code}}</td>
+        <td>{{dv.created_at}}</td>
+		 <td>{{dv.attached_at}}</td>
+		 <td>{{dv.activated_at}}</td>
+		 <td><a href="javascript:void(0)" ng-if="!getEnabled(dv.isDisabled)"  class="btn btn-danger" ng-click="detachDevice(dv.activation_code)"><i style="font-size:20px;" class="fa fa-close"></i> Detach</a>
+		 <a href="javascript:void(0)" ng-if="getEnabled(dv.isDisabled)" class="btn btn-success"  ng-click="activateDeviceFromTable(dv.activation_code)"><i style="font-size:20px;" class="fa fa-plus"></i> Attach</a>
+		 </td>
+      </tr>
+    </tbody>
+  </table>
+<div class="text-center">
+              <dir-pagination-controls boundary-links="true" pagination-id="myDevicePagination" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+<!-- <div class="col-md-3 col-sm-3">
+<div class="device_one"><a href="#addProduct"><i class="fa fa-plus"></i> Add Product Batch</a></div>
+</div> -->
+
+</div>
+
+
+
+
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="modelDevice" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myLargeModalLabel">Attach Device</h4>
+      </div>
+      <div class="modal-body">
+	 <div class="row"> 
+<ul class="nav nav-tabs">
+    <li ng-class="{'active':deviceTabs.isActivate}"><a ng-click="changeTab('isActivate')" data-toggle="tab" href="javascript:void(0)">By Activation Code</a></li>
+    <li ng-class="{'active':deviceTabs.isProductBatch}"><a ng-click="changeTab('isProductBatch')" data-toggle="tab" href="javascript:void(0)">By Product Batches</a></li>
+   </ul>
+	  <div class="tab-content tab-bg">
+    <div id="private" class="tab-pane fade" ng-class="{'in active':deviceTabs.isActivate}">
+    <div class="private-tab">
+	 <form name="form" ng-submit="activateDevice()" ng-class="{ 'has-error': form.actionCode.$dirty && form.actionCode.$error.required }" role="form">
+		<div class="form-group row">
+	<label class="col-sm-3 active_txt">Activation Code</label>
+	<div class="col-sm-6"><input type="text" name="actionCode" id="actionCode" ng-model="actionCode" class="form-control " placeholder="Enter Activation Code Here.." required>
+	 <span ng-show="form.actionCode.$dirty && form.actionCode.$error.required"  class="help-block">Activation Code is required</span>
+	</div>
+	<div class="col-sm-3">
+	<button type="submit" ng-disabled="form.$invalid" class="btn btn_add btn-new ng-binding add_serial" >Submit</button>
+	</div>
+	</div>
+	</form>
+	</div>
+	</div>  
+	  </div>
+	  
+	  <div class="tab-content tab-bg">
+    <div id="private" class="tab-pane fade" ng-class="{'in active':deviceTabs.isProductBatch}">
+    <div class="private-tab">
+	 <form name="formProduct" ng-submit="activateDeviceByProductBatch()"  role="form">
+	  <div class="form-group row">
+	  <div class="col-sm-3"></div>
+	  <div class="col-sm-3">
+                <label>
+                    <input type="radio" ng-change="clearProductId(true)" name="productBatch" ng-value="true" ng-model="isMyProductBatch">
+                    My Product Batches
+                </label>
+            </div>
+            <div class="col-sm-3">
+                <label>
+                    <input type="radio" name="productBatch" ng-change="clearProductId(false)" ng-value="false" ng-model="isMyProductBatch">
+                  Public Product Batches
+                </label>
+            </div>
+        </div>
+		<div  class="form-group row">
+	<label class="col-sm-3 active_txt">Select Product</label>
+	<div class="col-sm-6">
+	<select ng-show="isPublicProduct" class="form-control"  ng-model="selectedDevice" ng-options="obj.name for obj in myProducts">    
+			<option value="">--Select Product---</option> 
+    </select>
+<input type="text" ng-hide="isPublicProduct" ng-model="searchProductName" class="form-control " placeholder="Search Product By Name....">
+	 </div>
+	<div class="col-sm-3">
+	<a href="javascript:void(0)" ng-click="searchProduct()" ng-hide="isPublicProduct" class="btn btn-success" ><i style="font-size:20px;" class="fa fa-search"></i>Search</a>
+	</div>
+	</div>
+		
+		<div class="form-group row">
+	<label class="col-sm-3 active_txt">Product Id</label>
+	<div class="col-sm-6"><input type="text" name="productId" id="productId" ng-model="selectedDevice.product_id" class="form-control " placeholder="Enter Product Id Here.." required>
+	 <span ng-show="formProduct.productId.$dirty && formProduct.productId.$error.required"  class="help-block">Product Id is required</span>
+	</div>
+	<div class="col-sm-3">
+	</div>
+	</div>
+	<div class="form-group row">
+	<label class="col-sm-3 active_txt">Serial Number</label>
+	<div class="col-sm-6"><input type="text" name="serialNumber" id="serialNumber" ng-model="selectedDevice.serial" class="form-control " placeholder="Enter Serial Number Here.." required>
+	 <span ng-show="formProduct.serialNumber.$dirty && formProduct.serialNumber.$error.required"  class="help-block">Serial Number is required</span>
+	</div>
+	<div class="col-sm-3">
+	<button type="submit" ng-disabled="formProduct.$invalid" class="btn btn_add btn-new ng-binding add_serial" >Submit</button>
+	</div>
+	</div>
+	<div ng-hide="isPublicProduct" class="form-group row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-11">
+	<div class="text-center">
+              <dir-pagination-controls boundary-links="true" pagination-id="myProductPagination" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+	<table class="table table-bordered table-hover">
+	 <thead class="tblHeader">
+	<tr><th>Product Id</th><th>Product Name</th><th>Secret</th><th></th></tr>
+	</thead>
+	<tbody>
+	<tr dir-paginate="sp in searchedProduct| orderBy:'created_at':true | filter:q | itemsPerPage: searchPageSize" current-page="searchCurrentPage" pagination-id="myProductPagination" >
+		<td>{{sp.product_id}}</td>
+		<td>{{sp.name}}</td>
+		<td>{{sp.secret}}</td>
+		<td><label style="cursor:pointer;color:#3bb878;"><input type="radio" ng-click="selectedDevice.product_id=sp.product_id" name="publicProduct" />Select</label></td>
+	</tr>
+	</tbody>
+	</table>
+	<div class="text-center">
+              <dir-pagination-controls boundary-links="true" pagination-id="myProductPagination" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+	</div>
+	</div>
+	
+	
+	</form>
+	</div>
+	</div>  
+	  </div>
+	  
+       </div>
+      </div>
+      <div class="modal-footer">
+<!--         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
