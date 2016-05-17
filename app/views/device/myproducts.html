@@ -1,0 +1,28 @@
+<div class="container-fluid main-devices">
+
+<div class="row-fluid col-md-12 device_mg">
+ <h2>My Devices  <a href="javascript:void(0)"  class="btn btn_add btn-new ng-binding add_serial"><i class="fa fa-plus"></i> Attach a Device</a></h2>
+
+  <div class="col-md-12 col-sm-12 device_mg table-responsive">
+    <div class="row device_mg">
+
+      <div class="text-center">
+        <dir-pagination-controls boundary-links="true" pagination-id="productPagination" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/dirPagination.tpl.html" class="ng-isolate-scope"></dir-pagination-controls>
+      </div>
+     <div class="col-md-3 col-sm-3 mb10 ng-scope" dir-paginate="prd in products| orderBy:'created_at':true | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productPagination" ng-repeat="prd in products| orderBy:'created_at':true | filter:q | itemsPerPage: pageSize : 'productPagination'">
+      <div class="device_one"><a href="#productDetails/057c05a6ff1849eea58b324b28a44a99" class="ng-binding">New device</a></div>
+    </div><div class="col-md-3 col-sm-3 mb10 ng-scope" dir-paginate="prd in products| orderBy:'created_at':true | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productPagination" ng-repeat="prd in products| orderBy:'created_at':true | filter:q | itemsPerPage: pageSize : 'productPagination'">
+      <div class="device_one"><a href="#productDetails/4fb6dc0b014a4193b48579c910386adc" class="ng-binding">new dudu</a></div>
+    </div><div class="col-md-3 col-sm-3 mb10 ng-scope" dir-paginate="prd in products| orderBy:'created_at':true | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productPagination" ng-repeat="prd in products| orderBy:'created_at':true | filter:q | itemsPerPage: pageSize : 'productPagination'">
+      <div class="device_one"><a href="#productDetails/870e45f7cab04db39e0387da466db96a" class="ng-binding">DuduTags</a></div>
+    </div>
+      <div class="text-center">
+        <dir-pagination-controls boundary-links="true" pagination-id="productPagination" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/dirPagination.tpl.html" class="ng-isolate-scope"></dir-pagination-controls>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
