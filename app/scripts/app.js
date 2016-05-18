@@ -51,7 +51,7 @@ angular
       controller: 'HomeCtrl',
       controllerAs: 'home'
     })
-    .otherwise({
+      .otherwise({
       redirectTo: '/'
     });
 })

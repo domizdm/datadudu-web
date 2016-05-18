@@ -1,7 +1,7 @@
 <div class="main">
   <!--表格内容start-->
   <div class="table-content">
-
+    <div class="list-header">
     <form class="search form-search ">
       <select class="select-style">
         <option value="">ALL</option>
@@ -9,38 +9,33 @@
       </select>
       <input type="text" class="input-style" placeholder="Search here...">
       <button type="submit" class="btn btn-search">Search</button>
-    </form>
-
-    <div class="page-header">
-      <h1 style="display: inline">My Channels</h1>
-
       <a class="btn btn-default btn-new" href="#/channels/new">New Channel</a>
       <h5 class="usedspace-style">Total Used Space:2MB</h5>
-    </div>
-
+    </form>
+      </div>
     <div class="border-table table-list">
       <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channels" st-table="displayCollection">
         <thead class="tblHeader">
         <tr>
-          <th st-sort="name" class="th-left">name</th>
-          <th st-sort="created_at">last updata</th>
-          <th>public or private</th>
-          <th st-sort="usage">used space</th>
-          <th>created</th>
+          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">Name</span></th>
+          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>Last Updata</span></th>
+          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>Public or Private</span></th>
+          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>Used Space</span></th>
+          <th><span>Created</span></th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="channel in displayCollection">
           <td class="td-left">
             <a ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
-            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-xs"><img src="./images/icoimage/privete.png">Privete</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-xs"><img src="./images/icoimage/charts.png">Charts</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-xs"><img src="./images/icoimage/settings.png">Settings</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-xs"><img src="./images/icoimage/apikey.png">API key</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-xs"><img src="./images/icoimage/data.png">Data import/Export</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
           </td>
           <td></td>
-          <td><a href=""><img src="./images/icoimage/privete-ico.png">public</a></td>
+          <td><a href=""><i class="fa fa-group"></i>public</a></td>
           <td>{{channel.usage | bytes}}</td>
           <td><a href="">{{channel.created_at}}</a></td>
         </tr>

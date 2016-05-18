@@ -16,7 +16,9 @@ angular.module('dataduduR3App')
     .then(function(resp){
       $scope.channels = resp.channels;
     })
+
     .catch(function(err){
+
       // TODO: show error message
       $log.log(err);
     });

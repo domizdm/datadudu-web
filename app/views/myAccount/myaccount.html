@@ -1,62 +1,57 @@
-<div class="login-main">
-<div class="container">
 
-<div class="row account-main">
-<div class="col-md-5">
-<h2>我的帐户</h2>
-<button type="submit" ng-click="editAccount()" class="btn btn-default btn-new">编辑帐户</button>
-<hr>
-<table class="table">
-<tr>
-<td>用户帐号</td>
-<td> {{MyAccountInfo.username}}</td>
-</tr>
-<tr>
-<td>电子邮件</td>
-<td>{{MyAccountInfo.email}}</td>
-</tr>
-<tr>
-<td>时区 </td>
-<td>{{MyAccountInfo.timezone}}</td>
-</tr>
-<tr>
-<td>API密钥</td>
-<td style="color:#fd2626;"> {{MyAccountInfo.account_key}}</td>
-</tr>
+  <div class="container-fluid account-main">
+    <div class="row-fluid account-main">
+      <div class="col-md-5 col-sm-12 myaccount">
 
-<tr>
-<td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-warning">生成新的API密钥</button></td>
-</tr>
+     <h2>My Account<a href="#editaccount"><button type="submit" ng-click="editAccount()" class="btn btn-default btn-new">Edit Account</button></a></h2>
+        <hr>
+        <table class="table table-striped">
+          <tr>
+            <td>User ID </td>
+            <td> {{MyAccountInfo.username}}</td>
+          </tr>
+          <tr>
+            <td>Email </td>
+            <td>{{MyAccountInfo.email}}</td>
+          </tr>
+          <tr>
+            <td>Time Zone </td>
+            <td>{{MyAccountInfo.timezone}}</td>
+          </tr>
+          <tr>
+            <td>API Key </td>
+            <td style="color:#fd2626;"> {{MyAccountInfo.account_key}}</td>
+          </tr>
 
-</table>
+          <tr>
+            <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-warning">Generate New API Key</button></td>
+          </tr>
 
+        </table>
 
 
-</div>
 
-<div class="col-md-2"></div>
+      </div>
+      <div class="col-md-5 col-sm-12 profile">
+        <h2>Public Profile <a class="btn btn-default btn-new" href="#editprofile">Edit Public Profile</a></h2>
+        <!-- <button type="button" ng-click="" class="btn btn-default btn-new">Edit Public Profile</button> -->
 
-<div class="col-md-5">
-<h2>公开信息</h2>
-<!-- <button type="button" ng-click="" class="btn btn-default btn-new">Edit Public Profile</button> -->
-<a class="btn btn-default btn-new" href="#editprofile">编辑公开信息</a>
-<hr>
-<table ng-show="MyAccountInfo.public_flag" class="table">
-<tr>
-<td>网站</td>
-<td>{{MyAccountInfo.website}}</td>
-</tr>
-<tr>
-<td>生物</td>
-<td>{{MyAccountInfo.bio}}</td>
-</tr>
-<tr>
-<td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-default btn-new">查看公开信息</button></td>
-</tr>
-</table>
-</div>
+        <hr>
+        <table  ng-show="MyAccountInfo.public_flag" class="table table-striped table-condensed">
+          <tr>
+            <td>Website</td>
 
+            <td>{{MyAccountInfo.website}}</td>
+          </tr>
+          <tr>
+            <td>Bio</td>
+            <td>{{MyAccountInfo.bio}}</td>
+          </tr>
+          <tr>
+            <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-default btn-new">View Public Profile</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 
-</div>
-</div>
-</div>

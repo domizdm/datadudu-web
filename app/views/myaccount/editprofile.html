@@ -1,11 +1,11 @@
-<div class="login-main">
-  <div class="container">
+
+<div class="container-fluid">
 
     <div class="row account-main">
-      <div class="signup-outer ">
+      <div class="signup-outer">
         <form>
           <div class="row">
-            <div class="col-sm-4 hidden-sm">
+            <div class="col-sm-4">
 
             </div>
             <div class="col-sm-8">
@@ -14,7 +14,7 @@
           </div>
 
           <div class="row">
-            <div class="col-sm-4 hidden-sm">
+            <div class="col-sm-4">
 
             </div>
             <div class="col-sm-8">
@@ -25,31 +25,22 @@
 
 
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3 col-xs-1">
               <label class="pull-right">Website</label>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-7 col-sm-7 col-xs-7">
               <input type="text" ng-model="publicProfile.website" class="form-control">
             </div>
 
           </div>
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3 col-xs-1">
               <label class="pull-right">Bio</label>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-7 col-sm-7 col-xs-7">
               <textarea type="text" ng-model="publicProfile.bio" class="form-control"></textarea>
             </div>
 
-          </div>
-
-          <div class="row">
-            <div class="col-sm-4 hidden-sm">
-
-            </div>
-            <div class="col-sm-8">
-              <button type="submit" ng-click="updateUserProfile()" class="btn btn-new">Update Profile</button>
-            </div>
           </div>
 
         </form>
@@ -59,4 +50,3 @@
     </div>
   </div>
 
-</div>

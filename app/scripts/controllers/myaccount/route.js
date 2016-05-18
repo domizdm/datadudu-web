@@ -12,7 +12,17 @@ angular.module('dataduduR3App')
 .config(function ($routeProvider) {
   $routeProvider
     .when('/myaccount',{
-      templateUrl: 'views/myaccount/myaccount.html',
+      templateUrl:  'views/myaccount/myaccount.html',
       controller:'MyAccountCtrl'
     })
+    .when('/editaccount',{
+      templateUrl: 'views/myaccount/editaccount.html',
+      controller:'EditAccountCtrl'
+    })
+    .when('/editprofile',{
+      templateUrl: 'views/myaccount/editprofile.html',
+      controller:'EditProfileCtrl'
+    })
+
 });
+

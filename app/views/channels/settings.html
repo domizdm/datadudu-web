@@ -1,10 +1,31 @@
 
-<div class="row channel-main-setting">
-  <div class="col-md-12 channel-form-setting">
+<div class="row channel-main-setting" >
+  <div class="col-md-6 channel-form-setting">
 <div ng-controller="ChannelsSettingsCtrl">
+  <div>
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <td><label style="height: 28px">Channel View</label></td>
+      </tr>
+      </thead>
+      <tr>
+        <td><img class="table-ico" src="../images/icoimage/id.png" >Channel ID:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+      </tr>
+      <tr>
+        <td><img class="table-ico" src="../images/icoimage/author.png" >Author:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+      </tr>
+      <tr>
+        <td><img class="table-ico" src="../images/icoimage/access.png" >Access:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span></td>
+      </tr>
+      <tr>
+        <td><img class="table-ico" src="../images/icoimage/tags.png" >Tags:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
+      </tr>
+    </table>
+  </div>
 
   <div ng-if="form">
-    <table>
+    <table style="width: 350px">
       <tr><td><label>Name:</label></td><td><input ng-model="form.name" class="form-control"></td></tr>
       <tr><td><label>Description:</label></td><td><textarea ng-model="form.description" class="form-control"></textarea></td></tr>
 
@@ -50,6 +71,40 @@
   </div>
 
 </div>
+    </div>
+
+  <div class="col-md-6">
+    <div><label>HELP</label><hr/> </div>
+    <div>
+      <h4>ThinkSpeak Channal</h4>
+      <p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever since</p>
+      <p> the1500s,when an unknown printer took a galley of type and scrambled it to</p>
+      <p> make a type specimen book.It has survived not only five centuries, but also</p>
+      <p> the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </p>
+      <h4>Channal Settings</h4>
+      <p>
+        <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+        <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+        <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+        <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+        <i class="fa fa-circle-o"></i> Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+        <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
+
+      <h4>Using the Channal</h4>
+      <p>
+       <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <p> Lorem Ipsum has been the industry's standard dummy text ever since the</p>
+      <p> 1500s, when an unknown printer took a galley of type and scrambled it to</p>
+      <p> make a type specimen book. It has survived not only five centuries, but also </p>
+      <p>  the leap into electronic typesetting, remaining essentially unchanged.
+
+      </p>
+
+      </div>
+
+
     </div>
 </div>
 
