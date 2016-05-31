@@ -1,17 +1,58 @@
 
 <div ng-controller="ChannelsDataIOCtrl">
+  <form>
+      <div class="container-fluid col-md-12 col-sm-12 private-dataio" >
+        <h3>Export</h3>
+        <p>Download all of this Channel's feeds in CSV format.</p>
+        <br>
+        <div class="row-fluid edit_date">
 
-  <div ng-if="form">
-    <table>
-      <tr><td><label>Name:</label></td><td><input ng-model="form.name" class="form-control"></td></tr>
+          <div class="col-sm-3 col-xm-3">
+          <select  class="form-control ng-pristine ng-valid ng-not-empty ng-touched" >
+          </select>
 
-    </table>
+          </div>
+          <div class="container-fluid col-sm-1"><label> From</label></div>
+          <div class="col-sm-3">
 
-    <div>
-      <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)">Save Channel</button>
-    </div>
-  </div>
+              <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+              </div>
 
+          </div>
+          <div class="container-fluid col-sm-1" style="padding-left: 10px;" ><label>To</label></div>
+
+          <div class="col-sm-3">
+              <div class='input-group date' id='datetimepicker2'>
+                <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+              </div>
+          </div>
+
+          <form  method="GET" class="">
+            <a  class="btn btn-primary dataio-downbtn">Download</a>
+          </form>
+        </div>
+
+      </div>
+
+
+        <script type="text/javascript">
+          $(function () {
+            $('#datetimepicker1').datetimepicker();
+          });
+        </script>
+        <script type="text/javascript">
+          $(function () {
+          $('#datetimepicker2').datetimepicker();
+          });
+          </script>
+  </form>
 </div>
 
 

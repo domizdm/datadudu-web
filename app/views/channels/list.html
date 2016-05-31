@@ -10,7 +10,7 @@
       <input type="text" class="input-style" placeholder="Search here...">
       <button type="submit" class="btn btn-search">Search</button>
       <a class="btn btn-default btn-new" href="#/channels/new">New Channel</a>
-      <h5 class="usedspace-style">Total Used Space:2MB</h5>
+      <h5 class="usedspace-style hidden-sm hidden-xs ">Total Used Space:2MB</h5>
     </form>
       </div>
     <div class="border-table table-list">
@@ -18,7 +18,7 @@
         <thead class="tblHeader">
         <tr>
           <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">Name</span></th>
-          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>Last Updata</span></th>
+          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>Last Update</span></th>
           <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>Public or Private</span></th>
           <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>Used Space</span></th>
           <th><span>Created</span></th>
@@ -27,15 +27,20 @@
         <tbody>
         <tr ng-repeat="channel in displayCollection">
           <td class="td-left">
-            <a ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+            <div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">
+            <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+            </div>
+            <div ng-show="channel.name==''||channel.name=='null'||channel.name==null">
+              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
+            </div>
             <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
             <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>
             <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
             <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
             <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
           </td>
-          <td></td>
-          <td><a href=""><i class="fa fa-group"></i>public</a></td>
+          <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
+          <td><a href=""><i class="fa fa-group"></i>Public</a></td>
           <td>{{channel.usage | bytes}}</td>
           <td><a href="">{{channel.created_at}}</a></td>
         </tr>

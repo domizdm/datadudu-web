@@ -1,7 +1,7 @@
 
 <div class="container-fluid" ng-controller="ChannelsRealtimeCtrl">
-  <div class="row realtime">
-  <div class="col-md-6">
+  <div class="row realtime" style="border-bottom: 10px solid #E9E9E9;">
+  <div class="col-md-6" style="padding-left: 10px">
     <table class="table table-striped ">
       <thead>
       <tr>
@@ -23,7 +23,7 @@
     </table>
   </div>
 
-  <div class="col-md-5 " style="margin-left:20px;">
+  <div class="col-md-6 ">
   <div class="table-data-info">
   <table class="table table-striped ">
     <thead>
@@ -32,19 +32,19 @@
     </tr>
     </thead>
     <tr>
-      <td>Created</td><td><span am-time-ago="channel.created_at"></span></td>
+      <td >Created</td><td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
     </tr>
     <tr>
-      <td>Updated</td><td><span am-time-ago="channel.updated_at"></span></td>
+      <td>Updated</td><td style="text-align: right"><span am-time-ago="channel.updated_at"></span></td>
     </tr>
     <tr>
-      <td>Used Space</td><td>{{channel.usage | bytes}}</td>
+      <td>Used Space</td><td style="text-align: right">{{channel.usage | bytes}}</td>
     </tr>
     <tr>
-      <td>Last Entry Date</td><td>{{channel.last_entry_date}} (<span am-time-ago="channel.last_entry_date"></span>)</td>
+      <td>Last Entry Date</td><td style="text-align: right">{{channel.last_entry_date}} (<span am-time-ago="channel.last_entry_date"></span>)</td>
     </tr>
     <tr>
-      <td>Last Entry ID</td><td>{{channel.last_entry_id}}</td>
+      <td>Last Entry ID</td><td style="text-align: right">{{channel.last_entry_id}}</td>
     </tr>
   </table>
     </div>
@@ -52,7 +52,7 @@
 </div>
 
 <div class="col-md-12 col-sm-12">
-  <div class="row">
+  <div class="row" style="padding-bottom: 5px;border-bottom: 5px solid #E9E9E9;padding-top: 5px">
     <div class="col-sm-12 col-md-12 text-right">
       <form class="form-inline">
         <span>

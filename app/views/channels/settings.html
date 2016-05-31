@@ -1,6 +1,6 @@
 
 <div class="row channel-main-setting" >
-  <div class="col-md-6 channel-form-setting">
+  <div class="col-md-6 channel-form-setting" style="padding-left: 10px">
 <div ng-controller="ChannelsSettingsCtrl">
   <div>
     <table class="table table-striped ">
@@ -25,7 +25,7 @@
   </div>
 
   <div ng-if="form">
-    <table style="width: 350px">
+    <table style="width: 350px;margin-left: 20px;">
       <tr><td><label>Name:</label></td><td><input ng-model="form.name" class="form-control"></td></tr>
       <tr><td><label>Description:</label></td><td><textarea ng-model="form.description" class="form-control"></textarea></td></tr>
 
@@ -63,7 +63,7 @@
       </tr>
     </table>
 
-    <div>
+    <div style="margin-bottom: 10px;">
       <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)">Save Channel</button>
       <button class="btn btn btn-warning save-btn" ng-click="clearFeed(form)">Clear Feed</button>
       <button class="btn btn btn-danger save-btn" ng-click="deleteChannel(form)">Delete Channel</button>
@@ -82,7 +82,6 @@
       <p> the1500s,when an unknown printer took a galley of type and scrambled it to</p>
       <p> make a type specimen book.It has survived not only five centuries, but also</p>
       <p> the leap into electronic typesetting, remaining essentially unchanged.</p>
-      </p>
       <h4>Channal Settings</h4>
       <p>
         <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>

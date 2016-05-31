@@ -10,10 +10,10 @@
 
 <nav ng-if="numPages && pages.length >= 2">
   <ul class="pagination">
-    <li class="Previous"><a  class="Previous" href="" ng-click="selectPage(currentPage-1)" style="background-color:#0277BD;border-radius: 50px;margin-right: 15px;color: #FFFFFF">&larr;Previous</a></li>
+    <li class="Previous"><a  class="Previous" href="" ng-click="selectPage(currentPage-1)" style="background-color:#0277BD;border-radius: 50px;margin-right: 15px;color: #FFFFFF">Previous</a></li>
     <li ng-repeat="page in pages" ng-class="{active: page==currentPage}">
       <a href="" ng-click="selectPage(page)">{{page}}</a>
     </li>
-    <li class="Next"><a href=""   ng-click="selectPage(currentPage+1)"  style="background-color:#0277BD;border-radius: 50px;margin-left: 15px;width:90px;color: #FFFFFF">Next&rarr;</a></li>
+    <li class="Next"><a href=""   ng-click="selectPage(currentPage+1)"  style="background-color:#0277BD;border-radius: 50px;margin-left: 15px;width:90px;color: #FFFFFF">Next</a></li>
   </ul>
 </nav>

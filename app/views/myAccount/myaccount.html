@@ -1,57 +1,54 @@
+<div class="container-fluid account-main" ng-controller="MyAccountCtrl">
+  <div class="row-fluid account-main">
+    <div class="col-md-5 col-sm-12 myaccount">
 
-  <div class="container-fluid account-main">
-    <div class="row-fluid account-main">
-      <div class="col-md-5 col-sm-12 myaccount">
+      <h2>My Account<a href="#editaccount"><button type="submit"  class="btn btn-default btn-new">Edit Account</button></a></h2>
+      <hr>
+      <table class="table table-striped">
+        <tr>
+          <td>User ID </td>
+          <td>{{accountData.username}}</td>
+        </tr>
+        <tr>
+          <td>Email </td>
+          <td>{{accountData.email}}</td>
+        </tr>
+        <tr>
+          <td>Time Zone </td>
+          <td>{{accountData.timezone}}</td>
+        </tr>
+        <tr>
+          <td>API Key </td>
+          <td style="color:#fd2626;"> {{accountData.account_key}}</td>
+        </tr>
 
-     <h2>My Account<a href="#editaccount"><button type="submit" ng-click="editAccount()" class="btn btn-default btn-new">Edit Account</button></a></h2>
-        <hr>
-        <table class="table table-striped">
-          <tr>
-            <td>User ID </td>
-            <td> {{MyAccountInfo.username}}</td>
-          </tr>
-          <tr>
-            <td>Email </td>
-            <td>{{MyAccountInfo.email}}</td>
-          </tr>
-          <tr>
-            <td>Time Zone </td>
-            <td>{{MyAccountInfo.timezone}}</td>
-          </tr>
-          <tr>
-            <td>API Key </td>
-            <td style="color:#fd2626;"> {{MyAccountInfo.account_key}}</td>
-          </tr>
+        <tr>
+          <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-warning" ng-click="testThis()">Generate New API Key</button></td>
+        </tr>
 
-          <tr>
-            <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-warning">Generate New API Key</button></td>
-          </tr>
+      </table>
+    </div>
 
-        </table>
+    <div class="col-md-5 col-sm-12 profile">
+      <h2>Public Profile <a class="btn btn-default btn-new" href="#editprofile">Edit Public Profile</a></h2>
 
+      <hr>
+      <table   class="table table-striped table-condensed">
+        <tr>
+          <td>Website</td>
 
+          <td>{{accountData.website}}</td>
+        </tr>
+        <tr>
+          <td>Bio</td>
+          <td>{{accountData.bio}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-default btn-new">View Public Profile</button></td>
+        </tr>
 
-      </div>
-      <div class="col-md-5 col-sm-12 profile">
-        <h2>Public Profile <a class="btn btn-default btn-new" href="#editprofile">Edit Public Profile</a></h2>
-        <!-- <button type="button" ng-click="" class="btn btn-default btn-new">Edit Public Profile</button> -->
-
-        <hr>
-        <table  ng-show="MyAccountInfo.public_flag" class="table table-striped table-condensed">
-          <tr>
-            <td>Website</td>
-
-            <td>{{MyAccountInfo.website}}</td>
-          </tr>
-          <tr>
-            <td>Bio</td>
-            <td>{{MyAccountInfo.bio}}</td>
-          </tr>
-          <tr>
-            <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-default btn-new">View Public Profile</button></td>
-          </tr>
-        </table>
-      </div>
+      </table>
     </div>
   </div>
+</div>
 

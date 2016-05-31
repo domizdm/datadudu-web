@@ -1,65 +1,70 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-    <base href="/">
+  <base href="/">
 
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/AdminLTE/dist/css/AdminLTE.css" />
-    <link rel="stylesheet" href="bower_components/ng-notify/src/styles/ng-notify.css" />
-    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-    <!-- endbower -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/AdminLTE/dist/css/AdminLTE.css" />
+  <link rel="stylesheet" href="bower_components/ng-notify/src/styles/ng-notify.css" />
+  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <!-- endbower -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 
-    <style>[ng-cloak] {display:none;}</style>
+  <style>[ng-cloak] {
+    display: none;
+  }</style>
 
-  </head>
-  <body ng-app="dataduduR3App" ng-controller="MainCtrl"
-        class="hold-transition skin-blue sidebar-mini fixed" ng-cloak>
+</head>
+<body ng-app="dataduduR3App" ng-controller="MainCtrl"
+      class="hold-transition skin-blue sidebar-mini fixed" ng-cloak>
 
-  <ng-include ng-show="!isLoggedIn" src="'views/login.html'"></ng-include>
+<ng-include ng-show="!isLoggedIn" src="'views/login.html'"></ng-include>
 
-  <div class="wrapper" ng-if="isLoggedIn">
-    <header class="main-header">
-      <!-- Logo -->
-      <a href="#/" class="logo">
-        <span class="logo-mini"><img src="./images/title-smail.png"></span>
-        <span class="logo-lg"><img src="./images/title.png"></span>
+<div class="wrapper" ng-if="isLoggedIn">
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="#/" class="logo">
+      <span class="logo-mini"><img src="./images/title-smail.png"></span>
+      <span class="logo-lg"><img src="./images/title.png"></span>
+    </a>
+    <nav class="navbar  navbar-default">
+      <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button" id="switch" onclick="mySwitch()" >
+        <span class="sr-only"  >Toggle navigation</span>
       </a>
-      <nav class="navbar  navbar-default">
-        <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-          <span class="sr-only">Toggle navigation</span>
-        </a>
-        <span class="mychannel">My Channels</span>
+      <span class="mychannel">My Channels</span>
 
 
-
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-            <li><a href=""><i class="fa fa-life-ring" style="margin-right: 2px"></i><span style="border-right: 1px solid; padding-right: 15px;" >Support</span></a></li>
-            <li><a href=""><i class="fa fa-mobile-phone" style="margin-right:5px"></i><span  style="border-right: 1px solid; padding-right: 15px;">Mobile Version</span></a></li>
-             <li><a><img src="../images/icoimage/help.png" style="margin-right: 5px;margin-bottom: 10px;"><span  style="border-right: 1px solid; padding-right: 15px;">help</span></a></li>
-            <li class="dropdown messages-menu">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                <i class="fa fa-envelope-o"></i>
-                <span class="label label-success">4</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header">You have 4 messages</li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
-                  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li><a href=""><i class="fa fa-life-ring" style="margin-right: 2px"></i><span
+            style="border-right: 1px solid; padding-right: 15px;">Support</span></a></li>
+          <li><a href=""><i class="fa fa-mobile-phone" style="margin-right:5px"></i><span
+            style="border-right: 1px solid; padding-right: 15px;">Mobile Version</span></a></li>
+          <li><a><img src="../images/icoimage/help.png" style="margin-right: 5px;margin-bottom: 10px;"><span
+            style="border-right: 1px solid; padding-right: 15px;">help</span></a></li>
+          <li class="dropdown messages-menu">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">
+                  <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
                     <li><!-- start message -->
                       <a href="#">
                         <div class="pull-left">
@@ -72,339 +77,349 @@
                         <p>Why not buy a new awesome theme?</p>
                       </a>
                     </li>
-                  </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
-                </li>
-                <li class="footer"><a href="#">See All Messages</a></li>
-              </ul>
-            </li>
-            <li>
-              <a >
-            <select class="language"  >
-            <option value="">中文</option>
-            <option value="">English</option>
-            </select>
-                </a>
-            </li>
-            <li class="dropdown user user-menu">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="./images/user.png" class="user-image" alt="User Image">
-                <span class="hidden-xs">Jone <b>Smith</b></span>
-              </a>
-              <ul class="dropdown-menu">
-                <!-- User image -->
-                <li class="user-header">
-                  <img src="./images/user.png"class="img-circle" alt="User Image">
-
-                  <p>
-                  sssss
-                    <small>small</small>
-                  </p>
-                </li>
-                <!-- Menu Body -->
-                <li class="user-body">
-                  <div class="row">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="user-footer">
-                  <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  </div>
-                  <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                  </div>
-                </li>
-              </ul>
-            </li>
-
-          </ul>
-        </div>
-
-      </nav>
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <ng-include src="'components/sidebar.html'"></ng-include>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-
-      <!-- Main content -->
-      <section class="content">
-        <div ng-view></div>
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Create the tabs -->
-      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-      </ul>
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <!-- Home tab content -->
-        <div class="tab-pane" id="control-sidebar-home-tab">
-          <h3 class="control-sidebar-heading">Recent Activity</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                  <p>Will be 23 on April 24th</p>
+                  </ul>
+                  <div class="slimScrollBar"
+                       style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div>
+                  <div class="slimScrollRail"
+                       style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
                 </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-user bg-yellow"></i>
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+            <li><span style="line-height: 48px"><img src="./images/icoimage/interval.png"></span></li>
+          </li>
 
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+          <li>
 
-                  <p>New phone +1(800)555-1234</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                  <p>nora@example.com</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                  <p>Execution time 5 seconds</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-
-          <h3 class="control-sidebar-heading">Tasks Progress</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Custom Template Design
-                  <span class="label label-danger pull-right">70%</span>
-                </h4>
-
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Update Resume
-                  <span class="label label-success pull-right">95%</span>
-                </h4>
-
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Laravel Integration
-                  <span class="label label-warning pull-right">50%</span>
-                </h4>
-
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Back End Framework
-                  <span class="label label-primary pull-right">68%</span>
-                </h4>
-
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-
-        </div>
-        <!-- /.tab-pane -->
-        <!-- Stats tab content -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-        <!-- /.tab-pane -->
-        <!-- Settings tab content -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-          <form method="post">
-            <h3 class="control-sidebar-heading">General Settings</h3>
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Report panel usage
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-
-              <p>
-                Some information about this general settings option
+            <a>
+              <select class="language">
+                <option value="">中文</option>
+                <option value="">English</option>
+              </select>
+            </a>
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <!--<img src="./images/user.png" class="user-image" alt="User Image">-->
+              <p><span><img src="./images/icoimage/interval.png"></span>Jone <b>Smith</b><i class="fa fa-sort-desc"
+                                                                                            style="margin-left: 3px;"></i>
               </p>
-            </div>
-            <!-- /.form-group -->
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="./images/user.png" class="img-circle" alt="User Image">
 
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Allow mail redirect
-                <input type="checkbox" class="pull-right" checked>
-              </label>
+                <p>
 
-              <p>
-                Other sets of options are available
-              </p>
-            </div>
-            <!-- /.form-group -->
+                  <small></small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <!--<li class="user-body">-->
+                <!--<div class="row">-->
+                  <!--<div class="col-xs-4 text-center">-->
+                    <!--<a href="#">Followers</a>-->
+                  <!--</div>-->
+                  <!--<div class="col-xs-4 text-center">-->
+                    <!--<a href="#">Sales</a>-->
+                  <!--</div>-->
+                  <!--<div class="col-xs-4 text-center">-->
+                    <!--<a href="#">Friends</a>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</li>-->
+              <!--<li class="user-footer">-->
+                <!--<div class="pull-left">-->
+                  <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
+                <!--</div>-->
+                <!--<div class="pull-right">-->
+                  <!--<a href="#" class="btn btn-default btn-flat">Sign out</a>-->
+                <!--</div>-->
+              <!--</li>-->
+            </ul>
+          </li>
 
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Expose author name in posts
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-
-              <p>
-                Allow the user to show his name in blog posts
-              </p>
-            </div>
-            <!-- /.form-group -->
-
-            <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Show me as online
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-            </div>
-            <!-- /.form-group -->
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Turn off notifications
-                <input type="checkbox" class="pull-right">
-              </label>
-            </div>
-            <!-- /.form-group -->
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Delete chat history
-                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-              </label>
-            </div>
-            <!-- /.form-group -->
-          </form>
-        </div>
-        <!-- /.tab-pane -->
+        </ul>
       </div>
-    </aside>
 
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <ng-include src="'components/sidebar.html'"></ng-include>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    <!-- Main content -->
+    <section class="content">
+      <div ng-view></div>
+    </section>
+    <!-- /.content -->
   </div>
-  <!-- ./wrapper -->
+  <!-- /.content-wrapper -->
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                <p>New phone +1(800)555-1234</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                <p>nora@example.com</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                <p>Execution time 5 seconds</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">95%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Allow mail redirect
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Other sets of options are available
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Expose author name in posts
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Allow the user to show his name in blog posts
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Show me as online
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Turn off notifications
+              <input type="checkbox" class="pull-right">
+            </label>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Delete chat history
+              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+            </label>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
 
 
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/AdminLTE/dist/js/app.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+<script src="bower_components/ng-notify/src/scripts/ng-notify.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+<script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="bower_components/highcharts/highcharts.js"></script>
+<script src="bower_components/highcharts/highcharts-more.js"></script>
+<script src="bower_components/highcharts/modules/exporting.js"></script>
+<!-- endbower -->
+<script src="bower_components/moment/locale/en-gb.js"></script>
+<script src="bower_components/moment/locale/zh-cn.js"></script>
+<script src="bower_components/AdminLTE/plugins/slimScroll/jquery.slimscroll.js"></script>
+<!-- endbuild -->
 
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/AdminLTE/dist/js/app.js"></script>
-    <script src="bower_components/ngstorage/ngStorage.js"></script>
-    <script src="bower_components/lodash/lodash.js"></script>
-    <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
-    <script src="bower_components/ng-notify/src/scripts/ng-notify.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/angular-moment/angular-moment.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
-    <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="bower_components/highcharts/highcharts.js"></script>
-    <script src="bower_components/highcharts/highcharts-more.js"></script>
-    <script src="bower_components/highcharts/modules/exporting.js"></script>
-    <!-- endbower -->
-    <script src="bower_components/moment/locale/en-gb.js"></script>
-    <script src="bower_components/moment/locale/zh-cn.js"></script>
-    <script src="bower_components/AdminLTE/plugins/slimScroll/jquery.slimscroll.js"></script>
-    <!-- endbuild -->
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/home.js"></script>
-    <script src="scripts/controllers/channels/route.js"></script>
-    <script src="scripts/controllers/myaccount/route.js"></script>
-    <script src="scripts/controllers/device/route.js"></script>
-    <script src="scripts/controllers/channels/list.js"></script>
-    <script src="scripts/controllers/channels/main.js"></script>
-    <script src="scripts/controllers/channels/private.js"></script>
-    <script src="scripts/controllers/channels/realtime.js"></script>
-    <script src="scripts/controllers/channels/particle/modalAddPoint.js"></script>
-    <script src="scripts/controllers/channels/settings.js"></script>
-    <script src="scripts/controllers/channels/apikeys.js"></script>
-    <script src="scripts/controllers/channels/commands.js"></script>
-    <script src="scripts/controllers/channels/rules.js"></script>
-    <script src="scripts/controllers/channels/dataio.js"></script>
-    <script src="scripts/services/account.js"></script>
-    <script src="scripts/services/channel.js"></script>
-    <script src="scripts/services/config.js"></script>
-    <script src="scripts/services/utils.js"></script>
-    <script src="scripts/services/request-normalize-interceptor.js"></script>
-    <script src="scripts/services/auth.js"></script>
-    <script src="scripts/controllers/channels/create.js"></script>
-    <script src="scripts/services/authorization-interceptor.js"></script>
-    <script src="scripts/filters/bytes.js"></script>
-    <script src="scripts/directives/datetimepicker.js"></script>
-    <script src="scripts/directives/render-channel-chart.js"></script>
-    <script src="scripts/services/feed.js"></script>
-    <script src="scripts/services/modal-confirm.js"></script>
-    <!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/channels/route.js"></script>
+<script src="scripts/controllers/myaccount/route.js"></script>
+<script src="scripts/controllers/myaccount/myaccount.js"></script>
+<script src="scripts/controllers/device/route.js"></script>
+<script src="scripts/controllers/device/productdetails.js"></script>
+<script src="scripts/controllers/channels/list.js"></script>
+<script src="scripts/controllers/channels/main.js"></script>
+<script src="scripts/controllers/channels/private.js"></script>
+<script src="scripts/controllers/channels/realtime.js"></script>
+<script src="scripts/controllers/channels/particle/modalAddPoint.js"></script>
+<script src="scripts/controllers/channels/settings.js"></script>
+<script src="scripts/controllers/channels/apikeys.js"></script>
+<script src="scripts/controllers/channels/commands.js"></script>
+<script src="scripts/controllers/channels/rules.js"></script>
+<script src="scripts/controllers/channels/dataio.js"></script>
+<script src="scripts/services/account.js"></script>
+<script src="scripts/services/channel.js"></script>
+<script src="scripts/services/config.js"></script>
+<script src="scripts/services/utils.js"></script>
+<script src="scripts/services/request-normalize-interceptor.js"></script>
+<script src="scripts/services/auth.js"></script>
+<script src="scripts/controllers/channels/create.js"></script>
+<script src="scripts/services/authorization-interceptor.js"></script>
+<script src="scripts/filters/bytes.js"></script>
+<script src="scripts/directives/datetimepicker.js"></script>
+<script src="scripts/directives/render-channel-chart.js"></script>
+<script src="scripts/services/feed.js"></script>
+<script src="scripts/services/modal-confirm.js"></script>
+<!-- endbuild -->
 </body>
 </html>
