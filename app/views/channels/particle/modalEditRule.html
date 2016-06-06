@@ -1,0 +1,53 @@
+<div class="">
+  <div class="modal-header">
+    <h3 class="modal-title">New/Edit Rules</h3>
+  </div>
+
+  <div class="modal-body modal-add-rules">
+      <div class="col-md-8 ">
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Rules Name</label>
+          <input type="text" class="form-control" ng-model="form.rule_name" ng-model="form.rule_name">
+        </div>
+
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Fields</label>
+          <select class="form-control" ng-options="item.text for item in fields" ng-model="form.field"></select>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Action</label>
+          <select class="form-control" ng-options="item.text for item in acttion_freqs" ng-model="form.action_frequency"></select>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Condition Type</label>
+          <select class="form-control" ng-options="item.text for item in types" ng-model="form.type"></select>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Condition</label>
+          <select class="form-control" ng-options="item.text for item in criterias[form.type.key]" ng-model="form.criteria"></select>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Value</label>
+          <input type="text" class="form-control" ng-model="form.condition">
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <h2>Help</h2>
+        <hr>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+          into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">Save Rules</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</div>

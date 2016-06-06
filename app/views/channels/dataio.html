@@ -7,51 +7,27 @@
         <br>
         <div class="row-fluid edit_date">
 
-          <div class="col-sm-3 col-xm-3">
-          <select  class="form-control ng-pristine ng-valid ng-not-empty ng-touched" >
-          </select>
+          <!--<div class="col-sm-3 col-xm-3">-->
+            <!--<select  class="form-control ng-pristine ng-valid ng-not-empty ng-touched" >-->
+            <!--</select>-->
+          <!--</div>-->
 
-          </div>
           <div class="container-fluid col-sm-1"><label> From</label></div>
           <div class="col-sm-3">
 
-              <div class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-              </div>
-
+            <div class='input-group date' datetimepicker="form.begin"></div>
           </div>
+
           <div class="container-fluid col-sm-1" style="padding-left: 10px;" ><label>To</label></div>
 
           <div class="col-sm-3">
-              <div class='input-group date' id='datetimepicker2'>
-                <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-              </div>
+            <div class='input-group date' datetimepicker="form.end"></div>
           </div>
 
-          <form  method="GET" class="">
-            <a  class="btn btn-primary dataio-downbtn">Download</a>
-          </form>
+          <a class="btn btn-primary dataio-downbtn" ng-click="download(channel)">Download</a>
         </div>
 
       </div>
-
-
-        <script type="text/javascript">
-          $(function () {
-            $('#datetimepicker1').datetimepicker();
-          });
-        </script>
-        <script type="text/javascript">
-          $(function () {
-          $('#datetimepicker2').datetimepicker();
-          });
-          </script>
   </form>
 </div>
 

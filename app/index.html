@@ -22,9 +22,13 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
-  <style>[ng-cloak] {
-    display: none;
-  }</style>
+  <style>
+    /* TODO: 将下列css迁移至main.css */
+    [ng-cloak] {
+      display: none;
+    }
+    .form-control {transition:none;}/*移除form-control的动画效果避免跳动*/
+  </style>
 
 </head>
 <body ng-app="dataduduR3App" ng-controller="MainCtrl"
@@ -402,6 +406,7 @@
 <script src="scripts/controllers/channels/private.js"></script>
 <script src="scripts/controllers/channels/realtime.js"></script>
 <script src="scripts/controllers/channels/particle/modalAddPoint.js"></script>
+<script src="scripts/controllers/channels/particle/modalEditRule.js"></script>
 <script src="scripts/controllers/channels/settings.js"></script>
 <script src="scripts/controllers/channels/apikeys.js"></script>
 <script src="scripts/controllers/channels/commands.js"></script>

@@ -9,7 +9,7 @@
  */
 angular.module('dataduduR3App')
 .service('channel', function ($resource, config) {
-  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:type/:type_id', {
+  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:_type/:type_id', {
     id: '@_id',
     controller: 'channels'
   },{
@@ -90,7 +90,7 @@ angular.module('dataduduR3App')
     clear: {
       method: 'DELETE',
       params: {
-        type: 'feeds'
+        _type: 'feeds'
       }
     },
     /**
@@ -121,7 +121,7 @@ angular.module('dataduduR3App')
     fetchFeeds: {
       method: 'GET',
       params: {
-        type: 'feeds'
+        _type: 'feeds'
       }
     },
     /**
@@ -130,7 +130,7 @@ angular.module('dataduduR3App')
     listAPIKeys: {
       method: 'GET',
       params: {
-        type: 'api_keys',
+        _type: 'api_keys',
         action: 'list'
       }
     },
@@ -146,7 +146,7 @@ angular.module('dataduduR3App')
     generateWriteKey: {
       method: 'POST',
       params: {
-        type: 'api_keys',
+        _type: 'api_keys',
         action: 'generate_write_key'
       }
     },
@@ -165,7 +165,7 @@ angular.module('dataduduR3App')
     updateReadKey: {
       method: 'POST',
       params: {
-        type: 'api_keys',
+        _type: 'api_keys',
         action: 'update_read_key'
       }
     },
@@ -182,7 +182,7 @@ angular.module('dataduduR3App')
     deleteReadKey: {
       method: 'POST',
       params: {
-        type: 'api_keys',
+        _type: 'api_keys',
         action: 'delete_read_key'
       }
     },
@@ -199,7 +199,7 @@ angular.module('dataduduR3App')
     generateReadKey: {
       method: 'POST',
       params: {
-        type: 'api_keys',
+        _type: 'api_keys',
         action: 'generate_read_key'
       }
     },
@@ -215,7 +215,7 @@ angular.module('dataduduR3App')
     listCommands: {
       method: 'GET',
       params: {
-        type: 'commands'
+        _type: 'commands'
       }
     },
     /**
@@ -232,7 +232,7 @@ angular.module('dataduduR3App')
     addCommand: {
       method: 'POST',
       params: {
-        type: 'commands'
+        _type: 'commands'
       }
     },
     /**
@@ -248,7 +248,7 @@ angular.module('dataduduR3App')
     deleteCommand: {
       method: 'DELETE',
       params: {
-        type: 'commands'
+        _type: 'commands'
         //type_id: ''
       }
     },
@@ -264,7 +264,102 @@ angular.module('dataduduR3App')
     deleteAllCommands: {
       method: 'DELETE',
       params: {
-        type: 'commands'
+        _type: 'commands'
+      }
+    },
+    /**
+     * List Channel Rules
+
+     To add a channel rule, send an HTTP GET to http://api.datadudu.com/channels/CHANNEL_ID/rules
+     replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API. (required)
+     */
+    listRules: {
+      method: 'GET',
+      params: {
+        _type: 'rules'
+      }
+    },
+    /**
+     * Add a Channel Rule
+
+     To add a channel rule, send an HTTP POST to http://api.datadudu.com/channels/CHANNEL_ID/rules
+     replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API. (required)
+     type  (string) – choose between [numeric, string, no_data_check] (required)
+     field (string) – choose between [field1, field2, field3, field4, field5, field6, field7, field8, status] (required)
+     action_frequency (string)- choose between [change_only, always] (required)
+     criteria (string) –
+     <>ofor type is “numeric”, choose between [>,>=,<,<=,==,!=]
+     <>ofor type is “string”, choose between [contains, starts_with, ends_with, equal, not_equal, equal_ignore_case]
+     <>ofor type is “no_data_check”, WILL ADD LATER
+     <>·condition (string) – value for the criteria
+     */
+    addRule: {
+      method: 'POST',
+      params: {
+        _type: 'rules'
+      }
+    },
+    /**
+     * Update a Channel Rule
+
+     To add a channel rule, send an HTTP PUT to http://api.datadudu.com/channels/CHANNEL_ID/rules/RULE_ID
+     replacing CHANNEL_ID with the ID of your channel, and RULE_ID with ID of the rule.
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API. (required)
+     type  (string) – choose between [numeric, string, no_data_check] (required)
+     field (string) – choose between [field1, field2, field3, field4, field5, field6, field7, field8, status] (required)
+     action_frequency (string)- choose between [change_only, always] (required)
+     criteria (string) –
+     <>ofor type is “numeric”, choose between [>,>=,<,<=,==,!=]
+     <>ofor type is “string”, choose between [contains, starts_with, ends_with, equal, not_equal, equal_ignore_case]
+     <>ofor type is “no_data_check”, WILL ADD LATER
+     <>·condition (string) – value for the criteria
+     */
+    updateRule: {
+      method: 'PUT',
+      params: {
+        _type: 'rules'
+        //type_id: ''
+      }
+    },
+    /**
+     * Delete a Channel Rule
+
+     To delete a channel rule, send an HTTP DELETE to http://api.datadudu.com/channels/CHANNEL_ID/rules/RULE_ID
+     replacing CHANNEL_ID with the ID of your channel, RULE_ID with the ID of the rule.
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API. (required)
+
+     */
+    deleteRule: {
+      method: 'DELETE',
+      params: {
+        _type: 'rules'
+        //type_id: ''
+      }
+    },
+    /**
+     * Delete All Channel Rules
+
+     To DELETE all channel rules, send an HTTP DELETE to http://api.datadudu.com/channels/CHANNEL_ID/rules
+     replacing CHANNEL_ID with the ID of your channel
+
+     Valid request parameters:
+     api_key or token_id (string) – api_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API. (required)
+
+     */
+    deleteAllRules: {
+      method: 'DELETE',
+      params: {
+        _type: 'rules'
       }
     }
 

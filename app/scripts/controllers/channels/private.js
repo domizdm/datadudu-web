@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsPrivateCtrl', function($scope, $q, $filter, $window, $timeout, $log,
+.controller('ChannelsPrivateCtrl', function($scope, $q, $filter, $window, $timeout, $log, Auth,
                                             $httpParamSerializer, config, $uibModal, ngNotify, channel){
   $scope.loading = false;
 
@@ -189,7 +189,8 @@ angular.module('dataduduR3App')
       var query = {
         //timezone: '+08:00',
         start: begin !== null ? $filter('date')(begin, serverFormat, timezone) : undefined,
-        end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined
+        end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined,
+        token_id: Auth.me().token_id
       };
 
       var url=config.END_POINT+'/channels/'+channel.channel_id+'/feeds.csv?'+$httpParamSerializer(query);

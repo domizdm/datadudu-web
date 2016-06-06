@@ -1,16 +1,15 @@
-
 <div class="container-fluid" ng-controller="ChannelsRulesCtrl">
 
   <div class="container-fluid private-rule">
 
-      <div class="container-fluid">
+    <div class="container-fluid">
 
       <div class="row-fluid rules-main">
         <div class="col-md-6 table-responsive">
           <h2>Rules</h2>
           <hr>
           <div class="col-md-12 new_chanel">
-            <a href="javascript:void(0)" class="btn btn-default " data-toggle="modal" data-target="#myModal">New Rules</a>
+            <button class="btn btn-default " ng-click="openModalEditRule()">New Rules</button>
             <a href="javascript:void(0)" class="btn btn-warning rule-del">Delete All</a>
           </div>
           <br>
@@ -18,32 +17,33 @@
           <table style="margin-top: 28px;" class="table table-bordered">
             <thead class="tb2Header">
             <tr>
-              <th>Name </th>
-              <th>Field </th>
-              <th>Criteria </th>
-              <th>Condition </th>
-              <th>Created </th>
+              <th>Name</th>
+              <th>Field</th>
+              <th>Criteria</th>
+              <th>Condition</th>
+              <th>Created</th>
               <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr  class="">
-              <td><h4>
-                <a href="javascript:void(0)"  class="">
-                  <i class="fa fa-check-square"></i>
-                  Rule16
-                </a>
-              </h4>
+            <tr class="" ng-repeat="rule in form.rules">
+              <td>
+                <h4>
+                  <a href="" class="text-nowrap" ng-click="openModalEditRule(rule)">
+                    <i class="fa fa-check-square"></i>
+                    {{getRuleName(rule)}}
+                  </a>
+                </h4>
 
                 <div class="btn-group btn-group-sm hidden-xs hidden-sm hidden-md btns">
-                  <a href="javascript:void(0)"  class="btn btn-default">Edit</a>
+                  <button class="btn btn-default" ng-click="openModalEditRule(rule)">Edit</button>
                 </div>
               </td>
-              <td class="">field1</td>
-              <td class="">contains</td>
-              <td class="">1</td>
-              <td class="">1970-1-18</td>
-              <td style="text-align:ceneter"><a href="javascript:void(0)"  class="btn btn-warning">Delete</a></td>
+              <td class="">{{rule.field}}</td>
+              <td class="">{{rule.criteria}}</td>
+              <td class="">{{rule.condition}}</td>
+              <td class="">{{rule.created_at | date:'yyyy-MM-dd'}}</td>
+              <td style="text-align:ceneter"><a href="javascript:void(0)" class="btn btn-warning">Delete</a></td>
             </tr>
             </tbody>
           </table>
@@ -54,72 +54,78 @@
           <h2>Help</h2>
           <hr>
 
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.</p>
 
         </div>
 
-       </div>
+      </div>
 
-       </div>
+    </div>
 
     <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="container-fluid modal-dialog modal-lg">
-        <div class="modal-content container-fluid" >
+        <div class="modal-content container-fluid">
           <form>
-          <div class="modal-header">
-            <button type="button" class="close"
-                    data-dismiss="modal" aria-hidden="true">
-              &times;
-            </button>
-          </div>
+            <div class="modal-header">
+              <button type="button" class="close"
+                      data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+            </div>
 
-               <div class="row modal-add-rules">
+            <div class="row modal-add-rules">
 
-                     <div class="col-md-8 ">
-                         <h2>New Rules</h2>
-                           <hr/>
+              <div class="col-md-8 ">
+                <h2>New Rules</h2>
+                <hr/>
 
-                           <div >
-                             <label class="col-sm-3 col-md-3 col-xs-3">Rules Name</label>
-                             <input type="text"  class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
-                            </div>
+                <div>
+                  <label class="col-sm-3 col-md-3 col-xs-3">Rules Name</label>
+                  <input type="text" class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
+                </div>
 
-                           <div>
-                           <label class="col-sm-3 col-md-3 col-xs-3">Fields</label>
-                           <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched" ></option></option></select>
-                           </div>
+                <div>
+                  <label class="col-sm-3 col-md-3 col-xs-3">Fields</label>
+                  <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched"></option></option></select>
+                </div>
 
-                            <div>
-                            <label class="col-sm-3 col-md-3 col-xs-3">Action</label>
-                            <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched" ></option></option></select>
-                            </div>
+                <div>
+                  <label class="col-sm-3 col-md-3 col-xs-3">Action</label>
+                  <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched"></option></option></select>
+                </div>
 
-                            <div>
-                            <label class="col-sm-3 col-md-3 col-xs-3">Condition Type</label>
-                            <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched" ></option></option></select>
-                             </div>
+                <div>
+                  <label class="col-sm-3 col-md-3 col-xs-3">Condition Type</label>
+                  <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched"></option></option></select>
+                </div>
 
-                            <div>
-                            <label class="col-sm-3 col-md-3 col-xs-3">Condition</label>
-                            <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched" ></option></option></select>
-                            </div>
+                <div>
+                  <label class="col-sm-3 col-md-3 col-xs-3">Condition</label>
+                  <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched"></option></option></select>
+                </div>
 
-                            <div>
-                            <label class="col-sm-3 col-md-3 col-xs-3"></label>
-                            <input type="text"  class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
+                <div>
+                  <label class="col-sm-3 col-md-3 col-xs-3"></label>
+                  <input type="text" class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
+                </div>
+
               </div>
+              <div class="col-md-4">
+                <h2>Help</h2>
+                <hr>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.</p>
 
-          </div>
-                      <div class="col-md-4">
-              <h2>Help</h2>
-              <hr>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              </div>
 
             </div>
 
-                </div>
-
-                <div class="modal-footer">
+            <div class="modal-footer">
               <button type="button" class="btn btn-default"
                       data-dismiss="modal">closed
               </button>
@@ -133,6 +139,6 @@
       </div>
     </div>
 
-</div>
+  </div>
 </div>
 
