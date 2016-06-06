@@ -1,4 +1,88 @@
 <div class="container-fluid">
+
+  <!--
+   注意:
+
+   顶部信息由main.html统一处理,不要在所有子tab元素进行复制黏贴!!
+   它们所处的scope并不一样, 若子tab存在局部同名变量将产生冲突, 请勿复制粘贴到子tab!!
+  -->
+  <div class="row data-header" style="border-bottom: 10px solid #E9E9E9;padding:0;margin:10px;background:#fff;">
+    <div class="col-md-6" style="padding-left: 10px;">
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <td><label style="height: 30px">Channel View</label></td>
+        </tr>
+        </thead>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/id.png">Channel ID:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/author.png">Author:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/access.png">Access:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/tags.png">Tags:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-md-6 ">
+      <div class="table-data-info" style="margin-left: 10px;">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <td colspan="2"><label>Channel Status</label></td>
+          </tr>
+          </thead>
+          <tr>
+            <td>Created</td>
+            <td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
+          </tr>
+          <tr>
+            <td>Updated</td>
+            <td style="text-align: right"><span am-time-ago="channel.updated_at"></span></td>
+          </tr>
+          <tr>
+            <td>Used Space</td>
+            <td style="text-align: right">{{channel.usage | bytes}}</td>
+          </tr>
+          <tr>
+            <td>Last Entry Date</td>
+            <td style="text-align: right">{{channel.last_entry_date}} (<span
+              am-time-ago="channel.last_entry_date"></span>)
+            </td>
+          </tr>
+          <tr>
+            <td>Last Entry ID</td>
+            <td style="text-align: right">{{channel.last_entry_id}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row" style="padding:0;margin:10px;background:#fff;">
+    <div class="col-md-12">
+      <div class="nav-data" style="margin-bottom: 20px">
+        <ul class="nav nav-tabs">
+          <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
+            <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <div class="table-data">
     <div class="nav-tabs-custom">
       <div class="tab-content">

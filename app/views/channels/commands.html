@@ -1,125 +1,54 @@
 <div class="container-fluid ">
 
-  <div class="container-fluid">
-    <div class="row realtime" style="border-bottom: 10px solid #E9E9E9;">
-      <div class="col-md-6" style="padding-left: 10px">
-        <table class="table table-striped ">
+  <div class="row-fluid" style="padding: 15px">
+  <div class="col-md-6 table-commands-style">
+    <h2>Commands</h2>
+    <hr>
+    <div ng-controller="ChannelsCommandsCtrl">
+      <div ng-if="form">
+        <table class="table  table-bordered table-condensed">
           <thead>
           <tr>
-            <td><label style="height: 28px">Channel View</label></td>
+            <th>position</th>
+            <th>command_id</th>
+            <th>command_string</th>
+            <th></th>
           </tr>
           </thead>
-          <tr>
-            <td><img class="table-ico" src="../images/icoimage/id.png">Channel ID:</td>
-            <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
-          </tr>
-          <tr>
-            <td><img class="table-ico" src="../images/icoimage/author.png">Author:</td>
-            <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
-          </tr>
-          <tr>
-            <td><img class="table-ico" src="../images/icoimage/access.png">Access:</td>
-            <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span>
+          <tr ng-repeat="command in form.commands">
+            <td>{{command.position}}</td>
+            <td>{{command.command_id}}</td>
+            <td>{{command.command_string}}</td>
+            <td>
+              <button class="btn btn-default" ng-click="deleteCommand(form, command)">Delete</button>
             </td>
           </tr>
-          <tr>
-            <td><img class="table-ico" src="../images/icoimage/tags.png">Tags:</td>
-            <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
-          </tr>
         </table>
-      </div>
-
-      <div class="col-md-6 ">
-        <div class="table-data-info" style="margin-left: 10px">
-          <table class="table table-striped ">
-            <thead>
-            <tr>
-              <td colspan="2" style="height: 50px"><label>Channel Status</label></td>
-            </tr>
-            </thead>
-            <tr>
-              <td>Created</td>
-              <td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
-            </tr>
-            <tr>
-              <td>Updated</td>
-              <td style="text-align: right"><span am-time-ago="channel.updated_at"></span></td>
-            </tr>
-            <tr>
-              <td>Used Space</td>
-              <td style="text-align: right">{{channel.usage | bytes}}</td>
-            </tr>
-            <tr>
-              <td>Last Entry Date</td>
-              <td style="text-align: right">{{channel.last_entry_date}} (<span
-                am-time-ago="channel.last_entry_date"></span>)
-              </td>
-            </tr>
-            <tr>
-              <td>Last Entry ID</td>
-              <td style="text-align: right">{{channel.last_entry_id}}</td>
-            </tr>
-          </table>
+        <tbody>
+        <tr>
+          <td colspan="4"></td>
+        </tr>
+        </tbody>
+        <div>
+          <button class="btn btn-danger" ng-click="deleteAllCommands(form)">Delete All</button>
+        </div>
+        <div ng-if="!showNewCommand">
+          <button class="btn btn-success" ng-click="toggleShowNewCommand()">New Command</button>
+        </div>
+        <div ng-if="showNewCommand" ng-controller="ChannelsAddNewCommandCtrl">
+          <input ng-model="newCommand.position">
+          <input ng-model="newCommand.command_string">
+          <button class="btn btn-success" ng-click="addNewCommand(form, newCommand)">Save</button>
+          <button class="btn btn-danger" ng-click="toggleShowNewCommand()">Cancel</button>
         </div>
       </div>
     </div>
-    <div class="nav-data" style="margin-bottom: 20px">
-      <ul class="nav nav-tabs">
-        <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
-          <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
-        </li>
-      </ul>
-    </div>
-    <div class="row-fluid" style="padding: 15px">
-    <div class="col-md-6 table-commands-style">
-      <h2>Commands</h2>
-      <hr>
-      <div ng-controller="ChannelsCommandsCtrl">
-        <div ng-if="form">
-          <table class="table  table-bordered table-condensed">
-            <thead>
-            <tr>
-              <th>position</th>
-              <th>command_id</th>
-              <th>command_string</th>
-              <th></th>
-            </tr>
-            </thead>
-            <tr ng-repeat="command in form.commands">
-              <td>{{command.position}}</td>
-              <td>{{command.command_id}}</td>
-              <td>{{command.command_string}}</td>
-              <td>
-                <button class="btn btn-default" ng-click="deleteCommand(form, command)">Delete</button>
-              </td>
-            </tr>
-          </table>
-          <tbody>
-          <tr>
-            <td colspan="4"></td>
-          </tr>
-          </tbody>
-          <div>
-            <button class="btn btn-danger" ng-click="deleteAllCommands(form)">Delete All</button>
-          </div>
-          <div ng-if="!showNewCommand">
-            <button class="btn btn-success" ng-click="toggleShowNewCommand()">New Command</button>
-          </div>
-          <div ng-if="showNewCommand" ng-controller="ChannelsAddNewCommandCtrl">
-            <input ng-model="newCommand.position">
-            <input ng-model="newCommand.command_string">
-            <button class="btn btn-success" ng-click="addNewCommand(form, newCommand)">Save</button>
-            <button class="btn btn-danger" ng-click="toggleShowNewCommand()">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-sm-6">
-      <h2>Help</h2>
-      <hr>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s,</p>
-    </div>
-    </div>
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <h2>Help</h2>
+    <hr>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s,</p>
+  </div>
   </div>
 </div>
