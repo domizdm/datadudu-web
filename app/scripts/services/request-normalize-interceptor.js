@@ -11,7 +11,7 @@ angular.module('dataduduR3App')
 .factory('RequestNormalizeInterceptor', function ($httpParamSerializerJQLike, $httpParamSerializer) {
   return {
     request: function(config) {
-      if(/post/i.test(config.method)) {
+      if(/post/i.test(config.method) && config.params['_json'] != true) {
         config.data = $httpParamSerializerJQLike(config.data);
       }
       //if(/put/i.test(config.method)){

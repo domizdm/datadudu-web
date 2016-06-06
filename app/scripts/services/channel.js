@@ -302,7 +302,8 @@ angular.module('dataduduR3App')
     addRule: {
       method: 'POST',
       params: {
-        _type: 'rules'
+        _type: 'rules',
+        _json: true
       }
     },
     /**

@@ -16,7 +16,17 @@
         </div>
 
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Action</label>
+          <label class="col-sm-3 col-md-3 col-xs-3">Action Type</label>
+          <select class="form-control" ng-options="item.text for item in action_types" ng-model="form.action_type"></select>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Action Value</label>
+          <input type="text" class="form-control" ng-model="form.action_value">
+        </div>
+
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-xs-3">Action Frequency</label>
           <select class="form-control" ng-options="item.text for item in acttion_freqs" ng-model="form.action_frequency"></select>
         </div>
 
@@ -25,15 +35,24 @@
           <select class="form-control" ng-options="item.text for item in types" ng-model="form.type"></select>
         </div>
 
-        <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Condition</label>
-          <select class="form-control" ng-options="item.text for item in criterias[form.type.key]" ng-model="form.criteria"></select>
-        </div>
+        <form ng-if="form.type.key != 'no_data_check'">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-xs-3">Condition</label>
+            <select class="form-control" ng-options="item.text for item in criterias[form.type.key]" ng-model="form.criteria"></select>
+          </div>
 
-        <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Value</label>
-          <input type="text" class="form-control" ng-model="form.condition">
-        </div>
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-xs-3">Value</label>
+            <input type="text" class="form-control" ng-model="form.condition">
+          </div>
+        </form>
+
+        <form ng-if="form.type.key == 'no_data_check'">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-xs-3">Frequency</label>
+            <input type="number" class="form-control" ng-model="form.frequency">
+          </div>
+        </form>
 
       </div>
       <div class="col-md-4">

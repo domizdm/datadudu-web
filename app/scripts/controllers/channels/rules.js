@@ -27,16 +27,20 @@ angular.module('dataduduR3App')
         }
       });
 
-      channel.listRules({id:$scope.channel.channel_id})
-        .$promise
-        .then(function(resp){
-          $scope.form.rules = resp.rules;
-        })
-        .catch(function(err){
-          ngNotify.set(err.statusText, 'error');
-        });
+      $scope.reloadData();
     }
   });
+
+  $scope.reloadData = function(){
+    channel.listRules({id:$scope.channel.channel_id})
+      .$promise
+      .then(function(resp){
+        $scope.form.rules = resp.rules;
+      })
+      .catch(function(err){
+        ngNotify.set(err.statusText, 'error');
+      });
+  };
 
   var getRuleName = function(rule){
     return rule.rule_name ? rule.rule_name : 'Rule'+rule.rule_id;
@@ -68,7 +72,10 @@ angular.module('dataduduR3App')
               }
             })
             .result
-            .then(function(form){}, function(){/*dismiss*/});
+            .then(function(form){
+              //$scope.reloadData();
+              $route.reload();
+            }, function(){/*dismiss*/});
         })
         .catch(function(err){
           ngNotify.set(err.statusText, 'error');
@@ -76,6 +83,44 @@ angular.module('dataduduR3App')
     }
   };
 
+
+  $scope.deleteRule = function(rule) {
+    modalConfirm.open('Do you want to delete this rule?')
+      .then(function(){
+        channel.deleteRule({id: $scope.channel.channel_id, type_id: rule.rule_id})
+          .$promise
+          .then(function(resp){
+            ngNotify.set('Rule removed', 'success');
+            $route.reload();
+          })
+          .catch(function(err){
+            // TODO: more error info
+            ngNotify.set(err.data.desp || err.statusText, 'error');
+          });
+      })
+      .catch(function(){
+        // do nothing
+      });
+  };
+
+  $scope.deleteAllRules = function() {
+    modalConfirm.open('Do you want to delete all rules?')
+      .then(function(){
+        channel.deleteAllRules({id: $scope.channel.channel_id},{})
+          .$promise
+          .then(function(resp){
+            ngNotify.set('Rules deleted', 'success');
+            $route.reload();
+          })
+          .catch(function(err){
+            // TODO: more error info
+            ngNotify.set(err.statusText, 'error');
+          });
+      })
+      .catch(function(){
+        // do nothing
+      });
+  };
 
 
 
