@@ -1,60 +1,80 @@
-
 <div class="container-fluid" ng-controller="ChannelsRealtimeCtrl">
   <div class="row realtime" style="border-bottom: 10px solid #E9E9E9;">
-  <div class="col-md-6" style="padding-left: 10px">
-    <table class="table table-striped ">
-      <thead>
-      <tr>
-        <td><label style="height: 28px">Channel View</label></td>
-      </tr>
-      </thead>
-      <tr>
-        <td><img class="table-ico" src="../images/icoimage/id.png" >Channel ID:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
-      </tr>
-      <tr>
-        <td><img class="table-ico" src="../images/icoimage/author.png" >Author:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
-      </tr>
-      <tr>
-        <td><img class="table-ico" src="../images/icoimage/access.png" >Access:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span></td>
-      </tr>
-      <tr>
-        <td><img class="table-ico" src="../images/icoimage/tags.png" >Tags:</td><td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
-      </tr>
-    </table>
+    <div class="col-md-6" style="padding-left: 10px">
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <td><label style="height: 28px">Channel View</label></td>
+        </tr>
+        </thead>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/id.png">Channel ID:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/author.png">Author:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/access.png">Access:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/tags.png">Tags:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-md-6 ">
+      <div class="table-data-info" style="margin-left: 10px
+      ">
+        <table class="table table-striped ">
+          <thead>
+          <tr>
+            <td colspan="2" style="height: 50px"><label>Channel Status</label></td>
+          </tr>
+          </thead>
+          <tr>
+            <td>Created</td>
+            <td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
+          </tr>
+          <tr>
+            <td>Updated</td>
+            <td style="text-align: right"><span am-time-ago="channel.updated_at"></span></td>
+          </tr>
+          <tr>
+            <td>Used Space</td>
+            <td style="text-align: right">{{channel.usage | bytes}}</td>
+          </tr>
+          <tr>
+            <td>Last Entry Date</td>
+            <td style="text-align: right">{{channel.last_entry_date}} (<span
+              am-time-ago="channel.last_entry_date"></span>)
+            </td>
+          </tr>
+          <tr>
+            <td>Last Entry ID</td>
+            <td style="text-align: right">{{channel.last_entry_id}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 
-  <div class="col-md-6 ">
-  <div class="table-data-info">
-  <table class="table table-striped ">
-    <thead>
-    <tr>
-      <td colspan="2" style="height: 50px"><label>Channel Status</label></td>
-    </tr>
-    </thead>
-    <tr>
-      <td >Created</td><td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
-    </tr>
-    <tr>
-      <td>Updated</td><td style="text-align: right"><span am-time-ago="channel.updated_at"></span></td>
-    </tr>
-    <tr>
-      <td>Used Space</td><td style="text-align: right">{{channel.usage | bytes}}</td>
-    </tr>
-    <tr>
-      <td>Last Entry Date</td><td style="text-align: right">{{channel.last_entry_date}} (<span am-time-ago="channel.last_entry_date"></span>)</td>
-    </tr>
-    <tr>
-      <td>Last Entry ID</td><td style="text-align: right">{{channel.last_entry_id}}</td>
-    </tr>
-  </table>
-    </div>
-</div>
-</div>
-
-<div class="col-md-12 col-sm-12">
-  <div class="row" style="padding-bottom: 5px;border-bottom: 5px solid #E9E9E9;padding-top: 5px">
-    <div class="col-sm-12 col-md-12 text-right">
-      <form class="form-inline">
+  <div class="col-md-12 col-sm-12">
+    <div class="col-md-12">
+      <div class="nav-data">
+        <ul class="nav nav-tabs">
+          <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
+            <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row" style="border-bottom: 1px solid #E9E9E9;">
+        <div class="col-sm-12 col-md-12 text-right">
+          <form class="form-inline">
         <span>
           Frequency:
           <select class="form-control" ng-options="item.label for item in frequencies" ng-model="liveFreq"></select>
@@ -62,22 +82,22 @@
         <span>
           Live Data:
           <button class="btn btn-primary" ng-class="{'btn-danger' : !liveData, 'btn-success': liveData}"
-                  ng-click="toggleLiveData()">{{liveData ? 'On' : 'Off'}}</button>
+                  ng-click="toggleLiveData()">{{liveData ? 'On' : 'Off'}}
+          </button>
         </span>
-      </form>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-12" ng-repeat="(key,val) in channelsFields" ng-if="val.text">
+        <div render-channel-chart="channelsFeeds[key]"
+             render-channel-chart-scale="chartScale"
+             render-channel-chart-color="{{pickColor($index)}}"
+             render-channel-chart-api="chartsApi[$index]"
+             render-channel-chart-title="{{val.text}}">
+        </div>
+      </div>
     </div>
   </div>
-
-
-  <div class="col-md-12" ng-repeat="(key,val) in channelsFields" ng-if="val.text">
-    <div render-channel-chart="channelsFeeds[key]"
-      render-channel-chart-scale="chartScale"
-      render-channel-chart-color="{{pickColor($index)}}"
-      render-channel-chart-api="chartsApi[$index]"
-      render-channel-chart-title="{{val.text}}">
-    </div>
-  </div>
-</div>
 </div>
 
 

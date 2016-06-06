@@ -2,7 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="pragma" content="no-cache" />
   <base href="/">
 
   <title></title>
@@ -78,10 +81,8 @@
                       </a>
                     </li>
                   </ul>
-                  <div class="slimScrollBar"
-                       style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div>
-                  <div class="slimScrollRail"
-                       style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+                  <div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div>
+                  <div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
                 </div>
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
@@ -98,48 +99,17 @@
               </select>
             </a>
           </li>
-          <li class="dropdown user user-menu">
+
+          <li class=" dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <!--<img src="./images/user.png" class="user-image" alt="User Image">-->
-              <p><span><img src="./images/icoimage/interval.png"></span>Jone <b>Smith</b><i class="fa fa-sort-desc"
-                                                                                            style="margin-left: 3px;"></i>
+
+              <p><span><img src="./images/icoimage/interval.png"></span> <b>{{username}}</b><i class="fa fa-sort-desc" style="margin-left: 3px;"></i>
               </p>
             </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="./images/user.png" class="img-circle" alt="User Image">
-
-                <p>
-
-                  <small></small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <!--<li class="user-body">-->
-                <!--<div class="row">-->
-                  <!--<div class="col-xs-4 text-center">-->
-                    <!--<a href="#">Followers</a>-->
-                  <!--</div>-->
-                  <!--<div class="col-xs-4 text-center">-->
-                    <!--<a href="#">Sales</a>-->
-                  <!--</div>-->
-                  <!--<div class="col-xs-4 text-center">-->
-                    <!--<a href="#">Friends</a>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</li>-->
-              <!--<li class="user-footer">-->
-                <!--<div class="pull-left">-->
-                  <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
-                <!--</div>-->
-                <!--<div class="pull-right">-->
-                  <!--<a href="#" class="btn btn-default btn-flat">Sign out</a>-->
-                <!--</div>-->
-              <!--</li>-->
+            <ul class="dropdown-menu" >
+              <li><a href="#"  ng-click="logout()" style="line-height: 33px"><i class="fa fa-sign-out fa-lg"></i><b>Sign Out</b></a></li>
             </ul>
           </li>
-
         </ul>
       </div>
 

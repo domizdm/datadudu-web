@@ -1,27 +1,16 @@
 <div class="container-fluid">
   <div class="table-data">
+    <div class="nav-tabs-custom">
+      <div class="tab-content">
+        <div class="tab-pane active" ng-if="tab.key==routeParams.subview" ng-repeat="tab in tabs">
+          <ng-include src="tab.template"></ng-include>
+        </div>
+      </div>
 
-  <div class="nav-data">
-    <ul class="nav nav-pills">
-      <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
-        <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
-      </li>
-    </ul>
-  </div>
-    <!--nav-data-->
-<div class="nav-tabs-custom">
-
-  <!--style="background-color:#E9E9E9;"-->
-  <div class="tab-content">
-    <div class="tab-pane active" ng-if="tab.key==routeParams.subview" ng-repeat="tab in tabs">
-      <ng-include src="tab.template"></ng-include>
     </div>
-  </div>
 
+  </div>
 </div>
-
-  </div>
-  </div>
 
 
 

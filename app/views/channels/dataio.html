@@ -1,57 +1,127 @@
-
 <div ng-controller="ChannelsDataIOCtrl">
-  <form>
-      <div class="container-fluid col-md-12 col-sm-12 private-dataio" >
-        <h3>Export</h3>
-        <p>Download all of this Channel's feeds in CSV format.</p>
-        <br>
-        <div class="row-fluid edit_date">
+  <div class="row realtime" style="border-bottom: 10px solid #E9E9E9;">
+    <div class="col-md-6" style="padding-left: 10px">
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <td><label style="height: 28px">Channel View</label></td>
+        </tr>
+        </thead>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/id.png">Channel ID:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/author.png">Author:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/access.png">Access:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/tags.png">Tags:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
+        </tr>
+      </table>
+    </div>
 
-          <div class="col-sm-3 col-xm-3">
-          <select  class="form-control ng-pristine ng-valid ng-not-empty ng-touched" >
+    <div class="col-md-6 ">
+      <div class="table-data-info" style="margin-left: 10px;">
+        <table class="table table-striped ">
+          <thead>
+          <tr>
+            <td colspan="2" style="height: 50px"><label>Channel Status</label></td>
+          </tr>
+          </thead>
+          <tr>
+            <td>Created</td>
+            <td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
+          </tr>
+          <tr>
+            <td>Updated</td>
+            <td style="text-align: right"><span am-time-ago="channel.updated_at"></span></td>
+          </tr>
+          <tr>
+            <td>Used Space</td>
+            <td style="text-align: right">{{channel.usage | bytes}}</td>
+          </tr>
+          <tr>
+            <td>Last Entry Date</td>
+            <td style="text-align: right">{{channel.last_entry_date}} (<span
+              am-time-ago="channel.last_entry_date"></span>)
+            </td>
+          </tr>
+          <tr>
+            <td>Last Entry ID</td>
+            <td style="text-align: right">{{channel.last_entry_id}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="nav-data">
+    <ul class="nav nav-tabs">
+      <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
+        <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <form>
+    <div class="container-fluid col-md-12 col-sm-12 private-dataio">
+      <h2 style="padding-top: 25px">Data Import/export</h2>
+      <hr/>
+      <h3>Export</h3>
+      <p>Download all of this Channel's feeds in CSV format.</p>
+      <br>
+      <div class="row-fluid edit_date">
+
+        <div class="col-sm-3 col-xm-3">
+          <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
           </select>
 
-          </div>
-          <div class="container-fluid col-sm-1"><label> From</label></div>
-          <div class="col-sm-3">
+        </div>
+        <div class="container-fluid col-sm-1"><label> From</label></div>
+        <div class="col-sm-3">
 
-              <div class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" />
+          <div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
-              </div>
-
           </div>
-          <div class="container-fluid col-sm-1" style="padding-left: 10px;" ><label>To</label></div>
 
-          <div class="col-sm-3">
-              <div class='input-group date' id='datetimepicker2'>
-                <input type='text' class="form-control" />
+        </div>
+        <div class="container-fluid col-sm-1" style="padding-left: 10px;"><label>To</label></div>
+
+        <div class="col-sm-3">
+          <div class='input-group date' id='datetimepicker2'>
+            <input type='text' class="form-control"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
-              </div>
           </div>
-
-          <form  method="GET" class="">
-            <a  class="btn btn-primary dataio-downbtn">Download</a>
-          </form>
         </div>
 
+        <form method="GET" class="">
+          <a class="btn btn-primary dataio-downbtn">Download</a>
+        </form>
       </div>
 
+    </div>
 
-        <script type="text/javascript">
-          $(function () {
-            $('#datetimepicker1').datetimepicker();
-          });
-        </script>
-        <script type="text/javascript">
-          $(function () {
-          $('#datetimepicker2').datetimepicker();
-          });
-          </script>
+
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker1').datetimepicker();
+      });
+    </script>
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker2').datetimepicker();
+      });
+    </script>
   </form>
 </div>
 

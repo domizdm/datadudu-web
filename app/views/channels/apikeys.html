@@ -1,21 +1,103 @@
-
 <div ng-controller="ChannelsApiKeysCtrl">
-
+  <div class="row realtime" style="border-bottom: 10px solid #E9E9E9;">
+    <div class="col-md-6" style="padding-left: 10px">
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <td><label style="height: 28px">Channel View</label></td>
+        </tr>
+        </thead>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/id.png">Channel ID:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/author.png">Author:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/access.png">Access:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td><img class="table-ico" src="../images/icoimage/tags.png">Tags:</td>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6 ">
+      <div class="table-data-info" style="margin-left: 10px">
+        <table class="table table-striped ">
+          <thead>
+          <tr>
+            <td colspan="2" style="height: 50px"><label>Channel Status</label></td>
+          </tr>
+          </thead>
+          <tr>
+            <td>Created</td>
+            <td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
+          </tr>
+          <tr>
+            <td>Updated</td>
+            <td style="text-align: right"><span am-time-ago="channel.updated_at"></span></td>
+          </tr>
+          <tr>
+            <td>Used Space</td>
+            <td style="text-align: right">{{channel.usage | bytes}}</td>
+          </tr>
+          <tr>
+            <td>Last Entry Date</td>
+            <td style="text-align: right">{{channel.last_entry_date}} (<span
+              am-time-ago="channel.last_entry_date"></span>)
+            </td>
+          </tr>
+          <tr>
+            <td>Last Entry ID</td>
+            <td style="text-align: right">{{channel.last_entry_id}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid nav-data" style="margin-bottom: 20px">
+    <ul class="nav nav-tabs">
+      <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
+        <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}">{{tab.text}}</a>
+      </li>
+    </ul>
+  </div>
   <div ng-if="form">
-
-    <div class="table-apikey-style">
-      <div class="container">
+    <div class="container-fluid table-apikey-style">
+      <div class="row-fluid private-apikey" style="padding: 15px">
         <div class="col-md-6">
-          <table>
-            <tr><td colspan="2"><h3>Write API Key</h3></td></tr>
-            <tr><td><label>Key:</label></td><td><pre>{{form.writeKey}}</pre></td></tr>
-            <tr><td></td><td><button class="btn btn-warning" ng-click="generateWriteKey(form)">Generate New Write API Key</button></button></td></tr>
-
+          <h2>Apikeys</h2>
+          <hr>
+          <table style="width: 100%">
+            <tr>
+              <td colspan="2"><h3>Write API Key</h3></td>
+            </tr>
+            <tr>
+              <td><label>Key:</label></td>
+              <td>
+                <pre>{{form.writeKey}}</pre>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <button class="btn btn-warning" ng-click="generateWriteKey(form)">Generate New Write API Key</button>
+              </td>
+            </tr>
 
             <tr ng-repeat-start="item in form.readKeys">
               <td colspan="2"><h3>Read API Key</h3></td>
             </tr>
-            <tr><td><label>Key:</label></td><td><pre>{{item.read_key}}</pre></tr>
+            <tr>
+              <td><label>Key:</label></td>
+              <td>
+                <pre>{{item.read_key}}</pre>
+            </tr>
             <tr>
               <td><label>Note:</label></td>
               <td><textarea ng-model="item.note"></textarea></td>
@@ -23,31 +105,37 @@
             <tr ng-repeat-end>
               <td></td>
               <td>
-                <button class="btn btn-success" ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save Notes</button>
-                <button class="btn btn-danger" ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key</button>
+                <button class="btn btn-success" ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save
+                  Notes
+                </button>
+                <button class="btn btn-danger" ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key
+                </button>
               </td>
             </tr>
 
             <tr>
               <td></td>
               <td>
-                <button class="btn btn-warning" ng-click="generateReadKey(form.channel_id)">Generate Read API Key</button>
+                <button class="btn btn-warning" ng-click="generateReadKey(form.channel_id)">Generate Read API Key
+                </button>
               </td>
             </tr>
           </table>
 
-          </div>
+        </div>
 
-      <div class="col-md-6 col-sm-6"style="padding-right:20px ">
-        <h3>Help</h3>
-        <div class="col-md-8">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-          </div>
-      </div>
+        <div class="col-md-6">
+          <h2>Help</h2>
+          <hr>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s,
+          </p>
+
+        </div>
 
       </div>
-  </div>
     </div>
+  </div>
 
 </div>
 
