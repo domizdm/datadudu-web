@@ -100,6 +100,11 @@ angular.module('dataduduR3App')
             //$log.log(channelsMap);
           }
 
+          // handle response with 'is_truncated=true', data will be reduced by server
+          if(resp.is_truncated==true){
+            ngNotify.set('Data exceeds limit. Graphs may be in truncated mode.', 'warn');
+          }
+
           resolve({channelsFeeds: channelsMap, raw: resp, end:new Date(resp.end)});
         })
         .catch(function(err){
