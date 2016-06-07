@@ -19,7 +19,8 @@ angular.module('dataduduR3App')
     {label:'8 hours', value:'480'},
     {label:'1 day', value:'1440'},
     {label:'3 days', value:'4320'},
-    {label:'7 days', value:'10080'}
+    {label:'7 days', value:'10080'},
+    {label:'30 days', value:'43200'}
   ];
 
   var defaultDuration = $scope.durations[0];
