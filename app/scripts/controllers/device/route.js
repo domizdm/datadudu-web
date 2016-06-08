@@ -23,8 +23,8 @@ angular.module('dataduduR3App')
         templateUrl:  'views/device/addproducts.html',
         controller:'AddProductsCtrl'
       })
-      .when('/productdetails',{
+      .when('/productdetails/:product_id',{
         templateUrl:  'views/device/productdetails.html',
-        controller:'ProductdetailsCtrl'
+        controller:'ProductDetailsCtrl'
       })
   });
