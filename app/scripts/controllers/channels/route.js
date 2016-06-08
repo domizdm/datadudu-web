@@ -21,7 +21,7 @@ angular.module('dataduduR3App')
     })
     .when('/channels/:id/:subview', {
       templateUrl: function(urlattr){
-        //console.log(urlattr);
+       //console.log(urlattr);
         return 'views/channels/main.html';
       },
       controller: 'ChannelsMainCtrl'

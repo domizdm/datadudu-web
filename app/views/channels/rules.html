@@ -5,12 +5,12 @@
     <div class="container-fluid">
 
       <div class="row-fluid rules-main">
-        <div class="col-md-6 table-responsive">
+        <div class="col-md-6 table-rules">
           <h2>Rules</h2>
           <hr>
           <div class="col-md-12 new_chanel">
             <button class="btn btn-default " ng-click="openModalEditRule()">New Rules</button>
-            <button ng-click="deleteAllRules()" class="btn btn-warning rule-del">Delete All</button>
+            <button ng-click="deleteAllRules()" class="btn btn-danger rule-del">Delete All</button>
           </div>
           <br>
 
@@ -43,7 +43,9 @@
               <td class="">{{rule.criteria}}</td>
               <td class="">{{rule.condition}}</td>
               <td class="">{{rule.created_at | date:'yyyy-MM-dd'}}</td>
-              <td style="text-align:ceneter"><button ng-click="deleteRule(rule)" class="btn btn-warning">Delete</button></td>
+              <td style="text-align:center">
+                <button ng-click="deleteRule(rule)" class="btn btn-danger">Delete</button>
+              </td>
             </tr>
             </tbody>
           </table>

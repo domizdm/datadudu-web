@@ -1,34 +1,46 @@
-
 <div ng-controller="ChannelsDataIOCtrl">
-  <form>
-      <div class="container-fluid col-md-12 col-sm-12 private-dataio" >
-        <h3>Export</h3>
-        <p>Download all of this Channel's feeds in CSV format.</p>
-        <br>
-        <div class="row-fluid edit_date">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <form>
+        <div class="container-fluid col-md-6 col-sm-6 private-dataio">
+          <h3>Export</h3>
+          <p>Download all of this Channel's feeds in CSV format.</p>
+          <br>
+          <div class="row-fluid edit_date">
+            <div class="container-fluid col-sm-1"><label> From</label></div>
+            <div class="col-md-12 col-sm-12">
+              <div class='input-group date' datetimepicker="form.begin"></div>
+            </div>
 
-          <!--<div class="col-sm-3 col-xm-3">-->
-            <!--<select  class="form-control ng-pristine ng-valid ng-not-empty ng-touched" >-->
-            <!--</select>-->
-          <!--</div>-->
+            <div class="container-fluid col-sm-1" style="padding-left: 10px;"><label>To</label></div>
 
-          <div class="container-fluid col-sm-1"><label> From</label></div>
-          <div class="col-sm-3">
+            <div class="col-md-12 col-sm-12">
+              <div class='input-group date' datetimepicker="form.end"></div>
+            </div>
 
-            <div class='input-group date' datetimepicker="form.begin"></div>
+
+            <div class="col-md-12 col-sm-12"><a class="btn btn-primary dataio-downbtn" ng-click="download(channel)">Download</a>
+            </div>
+
           </div>
+          <div class="col-md-12 col-sm-12">
+            <h2>Help</h2>
+            <hr>
 
-          <div class="container-fluid col-sm-1" style="padding-left: 10px;" ><label>To</label></div>
-
-          <div class="col-sm-3">
-            <div class='input-group date' datetimepicker="form.end"></div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.</p>
           </div>
-
-          <a class="btn btn-primary dataio-downbtn" ng-click="download(channel)">Download</a>
         </div>
 
-      </div>
-  </form>
+        <div class="container-fluid col-md-6 col-sm-6">
+
+
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 
