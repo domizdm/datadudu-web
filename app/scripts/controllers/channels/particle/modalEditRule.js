@@ -10,7 +10,7 @@
 angular.module('dataduduR3App')
 .controller('ChannelsEditRuleCtrl', function($scope, $q, $filter, $window, $timeout, $log,
                                              config, $uibModal, $uibModalInstance, ngNotify,
-                                             channel, fields, channelId, rule, $httpParamSerializer){
+                                             channel, fields, channelId, rule){
 
 
   $scope.fields = [{key:'status', text:'Status'}];

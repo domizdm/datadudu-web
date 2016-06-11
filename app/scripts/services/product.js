@@ -9,7 +9,7 @@
  */
 angular.module('dataduduR3App')
 .service('product', function ($resource, config) {
-  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:_type/:type_id', {
+  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:_type/:type_id/:_extra_1', {
     id: '@_id',
     controller: 'products'
   },{
@@ -36,6 +36,21 @@ angular.module('dataduduR3App')
      */
     get: {
       method: 'GET',
+    },
+    /**
+     * Search Public Product Batches
+
+     To list/search public product batch, send HTTP GET to http://api.datadudu.cn/products-public
+
+
+     Valid request parameters:
+     name (string) – search by product name
+     */
+    listPublic: {
+      method: 'GET',
+      params: {
+        controller: 'products-public'
+      }
     },
     /**
      * Create a Product Batch
@@ -74,8 +89,22 @@ angular.module('dataduduR3App')
     listDevices: {
       method: 'GET',
       params: {
-        _type: 'devices',
-        _json: true
+        _type: 'devices'
+      }
+    },
+    /**
+     * List My Devices (devices that have been attached or activated)
+
+     To all the devices that have been attached or activated in my account, send HTTP GET to http://api.datadudu.cn/devices
+
+
+     Valid request parameters:
+     account_key or token_id (string) – account_key is Read or Write key for this specific channel (no key required for public channels) or token_id for internal use, obtained through login API.
+     */
+    listMyDevices: {
+      method: 'GET',
+      params: {
+        controller: 'devices'
       }
     },
     /**
@@ -107,6 +136,59 @@ angular.module('dataduduR3App')
       params: {
         controller: 'devices',
         _type: 'delete',
+        _json: true
+      }
+    },
+    /**
+     * Detach a Device (using Activation_Code to my account)
+
+     To detach a device to my account and create a channel using product template, send HTTP GET or POST to http://api.datadudu.cn/devices/ACTIVATION_CODE/detach replacing ACTIVATION_CODE
+
+
+     Valid request parameters:
+     account_key or token_id (string) –account_key  or token_id for internal use, obtained through login API.
+     */
+    detachDevice: {
+      method: 'POST',
+      params: {
+        controller: 'devices',
+        _type: 'detach',
+        _json: true
+      }
+    },
+    /**
+     * Attach a Device (using Product_ID and Serial to my account)
+
+     To attach a device to my account and create a channel using product template, send HTTP GET or POST to http://api.datadudu.cn/products/PRODUCT_ID/devices/SERIAL/attach replacing PRODUCT_ID and SERIAL
+
+
+     Valid request parameters:
+     account_key or token_id (string) –account_key  or token_id for internal use, obtained through login API.
+     name (string, optional) – channel name
+     */
+    attachDeviceByPidAndSerial: {
+      method: 'POST',
+      params: {
+        _type: 'devices',
+        _extra_1: 'attach',
+        _json: true
+      }
+    },
+    /**
+     * Attach a Device (using Activation_Code to my account)
+
+     To attach a device to my account and create a channel using product template, send HTTP GET or POST to http://api.datadudu.cn/devices/ACTIVATION_CODE/attach replacing ACTIVATION_CODE
+
+
+     Valid request parameters:
+     account_key or token_id (string) –account_key  or token_id for internal use, obtained through login API.
+     name (string, optional) – channel name
+     */
+    attachDeviceByActivationCode: {
+      method: 'POST',
+      params: {
+        controller: 'devices',
+        _extra_1: 'attach',
         _json: true
       }
     }

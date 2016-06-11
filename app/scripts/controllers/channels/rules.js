@@ -49,6 +49,7 @@ angular.module('dataduduR3App')
 
   $scope.openModalEditRule = function(rule){
     if($scope.channel) {
+      // TODO: 实际上这里用不到api_key,可以去除这个ajax,只作为备用
       channel.listAPIKeys({id:$scope.channel.channel_id})
         .$promise
         .then(function(resp){
