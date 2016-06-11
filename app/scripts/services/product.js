@@ -77,6 +77,38 @@ angular.module('dataduduR3App')
         _type: 'devices',
         _json: true
       }
+    },
+    /**
+     * Add Device Serials
+
+     To add a list of device serial numbers, send HTTP POST to http://api.datadudu.cn/products/PRODUCT_ID/devices replacing PRODUCT_ID
+
+
+     Valid request parameters:
+     account_key or token_id (string) –account_key  or token_id for internal use, obtained through login API.
+     JSON Body FIELDS:
+     {"devices":[{"serial":"123"},{"serial":"456"},{"serial":"789"}]}
+     */
+    addDevices: {
+      method: 'POST',
+      params: {
+        _type: 'devices',
+        _json: true
+      }
+    },
+    /**
+     * Delete a Device (using Activation_Code to my account)
+
+     To activate a device, send HTTP GET or POST to http://api.datadudu.cn/devices/ACTIVATION_CODE/delete replacing ACTIVATION_CODE
+     Note: Attached or Activated device cannot be deleted
+     */
+    deleteDevice: {
+      method: 'POST',
+      params: {
+        controller: 'devices',
+        _type: 'delete',
+        _json: true
+      }
     }
 
   });
