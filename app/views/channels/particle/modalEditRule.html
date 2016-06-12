@@ -28,6 +28,11 @@
           <input type="text" class="form-control" ng-model="form.action_value">
         </div>
 
+        <div class="row" ng-if="form.action_type.key=='command'">
+          <label class="col-sm-3 col-md-3 col-xs-3">Action Sub-Value</label>
+          <input type="text" class="form-control" ng-model="form.action_sub_value">
+        </div>
+
         <div class="row">
           <label class="col-sm-3 col-md-3 col-xs-3">Action Frequency</label>
           <select class="form-control" ng-options="item.text for item in acttion_freqs" ng-model="form.action_frequency"></select>
@@ -41,7 +46,9 @@
         <form ng-if="form.type.key != 'no_data_check'">
           <div class="row">
             <label class="col-sm-3 col-md-3 col-xs-3">Condition</label>
-            <select class="form-control" ng-options="item.text for item in criterias[form.type.key]" ng-model="form.criteria"></select>
+            <select class="form-control" ng-options="item.text for item in criterias[form.type.key]" ng-model="form.criteria">
+              <option value="">--Choose Condition--</option>
+            </select>
           </div>
 
           <div class="row">
