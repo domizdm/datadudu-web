@@ -103,11 +103,20 @@ angular.module('dataduduR3App')
       }
     },
     /**
-     *
+     * Update User Public Profile (Internal)
+
+     To update a user, send an HTTP POST to http://api.datadudu.cn/accounts/update/public
+     Valid request parameters:
      account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
      callback
+
+
+     JSON Body FIELDS:
+     website: website URL (optional)
+     bio: bio information (optional)
+     public_flag: whether to make profile public (optional)
      */
-    updatePublicProfile: {
+    updateProfile: {
       method: 'POST',
       params: {
         _action: 'update',
