@@ -9,55 +9,33 @@
  */
 
 angular.module('dataduduR3App')
-  .controller('MyAccountCtrl', function($scope, $q, $filter, $window, $timeout, $log,$http,
-                                              $httpParamSerializer, config, $uibModal, ngNotify, account){
+.controller('MyAccountCtrl', function($scope, $q, $filter, $window, $timeout, $log, $http, $route,
+                                            config, $uibModal, ngNotify, modalConfirm, Auth, account){
 
-    //$scope.channels = null;
-    //$scope.accountData=null;
-    account.me()
-      .$promise
-      .then(function(resp){
-        $scope.accountData = resp.account;
-        //console.log($scope.accountData);
-        //alert($scope.accountData);
-        //$scope.channels = resp.channels;
-      })
+  $scope.myAccount = Auth.me().account;
 
-      .catch(function(err){
+  $scope.generateAccountKey = function(){
+    modalConfirm.open('Do you want to generate new account key?')
+      .then(function(){
+        account.generateAccountKey()
+          .$promise
+          .then(function(resp){
+            ngNotify.set('New account key generated.', 'success');
 
-        // TODO: show error message
-        $log.log(err);
-      })
-
-    ;
-    $scope.testThis=function()
-    {
-      alert("test");
-    };
-  /*  $http({
-      method:'POST',
-      url   :'http://api.datadudu.cn/accounts/view?token_id=51e9989218714e679cd07465f1252f1a',
-      data  : $.param($scope.formData),
-      headers:{'Content-Type': 'application/x-www-form-urlencoded'}
-    })
-
-      .success(function(data){
-        if (data.success){
-          myfactory.savCampusSess().success(function(data){
-            if (data.status<0)
-              alert(data.error);
+            // rebind account info from server
+            Auth.rebind()
+              .then(function(){
+                $route.reload();
+              });
+          })
+          .catch(function(err){
+            // TODO: more error info
+            ngNotify.set(err.statusText, 'error');
           });
+      })
+      .catch(function(){
+        // do nothing
+      });
+  };
 
-          var info="welcome!"+data.uidd+"名用户";
-          alert(info);
-          $state.go('pensoncenter');
-        }
-        else {
-          $scope.errorphone=data.errors.phone;
-          $scope.errorpin=data.errors.pin;
-        }
-        $scope.message=data.message;
-      });*/
-
-
-  });
+});

@@ -2,18 +2,10 @@
   <!--表格内容start-->
   <div class="table-content">
     <div class="list-header">
-    <form class="search form-search ">
-      <select class="select-style">
-        <option value="">ALL</option>
-      </select>
-      <input type="text" class="input-style" placeholder="Search here..." ng-model="searchText">
-      <button type="submit" class="btn btn-search">Search</button>
-      <a class="btn btn-default btn-new" href="#/channels/new">New Channel</a>
-      <h5 class="usedspace-style hidden-sm hidden-xs ">Total Used Space: {{getAccountUsage() | bytes}}</h5>
-    </form>
-      </div>
+      <button class="btn btn-default" href="#/channels/new">New HttpAPI</button>
+    </div>
     <div class="border-table table-list">
-      <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channelsFiltered" st-table="displayCollection">
+      <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channels" st-table="displayCollection">
         <thead class="tblHeader">
         <tr>
           <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">Name</span></th>
