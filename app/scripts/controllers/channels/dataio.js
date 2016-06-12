@@ -11,6 +11,7 @@ angular.module('dataduduR3App')
 .controller('ChannelsDataIOCtrl', function($scope, $q, $filter, $route, $window, $log, $location, Auth,
                                             config, $uibModal, ngNotify, modalConfirm, channel, $httpParamSerializer){
 
+
   var today = new Date();
   var begin = new Date(today);
 
