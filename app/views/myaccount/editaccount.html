@@ -1,7 +1,7 @@
 <div class="container-fluid">
       <div class="row-fluid"style="margin: 10px;">
         <div class="signup-outer">
-          <form  name="signUpForm" ng-submit="Update(signUpForm)" role="form">
+          <form name="validatedForm" ng-submit="saveAccountInfo(form)">
 
             <div class="row">
               <div class="col-sm-3 hidden-sm">
@@ -17,9 +17,9 @@
               <div class="col-sm-3 col-xs-1">
                 <label class="pull-right">User ID</label>
               </div>
-              <div class="col-md-7 col-sm-5 col-xs-5" ng-class="{ 'has-error': signUpForm.username.$dirty && signUpForm.username.$error.required }">
-                <input type="text" id="username" name="username" ng-model="signUpInfo.username" class="form-control" required />
-                <span ng-show="signUpForm.username.$error.required && signUpForm.username.$dirty" class="help-block">required</span>
+              <div class="col-md-7 col-sm-5 col-xs-5" ng-class="{ 'has-error': validatedForm.username.$dirty && validatedForm.username.$error.required }">
+                <input type="text" name="username" ng-model="form.username" class="form-control" required />
+                <span ng-show="validatedForm.username.$error.required && validatedForm.username.$dirty" class="help-block">required</span>
 
               </div>
 
@@ -28,10 +28,10 @@
               <div class="col-sm-3 col-xs-1">
                 <label class="pull-right">Email</label>
               </div>
-              <div class="col-md-7 col-sm-5 col-xs-5" ng-class="{ 'has-error': signUpForm.email.$dirty && signUpForm.email.$error.required }">
-                <input type="email" id="email" name="email" ng-model="signUpInfo.email" class="form-control" required />
-                <span ng-show="signUpForm.email.$error.required && signUpForm.email.$dirty" class="help-block">required</span>
-                <span ng-show="!signUpForm.email.$error.required && signUpForm.email.$error.email && signUpForm.email.$dirty" class="help-block">invalid email</span>
+              <div class="col-md-7 col-sm-5 col-xs-5" ng-class="{ 'has-error': validatedForm.email.$dirty && validatedForm.email.$error.required }">
+                <input type="email" name="email" ng-model="form.email" class="form-control" required />
+                <span ng-show="validatedForm.email.$error.required && validatedForm.email.$dirty" class="help-block">required</span>
+                <span ng-show="!validatedForm.email.$error.required && validatedForm.email.$error.email && signUpForm.email.$dirty" class="help-block">invalid email</span>
               </div>
 
             </div>
@@ -41,8 +41,7 @@
                 <label class="pull-right">TomeZone</label>
               </div>
               <div class="col-md-7 col-sm-5 col-xs-5" >
-                <select class="form-control"  ng-model="signUpInfo.timezone">
-                  <option ng-repeat="option in timeZones " value="{{option.value}}">{{option.text}}</option>
+                <select class="form-control"  ng-model="form.timezone" ng-options="itemKey as (itemKey | timezone:itemVal) for (itemKey,itemVal) in timezones">
                 </select>
               </div>
 
@@ -52,9 +51,9 @@
               <div class="col-sm-3 col-xs-1">
                 <label class="pull-right ">Current Password</label>
               </div>
-              <div class="col-md-7 col-sm-5 col-xs-5" ng-class="{ 'has-error': signUpForm.password.$dirty && signUpForm.password.$error.required }">
-                <input type="password" id="password" name="password" ng-model="signUpInfo.password" class="form-control" required />
-                <span ng-show="signUpForm.password.$error.required && signUpForm.password.$dirty" class="help-block">required</span>
+              <div class="col-md-7 col-sm-5 col-xs-5" ng-class="{ 'has-error': validatedForm.password.$dirty && validatedForm.password.$error.required }">
+                <input type="password" name="password" ng-model="form.password" class="form-control" required />
+                <span ng-show="validatedForm.password.$error.required && validatedForm.password.$dirty" class="help-block">required</span>
               </div>
             </div>
 
@@ -63,26 +62,26 @@
 
               </div>
               <div class="col-md-7 col-sm-5 col-xs-5" >
-                <label class="pull-left"><input type="checkbox" ng-model="isChangePassword" />&nbsp;&nbsp;Do you want to change Password?</label>
+                <label class="pull-left"><input type="checkbox" ng-model="form.isChangePassword" />&nbsp;&nbsp;Do you want to change Password?</label>
               </div>
             </div>
 
-            <div class="row" ng-show="isChangePassword">
+            <div class="row" ng-if="form.isChangePassword">
               <div class="col-sm-3 col-xs-1" >
                 <label class="pull-right">New Password</label>
               </div>
               <div class="col-md-7 col-sm-5 col-xs-5" >
-                <input type="password" id="new_password" name="new_password" ng-model="signUpInfo.new_password" class="form-control" />
+                <input type="password" ng-model="form.newPassword1" class="form-control" />
               </div>
             </div>
 
-            <div class="row" ng-show="isChangePassword">
+            <div class="row" ng-if="form.isChangePassword">
               <div class="col-sm-3 col-xs-1" >
                 <label class="pull-right">Confirm Password</label>
               </div>
               <div class="col-md-7 col-sm-5 col-xs-5" >
-                <input ng-change="isMatch=false" type="password" id="confirmPassword" name="confirmPassword" ng-model="signUpInfo.confirmPassword" class="form-control" />
-                <span ng-show="isMatch" class="help-block">Passwords do not match.</span>
+                <input type="password" ng-model="form.newPassword2" class="form-control" />
+                <span ng-show="!isNewPassworMatch()" class="help-block">Passwords do not match.</span>
               </div>
             </div>
 
@@ -93,7 +92,7 @@
               </div>
               <div class="col-md-7 col-sm-5 col-xs-5">
 
-                <button type="submit" ng-disabled="signUpForm.$invalid " class="btn btn-new">Update Account</button>
+                <button type="submit" ng-disabled="validatedForm.$invalid " class="btn btn-new">Update Account</button>
               </div>
             </div>
           </form>

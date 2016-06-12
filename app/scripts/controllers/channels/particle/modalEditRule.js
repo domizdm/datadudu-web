@@ -34,7 +34,8 @@ angular.module('dataduduR3App')
   $scope.action_types = [
     {key: 'email', text:'Email'},
     {key: 'sms', text:'Sms'},
-    {key: 'http', text:'Http'}
+    {key: 'http', text:'Http'},
+    {key: 'command', text:'Command'}
   ];
 
   $scope.criterias = {
@@ -68,6 +69,7 @@ angular.module('dataduduR3App')
     action_type: rule ? _.find($scope.action_types, {key:rule.action_type}) : $scope.action_types[0],
     action_value: rule ? rule.action_value : '',
     action_frequency: rule ? _.find($scope.acttion_freqs, {key:rule.action_frequency}) : $scope.acttion_freqs[0],
+    action_sub_value: rule ? rule.action_sub_value : '',
     criteria: rule ? _.find($scope.criterias[rule.type], {key:rule.criteria}) : null,
     condition: rule ? rule.condition : '',
     frequency: rule ? parseFloat(rule.frequency) : 0
@@ -81,6 +83,7 @@ angular.module('dataduduR3App')
         rule_id: $scope.form.rule_id,
         action_type: $scope.form.action_type ? $scope.form.action_type.key : null,
         action_value: $scope.form.action_value,
+        action_sub_value: $scope.form.action_sub_value,
         rule_name: $scope.form.rule_name,
         field: $scope.form.field ? $scope.form.field.key : null,
         type: $scope.form.type ? $scope.form.type.key : null,
