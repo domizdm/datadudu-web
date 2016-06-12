@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsMainCtrl', function ($scope, $routeParams, $log, channel) {
+.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $log, channel) {
 
   $scope.channel = null;
 
@@ -22,6 +22,10 @@ angular.module('dataduduR3App')
     {key:'rules',text:'Rules',template:'views/channels/rules.html'},
     {key:'dataio',text:'Data Import/Export',template:'views/channels/dataio.html'}
   ];
+
+  $scope.reloadTab = function(){
+    $route.reload();
+  };
 
   channel.list()
     .$promise
