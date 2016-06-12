@@ -26,6 +26,23 @@ angular.module('dataduduR3App')
           });
       });
     },
+    /**
+     * update account info from server
+     * @returns {*}
+       */
+    rebind: function(){
+      return $q(function(resolve, reject){
+        return account.me(null, null)
+          .$promise
+          .then(function(resp){
+            $localStorage.me.account = resp.account;
+            resolve(resp);
+          })
+          .catch(function(err){
+            reject(err);
+          });
+      });
+    },
     me: function() {
       return $localStorage.me;
     },

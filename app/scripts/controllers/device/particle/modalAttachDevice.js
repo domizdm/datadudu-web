@@ -22,7 +22,7 @@ angular.module('dataduduR3App')
   $scope.privateProducts = privateProducts;
 
   $scope.formByActivationCode = {
-    activationCode: '',
+    activationCode: ''
   };
 
   $scope.formByProductId = {

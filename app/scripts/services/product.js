@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc service
- * @name dataduduR3App.channel
+ * @name dataduduR3App.product
  * @description
  * # product
  * Service in the dataduduR3App.

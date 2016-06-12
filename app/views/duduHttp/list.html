@@ -1,0 +1,55 @@
+<div class="main">
+  <!--表格内容start-->
+  <div class="table-content">
+    <div class="list-header">
+      <button class="btn btn-default" href="#/channels/new">New HttpAPI</button>
+    </div>
+    <div class="border-table table-list">
+      <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channels" st-table="displayCollection">
+        <thead class="tblHeader">
+        <tr>
+          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">Name</span></th>
+          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>Last Update</span></th>
+          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>Public or Private</span></th>
+          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>Used Space</span></th>
+          <th><span>Created</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="channel in displayCollection">
+          <td class="td-left">
+            <div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">
+            <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+            </div>
+            <div ng-show="channel.name==''||channel.name=='null'||channel.name==null">
+              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
+            </div>
+            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
+          </td>
+          <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
+          <td><a href=""><i class="fa fa-group"></i>Public</a></td>
+          <td>{{channel.usage | bytes}}</td>
+          <td><a href="">{{channel.created_at}}</a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="5" class="text-center">
+            <div class="paging-style" st-pagination="" st-items-by-page="10"></div>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+
+
+
+    </div>
+
+  </div>
+  <!--表格内容END-->
+
+</div>

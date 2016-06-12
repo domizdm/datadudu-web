@@ -21,6 +21,8 @@
               <th>Field</th>
               <th>Criteria</th>
               <th>Condition</th>
+              <th>Last Result</th>
+              <th>Last Result Time</th>
               <th>Created</th>
               <th></th>
             </tr>
@@ -42,6 +44,8 @@
               <td class="">{{rule.field}}</td>
               <td class="">{{rule.criteria}}</td>
               <td class="">{{rule.condition}}</td>
+              <td class="">{{rule.last_result}}</td>
+              <td class="">{{rule.last_result_time | date:'yyyy-MM-dd'}}</td>
               <td class="">{{rule.created_at | date:'yyyy-MM-dd'}}</td>
               <td style="text-align:ceneter"><button ng-click="deleteRule(rule)" class="btn btn-warning">Delete</button></td>
             </tr>

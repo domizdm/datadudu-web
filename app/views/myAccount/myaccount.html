@@ -7,23 +7,23 @@
       <table class="table table-striped">
         <tr>
           <td>User ID </td>
-          <td>{{accountData.username}}</td>
+          <td>{{myAccount.username}}</td>
         </tr>
         <tr>
           <td>Email </td>
-          <td>{{accountData.email}}</td>
+          <td>{{myAccount.email}}</td>
         </tr>
         <tr>
           <td>Time Zone </td>
-          <td>{{accountData.timezone}}</td>
+          <td>{{myAccount.timezone}}</td>
         </tr>
         <tr>
           <td>API Key </td>
-          <td style="color:#fd2626;"> {{accountData.account_key}}</td>
+          <td style="color:#fd2626;"> {{myAccount.account_key}}</td>
         </tr>
 
         <tr>
-          <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-warning" ng-click="testThis()">Generate New API Key</button></td>
+          <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-warning" ng-click="generateAccountKey()">Generate New API Key</button></td>
         </tr>
 
       </table>
@@ -37,11 +37,11 @@
         <tr>
           <td>Website</td>
 
-          <td>{{accountData.website}}</td>
+          <td>{{myAccount.website}}</td>
         </tr>
         <tr>
           <td>Bio</td>
-          <td>{{accountData.bio}}</td>
+          <td>{{myAccount.bio}}</td>
         </tr>
         <tr>
           <td colspan="2"><button style="float:left; margin-top:30px;" type="submit" class="btn btn-default btn-new">View Public Profile</button></td>
