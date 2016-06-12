@@ -1,86 +1,93 @@
+<div class="container-fluid main-devices">
 
-<div class="container-fluid main-devices " ng-controller="ProductDetailsCtrl">
-
-<div class="row-fluid channel-main main-devices">
-  <div class="col-md-1 hidden-sm">
+  <div class="row-fluid channel-main main-devices">
+    <div class="col-md-1 hidden-sm">
     </div>
-<div class=" col-md-10">
+    <div class=" col-md-10">
 
-<div class="col-sm-6">
+      <div class="col-sm-6">
 
-<h3 class="product_title">New device <a class="fa fa-pencil" >Edit</a></h3>
-<p>Private Product</p>
-<div class="device_detais">
-<p class=""><span><strong>Product ID</strong></span>
+        <h3 class="product_title">New device <a class="fa fa-pencil">Edit</a></h3>
+        <p>Private Product</p>
+        <div class="device_detais">
+          <p class=""><span><strong>Product ID</strong></span>
+            {{product.product_id}}
+          </p>
+          <p class="ng-binding"><span><strong>Product Secret</strong></span>
+            {{product.secret}}
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="serial_out">
 
-</p>
-<p class="ng-binding"><span><strong>Product Secret</strong></span>
+          <form name="form" class="">
+            <p>Press enter key to add multiple Serial Numbers </p>
+            <textarea type="text" class="form-control serial_txt" placeholder="Add Serial Number for this product"
+                      ng-model="seriesText"></textarea>
+            <button type="submit" class="btn btn_add btn-new  add_serial"
+                    ng-click="addDevices(product.product_id, seriesText)">Add
+            </button>
+          </form>
 
-</p>
-</div>
-</div>
-<div class="col-sm-6">
-<div class="serial_out">
+        </div>
+      </div>
 
-<form name="form" class="">
-<p>Press enter key to add multiple Serial Numbers </p>
-<textarea type="text"  class="form-control serial_txt" placeholder="Add Serial Number for this product"  required=""></textarea>
-<button type="submit"  class="btn btn_add btn-new  add_serial" >Add</button>
-</form>
+      <div class="device_form">
 
-</div></div>
+        <div class="">
+          <h3>Devices</h3>
+          <div class="row-fluid">
+            <div class="col-sm-6" style="margin-bottom: 3px;">
+              <div class="input-group">
+                <input type="text" class="form-control " placeholder="Search" style="width: 300px;"
+                       ng-model="searchText"/>
+                <span class="input-group-addon">
+                    <button type="submit">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+              </div>
+            </div>
 
-<div class="device_form">
+          </div>
 
-<div  class="">
-<h3>Devices</h3>
-<div class="row-fluid" >
-<div class="col-sm-6" style="margin-bottom: 3px;">
-<div class="input-group">
-                    <input type="text" class="form-control "  placeholder="Search" style="width: 300px;">
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-</div>
+          <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+            <thead class="tb2Header">
+            <tr role="row">
+              <th class="">Serial Number</th>
+              <th class="">Activation Code</th>
+              <th class="">Actived At</th>
+              <th class="">Attached At</th>
+              <th class="">Created At</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="device in devices | filter:searchText track by $index">
+              <td>{{device.serial}}</td>
+              <td>{{device.activation_code}}</td>
+              <td>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</td>
+              <td>{{(device.attached_at | date:'yyyy-MM-dd') || 'Not Attached'}}</td>
+              <td>{{device.created_at | date:'yyyy-MM-dd'}}</td>
 
-</div>
+              <td>
+                <a href="javascript:void(0)" class="btn btn-default"><i style="margin-right:10px;"
+                                                                        class="fa fa-pencil"></i>Edit</a>&nbsp;
+                <a href="javascript:void(0)" class="btn btn-danger"
+                   ng-click="deleteDevice(device.activation_code)"><i style="margin-right:10px;"
+                                                                      class="fa fa-trash"></i>Delete</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
 
-  <table  class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
-    <thead class="tb2Header">
-    <tr role="row">
-      <th class=""  >Serial Number</th>
-      <th class="">Activation Code</th>
-      <th class="">Actived At</th>
-      <th class="">Attached At</th>
-      <th class="">Created At</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1 hidden-sm">
+    </div>
 
-      <td>
-        <a href="javascript:void(0)" class="btn btn-default"><i style="margin-right:10px;" class="fa fa-pencil"></i>Edit</a>&nbsp;
-        <a href="javascript:void(0)"  class="btn btn-danger"><i style="margin-right:10px;" class="fa fa-trash"></i>Delete</a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-</div>
-</div>
-</div>
-  <div class="col-md-1 hidden-sm" >
   </div>
-
-</div>
 </div>
 

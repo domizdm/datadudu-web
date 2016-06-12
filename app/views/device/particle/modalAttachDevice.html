@@ -1,0 +1,162 @@
+<div class="">
+  <div class="modal-header">
+    <h3 class="modal-title">Attach Device</h3>
+  </div>
+
+  <div class="modal-body">
+    <div class="row modal-attach">
+      <ul class="nav nav-tabs">
+        <li ng-class="{active:currentTab=='tabByActivationCode'}" ng-click="changeTab('tabByActivationCode')"><a>My
+          Activation Code</a></li>
+        <li ng-class="{active:currentTab=='tabByProductId'}" ng-click="changeTab('tabByProductId')"><a>By Product
+          Batches</a></li>
+      </ul>
+
+      <!-- Tab 1 Begin -->
+      <div class="tab-content tab-bg">
+        <div class="tab-pane" ng-class="{'active':currentTab=='tabByActivationCode'}">
+          <div class="private-tab">
+            <form name="form" role="form">
+              <div class="form-group row">
+                <label class="col-sm-2 col-md-2">Activation Code</label>
+                <div class="col-sm-6"><input type="text" class="form-control"
+                                             placeholder="Enter Activation Code Here.."
+                                             ng-model="formByActivationCode.activationCode">
+
+                </div>
+                <div class="col-sm-2 col-md-2" style="margin-left:20px; ">
+                  <button type="submit" class="btn btn_add btn-new"
+                          ng-click="attachByActivationCode(formByActivationCode.activationCode)">Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Tab 1 End -->
+
+      <!-- Tab 2 Begin -->
+      <div class="tab-content tab-bg">
+        <div class="tab-pane" ng-class="{'active':currentTab=='tabByProductId'}">
+          <div class="private-tab">
+            <div class="form-group row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">
+                <label>
+                  <input type="radio" value="private" ng-change="onChangeDeviceType()"
+                         ng-model="formByProductId.deviceType">
+                  My Product Batches
+                </label>
+              </div>
+              <div class="col-sm-3">
+                <label>
+                  <input type="radio" value="public" ng-change="onChangeDeviceType()"
+                         ng-model="formByProductId.deviceType">
+                  Public Product Batches
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 active_txt">Select Product</label>
+              <div class="col-sm-6">
+                <!-- Private Component Begin -->
+                <select ng-if="formByProductId.deviceType=='private'" class="form-control"
+                        ng-change="onProductChange(formByProductId.product.product_id)"
+                        ng-model="formByProductId.product" ng-options="item.name for item in privateProducts">
+                  <option value="">--Select Product---</option>
+                </select>
+                <!-- Private Component End -->
+
+                <!-- Public Component Begin -->
+                <input type="text" ng-if="formByProductId.deviceType=='public'"
+                       ng-model="formByProductId.searchProductName"
+                       class="form-control"
+                       placeholder="Search Product By Name....">
+                <!-- Public Component End -->
+              </div>
+
+              <!-- Public Component Begin -->
+              <div class="col-sm-3">
+                <button ng-click="onSearchProduct(formByProductId.searchProductName)"
+                        ng-if="formByProductId.deviceType=='public'"
+                        class="btn btn-success"><i style="font-size:20px;" class="fa fa-search"></i>Search
+                </button>
+              </div>
+              <!-- Public Component End -->
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 active_txt">Product Id</label>
+              <div class="col-sm-6"><input type="text"
+                                           ng-model="formByProductId.productId"
+                                           class="form-control"
+                                           placeholder="Enter Product Id Here..">
+              </div>
+              <div class="col-sm-3">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 active_txt">Serial Number</label>
+              <div class="col-sm-6"><input type="text"
+                                           ng-model="formByProductId.serial"
+                                           class="form-control"
+                                           placeholder="Enter Serial Number Here..">
+              </div>
+              <div class="col-sm-3">
+                <button type="submit"
+                        class="btn btn_add btn-new add_serial"
+                        ng-click="attachByProductId(formByProductId.productId, formByProductId.serial)">Submit
+                </button>
+              </div>
+            </div>
+
+            <div ng-show="formByProductId.deviceType=='public'" class="form-group row">
+              <div class="col-sm-11">
+                <table class="table table-bordered table-hover" st-safe-src="publicProducts"
+                       st-table="displayCollection">
+                  <thead class="tblHeader">
+                  <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Secret</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="item in displayCollection">
+                    <td>{{item.product_id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.secret}}</td>
+                    <td>
+                      <label class="text-nowrap">
+                        <input type="radio" ng-value="item"
+                               ng-change="onProductChange(formByProductId.product.product_id)"
+                               ng-model="formByProductId.product">
+                        Select
+                      </label>
+                    </td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <td colspan="5" class="text-center">
+                      <div class="paging-style" st-pagination="" st-items-by-page="5"></div>
+                    </td>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tab 2 End-->
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
+  </div>
+</div>
