@@ -20,6 +20,10 @@ body {
 
 }
 
+@media (max-width: 1386px) {
+  .table-rules{width: 100%;}
+}
+
 @media (max-width:1205px ) {
   .nav-tabs > li {
 
@@ -680,14 +684,14 @@ padding-bottom: 15px;
   margin-bottom: 10px;
 }
 
-.signup-outer {
-  width: 100% !important;
-}
+/*!*.signup-outer {*!*/
+  /*!*width: 100% !important;*!*/
+/*}*/
 
 .signup-outer, .login-outer {
-  width: 440px;
-  height: auto;
-  padding: 35px 40px;
+  /*width: 440px;*/
+  /*height: auto;*/
+  /*padding: 35px 40px;*/
   background: #fff;
   box-shadow: 0 1px 7px 2px rgba(135, 158, 171, 0.1);
 }
@@ -943,3 +947,7 @@ label {
 .data-header table{margin-bottom: 0px;}
 .table-data-info table tbody tr td{padding:8px ;vertical-align: middle;}
 .table-data-info table{margin-bottom: 10px;}
+
+.duduhttp_table table.myTable td a, table.myTable th a{color: #FFFFFF;}
+.channel-create .channel-form table tr{margin: 4px 0px;}
+.channel-create button a {color: #FFFFFF}

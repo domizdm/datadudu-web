@@ -9,7 +9,7 @@
           <td>Name:</td>
           <td><input ng-model="form.http_name" class="form-control"></td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>API Key:</td>
           <td><label class="text-danger">{{form.api_key || 'N/A'}}</label>
         </tr>
@@ -17,26 +17,26 @@
           <td>URL:</td>
           <td><input ng-model="form.url" class="form-control" required/></td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>HTTP Auth Username:</td>
           <td><input ng-model="form.auth_username" class="form-control" /></td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>HTTP Auth Password:</td>
           <td><input ng-model="form.auth_password" class="form-control"></td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>Method:</td>
           <td>
             <select class="form-control" ng-options="item.key as item.text for item in httpMethods" ng-model="form.method">
             </select>
           </td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>Content Type:</td>
           <td><input ng-model="form.content_type" class="form-control"></td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>HTTP Version:</td>
           <td>
             <select class="form-control" ng-options="item.key as item.text for item in httpVersions" ng-model="form.version">
@@ -44,26 +44,27 @@
             </select>
           </td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>Host</td>
           <td><input ng-model="form.host" class="form-control"></td>
         </tr>
-        <tr>
+        <tr >
           <td>Headers:</td>
           <td>
             <fieldset ng-repeat="item in form.headers track by $index" style="border:1px solid #ccc;padding:10px;margin:2px;">
               <div>Name:<input ng-model="item.name" class="form-control"></div>
-              <div>Value:<input ng-model="item.value" class="form-control"></div>
-              <div><a href="" ng-click="removeHeader($index)">Remove</a></div>
-            </fieldset>
-            <div><a href="" ng-click="addNewHeader()">add new header</a></div>
+              <div>Value:<input ng-model="item.value" class="form-control"></div><br/>
+              <div><button class="btn btn-info"><a href="" ng-click="removeHeader($index)">Remove</a></button></div>
+            </fieldset><br/>
+
+            <div><button class="btn btn-success"><a href="" ng-click="addNewHeader()">add new header</a></button></div><br/>
           </td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>Body</td>
           <td><textarea ng-model="form.body" class="form-control"></textarea></td>
         </tr>
-        <tr>
+        <tr style="line-height: 50px">
           <td>Parse String</td>
           <td><input ng-model="form.parse_string" type="number" class="form-control"></td>
         </tr>
@@ -85,4 +86,3 @@
   </div>
 
 </div>
-
