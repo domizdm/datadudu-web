@@ -1,18 +1,16 @@
 <div class="container-fluid main-devices">
 
-  <div class="row-fluid col-md-12 device_mg">
-    <h2>Development Devices<a href="#/addproducts" class="btn btn_add btn-new ng-binding add_serial"><i
-      class="fa fa-plus"></i>Add Products Batch</a></h2>
-
-    <div class="col-md-12 col-sm-12 device_mg">
-      <div class="row ">
-
+  <div class="row-fluid col-md-12 device_mg ">
+<div class="container-fluid">
+    <div class="row-fluid col-md-6 col-sm-5 col-xs-6"><h3>Development Devices</h3></div>
+   <div class="row-fluid col-md-6 col-sm-5 col-xs-6" style="margin-top: 10px"> <a href="#/addproducts" class="btn btn_add btn-new ng-binding add_serial"><i class="fa fa-plus"></i>Add Products Batch</a></div>
+</div>
+    <div class="col-md-12 col-sm-12 device_mg_div">
+      <div>
         <a ng-repeat="product in products" ng-href="#/productdetails/{{product.product_id}}">
           <div class="col-md-3 products-div">{{product.name}}</div>
         </a>
-
       </div>
-
     </div>
   </div>
 </div>

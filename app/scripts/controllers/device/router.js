@@ -14,5 +14,6 @@ angular.module('dataduduR3App')
       .when('/device',{
         templateUrl:  'views/device/mydevice.html',
         controller:'MyDeviceCtrl'
+
       })
   });
