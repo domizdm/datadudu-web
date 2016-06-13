@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col-md-12" ng-repeat="(key,val) in channelsFields" ng-if="val.text">
-        <div render-channel-chart="channelsFeeds[key]"
+        <div style="height:240px;" render-channel-chart="channelsFeeds[key]"
              render-channel-chart-scale="chartScale"
              render-channel-chart-color="{{pickColor($index)}}"
              render-channel-chart-api="chartsApi[$index]"
