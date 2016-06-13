@@ -9,16 +9,14 @@
  */
 angular.module('dataduduR3App')
 .controller('DuduHttpListCtrl', function ($scope, $log, $route, duduHttp, Auth, modalConfirm, ngNotify) {
-  $scope.duduhttps = null;
+  $scope.duduhttps = [];
 
   duduHttp.list()
     .$promise
     .then(function(resp){
       $scope.duduhttps = resp.duduhttps;
     })
-
     .catch(function(err){
-
       // TODO: show error message
       $log.log(err);
     });

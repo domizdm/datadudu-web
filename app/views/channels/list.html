@@ -20,6 +20,7 @@
           <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>Last Update</span></th>
           <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>Public or Private</span></th>
           <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>Used Space</span></th>
+          <th><span>Device</span></th>
           <th><span>Created</span></th>
         </tr>
         </thead>
@@ -39,8 +40,12 @@
             <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
           </td>
           <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
-          <td><a href=""><i class="fa fa-group"></i>Public</a></td>
+          <td><a href=""><i class="fa fa-group"></i>{{channel.public_flag=='true'?'Public':'Private'}}</a></td>
           <td>{{channel.usage | bytes}}</td>
+          <td>
+            <span ng-if="channel.device_id==null">No Device</span>
+            <span ng-if="channel.device_id!=null"><u>Device Icon</u></span>
+          </td>
           <td><a href="">{{channel.created_at}}</a></td>
         </tr>
         </tbody>
