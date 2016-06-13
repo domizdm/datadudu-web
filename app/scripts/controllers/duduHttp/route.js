@@ -14,5 +14,13 @@ angular.module('dataduduR3App')
     .when('/duduHttp', {
       templateUrl: 'views/duduHttp/list.html',
       controller: 'DuduHttpListCtrl'
+    })
+    .when('/duduHttp/create', {
+      templateUrl: 'views/duduHttp/detail.html',
+      controller: 'DuduHttpCreateCtrl'
+    })
+    .when('/duduHttp/:dudu_http_id', {
+      templateUrl: 'views/duduHttp/detail.html',
+      controller: 'DuduHttpEditCtrl'
     });
 });

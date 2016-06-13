@@ -18,7 +18,7 @@
 
             </div>
             <div class="col-sm-8">
-              <label><input name="user" ng-model="publicProfile.public_flag" type="checkbox" >&nbsp;Make Public?</label>
+              <label><input name="user" ng-model="form.public_flag" type="checkbox" >&nbsp;Make Public?</label>
 
             </div>
           </div>
@@ -29,7 +29,7 @@
               <label class="pull-right">Website</label>
             </div>
             <div class="col-md-7 col-sm-7 col-xs-7">
-              <input type="text" ng-model="publicProfile.website" class="form-control">
+              <input type="text" ng-model="form.website" class="form-control">
             </div>
 
           </div>
@@ -38,12 +38,14 @@
               <label class="pull-right">Bio</label>
             </div>
             <div class="col-md-7 col-sm-7 col-xs-7">
-              <textarea type="text" ng-model="publicProfile.bio" class="form-control"></textarea><br/>
-              <button class="btn btn btn-success save-btn">Update Profile</button>
+              <textarea type="text" ng-model="form.bio" class="form-control"></textarea>
             </div>
 
           </div>
 
+          <div class="row text-center">
+            <button class="btn btn-primary" ng-click="saveProfile(form)">Save</button>
+          </div>
         </form>
 
       </div>
