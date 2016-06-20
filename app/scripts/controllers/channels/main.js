@@ -10,6 +10,12 @@
 angular.module('dataduduR3App')
 .controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $log, channel) {
 
+  //channel页面导航显示、隐藏
+  $scope.navhide = true;
+  $scope.toggle = function() {
+    $scope.navhide = !$scope.navhide;
+  };
+
   $scope.channel = null;
 
   $scope.tabs = [

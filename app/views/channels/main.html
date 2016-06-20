@@ -6,14 +6,17 @@
    顶部信息由main.html统一处理,不要在所有子tab元素进行复制黏贴!!
    它们所处的scope并不一样, 若子tab存在局部同名变量将产生冲突, 请勿复制粘贴到子tab!!
   -->
+
   <div class="row data-header" style="padding:0;margin:10px;background:#fff;">
     <div class="col-md-6">
       <table class="table table-striped ">
         <thead>
         <tr>
           <td><label style="height: 30px">Channel View</label></td>
+          <td><button class="btn btn-info "style="margin-top: 1px;float:right " ng-click="toggle()">Show/Hide</button></td>
         </tr>
         </thead>
+        <tbody ng-show="navhide">
         <tr>
           <td><img class="table-ico" src="../images/icoimage/id.png">Channel ID:</td>
           <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
@@ -31,6 +34,7 @@
           <td><img class="table-ico" src="../images/icoimage/tags.png">Tags:</td>
           <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.tags}}</span></td>
         </tr>
+        </tbody>
       </table>
     </div>
 
@@ -39,10 +43,10 @@
         <table class="table table-striped">
           <thead>
           <tr>
-            <td colspan="2"><label style="padding-bottom: 10px;">Channel Status</label></td>
+            <td colspan="2"><label style="padding-bottom: 10px;">Channel Status</label> </td>
           </tr>
           </thead>
-          <tbody>
+          <tbody  ng-show="navhide">
           <tr>
             <td>Created</td>
             <td style="text-align: right"><span am-time-ago="channel.created_at"></span></td>
@@ -79,6 +83,7 @@
           <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
             <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}" ng-click="reloadTab()">{{tab.text}}</a>
           </li>
+
         </ul>
       </div>
     </div>
