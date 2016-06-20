@@ -123,6 +123,11 @@ input, select, textarea:focus {
   color: #0277BD;
   margin-right: 5px;
 }
+.fa-lock{
+  color: #0277BD;
+  margin-right: 5px;
+  font-size: 18px;
+}
 .channel-main-setting{padding: 15px;}
 .channel-main-setting .fa-circle-o {
   color: #0074BB;

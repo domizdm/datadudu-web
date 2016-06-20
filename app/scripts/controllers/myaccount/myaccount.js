@@ -15,6 +15,7 @@ angular.module('dataduduR3App')
   $scope.myAccount = Auth.me().account;
 
   $scope.generateAccountKey = function(){
+
     modalConfirm.open('Do you want to generate new account key?')
       .then(function(){
         account.generateAccountKey()

@@ -40,7 +40,7 @@
             <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
           </td>
           <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
-          <td><a href=""><i class="fa fa-group"></i>{{channel.public_flag=='true'?'Public':'Private'}}</a></td>
+          <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' Public': 'Private'}}</a></td>
           <td>{{channel.usage | bytes}}</td>
           <td>
             <span ng-if="channel.device_id==null">No Device</span>
