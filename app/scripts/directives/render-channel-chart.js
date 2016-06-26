@@ -7,7 +7,7 @@
  * # renderChannelChart
  */
 angular.module('dataduduR3App')
-.directive('renderChannelChart', function ($log, $timeout) {
+.directive('renderChannelChart', function ($log, $timeout, $filter) {
   return {
     template: '<div></div>',
     restrict: 'AE',
@@ -114,11 +114,15 @@ angular.module('dataduduR3App')
           }]
         },
         tooltip: {
-          //formatter: function () {
-          //  return '<b>' + this.series.name + '</b><br/>' +
-          //    Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
-          //    Highcharts.numberFormat(this.y, 2);
-          //}
+          formatter: function () {
+            //return Highcharts.dateFormat('%Y-%m-%d %H:%M:%S %T', this.x) + '<br/>' +
+            // '<b>' + this.series.name + '</b><br/>' +
+            //Highcharts.numberFormat(this.y, 2);//
+
+            //moment(this.x).format('YYYY-MM-DD hh:mm:ss Z') + '<br/>' +
+            return $filter('date')(this.x, 'yyyy-MM-dd HH:mm:ss Z') + '<br/>' +
+              '<span style="color:' + this.point.color + '">\u25CF</span>'+this.series.name + ': <b>'+this.point.y+'</b>';
+          }
         },
         legend: {
           enabled: false

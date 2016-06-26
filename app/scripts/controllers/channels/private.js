@@ -13,6 +13,7 @@ angular.module('dataduduR3App')
   $scope.loading = false;
 
   $scope.durations = [
+    {label:'All Data', value:null},
     {label:'1 hour', value:'60'},
     {label:'2 hours', value:'120'},
     {label:'4 hours', value:'240'},
@@ -56,6 +57,10 @@ angular.module('dataduduR3App')
       start: begin !== null ? $filter('date')(begin, serverFormat, timezone) : undefined,
       end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined
     };
+
+    // if start/end is null, it would generate a Invalid Date - Date object
+    if(isNaN(query.begin)) delete query.begin;
+    if(isNaN(query.end)) delete query.end;
 
     return $q(function(resolve, reject){
       channel.fetchFeeds(query)
@@ -198,6 +203,10 @@ angular.module('dataduduR3App')
         end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined,
         token_id: Auth.me().token_id
       };
+
+      // if start/end is null, it would generate a Invalid Date - Date object
+      if(isNaN(query.begin)) delete query.begin;
+      if(isNaN(query.end)) delete query.end;
 
       var url=config.END_POINT+'/channels/'+channel.channel_id+'/feeds.csv?'+$httpParamSerializer(query);
 

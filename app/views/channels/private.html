@@ -34,12 +34,16 @@
       </div>
     </div>
     <div class="col-md-12" ng-repeat="(key,val) in channelsFields" ng-if="val.text">
-      <div class="text-center text-muted" style="padding:50px;font-size:24px;" ng-show="!channelsFeeds[key].data.length">
+      <div class="text-center text-muted" style="padding:50px;font-size:24px;" ng-show="loading">
+        <div>Loading...<i class="fa fa-refresh fa-spin"></i></div>
+      </div>
+
+      <div class="text-center text-muted" style="padding:50px;font-size:24px;" ng-show="!loading && !channelsFeeds[key].data.length">
         <div>No data available for </div>
         <div>{{val.text}}</div>
       </div>
 
-      <div style="height:240px;" ng-show="channelsFeeds[key].data.length" render-channel-chart="channelsFeeds[key]"
+      <div style="height:240px;" ng-show="!loading && channelsFeeds[key].data.length" render-channel-chart="channelsFeeds[key]"
            render-channel-chart-color="{{pickColor($index)}}"
            render-channel-chart-api="chartsApi[$index]"
            render-channel-chart-title="{{val.text}}">
