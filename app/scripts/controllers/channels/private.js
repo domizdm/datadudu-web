@@ -27,9 +27,31 @@ angular.module('dataduduR3App')
   var defaultDuration = $scope.durations[0];
   var defaultBegin = null;//new Date();// FIXME: hard code date for debug '2016-04-22 18:00'
   //defaultBegin.setMinutes(defaultBegin.getMinutes() - parseInt(defaultDuration.value, 10));
+
+  $scope.queryTypes = [
+    {label:'Sample', value:'sample'},
+    {label:'Average', value:'average'},
+    {label:'Sum', value:'sum'},
+  ];
+
+  $scope.queryParams = [
+    //10, 15, 20, 30, 60, 240, 720, 1440, "daily"
+    {label:'10 mins', value:'10'},
+    {label:'15 mins', value:'15'},
+    {label:'20 mins', value:'20'},
+    {label:'30 mins', value:'30'},
+    {label:'1 hours', value:'60'},
+    {label:'4 hours', value:'240'},
+    {label:'12 hours', value:'720'},
+    {label:'1 day', value:'1440'},
+    {label:'Daily', value:'daily'}
+  ];
+
   $scope.query = {
     begin: defaultBegin,
-    duration: defaultDuration
+    duration: defaultDuration,
+    type: $scope.queryTypes[0],
+    params: $scope.queryParams[0]
   };
 
   $scope.$on('$destroy', function(){
@@ -42,7 +64,7 @@ angular.module('dataduduR3App')
    * @param scale in minutes
    * @returns {Date}
      */
-  var loadData = function(channelId, begin, scale){
+  var loadData = function(channelId, begin, scale, queryType, queryParams){
     var timezone = 'GMT+08:00';//FIXME: 目测server上不填timezone的情况下会自动减8?
     var serverFormat = 'yyyy-MM-dd HH:mm:ss';
     var begin = begin!=null ? new Date(begin) : null;
@@ -57,6 +79,10 @@ angular.module('dataduduR3App')
       start: begin !== null ? $filter('date')(begin, serverFormat, timezone) : undefined,
       end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined
     };
+
+    if(queryType != 'sample') {
+      query[queryType] = queryParams;
+    }
 
     // if start/end is null, it would generate a Invalid Date - Date object
     if(isNaN(query.begin)) delete query.begin;
@@ -138,7 +164,7 @@ angular.module('dataduduR3App')
     if(null != channel) {
       $scope.loading = true;
 
-      loadData(channel.channel_id, begin, scale)
+      loadData(channel.channel_id, begin, scale, $scope.query.type.value, $scope.query.params.value)
         .then(function(resp){
           $scope.loading = false;
 
@@ -203,6 +229,12 @@ angular.module('dataduduR3App')
         end: end !== null ? $filter('date')(end, serverFormat, timezone) : undefined,
         token_id: Auth.me().token_id
       };
+
+      var queryType = $scope.query.type.value;
+      var queryParams = $scope.query.params.value;
+      if(queryType != 'sample') {
+        query[queryType] = queryParams;
+      }
 
       // if start/end is null, it would generate a Invalid Date - Date object
       if(isNaN(query.begin)) delete query.begin;

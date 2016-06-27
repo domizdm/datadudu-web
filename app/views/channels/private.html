@@ -11,6 +11,16 @@
           <div class="nav-table-data">
             <ul class="nav navbar-nav">
               <table>
+                <td><label>Type</label></td>
+                <td>
+                  <select class="form-control" ng-options="item.label for item in queryTypes"
+                          ng-model="query.type"></select>
+                </td>
+                <td>
+                  <select class="form-control" ng-options="item.label for item in queryParams"
+                          ng-show="query.type.value=='average' || query.type.value=='sum'"
+                          ng-model="query.params"></select>
+                </td>
                 <td><label>From</label></td>
                 <td>
                   <div class='input-group date' datetimepicker="query.begin"></div>
