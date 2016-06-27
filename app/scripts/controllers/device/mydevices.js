@@ -39,6 +39,7 @@ angular.module('dataduduR3App')
   };
 
   $scope.openModalAttachDevice = function(){
+
     product.list()
       .$promise
       .then(function(resp){

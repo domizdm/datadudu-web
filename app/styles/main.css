@@ -594,7 +594,7 @@ table.myTable td, table.myTable th {
 }
 
 .nav-table-data label, button {
-  margin-right: 5px;
+  /*margin-right: 5px;*/
   margin-left: 5px;
 }
 
@@ -956,3 +956,7 @@ label {
 .duduhttp_table table.myTable td a, table.myTable th a{color: #FFFFFF;}
 .channel-create .channel-form table tr{margin: 4px 0px;}
 .channel-create button a {color: #FFFFFF}
+/*login style start*/
+.login-top-image h2{margin-top: 10px;}
+/*login style end*/
+
