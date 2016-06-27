@@ -364,7 +364,7 @@ table.myTable td, table.myTable th {
   padding-left: 20px;
   border-radius: 2px;
   border: solid 1px #C0C0C0;
-  width: 30%;
+  width: 36%;
   height: 44px;
 }
 
@@ -382,7 +382,7 @@ table.myTable td, table.myTable th {
   /*为下拉小箭头留出一点位置，避免被文字覆盖*/
   padding-right: 14px;
   height: 44px;
-  width: 10%;
+  width: 16%;
 }
 
 .search input {
@@ -496,11 +496,6 @@ table.myTable td, table.myTable th {
 
 .login-page .login-box {
   margin-top: 100px;
-}
-
-.login-top-right li {
-  margin-right: 20px;
-
 }
 
 @media (max-width: 780px) {
@@ -957,6 +952,9 @@ label {
 .channel-create .channel-form table tr{margin: 4px 0px;}
 .channel-create button a {color: #FFFFFF}
 /*login style start*/
-.login-top-image h2{margin-top: 10px;}
+.login-top-image h2{margin-top: 10px;padding-left: 50px;}
+
+.login-select{height: 33px;
+border-radius: 3px}
 /*login style end*/
 
