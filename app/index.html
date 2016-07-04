@@ -114,7 +114,7 @@
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
-  <ng-include src="'components/sidebar.html'"></ng-include>
+  <ng-include src="'components/sidebar.html'" ng-controller="SidebarCtrl"></ng-include>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -360,6 +360,7 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/sidebar.js"></script>
 
 <script src="scripts/controllers/myaccount/route.js"></script>
 <script src="scripts/controllers/myaccount/myaccount.js"></script>
@@ -369,6 +370,11 @@
 <script src="scripts/controllers/device/route.js"></script>
 <script src="scripts/controllers/device/myproducts.js"></script>
 <script src="scripts/controllers/device/mydevices.js"></script>
+<script src="scripts/controllers/device/mydevices-dashboard.js"></script>
+<script src="scripts/controllers/device/mydevices-main.js"></script>
+<script src="scripts/controllers/device/mydevices-commands.js"></script>
+<script src="scripts/controllers/device/mydevices-rules.js"></script>
+<script src="scripts/controllers/device/mydevices-settings.js"></script>
 <script src="scripts/controllers/device/addproducts.js"></script>
 <script src="scripts/controllers/device/productdetails.js"></script>
 <script src="scripts/controllers/device/particle/modalAttachDevice.js"></script>

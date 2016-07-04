@@ -9,7 +9,8 @@
  */
 
 var __config = {
-  END_POINT: 'http://api-datadudu.cloudforce.cn'
+  END_POINT: 'http://api-datadudu.cloudforce.cn',
+  USE_DEVICE_DASHBOARD: false
 };
 
 angular.module('dataduduR3App')

@@ -1,0 +1,113 @@
+<div class="container-fluid">
+
+  <!--
+   注意:
+
+   顶部信息由main.html统一处理,不要在所有子tab元素进行复制黏贴!!
+   它们所处的scope并不一样, 若子tab存在局部同名变量将产生冲突, 请勿复制粘贴到子tab!!
+  -->
+
+  <div class="row data-header" style="padding:0;margin:10px;background:#fff;">
+    <div class="col-md-6">
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <td><label style="height: 30px">Device View</label></td>
+          <td><button class="btn btn-info "style="margin-top: 1px;float:right " ng-click="toggleNavhide()">Show/Hide</button></td>
+        </tr>
+        </thead>
+        <tbody ng-show="navhide">
+        <tr>
+          <td>Device ID:</td>
+          <td style="text-align: right"><span>{{device.device_id}}</span></td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td style="text-align: right"><span>{{device.name}}</span></td>
+        </tr>
+        <tr>
+          <td>Serial:</td>
+          <td style="text-align: right"><span>{{device.serial}}serial</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Activation Code:</td>
+          <td style="text-align: right"><span>{{device.activation_code}}</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6 ">
+      <div class="table-data-info">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <td colspan="2"><label style="padding-bottom: 10px;">Channel Status</label> </td>
+          </tr>
+          </thead>
+          <tbody  ng-show="navhide">
+          <tr>
+            <td>Channel ID:</td>
+            <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+          </tr>
+          <tr>
+            <td>Author:</td>
+            <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.username}}</span></td>
+          </tr>
+          <tr>
+            <td>Used Space</td>
+            <td style="text-align: right">{{channel.usage | bytes}}</td>
+          </tr>
+          <tr>
+            <td>Access:</td>
+            <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span>
+            </td>
+          </tr>
+          <!--<tr>-->
+            <!--<td>Last Entry ID</td>-->
+            <!--<td style="text-align: right">{{channel.last_entry_id}}</td>-->
+          <!--</tr>-->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div ng-if="!!channel">
+    <div class="row" style="padding:0;margin:10px;background:#fff;">
+      <div class="col-md-12">
+        <div class="nav-data" style="margin-bottom: 3px">
+          <ul class="nav nav-tabs">
+            <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
+              <a ng-href="#/mydevice-dashboard/{{routeParams.id}}/{{tab.key}}" ng-click="reloadTab()">{{tab.text}}</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-data">
+      <div class="nav-tabs-custom">
+        <div class="tab-content">
+          <div class="tab-pane active" ng-if="tab.key==routeParams.subview" ng-repeat="tab in tabs">
+            <ng-include src="tab.template"></ng-include>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="device && !device.channel_id">
+    <p class="alert alert-warning">Not attach any channel. Further operations require a channel attached device.</p>
+  </div>
+</div>
+
+
+
+
+
+

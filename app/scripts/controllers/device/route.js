@@ -27,4 +27,15 @@ angular.module('dataduduR3App')
         templateUrl:  'views/device/productdetails.html',
         controller:'ProductDetailsCtrl'
       })
+      .when('/mydevice-dashboard',{
+        templateUrl:  'views/device/mydevices-dashboard.html',
+        controller:'MyDevicesDashboardCtrl'
+      })
+      .when('/mydevice-dashboard/:id/:subview', {
+        templateUrl: function(urlattr){
+          //console.log(urlattr);
+          return 'views/device/mydevices-main.html';
+        },
+        controller: 'MyDevicesMainCtrl'
+      })
   });
