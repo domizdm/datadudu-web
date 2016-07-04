@@ -12,6 +12,7 @@ angular.module('dataduduR3App')
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
+  $scope.templateType = $scope.sensorTemplates[0];
 
   //product id:
   //870e45f7cab04db39e0387da466db96a
