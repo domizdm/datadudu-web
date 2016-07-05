@@ -9,7 +9,7 @@
       <input type="text" class="input-style" placeholder="Search here..." ng-model="searchText">
       <button type="submit" class="btn btn-search hidden-xs">Search</button>
       <a class="btn btn-default btn-new  " href="#/channels/new">New Channel</a>
-      <h5 class="usedspace-style hidden-sm hidden-xs ">Total Used Space: {{getAccountUsage() | bytes}}</h5>
+      <h5 class="usedspace-style hidden-sm hidden-xs " >Total Used Space: {{getAccountUsage() | bytes}}</h5>
     </form>
       </div>
     <div class="border-table table-list table-responsive">
@@ -44,7 +44,7 @@
           <td>{{channel.usage | bytes}}</td>
           <td>
             <span ng-if="channel.device_id==null">No Device</span>
-            <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"><u>Device Icon</u></span>
+            <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
           </td>
           <td><a href="">{{channel.created_at}}</a></td>
         </tr>

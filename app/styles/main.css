@@ -177,7 +177,7 @@ input, select, textarea:focus {
   top: 1px;
   vertical-align: bottom;
 }
-
+.user-info .info{margin-top: 0;margin-bottom: 0;}
 .user-info a {
   color: #ffffff;
 }
@@ -403,7 +403,7 @@ table.myTable td, table.myTable th {
 
 .usedspace-style {
   float: right;
-  padding-right: 30px;
+  padding-right: 10px;
 }
 
 .pagination {
@@ -633,7 +633,7 @@ padding-bottom: 15px;
   position: relative;
   min-height: 1px;
   padding-right: 15px;
-  /*padding-left: 0px;*/
+  padding-left: 0px;
 }
 
 .data-graph nav {
