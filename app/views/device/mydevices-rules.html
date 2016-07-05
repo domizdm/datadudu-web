@@ -1,0 +1,76 @@
+<div class="container-fluid" ng-controller="MyDevicesRulesCtrl">
+
+  <div class="container-fluid private-rule">
+
+    <div class="container-fluid">
+
+      <div class="row-fluid rules-main">
+        <div class="col-md-6 table-rules" >
+          <h2>Rules</h2>
+          <hr>
+          <div class="col-md-12 new_chanel">
+            <button class="btn btn-default " ng-click="openModalEditRule()">New Rules</button>
+            <button ng-click="deleteAllRules()" class="btn btn-danger rule-del">Delete All</button>
+          </div>
+          <br>
+
+          <table style="margin-top: 28px;" class="table table-bordered">
+            <thead class="tb2Header">
+            <tr>
+              <th>Name</th>
+              <th>Field</th>
+              <th>Criteria</th>
+              <th>Condition</th>
+              <th>Last Result</th>
+              <th>Last Result Time</th>
+              <th>Created</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="" ng-repeat="rule in form.rules">
+              <td>
+                <h4>
+                  <a href="" class="text-nowrap" ng-click="openModalEditRule(rule)">
+                    <i class="fa fa-check-square"></i>
+                    {{getRuleName(rule)}}
+                  </a>
+                </h4>
+
+                <div class="btn-group btn-group-sm hidden-xs hidden-sm hidden-md btns">
+                  <button class="btn btn-default" ng-click="openModalEditRule(rule)">Edit</button>
+                </div>
+              </td>
+              <td class="">{{rule.field}}</td>
+              <td class="">{{rule.criteria}}</td>
+              <td class="">{{rule.condition}}</td>
+              <td class="">{{rule.last_result}}</td>
+              <td class="">{{rule.last_result_time | date:'yyyy-MM-dd'}}</td>
+              <td class="">{{rule.created_at | date:'yyyy-MM-dd'}}</td>
+              <td style="text-align:center">
+                <button ng-click="deleteRule(rule)" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="col-md-6 table-rules" >
+          <h2>Help</h2>
+          <hr>
+
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+

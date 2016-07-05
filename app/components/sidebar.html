@@ -18,13 +18,14 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <div class="sidebar-left">
       <ul class="sidebar-menu">
-        <li class="default-color">
+        <!-- Dudu开放平台 Begin -->
+        <li class="default-color" ng-if="!useDeviceDashboard">
           <a class="active" ng-href="#/channels">
             <i class="fa fa-home"></i>
             <span style="width:183px; height: 58px;">Data Warehouse</span>
           </a>
         </li>
-        <li class="treeview">
+        <li class="treeview" ng-if="!useDeviceDashboard">
           <a href="">
             <i class="fa fa-bookmark-o"></i> <span style="width:183px; height: 49px;"> Data Factory</span> <i
             class="fa fa-angle-left pull-right"></i>
@@ -40,7 +41,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview" ng-if="!useDeviceDashboard">
           <a href="">
             <i class="fa fa-desktop"></i>
             <span style="width:183px; height: 49px;">Lifecycle Management</span><i class="fa fa-angle-left pull-right"></i>
@@ -50,6 +51,32 @@
             <li><a href="#/mydevice"><i class="fa fa-circle-o"></i>My Devices</a></li>
           </ul>
         </li>
+        <!-- Dudu开放平台 End -->
+
+
+
+        <!-- Dudu设备控制面板 Begin -->
+        <li class="treeview" ng-if="useDeviceDashboard">
+          <a href="">
+            <i class="fa fa-bookmark-o"></i> <span style="width:183px; height: 49px;"> Data Factory</span> <i
+            class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i>Dudu HTTP</a></li>
+          </ul>
+        </li>
+        <li class="treeview" ng-if="useDeviceDashboard">
+          <a href="">
+            <i class="fa fa-desktop"></i>
+            <span style="width:183px; height: 49px;">Devices</span><i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a ng-href="#/mydevice-dashboard"><i class="fa fa-circle-o"></i>My Devices</a></li>
+          </ul>
+        </li>
+        <!-- Dudu设备控制面板 End -->
+
+
 
         <li class="treeview">
           <a href="">

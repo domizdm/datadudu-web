@@ -1,0 +1,48 @@
+<div class="container-fluid main-devices">
+
+  <div class="row-fluid col-md-12 device_mg">
+    <h2>My Devices <a ng-click="openModalAttachDevice()" class="btn btn_add btn-new ng-binding add_serial"><i
+      class="fa fa-plus"></i> Attach a Device</a></h2>
+
+    <div class="col-md-12 col-sm-12 device_mg table-responsive">
+      <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+        <thead class="tb2Header">
+        <tr role="row">
+          <th class="">Device Id</th>
+          <th class="">Serial Number</th>
+          <th class="">Product Name</th>
+          <th class="">Product Id</th>
+          <th class="">Activation Code</th>
+          <th class="">Created At</th>
+          <th class="">Attached At</th>
+          <th class="">Activated At</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="device in devices">
+          <td><a ng-href="#/mydevice-dashboard/{{device.device_id}}/settings">{{device.device_id}}</a></td>
+          <td>{{device.serial}}</td>
+          <td>{{device.name}}</td>
+          <td>{{device.product_id}}</td>
+          <td>{{device.activation_code}}</td>
+          <td>{{device.created_at | date:'yyyy-MM-dd'}}</td>
+          <td>{{(device.attached_at | date:'yyyy-MM-dd') || 'Not Attached'}}</td>
+          <td>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</td>
+          <td>
+            <a href="" class="btn btn-danger" ng-click="detachDevice(device.activation_code)" ng-show="!!device.channel_id"><i style="font-size:20px;"
+                                                                                                 class="fa fa-close"></i>
+              Detach</a>
+
+            <a href="" class="btn btn-danger" ng-click="removeDevice(device.activation_code)"><i style="font-size:20px;"
+                                                                                                 class="fa fa-close"></i>
+              Remove</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name dataduduR3App.controller:ChannelsCommandsCtrl
+ * @name dataduduR3App.controller:MyDevicesCommandsCtrl
  * @description
- * # ChannelsCommandsCtrl
+ * # MyDevicesCommandsCtrl
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsCommandsCtrl', function($scope, $q, $filter, $route, $log, $location,
+.controller('MyDevicesCommandsCtrl', function($scope, $q, $filter, $route, $log, $location,
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
@@ -73,7 +73,7 @@ angular.module('dataduduR3App')
   };
 
 })
-.controller('ChannelsAddNewCommandCtrl', function($scope, $q, $filter, $route, $log, $location,
+.controller('MyDevicesAddNewCommandCtrl', function($scope, $q, $filter, $route, $log, $location,
                                              config, $uibModal, ngNotify, modalConfirm, channel){
   $scope.newCommand = {};
 
