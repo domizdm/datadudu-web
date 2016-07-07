@@ -1,0 +1,79 @@
+<div class="col-md-6 table-commands-style">
+  <h2>Commands</h2>
+  <hr>
+  <div>
+    <div ng-if="form">
+      <table class="table  table-bordered table-condensed">
+        <thead>
+        <tr>
+          <th>position</th>
+          <th>command_id</th>
+          <th>command_string</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="command in form.commands" ng-show="!loading">
+          <td>{{command.position}}</td>
+          <td>{{command.command_id}}</td>
+          <td>{{command.command_string}}</td>
+          <td>
+            <button class="btn btn-danger" ng-click="deleteCommand(form, command.command_id)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div ng-show="loading" class="alert alert-info">
+        Loading...
+      </div>
+
+      <div>
+        <button class="btn btn-danger" ng-click="deleteAllCommands(form)">Delete All</button>
+      </div>
+      <br/>
+      <div ng-if="!showNewCommand">
+        <button class="btn btn-success" ng-click="toggleShowNewCommand()">New Command</button>
+      </div><br/>
+
+      <div ng-if="showNewCommand" ng-controller="MyDevicesAddNewCommandCtrl">
+        <div>
+          <span class="col-sm-12">
+            <label>Command Type:</label>
+          </span>
+          <span class="col-sm-6">
+            <select class="form-control" ng-options="command.text group by command.group for command in commandsForTag" ng-model="newCommand.commandType">
+              <option value="">--Choose Command---</option>
+            </select>
+          </span>
+          <span class="col-sm-6 text-muted">{{newCommand.commandType.tooltip || 'Choose a command to create'}}</span>
+        </div>
+
+        <div ng-if="newCommandValueShow">
+          <span class="col-sm-12">
+            <label>Command Value:</label>
+          </span>
+          <span class="col-sm-6">
+            <input type="{{newCommandValueType}}" class="form-control" placeholder="Command Value" ng-model="newCommand.commandValue">
+          </span>
+          <!--<span class="col-sm-6 text-muted">Foo for tooltip message here</span>-->
+        </div>
+
+        <div>
+          <span class="col-sm-12">
+            &nbsp;<br>
+            <button class="btn btn-success" ng-click="addNewCommand(form, newCommand)">Save</button>
+            <button class="btn btn-danger" ng-click="toggleShowNewCommand()">Cancel</button>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="col-md-6 col-sm-6">
+  <h2>Help</h2>
+  <hr>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s,</p>
+</div>

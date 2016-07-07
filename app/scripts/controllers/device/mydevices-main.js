@@ -20,7 +20,8 @@ angular.module('dataduduR3App')
   $scope.device = null;
 
   $scope.sensorTemplates = [
-    {key:'tag', text:'Intelligent Tag',settingsPage:'views/device/particle/settings/tag.html',commandsPage:''}
+    {key:'tag', text:'Intelligent Tag',settingsPage:'views/device/particle/settings/tag.html',rulesPage:'',commandsPage:'views/device/particle/commands/tag.html'},
+    {key:'custom', text:'Custom',settingsPage:'views/device/particle/settings/custom.html',rulesPage:'',commandsPage:'views/device/particle/commands/custom.html'},
   ];
 
   $scope.tabs = [
@@ -54,8 +55,6 @@ angular.module('dataduduR3App')
         $scope.channel = _.find(resp.channels, {channel_id: channel_id});
       });
   };
-
-
 
   $scope.loadDevice();
 

@@ -12,7 +12,7 @@ angular.module('dataduduR3App')
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
-  $scope.templateType = $scope.sensorTemplates[0];
+  $scope.templateType = null;
 
   //product id:
   //870e45f7cab04db39e0387da466db96a
@@ -22,6 +22,28 @@ angular.module('dataduduR3App')
   $scope.$watch('channel', function(newVal){
     if(newVal) {
       $scope.form = _.extend({}, $scope.channel);
+
+      // 实际上因为每次点击tab都会重新加载route,所以会此点击都会重置为默认值
+      // set template type to default when channel changed
+      $scope.templateType = $scope.sensorTemplates[0];
+    }
+  });
+
+  $scope.$watch('templateType', function(newVal){
+    // 非自定义页面时对JSON进行parse
+    if(!/custom/i.test($scope.templateType.key)) {
+      try{
+        $scope.form.metadata = JSON.parse($scope.form.metadata);
+      }catch(e){
+        $log.log('Parsing metadata failed. Fallback as an empty object.');
+        $scope.form.metadata = {};
+      }
+    }else{
+      try{
+        $scope.form.metadata = JSON.stringify($scope.form.metadata);
+      }catch(e){
+        $log.log('Stringify metadata failed. Fallback as an empty string.');
+      }
     }
   });
 
