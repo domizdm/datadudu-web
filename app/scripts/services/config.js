@@ -10,7 +10,7 @@
 
 var __config = {
   END_POINT: 'http://api-datadudu.cloudforce.cn',
-  USE_DEVICE_DASHBOARD: false
+  USE_DEVICE_DASHBOARD: true
 };
 
 angular.module('dataduduR3App')

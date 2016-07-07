@@ -5,67 +5,10 @@
   <div>
     <div ng-if="form">
       <table style="width: 100%;">
-        <tr><td><label>Name</label></td></tr>
-        <tr>
-          <td><input ng-model="form.name" class="form-control"></td>
-        </tr>
-        <tr><td><label>Description</label></td></tr>
-        <tr>
-          <td><textarea ng-model="form.description" class="form-control"></textarea></td>
-        </tr>
-
-        <tr> <td><label>Metadata:</label></td></tr>
-        <tr>
-          <td><textarea ng-model="form.metadata" class="form-control"></textarea></td>
-        </tr>
-
-        <tr><td><label>Tags:</label></td></tr>
-        <tr>
-          <td><input ng-model="form.tags" class="form-control"></td>
-        </tr>
-
-        <tr> <td><label>latitude:</label></td></tr>
-        <tr>
-
-          <td><input ng-model="form.latitude" class="form-control"></td>
-        </tr>
-
-        <tr><td><label>longitude:</label></td></tr>
-        <tr>
-          <td><input ng-model="form.longitude" class="form-control"></td>
-        </tr>
-
-        <tr><td><label>elevation:</label></td></tr>
-        <tr>
-          <td><input ng-model="form.elevation" type="number" class="form-control"></td>
-        </tr>
-
-        <tr> <td><label>make public</label><input style="float: right" ng-model="form.public_flag" type="checkbox"></td>
-
-        </tr>
 
 
-        <tr> <td><label>url:</label></td></tr>
-        <tr>
-          <td><input ng-model="form.url" class="form-control"></td>
-        </tr>
 
-        <tr>  <td><label>videoId:</label></td></tr>
-        <tr>
-          <td>
-            <input ng-model="form.videoId" class="form-control"><br/>
 
-            <label>
-              <input ng-model="form.video_type" type="radio" value="youtube">
-              YouTube
-            </label>
-
-            <label>
-              <input ng-model="form.video_type" type="radio" value="vimeo">
-              Vimeo
-            </label>
-          </td>
-        </tr>
       </table>
       <br/>
       <div style="margin-bottom: 10px;">
