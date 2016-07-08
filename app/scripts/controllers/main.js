@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('MainCtrl', function ($route, $routeParams, $log, $window, Auth, $scope, $location) {
+.controller('MainCtrl', function ($route, $routeParams, $log, $window, Auth, $scope, $location, config) {
   // 只在加载时记录下登陆状态, sign in/out时强制页面重载
   $scope.isLoggedIn = Auth.isLoggedIn();
   $scope.username = Auth.username();
@@ -37,5 +37,13 @@ angular.module('dataduduR3App')
 
     $window.location.reload();
   };
+
+
+  // set up platform title
+  if(config.USE_DEVICE_DASHBOARD) {
+    angular.element('head>title').text('嘟嘟大数据管理控制台（专业版）');
+  }else{
+    angular.element('head>title').text('嘟嘟智能硬件控制面板');
+  }
 
 });
