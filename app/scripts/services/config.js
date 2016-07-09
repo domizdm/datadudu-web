@@ -9,7 +9,7 @@
  */
 
 var __config = {
-  END_POINT: 'http://api-datadudu.cloudforce.cn',
+  END_POINT: 'http://api.datadudu.cn',
   USE_DEVICE_DASHBOARD: false
 };
 
