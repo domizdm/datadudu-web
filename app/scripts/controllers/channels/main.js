@@ -26,7 +26,8 @@ angular.module('dataduduR3App')
     {key:'apikeys',text:'API Keys',template:'views/channels/apikeys.html'},
     {key:'commands',text:'Commands',template:'views/channels/commands.html'},
     {key:'rules',text:'Rules',template:'views/channels/rules.html'},
-    {key:'dataio',text:'Data Import/Export',template:'views/channels/dataio.html'}
+    {key:'dataio',text:'Data Import/Export',template:'views/channels/dataio.html'},
+    {key:'triigers',text:'Triggers',template:'views/channels/triggers.html'}
   ];
 
   $scope.reloadTab = function(){

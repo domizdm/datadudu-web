@@ -39,7 +39,6 @@ angular.module('dataduduR3App')
   };
 
   $scope.deleteDevice = function(activation_code) {
-
     modalConfirm.open('Do you want to delete this device?')
       .then(function(){
         product.deleteDevice({id: activation_code}, {})
@@ -56,6 +55,29 @@ angular.module('dataduduR3App')
       .catch(function(){
         // do nothing
       });
+  };
+
+  $scope.deleteProduct = function(productId) {
+    modalConfirm.open('Do you want to delete this product?')
+      .then(function(){
+        product.delete({id: productId}, {})
+          .$promise
+          .then(function(resp){
+            ngNotify.set('Product deleted.', 'success');
+
+            $route.reload();
+          })
+          .catch(function(err){
+            ngNotify.set(err.statusText, 'error');
+          });
+      })
+      .catch(function(){
+        // do nothing
+      });
+  };
+
+  $scope.editProduct = function(productId) {
+    $location.path('/addproducts/'+productId);
   };
 
   $scope.addDevices = function(productId, seriesText){

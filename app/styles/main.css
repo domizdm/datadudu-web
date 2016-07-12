@@ -61,7 +61,15 @@ body {
 
 /*}*/
 
-/* TODO: 将下列css迁移至main.css */
+/* for smart table */
+.st-sort-ascent:before {
+  content: '\25B2';
+}
+.st-sort-descent:before {
+  content: '\25BC';
+}
+
+/* 将下列css迁移至main.css */
 [ng-cloak] {
   display: none;
 }
