@@ -38,6 +38,26 @@ angular.module('dataduduR3App')
       });
   };
 
+  $scope.removeDevice = function(activation_code) {
+
+    modalConfirm.open('Are you sure you want to remove this device? All collected data of this device would be removed.')
+      .then(function(){
+        product.deleteDevice({id: activation_code}, {})
+          .$promise
+          .then(function(resp){
+            ngNotify.set('Device removed.', 'success');
+
+            $route.reload();
+          })
+          .catch(function(err){
+            ngNotify.set(err.data.desp || err.statusText, 'error');
+          });
+      })
+      .catch(function(){
+        // do nothing
+      });
+  };
+
   $scope.openModalAttachDevice = function(){
 
     product.list()
