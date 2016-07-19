@@ -29,8 +29,12 @@ angular.module('dataduduR3App')
         return scope.row[scope.attr];
       }, function (newValue, oldValue) {
         if (newValue === true) {
+          //$log.log('dead loop test 1');
+          element.find('input').attr('checked', true);
           element.find('input').addClass('datadudu-checked');
         } else {
+          //$log.log('dead loop test 2');
+          element.find('input').attr('checked', false);
           element.find('input').removeClass('datadudu-checked');
         }
       });
