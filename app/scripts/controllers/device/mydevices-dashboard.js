@@ -40,12 +40,12 @@ angular.module('dataduduR3App')
 
   $scope.removeDevice = function(activation_code) {
 
-    modalConfirm.open('Are you sure you want to remove this device?')
+    modalConfirm.open('Are you sure you want to remove this device? All collected data of this device would be removed.')
       .then(function(){
         product.deleteDevice({id: activation_code}, {})
           .$promise
           .then(function(resp){
-            ngNotify.set('Device detached.', 'success');
+            ngNotify.set('Device removed.', 'success');
 
             $route.reload();
           })

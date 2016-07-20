@@ -43,6 +43,21 @@ angular.module('dataduduR3App')
       }
     },
     /**
+     * Search User by user or user_id
+
+     To search user accounts, send an HTTP GET to http://api.datadudu.cn/accounts/search
+
+     Valid request parameters:
+     account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
+     username (string) or user_id (string): (required) : search by username (minimum 3 characters needed)  or search by user_id, user_id must be full length and correct.
+     */
+    search: {
+      method: 'GET',
+      params: {
+        _action: 'search'
+      }
+    },
+    /**
      * Timezone Information
 
      To Get the List of Timezones:
