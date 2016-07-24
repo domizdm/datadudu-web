@@ -15,6 +15,20 @@ angular.module('dataduduR3App')
   $scope.routeParams = $routeParams;
   $scope.itemsByPage = 10;
 
+
+  // ----- Language Begin ----
+  // TODO: it should be loaded from user profile or cookie?
+  $scope.appLanguage = Auth.language();
+  $scope.onChangeLanguage = function(lang){
+    $scope.appLanguage = Auth.language(lang);
+
+    $window.location.reload();// reload through $window coz login is not in route
+  };
+
+  $scope.Lang = config.lang[$scope.appLanguage];
+  // ---- Language End ----
+
+
   $scope.loginForm = {
     username: 'wangmao',
     password: 'wangmao',
@@ -38,6 +52,10 @@ angular.module('dataduduR3App')
     $window.location.reload();
   };
 
+  // for debug
+  $scope.printMe = function() {
+    Auth.print();
+  };
 
   // set up platform title
   if(config.USE_DEVICE_DASHBOARD) {

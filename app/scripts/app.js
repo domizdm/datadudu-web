@@ -70,6 +70,13 @@ angular
   });
 
 })
+.run(function(config, $window, $log){
+  config.lang = window.lang ? window.lang : {};
+
+  if(!window.lang) {
+    $log.warn('No available language found! This could cause DataDudu bugs.');
+  }
+})
 .constant('angularMomentConfig', {
   //timezone: 'Asia/Shanghai'
   //timezone: 'UTC'

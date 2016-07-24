@@ -9,10 +9,13 @@
  * Route module of the application.
  */
 angular.module('dataduduR3App')
-.config(function ($routeProvider) {
+.config(function ($routeProvider, langTransProvider) {
+
+  console.log();
+
   $routeProvider
     .when('/channels', {
-      templateUrl: 'views/channels/list.html',
+      templateUrl: langTransProvider.T('views/channels/list','html'),
       controller: 'ChannelsListCtrl'
     })
     .when('/channels/new', {

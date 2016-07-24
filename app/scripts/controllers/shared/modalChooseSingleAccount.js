@@ -9,11 +9,11 @@
  */
 angular.module('dataduduR3App')
 .controller('SharedChooseSingleAccountCtrl', function($scope, $q, $filter, $window, $timeout, $log,
-                                             config, $uibModal, $uibModalInstance, ngNotify, account,
-                                             feed/*, fields, writeKey*/){
+                                             config, $uibModal, $uibModalInstance, ngNotify, account){
 
 
   $scope.form = {
+    toUser: null
   };
 
   $scope.searchAccounts = function(pattern){
@@ -27,9 +27,10 @@ angular.module('dataduduR3App')
 
   $scope.ok = function () {
     if($scope.form.toUser && $scope.form.toUser.user_id) {
-      // TODO: return selected user's user_id
+      // return selected user's user_id
 
-      $log.log($scope.form);
+      //$log.log($scope.form);
+      $uibModalInstance.close($scope.form.toUser);
 
     }else{
       ngNotify.set('It is not a valid user.', 'warn');

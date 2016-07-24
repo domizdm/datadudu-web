@@ -43,6 +43,19 @@ angular.module('dataduduR3App')
           });
       });
     },
+    print: function() {// for debug
+      $log.log($localStorage.me);
+    },
+    language: function(lang){// setter and getter for language
+      var defaultLang = 'en-GB';
+
+      if(!lang) {
+        lang = $localStorage.lang ? $localStorage.lang : defaultLang;
+      }
+
+      $localStorage.lang = lang;
+      return lang;
+    },
     me: function() {
       return $localStorage.me;
     },

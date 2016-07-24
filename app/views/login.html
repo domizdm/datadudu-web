@@ -19,9 +19,9 @@
       <div class="col-md-6 login-top-right">
           <ul class="collapse navbar-collapse" id="header-nav">
             <li class="border-right">
-              <select class="language login-select">
-                <option value="">中文</option>
-                <option value="">English</option>
+              <select class="language login-select" ng-model="appLanguage" ng-change="onChangeLanguage(appLanguage)">
+                <option value="zh-CN">中文</option>
+                <option value="en-GB">English</option>
               </select>
             </li>
             <li class="active"><button type="button" class="btn btn-primary ">Sign In</button></li>
@@ -39,15 +39,15 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg" ng-bind-html="Lang['login.title']"></p>
 
       <form>
         <div class="form-group has-feedback">
-          <input type="username" class="form-control" placeholder="Username" ng-model="loginForm.username" required>
+          <input type="username" class="form-control" placeholder="{{Lang['login.username']}}" ng-model="loginForm.username" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password" ng-model="loginForm.password" required>
+          <input type="password" class="form-control" placeholder="{{Lang['login.password']}}" ng-model="loginForm.password" required>
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="form-group">
