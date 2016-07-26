@@ -8,15 +8,11 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsListCtrl', function ($scope, $log, $filter, $uibModal, channel, Auth, ngNotify) {
+.controller('ChannelsListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify) {
   $scope.channels = null;
   $scope.channelsFiltered = null;
 
   $scope.searchText = '';
-
-  //$scope.form = {
-  //  selected:[]
-  //};
 
   $scope.$watch('channels', function(newVal){
     $scope.channelsFiltered = $filter('filter')($scope.channels, $scope.searchText);
@@ -51,24 +47,44 @@ angular.module('dataduduR3App')
 
   $scope.shareChannels = function(channels){
 
-    if(channels.length >= 0) {
+    if(channels.length > 0) {
       var channelIds = _.map(channels, function(v){return v.channel_id;});
-      //$log.log(channelIds);
+      var channelNames = _.map(channels, function(v){return v.name;});
 
       $uibModal.open({
           templateUrl: 'views/shared/modalChooseSingleAccount.html',
           controller: 'SharedChooseSingleAccountCtrl',
-          resolve: {
-            //fields: function(){
-            //  return $scope.channelsFields;
-            //},
-            //writeKey: function(){
-            //  return writeKey;
-            //}
-          }
+          resolve: {}
         })
         .result
-        .then(function(form){}, function(){/*dismiss*/});
+        .then(function(user){
+          if(user.user_id) {
+            var msg = ['Do you want to share channel(s)', channelNames.join(','), 'to', user.username,'?'].join(' ');
+
+            var payload = {
+              channels: channelIds,
+              to: user.user_id
+            };
+
+            // open modal to confirm
+            modalConfirm.open(msg)
+              .then(function(){
+                share.shareChannelsToUser({}, payload)
+                  .$promise
+                  .then(function(resp){
+                    ngNotify.set('Channel(s) shared successfully.', 'success');
+
+                    $route.reload();
+                  })
+                  .catch(function(err){
+                    ngNotify.set(err.data.desp || err.statusText, 'error');
+                  });
+              })
+              .catch(function(){
+                $scope.shareChannels($scope.getCheckedItems($scope.channels));
+              });
+          }
+        }, function(){/*dismiss*/});
 
     }else{
       ngNotify.set('No channels selected.', 'warn');

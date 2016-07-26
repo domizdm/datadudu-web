@@ -10,7 +10,8 @@
 
 var __config = {
   END_POINT: 'http://api.datadudu.cn',
-  USE_DEVICE_DASHBOARD: false
+  USE_DEVICE_DASHBOARD: false,
+  lang: {}
 };
 
 angular.module('dataduduR3App')
