@@ -16,8 +16,8 @@ angular.module('dataduduR3App')
   $scope.itemsByPage = 10;
 
   $scope.loginForm = {
-    username: 'wangmao',
-    password: 'wangmao',
+    username: '',
+    password: '',
     message: null
   };
   $scope.login = function(form) {
