@@ -6,50 +6,41 @@
       <!--<div class=" pull-left image">-->
       <!--<img src="../images/user.png" alt="profile photo" class="img-circle">-->
       <!--</div>-->
-      <div id="user-info">
+      <div id="user-info" class="text-center">
                 <span class="user-info" id="show">
-                    <h4>Welcome</h4>
-              <h3 style="text-transform:capitalize">{{username }}</h3>
+                    <h4 class="text-center" ng-bind-html="Lang['sidebar.welcome']">!</h4>
+              <h3 class="text-center" style="text-transform:capitalize;">{{username }}</h3>
 
                   <!--&lt;!&ndash;<a href="#"><span>status</span><i class="fa fa-circle text-success"></i>Online</a>&ndash;&gt;-->
                 </span>
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
-    <div class="sidebar-left">
-      <ul class="sidebar-menu">
+    <div class="sidebar-left" >
+      <ul class="sidebar-menu ">
         <!-- Dudu开放平台 Begin -->
-        <li class="default-color" ng-if="!useDeviceDashboard">
-          <a class="active" ng-href="#/channels">
-            <i class="fa fa-home"></i>
-            <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.data_warehouse']"></span>
-          </a>
-        </li>
         <li class="treeview" ng-if="!useDeviceDashboard">
-          <a href="">
-            <i class="fa fa-bookmark-o"></i> <span style="width:183px; height: 49px;"> Data Factory</span> <i
-            class="fa fa-angle-left pull-right"></i>
+          <a class="active " ng-href="#/channels">
+            <i class="fa fa-home"></i>
+            <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.data_factory']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a ng-href="#/channels"><i class="fa fa-circle-o"></i>My Channels</a></li>
-            <!--<li><a href=""><i class="fa fa-map-marker"></i>Hospital</a></li>-->
-            <!--<li><a href=""><i class="fa fa-ambulance"></i>Transportation</a></li>-->
-            <!--<li><a href=""><i class="fa fa-heart-o"></i>Home Care</a></li>-->
-            <!--<li><a href=""><i class="fa fa-building-o"></i>Office</a></li>-->
-            <!--<li><a href=""><i class="fa fa-medkit"></i>Home Monitoring</a></li>-->
-            <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i>Dudu HTTP</a></li>
-            <li><a href="#/triggersLog"><i class="fa fa-circle-o"></i>Triggers Log</a></li>
+            <li><a href="#/channels" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
+            <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.dudu_http']"></span></a></li>
+            <li><a href="#/channels/21/rules"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.data_rules']"></span></a></li>
+            <li><a href="#/channels/21/commands"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.commands']"></span></a></li>
+            <li><a href="#/triggersLog"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.data_analysis']"></span></a></li>
+            <li><a href="#/triggersLog"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.triggers_log']"></span></a></li>
           </ul>
         </li>
-
         <li class="treeview" ng-if="!useDeviceDashboard">
           <a href="">
-            <i class="fa fa-desktop"></i>
-            <span style="width:183px; height: 49px;">Lifecycle Management</span><i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-bookmark"></i>
+            <span style="width:183px; height: 49px;"><span ng-bind-html="Lang['sidebar.product_management']"></span></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/myproducts"><i class="fa fa-circle-o"></i>My Products</a></li>
-            <li><a href="#/mydevice"><i class="fa fa-circle-o"></i>My Devices</a></li>
+            <li><a href="#/myproducts"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_products']"></span></a></li>
+            <li><a href="#/mydevice"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.product_library']"></span></a></li>
           </ul>
         </li>
         <!-- Dudu开放平台 End -->
@@ -77,26 +68,49 @@
         </li>
         <!-- Dudu设备控制面板 End -->
 
-
+        <li class="">
+          <a href="#/mydevice" >
+            <i class="fa fa-desktop"></i>
+            <span style="width:183px; height: 58px;"  ng-bind-html="Lang['sidebar.device_management']"></span>
+          </a>
+        </li>
 
         <li class="treeview">
-          <a href="">
+          <a href="#/myaccount">
             <i class="fa fa-user"></i>
-            <span style="width:183px; height: 49px;">Account</span><i class="fa fa-angle-left pull-right"></i>
+            <span style="width:183px; height: 49px;" ng-bind-html="Lang['sidebar.account']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/myaccount"><i class="fa fa-user"></i>My Account</a></li>
-            <li><a href="#/editaccount" ng-click="path()"><i class="fa fa-user"></i>Edit Account</a></li>
-            <li><a href=""><i class="fa fa-user"></i>Public Profile</a></li>
-            <li><a href="#/editprofile"><i class="fa fa-user"></i>Edit Public Profile</a></li>
+
+            <li><a href="#/editaccount" ng-click="path()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.personal_data']"></span></a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.security_settings']"></span></a></li>
+            <li><a href="#/myaccount"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_account']"></span></a></li>
+            <li><a href="#/editaccount" ng-click="path()"><i class="fa fa-circle-o"></i>编辑账户</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i>Public Profile</a></li>
           </ul>
         </li>
 
         <li class="">
-          <a href="" ng-click="logout()">
-            <i class="fa fa-power-off"></i>
-            <span style="width:183px; height: 58px;">Sign Out</span>
+          <a href="" >
+            <i class="fa fa-database"></i>
+            <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.expense_center']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
+          <ul class="treeview-menu">
+            <li><a href=""><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.account_inquiry']"></span></a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.order_management']"></span></a></li>
+          </ul>
+        </li>
+
+        <li class="">
+          <a href="" >
+            <i class="fa fa-bullhorn"></i>
+            <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.message_center']"></span><i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href=""><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.full_message']"></span></a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.unread_message']"></span></a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.read_message']"></span></a></li>
+          </ul>
         </li>
       </ul>
 
@@ -104,10 +118,10 @@
   </section>
 
   <div class="container-fluid footer navbar-fixed-bottom" style="overflow: hidden"  >
-      <p class="container-fluid hidden-md hidden-sm " >
-        ©Copyright 2016 <br/>
-        DataDuDu.com. All rights reserved.
-      </p>
+    <p class="container-fluid hidden-md hidden-sm " >
+      ©Copyright 2016 <br/>
+      DataDuDu.com. All rights reserved.
+    </p>
   </div>
 
 
@@ -118,4 +132,17 @@
   }
 </script>
 
+<!--<script>-->
+<!--$scope.action=function(str){-->
+<!--var wd = $(this).text();-->
+<!--var tit = $('.mychannel').text(wd);-->
+<!--}-->
 
+<!--</script>-->
+
+<script type="text/javascript">
+  $('.sidebar-menu a,span').on('click',function(){
+    var wd = $(this).text();
+    var tit = $('.mychannel').text(wd);
+  })
+</script>

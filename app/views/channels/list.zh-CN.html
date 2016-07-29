@@ -2,28 +2,30 @@
   <!--表格内容start-->
   <div class="table-content">
     <div class="list-header">
-    <form class="search form-search ">
-      <select class="select-style">
-        <option value="">ALL</option>
-      </select>
-      <input type="text" class="input-style" placeholder="Search here..." ng-model="searchText">
-      <button type="submit" class="btn btn-search hidden-xs">搜索</button>
-      <a class="btn btn-default btn-new  " href="#/channels/new">New Channel</a>
-      <a class="btn btn-default" href="" ng-click="shareChannels(getCheckedItems(channels))">分享给...</a>
-      <h5 class="usedspace-style hidden-sm hidden-xs " >已使用: {{getAccountUsage() | bytes}}</h5>
-    </form>
-      </div>
+      <form class="search form-search ">
+        <select class="select-style">
+          <option value="">全选</option>
+        </select>
+        <input type="text" class="input-style" placeholder="你想找什么？" ng-model="searchText">
+        <button type="submit" class="btn btn-search hidden-xs">搜索</button>
+        <a class="btn btn-default btn-new  " href="#/channels/new">新建账户</a>
+        <a class="btn btn-default" href="" ng-click="shareChannels(getCheckedItems(channels))">分享到...</a>
+        <h5 class="usedspace-style " ><a class=" hidden-sm hidden-xs" style="color: #0c0c0c;margin-right: 5px">总体占用空间:</a>{{getAccountUsage() | bytes}} </h5>
+      </form>
+
+
+    </div>
     <div class="border-table table-list table-responsive">
       <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channelsFiltered" st-table="displayCollection">
         <thead class="tblHeader">
         <tr>
           <th style="width:40px;"></th>
-          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">名称</span></th>
-          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>Last Update</span></th>
-          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>Public or Private</span></th>
-          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>Used Space</span></th>
-          <th><span>Device</span></th>
-          <th><span>Created</span></th>
+          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">存储空间</span></th>
+          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>最后一次更新</span></th>
+          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>账户类型</span></th>
+          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>占用空间</span></th>
+          <th><span>关联设备</span></th>
+          <th><span>创建时间</span></th>
         </tr>
         </thead>
         <tbody>
@@ -32,22 +34,22 @@
           <td st-row-check="channel" st-row-check-attr="checkedFlag"></td>
           <td class="td-left">
             <div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">
-            <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
             </div>
             <div ng-show="channel.name==''||channel.name=='null'||channel.name==null">
               <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
             </div>
-            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">账户信息</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">数据图表</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">设置</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">秘钥</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">导入/导出</button></a>
           </td>
           <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
-          <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' Public': 'Private'}}</a></td>
+          <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 公开账户': '私有账户'}}</a></td>
           <td>{{channel.usage | bytes}}</td>
           <td>
-            <span ng-if="channel.device_id==null">No Device</span>
+            <span ng-if="channel.device_id==null">无设备</span>
             <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
           </td>
           <td><a href="">{{channel.created_at}}</a></td>
