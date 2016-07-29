@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('MainCtrl', function ($route, $routeParams, $log, $window, Auth, $scope, $location, config, langTrans) {
+.controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config, langTrans) {
   // 只在加载时记录下登陆状态, sign in/out时强制页面重载
   $scope.isLoggedIn = Auth.isLoggedIn();
   $scope.username = Auth.username();
@@ -16,7 +16,7 @@ angular.module('dataduduR3App')
   $scope.itemsByPage = 10;
 
   // explode a language translation API
-  $scope.T = langTrans.T;
+  $rootScope.T = langTrans.T;
 
   // ----- Language Begin ----
   // TODO: it should be loaded from user profile or cookie?
@@ -27,7 +27,7 @@ angular.module('dataduduR3App')
     $window.location.reload();// reload through $window coz login is not in route
   };
 
-  $scope.Lang = config.lang[$scope.appLanguage];
+  $rootScope.Lang = config.lang[$scope.appLanguage];
   // ---- Language End ----
 
 
