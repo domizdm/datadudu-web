@@ -12,8 +12,6 @@ window.lang['en-GB'] = {
   // ---- Login Page End ----
 
   // ---- Sidebar Begin ----
-
-  'user-info .welcome': 'Welcome',
   'sidebar.data_factory': 'Data factory',
   'sidebar.data_warehouse': 'Data Warehouse',
   'sidebar.dudu_http': 'Dudu HTTP',
@@ -38,9 +36,15 @@ window.lang['en-GB'] = {
   'sidebar.full_message': ' Full Message',
   'sidebar.unread_message': ' Unread Message',
   'sidebar.read_message': ' Read Message',
+  'sidebar.welcome': 'Welcome!',
+  // ---- Sidebar Begin ----
+  'myTable.previous': 'Previous!',
+  'myTable.next': 'Next!',
 
   // ---- Sidebar Begin ----
+  'main-devices.Newduduhttp': 'New DuduHTTP',
 
+  // ---- Sidebar End ----
   null:null
 };
 

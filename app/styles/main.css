@@ -520,7 +520,7 @@ table.myTable td, table.myTable th {
 .navbar-custom-menu li a:hover {
   background-color: #F5F5F5;
 }
-.navbar-custom-menu .dropdown-menu > li > a{padding: 3px 7px;}
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #F5F5F5;
 }

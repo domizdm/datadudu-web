@@ -12,7 +12,6 @@ window.lang['zh-CN'] = {
   // ---- Login Page End ----
 
   // ---- Sidebar Begin ----
-  'user-info .welcome': '欢迎',
   'sidebar.data_factory': '数据工厂',
   'sidebar.data_warehouse': '数据仓库',
   'sidebar.dudu_http': 'HTTP数据交互',
@@ -37,6 +36,14 @@ window.lang['zh-CN'] = {
   'sidebar.full_message': ' 全部消息',
   'sidebar.unread_message': ' 未读消息',
   'sidebar.read_message': ' 已读消息',
+  'sidebar.welcome': '欢迎!',
+  // ---- Sidebar End ----
+
+  'myTable.previous': '上一页!',
+  'myTable.next': '上一页!',
+
+  // ---- Sidebar Begin ----
+  'main-devices.Newduduhttp': '新建HTTP',
 
   // ---- Sidebar End ----
 
