@@ -65,7 +65,7 @@ angular.module('dataduduR3App')
           .then(function(resp){
             ngNotify.set('Product deleted.', 'success');
 
-            $route.reload();
+            $location.path('/myproducts');
           })
           .catch(function(err){
             ngNotify.set(err.statusText, 'error');
