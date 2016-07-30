@@ -37,6 +37,12 @@ angular.module('dataduduR3App')
     {key: 'http', text:'Http'},
     {key: 'command', text:'Command'}
   ];
+  $scope.frequencies = [
+    {key:'300',text:'5 Minutes'},
+    {key:'600',text:'10 Minutes'},
+    {key:'1800',text:'30 Minutes'},
+    {key:'3600',text:'1 Hour'}
+  ];
 
   $scope.criterias = {
     'numeric': [
@@ -72,9 +78,9 @@ angular.module('dataduduR3App')
     action_sub_value: rule ? rule.action_sub_value : '',
     criteria: rule ? _.find($scope.criterias[rule.type], {key:rule.criteria}) : null,
     condition: rule ? rule.condition : '',
-    frequency: rule ? parseFloat(rule.frequency) : 0
+    // if not found, means it's a corrupt data, fall back to default 0
+    frequency: rule ? (_.find($scope.frequencies, {key:rule.frequency}) || $scope.frequencies[0]) : $scope.frequencies[0],
   };
-
 
 
   $scope.ok = function () {
@@ -90,7 +96,7 @@ angular.module('dataduduR3App')
         action_frequency: $scope.form.action_frequency ? $scope.form.action_frequency.key : null,
         criteria: $scope.form.criteria ? $scope.form.criteria.key : null,
         condition: $scope.form.condition,
-        frequency: $scope.form.frequency || 0
+        frequency: $scope.form.frequency ? $scope.form.frequency.key : null
       };
 
     if(form.rule_id != null) {// add new rule

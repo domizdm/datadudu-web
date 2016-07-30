@@ -66,7 +66,7 @@
         <form ng-if="form.type.key == 'no_data_check'">
           <div class="row">
             <label class="col-sm-3 col-md-3 col-xs-3">Frequency</label>
-            <input type="number" class="form-control" ng-model="form.frequency">
+            <select class="form-control" ng-options="item.text for item in frequencies" ng-model="form.frequency"></select>
           </div>
         </form>
 
