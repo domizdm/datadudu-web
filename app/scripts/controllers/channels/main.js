@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $log, channel) {
+.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $log, Auth, channel) {
 
   //channel页面导航显示、隐藏
   $scope.navhide = true;
@@ -19,7 +19,7 @@ angular.module('dataduduR3App')
   $scope.channel = null;
 
   $scope.tabs = [
-    {key:'private',text:'Private View',template:'views/channels/private.html'},
+    {key:'private',text:Auth.L('login.title'),template:'views/channels/private.html'},
     {key:'realtime',text:'Real Time',template:'views/channels/realtime.html'},
     {key:'public',text:'Public View',template:'views/channels/public.html'},
     {key:'settings',text:'Settings',template:'views/channels/settings.html'},
