@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $log, Auth, channel) {
+.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $uibModal, $log, Auth, channel) {
 
   //channel页面导航显示、隐藏
   $scope.navhide = true;
@@ -41,5 +41,41 @@ angular.module('dataduduR3App')
       $scope.channel = _.find(resp.channels, {channel_id: $routeParams.id});
     });
 
+
+  $scope.openModalUploadIcon = function(){
+    if($scope.channel) {
+      $uibModal.open({
+          templateUrl: 'views/shared/modalUploadIcon.html',
+          controller: 'ChannelUploadIconCtrl',
+          resolve: {}
+        })
+        .result
+        .then(function(form){}, function(){/*dismiss*/});
+
+      //channel.listAPIKeys({id:$scope.channel.channel_id})
+      //  .$promise
+      //  .then(function(resp){
+      //    var writeKey = resp.write_key;
+      //
+      //    $uibModal.open({
+      //        templateUrl: 'views/channels/particle/modalAddPoint.html',
+      //        controller: 'ChannelsAddPointCtrl',
+      //        resolve: {
+      //          fields: function(){
+      //            return $scope.channelsFields;
+      //          },
+      //          writeKey: function(){
+      //            return writeKey;
+      //          }
+      //        }
+      //      })
+      //      .result
+      //      .then(function(form){}, function(){/*dismiss*/});
+      //  })
+      //  .catch(function(err){
+      //    ngNotify.set(err.statusText, 'error');
+      //  });
+    }
+  };
 
 });
