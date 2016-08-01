@@ -59,6 +59,10 @@ angular.module('dataduduR3App')
     Auth.print();
   };
 
+  $scope.reload = function(){
+    $route.reload();
+  };
+
   // set up platform title
   if(config.USE_DEVICE_DASHBOARD) {
     angular.element('head>title').text('嘟嘟智能硬件控制面板');
