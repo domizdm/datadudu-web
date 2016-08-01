@@ -38,13 +38,53 @@ window.lang['en-GB'] = {
   'sidebar.read_message': ' Read Message',
   'sidebar.welcome': 'Welcome!',
   // ---- Sidebar Begin ----
-  'myTable.previous': 'Previous!',
-  'myTable.next': 'Next!',
+  'myTable.previous': 'Previous',
+  'myTable.next': 'Next',
 
   // ---- Sidebar Begin ----
   'main-devices.Newduduhttp': 'New DuduHTTP',
+  'main-devices.name': 'Name',
+  'main-devices.method': 'Method',
+  'main-devices.AuthUsername': 'AuthUsername',
+  'main-devices.AuthPassword': 'AuthPassword',
+  'main-devices.edit': 'Edit',
+  'main-devices.delete': 'Delete',
 
   // ---- Sidebar End ----
+
+
+  // ---- rules Begin ----
+
+  'rules-main.rules': 'Rules',
+  'rules-main.newrules': 'New Rules',
+  'rules-main.name': 'Name',
+  'rules-main.field': 'Field',
+  'rules-main.criteria': ' Criteria',
+  'rules-main.condition': 'Condition ',
+  'rules-main.lastresult': 'Last Rules',
+  'rules-main.lastresulttime': 'LastreSultTime',
+  'rules-main.created': 'Created',
+  'rules-main.deleteall': 'Delete All',
+  'rules-main.delete': 'Delete ',
+
+  // ---- rules End ----
+
+
+  // ---- data-header start ----
+  'data-header.channel_view': 'ChannelView',
+  'data-header.show_hide': 'Show/Hide',
+  'data-header.channel_id': 'Channel ID:',
+  'data-header.channel_author': 'Author:',
+  'data-header.channel_access': 'Access:',
+  'data-header.channel_tags': 'Tags:',
+  'data-header.ChannelStatus': 'Channel Status:',
+  'data-header.Created': 'Created :',
+  'data-header.Updated': 'Updated :',
+  'data-header.UsedSpace': 'Used Space :',
+  'data-header.LastEntry ': 'Last Entry ID And Date :',
+  'nav-data-header.PrivateView ': 'Private View :',
+
+  // ---- data-header End ----
   null:null
 };
 

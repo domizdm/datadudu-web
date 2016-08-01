@@ -8,7 +8,7 @@
         </select>
         <input type="text" class="input-style" placeholder="你想找什么？" ng-model="searchText">
         <button type="submit" class="btn btn-search hidden-xs">搜索</button>
-        <a class="btn btn-default btn-new  " href="#/channels/new">新建账户</a>
+        <a class="btn btn-default btn-new  " href="#/channels/new">新建空间</a>
         <a class="btn btn-default" href="" ng-click="shareChannels(getCheckedItems(channels))">分享到...</a>
         <h5 class="usedspace-style " ><a class=" hidden-sm hidden-xs" style="color: #0c0c0c;margin-right: 5px">总体占用空间:</a>{{getAccountUsage() | bytes}} </h5>
       </form>
@@ -21,8 +21,8 @@
         <tr>
           <th style="width:40px;"></th>
           <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">存储空间</span></th>
+          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>权限</span></th>
           <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>最后一次更新</span></th>
-          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>账户类型</span></th>
           <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>占用空间</span></th>
           <th><span>关联设备</span></th>
           <th><span>创建时间</span></th>
@@ -33,20 +33,26 @@
           <!--<td><input type="checkbox" ng-model="channel.selected" name="form.selected[]" value="{{channel.channel_id}}"></td>-->
           <td st-row-check="channel" st-row-check-attr="checkedFlag"></td>
           <td class="td-left">
-            <div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">
-              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
-            </div>
-            <div ng-show="channel.name==''||channel.name=='null'||channel.name==null">
-              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
-            </div>
-            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">账户信息</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">数据图表</button></a>
+            <div style="float: left;width: 150px">
+            <img src="./images/icoimage/channel_img.png" style="float: left">
+            <!--<div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">-->
+              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private"><b>{{channel.name}}</b></a><br/>
+            <!--</div>-->
+            <!--<div ng-show="channel.name==''||channel.name=='null'||channel.name==null">-->
+              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">空间编号:{{channel.channel_id}}</a>
+              </div>
+            <!--</div>-->
+            <div class="channel_ctr">
+            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">空间信息</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">实时数据</button></a>
             <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">设置</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">秘钥</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API秘钥</button></a>
             <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">导入/导出</button></a>
+            </div>
           </td>
+
+          <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 对所有人开放': '仅对自己开放'}}</a></td>
           <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
-          <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 公开账户': '私有账户'}}</a></td>
           <td>{{channel.usage | bytes}}</td>
           <td>
             <span ng-if="channel.device_id==null">无设备</span>

@@ -39,13 +39,54 @@ window.lang['zh-CN'] = {
   'sidebar.welcome': '欢迎!',
   // ---- Sidebar End ----
 
-  'myTable.previous': '上一页!',
-  'myTable.next': '上一页!',
+  'myTable.previous': '上一页',
+  'myTable.next': '下一页',
 
-  // ---- Sidebar Begin ----
+  // ---- duduhttp Begin ----
   'main-devices.Newduduhttp': '新建HTTP',
+  'main-devices.name': '名称',
+  'main-devices.method': '方法',
+  'main-devices.AuthUsername': '授权用户',
+  'main-devices.AuthPassword': '授权密码',
+  'main-devices.Method': '方法',
+  'main-devices.edit': '编辑',
+  'main-devices.delete': '删除',
+  // ---- duduhttp End ----
 
-  // ---- Sidebar End ----
+
+  // ---- rules Begin ----
+  'rules-main.rules': '规则',
+  'rules-main.newrules': '新增规则',
+  'rules-main.name': '名称',
+  'rules-main.field': '存储单元',
+  'rules-main.criteria': ' 标准',
+  'rules-main.condition': '状态 ',
+  'rules-main.lastresult': '最近更新结果',
+  'rules-main.lastresulttime': '最近更新时间',
+  'rules-main.created': '创建时间',
+  'rules-main.deleteall': '删除全部',
+  'rules-main.delete': '删除 ',
+  // ---- rules End ----
+
+  // ---- data-header  start ----
+  'data-header.channel_view': '空间信息:',
+  'data-header.show_hide': '显示/隐藏',
+  'data-header.channel_id': '空间编号:',
+  'data-header.channel_author': '账户名:',
+  'data-header.channel_access': '权限:',
+  'data-header.channel_tags': '标签:',
+  'data-header.ChannelStatus': '空间状态:',
+  'data-header.Created': '创建时间:',
+  'data-header.Updated': '更新时间 :',
+  'data-header.UsedSpace': ' 已用空间 :',
+  'data-header.LastEntry ': ' :',
+  'nav-data-header.PrivateView ': '图形化显示 :',
+
+
+
+  // ---- data-header End ----
+
+
 
   null:null
 };

@@ -6,24 +6,24 @@
 
       <div class="row-fluid rules-main">
         <div class="col-md-6 table-rules" >
-          <h2>Rules</h2>
+          <h2 ng-bind-html="Lang['rules-main.rules']">Rules</h2>
           <hr>
           <div class="col-md-12 new_chanel">
-            <button class="btn btn-default " ng-click="openModalEditRule()">New Rules</button>
-            <button ng-click="deleteAllRules()" class="btn btn-danger rule-del">Delete All</button>
+            <button class="btn btn-default " ng-click="openModalEditRule()" ng-bind-html="Lang['rules-main.newrules']"></button>
+            <button ng-click="deleteAllRules()" class="btn btn-danger rule-del" ng-bind-html="Lang['rules-main.deleteall']"></button>
           </div>
           <br>
 
           <table style="margin-top: 28px;" class="table table-bordered">
             <thead class="tb2Header">
             <tr>
-              <th>Name</th>
-              <th>Field</th>
-              <th>Criteria</th>
-              <th>Condition</th>
-              <th>Last Result</th>
-              <th>Last Result Time</th>
-              <th>Created</th>
+              <th ng-bind-html="Lang['rules-main.name']"></th>
+              <th ng-bind-html="Lang['rules-main.field']"></th>
+              <th ng-bind-html="Lang['rules-main.criteria']"></th>
+              <th ng-bind-html="Lang['rules-main.condition']"></th>
+              <th ng-bind-html="Lang['rules-main.lastresult']"> </th>
+              <th ng-bind-html="Lang['rules-main.lastresulttime']"> </th>
+              <th ng-bind-html="Lang['rules-main.created']"></th>
               <th></th>
             </tr>
             </thead>
@@ -48,7 +48,7 @@
               <td class="">{{rule.last_result_time | date:'yyyy-MM-dd'}}</td>
               <td class="">{{rule.created_at | date:'yyyy-MM-dd'}}</td>
               <td style="text-align:center">
-                <button ng-click="deleteRule(rule)" class="btn btn-danger">Delete</button>
+                <button ng-click="deleteRule(rule)" class="btn btn-danger" ng-bind-html="Lang['rules-main.delete']"></button>
               </td>
             </tr>
             </tbody>
