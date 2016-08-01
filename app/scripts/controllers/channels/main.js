@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $log, channel) {
+.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $log, Auth, channel) {
 
   //channel页面导航显示、隐藏
   $scope.navhide = true;
@@ -19,15 +19,16 @@ angular.module('dataduduR3App')
   $scope.channel = null;
 
   $scope.tabs = [
-    {key:'private',text:'Private View',template:'views/channels/private.html'},
-    {key:'realtime',text:'Real Time',template:'views/channels/realtime.html'},
-    {key:'public',text:'Public View',template:'views/channels/public.html'},
-    {key:'settings',text:'Settings',template:'views/channels/settings.html'},
-    {key:'apikeys',text:'API Keys',template:'views/channels/apikeys.html'},
-    {key:'commands',text:'Commands',template:'views/channels/commands.html'},
-    {key:'rules',text:'Rules',template:'views/channels/rules.html'},
-    {key:'dataio',text:'Data Import/Export',template:'views/channels/dataio.html'},
-    {key:'triigers',text:'Triggers',template:'views/channels/triggers.html'}
+    {key:'private',text:Auth.L('nav-data-header.PrivateView'),template:'views/channels/private.html'},
+    {key:'realtime',text:Auth.L('nav-data-header.RealTime'),template:'views/channels/realtime.html'},
+
+    {key:'settings',text:Auth.L('nav-data-header.seating'),template:'views/channels/settings.html'},
+    {key:'apikeys',text:Auth.L('nav-data-header.apikey'),template:'views/channels/apikeys.html'},
+    {key:'commands',text:Auth.L('nav-data-header.commands'),template:'views/channels/commands.html'},
+    {key:'rules',text:Auth.L('nav-data-header.rules'),template:'views/channels/rules.html'},
+    {key:'dataio',text:Auth.L('nav-data-header.im_ex'),template:'views/channels/dataio.html'},
+    {key:'triigers',text:Auth.L('nav-data-header.triggers'),template:'views/channels/triggers.html'},
+    {key:'public',text:Auth.L('nav-data-header.publicview'),template:'views/channels/public.html'}
   ];
 
   $scope.reloadTab = function(){

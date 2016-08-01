@@ -167,10 +167,8 @@ angular.module('dataduduR3App')
       loadData(channel.channel_id, begin, scale, $scope.query.type.value, $scope.query.params.value)
         .then(function(resp){
           $scope.loading = false;
-
           $scope.channelsFeeds = resp.channelsFeeds;
           //$log.log($scope.channelsFeeds);
-
           // set time back
           // 如果有数据, 理论上第一个点的时间应该跟查询吻合
           var firstPoint = _.first(resp.raw.feeds);

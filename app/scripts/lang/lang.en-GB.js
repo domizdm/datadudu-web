@@ -70,7 +70,7 @@ window.lang['en-GB'] = {
   // ---- rules End ----
 
 
-  // ---- data-header start ----
+  // ---- data- start ----
   'data-header.channel_view': 'ChannelView',
   'data-header.show_hide': 'Show/Hide',
   'data-header.channel_id': 'Channel ID:',
@@ -82,9 +82,28 @@ window.lang['en-GB'] = {
   'data-header.Updated': 'Updated :',
   'data-header.UsedSpace': 'Used Space :',
   'data-header.LastEntry ': 'Last Entry ID And Date :',
-  'nav-data-header.PrivateView ': 'Private View :',
+  'nav-data-header.PrivateView': 'Private View ',
+  'nav-data-header.RealTime': 'Real Time',
+  'nav-data-header.seating': 'Settings ',
+  'nav-data-header.apikey': 'API Keys ',
+  'nav-data-header.commands': 'Commands ',
+  'nav-data-header.rules': 'Rules ',
+  'nav-data-header.im_ex': 'Data Import/Export',
+  'nav-data-header.triggers': 'Triggers ',
+  'nav-data-header.publicview': 'Public View ',
 
-  // ---- data-header End ----
+  'data-graph.DataCharts': 'Data Charts',
+  'data-graph.AddDataPoint': ' Add a Data Point',
+  'data-graph.Type': 'Type ',
+  'data-graph.From': 'From ',
+  'data-graph.Scale': 'Scale ',
+  'data-graph.Download': 'Download ',
+  'data-graph.Refresh': 'Refresh ',
+  'realtime.Frequency': 'Frequency: ',
+  'realtime.LiveData': 'Live Data ',
+
+
+  // ---- data- End ----
   null:null
 };
 

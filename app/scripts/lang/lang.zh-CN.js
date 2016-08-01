@@ -68,7 +68,7 @@ window.lang['zh-CN'] = {
   'rules-main.delete': '删除 ',
   // ---- rules End ----
 
-  // ---- data-header  start ----
+  // ---- data-  start ----
   'data-header.channel_view': '空间信息:',
   'data-header.show_hide': '显示/隐藏',
   'data-header.channel_id': '空间编号:',
@@ -79,12 +79,29 @@ window.lang['zh-CN'] = {
   'data-header.Created': '创建时间:',
   'data-header.Updated': '更新时间 :',
   'data-header.UsedSpace': ' 已用空间 :',
-  'data-header.LastEntry ': ' :',
-  'nav-data-header.PrivateView ': '图形化显示 :',
+  'data-header.LastEntry': '最近一次更新',
+  'nav-data-header.PrivateView': '图形化显示',
+  'nav-data-header.RealTime': '实时数据 ',
+  'nav-data-header.seating': '设置 ',
+  'nav-data-header.apikey': 'API秘钥 ',
+  'nav-data-header.commands': '指令 ',
+  'nav-data-header.rules': '规则 ',
+  'nav-data-header.im_ex': '数据导入/导出 ',
+  'nav-data-header.triggers': '触发记录 ',
+  'nav-data-header.publicview': '数据共享设定 ',
+
+  'data-graph.DataCharts': '数据图表',
+  'data-graph.AddDataPoint': '添加数据点 ',
+  'data-graph.Type': '类型 ',
+  'data-graph.From': '起始时间 ',
+  'data-graph.Scale': '数据范围 ',
+  'data-graph.Download': '下载 ',
+  'data-graph.Refresh': '更新 ',
+  'realtime.Frequency': '频率 ',
+  'realtime.LiveData': '实时数据 ',
 
 
-
-  // ---- data-header End ----
+  // ---- data- End ----
 
 
 

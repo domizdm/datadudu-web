@@ -1,17 +1,17 @@
 <div class="container-fluid" ng-controller="ChannelsPrivateCtrl">
 
   <div class="col-md-12">
-    <div class="col-md-12 col-sm-12" style="margin: 0px 10px">
+    <div class="col-md-12 col-sm-12" style="margin: 0 10px">
       <div class="row data-graph">
         <nav class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
-            <a class="navbar-brand" href="">Data Charts</a>
-            <button class="btn btn-primary btn-add" ng-click="openModalAddPoint()" style="margin-top:10px;background-color: #04CC24; border-color: #04CC24;">Add a Data Point</button>
+            <a class="navbar-brand" href="" ng-bind-html="Lang['data-graph.DataCharts']"></a>
+            <button class="btn btn-primary btn-add" ng-click="openModalAddPoint()" style="margin-top:10px;background-color: #04CC24; border-color: #04CC24;" ng-bind-html="Lang['data-graph.AddDataPoint']"></button>
           </div>
           <div class="nav-table-data">
             <ul class="nav navbar-nav">
               <table>
-                <td><label>Type</label></td>
+                <td><label ng-bind-html="Lang['data-graph.Type']"></label></td>
                 <td>
                   <select class="form-control" ng-options="item.label for item in queryTypes"
                           ng-model="query.type"></select>
@@ -21,19 +21,19 @@
                           ng-show="query.type.value=='average' || query.type.value=='sum'"
                           ng-model="query.params"></select>
                 </td>
-                <td><label>From</label></td>
+                <td><label ng-bind-html="Lang['data-graph.From']"></label></td>
                 <td>
                   <div class='input-group date' datetimepicker="query.begin"></div>
                 </td>
-                <td><label>Scale</label></td>
+                <td><label ng-bind-html="Lang['data-graph.Scale']"></label></td>
                 <td><select class="form-control" ng-options="item.label for item in durations"
                             ng-model="query.duration"></select></td>
                 <td>
-                  <button class="btn btn-primary" ng-click="download(channel)">Download</button>
+                  <button class="btn btn-primary" ng-click="download(channel)" ng-bind-html="Lang['data-graph.Download']"></button>
                 </td>
                 <td>
-                  <button class="btn btn-default" ng-click="reloadData(channel)" ng-disabled="loading">
-                    Refresh
+                  <button class="btn btn-default" ng-click="reloadData(channel)" ng-disabled="loading" ng-bind-html="Lang['data-graph.Refresh']">
+
                     <i class="fa fa-refresh" ng-show="loading" ng-class="{'fa-spin': loading}"></i>
                   </button>
                 </td>
