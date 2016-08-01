@@ -3,7 +3,7 @@
     <div class="row channel-main-setting">
       <div class="col-md-12" style="padding-left: 10px;">
         <h2>Triggers</h2>
-        <p class="text-muted">This list shows {{mc.tableState.pagination.start+mc.tableState.pagination.number}}
+        <p class="text-muted">This list shows {{mc.tableState.pagination.number}}
           items per page. Columns 'Finished At' and 'Created At' are both sortable.</p>
         <hr>
         <div>
@@ -20,12 +20,12 @@
             </thead>
             <tbody ng-show="!mc.isLoading">
             <tr ng-repeat="row in mc.displayed">
-              <td>{{row.trigger_id}}</td>
-              <td>{{row.field}}</td>
-              <td>{{row.log}}</td>
-              <td>{{row.status}}</td>
-              <td>{{row.created_at}}</td>
-              <td>{{row.finished_at}}</td><!-- | date:'yyyy-MM-dd HH:mm:ss' -->
+              <td style="width:100px;">{{row.trigger_id}}</td>
+              <td style="width:100px;">{{row.field}}</td>
+              <td style="max-width:200px;word-break: break-all;">{{row.log}}</td>
+              <td style="width:100px;">{{row.status}}</td>
+              <td style="width:180px;">{{row.created_at}}</td>
+              <td style="width:180px;">{{row.finished_at}}</td><!-- | date:'yyyy-MM-dd HH:mm:ss' -->
             </tr>
             <tr ng-if="!mc.displayed.length">
               <td colspan="6" class="text-left">

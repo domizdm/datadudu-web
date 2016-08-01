@@ -27,7 +27,7 @@ angular.module('dataduduR3App')
     {key:'commands',text:Auth.L('nav-data-header.commands'),template:'views/channels/commands.html'},
     {key:'rules',text:Auth.L('nav-data-header.rules'),template:'views/channels/rules.html'},
     {key:'dataio',text:Auth.L('nav-data-header.im_ex'),template:'views/channels/dataio.html'},
-    {key:'triigers',text:Auth.L('nav-data-header.triggers'),template:'views/channels/triggers.html'},
+    {key:'triggers',text:Auth.L('nav-data-header.triggers'),template:'views/channels/triggers.html'},
     {key:'public',text:Auth.L('nav-data-header.publicview'),template:'views/channels/public.html'}
   ];
 
