@@ -1,78 +1,59 @@
-
 <header class="main-header" style="height: 50px;">
   <!-- Logo -->
-  <a href="#/" class="logo">
-    <span class="logo-mini"><img src="./images/title-smail.png"></span>
-    <span class="logo-lg"><img src="./images/title.png"></span>
-  </a>
-  <nav class="navbar  navbar-default">
-    <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button" id="switch" onclick="mySwitch()" >
-      <span class="sr-only" >Toggle navigation</span>
+  <div href="#" class="logo">
+     <span class="logo-lg" style="float: left;">
+        <a href=""style="float: right; font-size: 14px;border-right: 1px solid #0369A6;padding-right: 5px;margin-left: 5px;color: #ffffff">嘟嘟大数据</a><img src="./images/icoimage/dudulogo.png">
+      </span>
+      <span class="logo-lg" style="float: left;"><a href="" style="float: right;padding-left: 5px; font-size: 14px;color: #ffffff">管理控制台</a></span>
+  </div>
+  <nav class="navbar  navbar-default top_nva_cn">
+    <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button" id="switch" onclick="mySwitch()">
+      <span class="sr-only">Toggle navigation</span>
     </a>
-    <span class="mychannel hidden-xs" >这个是中文的Template</span>
-    <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
-        <li><a href=""><i class="fa fa-life-ring" style="margin-right: 2px"></i><span
-          style="border-right: 1px solid; padding-right: 15px;">Support</span></a></li>
-        <li><a href=""><i class="fa fa-mobile-phone" style="margin-right:5px"></i><span
-          style="border-right: 1px solid; padding-right: 15px;">Mobile Version</span></a></li>
-        <li><a><img src="../images/icoimage/help.png" style="margin-right: 5px;margin-bottom: 10px;"><span
-          style="border-right: 1px solid; padding-right: 15px;">help</span></a></li>
-        <li class="dropdown messages-menu">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-envelope-o"></i>
-            <span class="label label-success">4</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="header">You have 4 messages</li>
-            <li>
-              <!-- inner menu: contains the actual data -->
-              <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">
-                <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="./images/user.png" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slimScrollBar"
-                     style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div>
-                <div class="slimScrollRail"
-                     style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
-              </div>
-            </li>
-            <li class="footer"><a href="#">See All Messages</a></li>
-          </ul>
-        <li><span style="line-height: 48px"><img src="./images/icoimage/interval.png"></span></li>
-        </li>
+    <span class="mychannel hidden-xs"></span>
 
+    <div class="navbar-custom-menu ">
+      <ul class="nav navbar-nav">
+
+        <li><a href=""><i class="fa fa-rmb" style="margin-right:5px;font-size: 20px;padding-top: 2px;"></i><span style=" border-right: 1px solid #797F8B; padding-right: 15px;">服务价格</span></a></li>
+
+        <li class="">
+          <a href="" class=" dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-bullhorn" style="font-size: 20px;"></i>
+            <span class="label label-success">4</span>
+            <span class="">站内消息</span>
+          </a>
+          <ul class="dropdown-menu ms_dropdown-menu" role="menu" aria-labelledby="dropdownMenu2" >
+            <li><a href=""><b>全部消息</b></a></li>
+            <li><a href=""><b>未读消息</b></a></li>
+            <li><a href=""><b>已读消息</b></a></li>
+          </ul>
+        </li>
+        <li><a href=""><img src="../images/icoimage/help2.png"
+                            style="margin-right: 5px;margin-bottom: 3px;border-left: 1px solid; padding-left: 10px; "><span
+          style="">帮助与文档</span></a></li>
         <li>
 
           <a>
-            <select class="language" ng-model="appLanguage" ng-change="onChangeLanguage(appLanguage)">
+            <select class="language" ng-model="appLanguage" ng-change="onChangeLanguage(appLanguage)" style="color: #000000;">
               <option value="zh-CN">中文</option>
               <option value="en-GB">English</option>
             </select>
           </a>
         </li>
 
-        <li class=" dropdown">
+        <li class=" dropdown cn_dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 
-            <p><span><img src="./images/icoimage/interval.png"></span> <b>{{username}}</b><i class="fa fa-sort-desc"
-                                                                                             style="margin-left: 3px;"></i>
-            </p>
+            <p style="color: #ffffff"><span><img src="./images/icoimage/interval.png"></span><i class="fa fa-cog" style="margin-right: 5px;font-size: 20px;"></i>账户信息<i
+              class="fa fa-sort-desc" style="margin-left: 3px;"></i></p>
           </a>
-          <ul class="dropdown-menu">
-            <li><a href="#" ng-click="logout()" style="line-height: 33px"><i class="fa fa-sign-out fa-lg"></i><b>Sign
-              Out</b></a></li>
+          <ul class="dropdown-menu cn_dropdown_menu">
+            <li><a href="#" style="line-height: 33px;color: #ffffff"><i class="fa fa-cog fa-lg"></i><b>账户信息</b></a>
+            </li>
+            <li><a href="#" style="line-height: 33px;color: #ffffff"><i class="fa fa-user fa-lg"></i><b>账户管理</b></a>
+            </li>
+            <li><a href="#" ng-click="logout()" style="line-height: 33px;color: #ffffff"><i class="fa fa-user-times fa-lg"></i><b>退出登录</b></a></li>
           </ul>
         </li>
       </ul>

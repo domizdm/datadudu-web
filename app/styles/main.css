@@ -11,7 +11,7 @@ body {
 
 @media (max-width: 1140px) {
   .rules-main .col-md-6 {
-     width: 100%;
+    width: 100%;
   }
 }
 @media (min-width:992px) {
@@ -32,15 +32,20 @@ body {
 
 }
 
+
 @media (max-width: 991px){
-  .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+  .navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
+    min-width: 100px;
     position: absolute;
-    right: 0%;
+    right: 0;
     left: auto;
     border: 1px solid #ddd;
-    background: #fff;
+    background: #0169B0;
   }
 }
+
+
+
 @media (max-width: 992px) {
   .navbar-custom-menu li span {
     display: none;
@@ -80,11 +85,11 @@ input, select, textarea:focus {
 }
 
 .main-header {
-  background-color: #025f98;
+  background-color:#0277BD;
 }
 
 .main-header a {
-  color: #5B616E;
+  color: #ffffff;
 }
 
 .main-header .sidebar-toggle:hover {
@@ -502,24 +507,10 @@ table.myTable td, table.myTable th {
   display: inline;
 }
 
-.login-page .login-box {
-  margin-top: 100px;
-}
-
 @media (max-width: 780px) {
   .navbar-header {
     text-align: center;
   }
-}
-
-.navbar-fixed-bottom {
-  text-align: center;
-}
-
-.navbar-fixed-bottom span {
-  font-size: 20px;
-  color: #FFFFFF;
-  line-height: 50px;
 }
 
 .navbar-custom-menu .user-header {
@@ -529,7 +520,7 @@ table.myTable td, table.myTable th {
 .navbar-custom-menu li a:hover {
   background-color: #F5F5F5;
 }
-.navbar-custom-menu .dropdown-menu > li > a{padding: 3px 7px;}
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #F5F5F5;
 }
@@ -629,7 +620,7 @@ table.myTable td, table.myTable th {
 }
 
 .table-commands-style {
-padding-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .table-commands-style table > thead {
@@ -693,7 +684,7 @@ padding-bottom: 15px;
 }
 
 /*!*.signup-outer {*!*/
-  /*!*width: 100% !important;*!*/
+/*!*width: 100% !important;*!*/
 /*}*/
 
 .signup-outer, .login-outer {
@@ -720,7 +711,7 @@ padding-bottom: 15px;
 }
 
 .main-header .navbar .nav > li > a > .label {
-  position: absolute;
+  position: static;
   top: 11px !important;
   right: 1px !important;
 
@@ -800,7 +791,7 @@ padding-bottom: 15px;
 }
 
 label {
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 
 }
 
@@ -842,7 +833,7 @@ label {
   color: #FFFFFF;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
-  border: 0px;
+  border: 0;
 }
 .modal-attach .tab-bg {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.13);
@@ -906,7 +897,7 @@ label {
 }
 
 .nav-tabs-custom > .tab-content {
-  padding: 0px;
+  padding: 0;
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -943,26 +934,26 @@ label {
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
   border-color: #FFFFFF;
 }
-.navbar-custom-menu p{margin: 0px;}
+.navbar-custom-menu p{margin: 0;}
 
 .nav-tabs-custom {
-  margin-bottom: 0px;}
+  margin-bottom: 0;}
 .nav-data a{background-color: #4C98EC;color: #FFFFFF}
 .data-header .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
   padding: 4px;
   vertical-align: middle;
 }
-.data-header table{margin-bottom: 0px;}
+.data-header table{margin-bottom: 0;}
 .table-data-info table tbody tr td{padding:8px ;vertical-align: middle;}
 /*.table-data-info table{margin-bottom: 10px;}*/
 
 .duduhttp_table table.myTable td a, table.myTable th a{color: #FFFFFF;}
-.channel-create .channel-form table tr{margin: 4px 0px;}
+.channel-create .channel-form table tr{margin: 4px 0;}
 .channel-create button a {color: #FFFFFF}
 /*login style start*/
 .login-top-image h2{margin-top: 10px;padding-left: 50px;}
 
 .login-select{height: 33px;
-border-radius: 3px}
+  border-radius: 3px}
 /*login style end*/
 
