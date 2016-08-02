@@ -6,19 +6,23 @@
    顶部信息由main.html统一处理,不要在所有子tab元素进行复制黏贴!!
    它们所处的scope并不一样, 若子tab存在局部同名变量将产生冲突, 请勿复制粘贴到子tab!!
   -->
+
   <div class="row data-header" style="padding:0;margin:10px;background:#fff;">
-    <div class="col-md-2">
-      <img src="../images/icoimage/">
-      </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <table class="table table-striped ">
         <thead>
         <tr>
-          <td><label style="height: 30px" ng-bind-html="Lang['data-header.channel_view']"></label></td>
+          <td colspan="2"><label style="height: 30px" ng-bind-html="Lang['data-header.channel_view']"></label></td>
           <td ><button class="btn btn-info show_hide " style="margin-top: 1px;float:right " ng-click="toggle()" ng-bind-html="Lang['data-header.show_hide']"></button></td>
         </tr>
         </thead>
         <tbody ng-show="navhide">
+        <tr>
+          <td rowspan="6" style="width:120px;" class="text-center">
+            <img src="images/yeoman.png" style="max-height:100px;max-width:120px;"/>
+            <button ng-click="openModalUploadIcon()">Upload Icon</button>
+          </td>
+        </tr>
         <tr>
           <td><img class="table-ico" src="../images/icoimage/id.png"><span ng-bind-html="Lang['data-header.channel_id']"></span></td>
           <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
@@ -40,7 +44,7 @@
       </table>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-6">
       <div class="table-data-info">
         <table class="table table-striped">
           <thead>
