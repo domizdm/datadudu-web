@@ -8,6 +8,13 @@
 <div class="modal-body">
   <div class="row">
     <div class="alert alert-danger">Under construction...</div>
+
+    <div class="btn btn-default"
+         ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+         ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+         ngf-resize="{width: 100, height: 100}">Click to Choose Image...</div>
+
+    Image thumbnail: <img ngf-thumbnail="file || '/thumb.jpg'">
   </div>
 </div>
 <div class="modal-footer">
