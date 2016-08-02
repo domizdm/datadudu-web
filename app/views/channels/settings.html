@@ -1,23 +1,23 @@
 
-<div class="row channel-main-setting">
+<div class="row channel-main-setting setting">
   <div class="col-md-6 " style="padding-left: 10px;">
-    <h2>Settings</h2>
+    <h2  ng-bind-html="Lang['setting.setting']"></h2>
     <hr>
     <div ng-controller="ChannelsSettingsCtrl">
       <div ng-if="form">
         <table style="width: 100%;">
-          <tr><td><label>Name</label></td></tr>
+          <tr><td><label  ng-bind-html="Lang['setting.Name']"></label></td></tr>
           <tr>
             <td><input ng-model="form.name" class="form-control"></td>
           </tr>
-          <tr><td><label>Description</label></td></tr>
+          <tr><td><label  ng-bind-html="Lang['setting.Description']"></label></td></tr>
           <tr>
             <td><textarea ng-model="form.description" class="form-control"></textarea></td>
           </tr>
 
 
           <tr ng-repeat="fidx in [1,2,3,4,5,6,7,8] track by $index">
-            <td style="display: inline"><label>Feild:</label> {{fidx}}:</td>
+            <td style="display: inline"><label  ng-bind-html="Lang['setting.Feild']"></label> {{fidx}}:</td>
             <td style="display: inline">
               <input ng-model="$parent.form['field'+fidx]" ng-disabled="!$parent.form['field'+fidx+'-enabled']"
                      class="form-control" placeholder="Fill in field name...">
@@ -27,64 +27,64 @@
             </td>
           </tr>
 
-          <tr> <td><label>Metadata:</label></td></tr>
+          <tr> <td><label  ng-bind-html="Lang['setting.Metadata']"></label></td></tr>
           <tr>
             <td><textarea ng-model="form.metadata" class="form-control"></textarea></td>
           </tr>
 
-          <tr><td><label>Tags:</label></td></tr>
+          <tr><td><label  ng-bind-html="Lang['setting.Tags']"></label></td></tr>
           <tr>
             <td><input ng-model="form.tags" class="form-control"></td>
           </tr>
 
-          <tr> <td><label>latitude:</label></td></tr>
+          <tr> <td><label  ng-bind-html="Lang['setting.latitude']"></label></td></tr>
           <tr>
 
             <td><input ng-model="form.latitude" class="form-control"></td>
           </tr>
 
-          <tr><td><label>longitude:</label></td></tr>
+          <tr><td><label  ng-bind-html="Lang['setting.longitude']"></label></td></tr>
           <tr>
             <td><input ng-model="form.longitude" class="form-control"></td>
           </tr>
 
-          <tr><td><label>elevation:</label></td></tr>
+          <tr><td><label  ng-bind-html="Lang['setting.elevation']"></label></td></tr>
           <tr>
             <td><input ng-model="form.elevation" type="number" class="form-control"></td>
           </tr>
 
-          <tr> <td><label>make public</label><input style="float: right" ng-model="form.public_flag" type="checkbox"></td>
+          <tr> <td><label  ng-bind-html="Lang['setting.makepublic']">make public</label><input style="float: right" ng-model="form.public_flag" type="checkbox"></td>
 
           </tr>
 
 
-          <tr> <td><label>url:</label></td></tr>
+          <tr> <td><label  ng-bind-html="Lang['setting.url']"></label></td></tr>
           <tr>
             <td><input ng-model="form.url" class="form-control"></td>
           </tr>
 
-          <tr>  <td><label>videoId:</label></td></tr>
+          <tr>  <td><label  ng-bind-html="Lang['setting.videoId']"></label></td></tr>
           <tr>
             <td>
               <input ng-model="form.videoId" class="form-control"><br/>
 
               <label>
                 <input ng-model="form.video_type" type="radio" value="youtube">
-                YouTube
+               <span  ng-bind-html="Lang['setting.YouTube']"> </span>
               </label>
 
               <label>
                 <input ng-model="form.video_type" type="radio" value="vimeo">
-                Vimeo
+              <span  ng-bind-html="Lang['setting.Vimeo']"> </span>
               </label>
             </td>
           </tr>
         </table>
         <br/>
         <div style="margin-bottom: 10px;">
-          <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)">Save Channel</button>
-          <button class="btn btn btn-warning save-btn" ng-click="clearFeed(form)">Clear Feed</button>
-          <button class="btn btn btn-danger save-btn" ng-click="deleteChannel(form)">Delete Channel</button>
+          <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)"  ng-bind-html="Lang['setting.SaveChannel']"></button>
+          <button class="btn btn btn-warning save-btn" ng-click="clearFeed(form)"  ng-bind-html="Lang['setting.ClearFeed']"></button>
+          <button class="btn btn btn-danger save-btn" ng-click="deleteChannel(form)"  ng-bind-html="Lang['setting.DeleteChannel']"></button>
         </div>
       </div>
 
@@ -92,7 +92,7 @@
   </div>
 
   <div class="col-md-6">
-    <h2>Help</h2>
+    <h2 ng-bind-html="Lang['setting.Help']"></h2>
     <hr/>
     <div>
       <h4>ThinkSpeak Channal</h4>

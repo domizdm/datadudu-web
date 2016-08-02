@@ -1,19 +1,16 @@
 <div class="row channel-main-setting" ng-controller="ChannelsTriggersCtrl">
-  <div class="col-md-12" style="padding-left: 10px;">
-    <h2>Triggers</h2>
-    <p class="text-muted">This list shows {{mc.tableState.pagination.number}}
-      items per page. Columns 'Finished At' and 'Created At' are both sortable.</p>
-    <hr>
+  <div class="col-md-12 triggers" style="padding-left: 10px;">
+
     <div ng-if="!!channel">
       <table class="table" st-pipe="mc.callServer" st-table="mc.displayed">
-        <thead>
+        <thead style="background-color: #0277BD;color: #ffffff">
         <tr>
-          <th class="text-nowrap">Trigger ID</th>
-          <th class="text-nowrap">Field</th>
-          <th class="text-nowrap">Log</th>
-          <th class="text-nowrap">Status</th>
-          <th class="text-nowrap" st-sort="created_at" st-skip-natural="true">Created At</th>
-          <th class="text-nowrap" st-sort="finished_at" st-skip-natural="true">Finished At</th>
+          <th class="text-nowrap" ng-bind-html="Lang['triggers.TriggerID']"></th>
+          <th class="text-nowrap" ng-bind-html="Lang['triggers.Field']"></th>
+          <th class="text-nowrap" ng-bind-html="Lang['triggers.Log']"></th>
+          <th class="text-nowrap" ng-bind-html="Lang['triggers.Status']"></th>
+          <th class="text-nowrap" st-sort="created_at" st-skip-natural="true" ng-bind-html="Lang['triggers.CreatedAt']"></th>
+          <th class="text-nowrap" st-sort="finished_at" st-skip-natural="true" ng-bind-html="Lang['triggers.FinishedAt']"></th>
         </tr>
         </thead>
         <tbody ng-show="!mc.isLoading">
@@ -27,14 +24,14 @@
         </tr>
         <tr ng-if="!mc.displayed.length">
           <td colspan="6" class="text-left">
-            <p class="">No Data</p>
+            <p  ng-bind-html="Lang['triggers.NoData']"></p>
           </td>
         </tr>
         </tbody>
         <tbody ng-show="mc.isLoading">
         <tr>
           <td colspan="6" class="text-left">
-            <p class="">Loading ... </p>
+            <p class="" ng-bind-html="Lang['triggers.Loading']">  </p>
           </td>
         </tr>
         <tfoot>
@@ -42,8 +39,14 @@
           <td class="text-center" st-pagination="" st-items-by-page="itemsByPage" colspan="6">
           </td>
         </tr>
+
         </tfoot>
+
       </table>
+      <span style="color: #3783C2" ng-bind-html="Lang['triggers.triggers']"></span>
+      <hr/>
+      <p class="text-muted"><span  ng-bind-html="Lang['triggers.reminder']"></span> {{mc.tableState.pagination.number}}
+        <span  ng-bind-html="Lang['triggers.reminder2']"></span></p>
     </div>
   </div>
 </div>

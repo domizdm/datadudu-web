@@ -695,15 +695,39 @@ table.myTable td, table.myTable th {
   box-shadow: 0 1px 7px 2px rgba(135, 158, 171, 0.1);
 }
 
-.main-devices {
+/*设备管理开始*/
+.main-devices{background-color: #ffffff;}
+.devices_header {
   background-color: #FFFFFF;
-  margin: 10px 10px;
+  padding: 20px 61px;
 }
+.devices_header .device_develop{margin-right: 30px;color:#0168B3;}
+.devices_header .btn-search{margin-left: 25px;}
+@media (max-width: 768px) {
+  .devices_header{margin-top: 50px;}
+}
+.main-devices .devices_header{border-bottom:2px solid  #F6F6F6;}
+.devices_sort{ background-color: #FFFFFF;padding: 20px 61px;}
+.devices_sort span{margin-right: 10px;}
+.devices_sort span i{margin-right: 5px;}
+.devices_sor a:hover, a:active, a:focus{color: #0277BD;}
+.devices_sor a{color:#000000 ;}
+.devices_body{padding: 5px 61px;}
+.devices_div{background-color: #F5F5F5;width: 100%;height:auto;}
+.devices_div p{margin: 0 0  2px 0;}
+.devices_del{margin-left: 54px;margin-top: 5px}
+.device_ico{float:left;margin-right: 5px;padding-top:20px;margin-bottom: 20px;padding-left: 10px;padding-right: 10px;}
+.devices_div .create span{color:#828181;font-size: 12px;}
+@media (max-width: 768px) {
+  .text-left{float: right;}
 
-.device_mg {
-  margin-top: 20px;
-  padding: 10px;
 }
+/*设备管理结束*/
+
+/*.device_mg {*/
+  /*margin-top: 20px;*/
+  /*padding: 10px;*/
+/*}*/
 
 .tb2Header {
   background-color: #025F98;

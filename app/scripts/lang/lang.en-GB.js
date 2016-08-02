@@ -66,6 +66,7 @@ window.lang['en-GB'] = {
   'rules-main.created': 'Created',
   'rules-main.deleteall': 'Delete All',
   'rules-main.delete': 'Delete ',
+  'rules-main.edit': 'Edit ',
 
   // ---- rules End ----
 
@@ -102,8 +103,83 @@ window.lang['en-GB'] = {
   'realtime.Frequency': 'Frequency: ',
   'realtime.LiveData': 'Live Data ',
 
-
   // ---- data- End ----
+
+  // ---- Commands- Start ----
+  'commands.commands': 'Commands',
+  'commands.position': 'position',
+  'commands.command_id': 'command_id',
+  'commands.command_string': 'command_string',
+  'commands.Delete': 'Delete',
+  'commands.Delete All': 'Delete All',
+  'commands.New Command': 'New Command',
+  'commands.Save': 'Save',
+  'commands.Cancel': 'Cancel',
+  'commands.Help': 'Help',
+  // ---- Commands- End ----
+
+  // ---- Triggers- start ----
+  'triggers.triggers': 'Triggers',
+  'triggers.TriggerID': 'Trigger ID',
+  'triggers.Field': 'Field',
+  'triggers.Log': 'Log',
+  'triggers.Status': 'Status',
+  'triggers.CreatedAt': 'Created At',
+  'triggers.Finished At': 'Finished At',
+  'triggers.No Data': ' No Data',
+  'triggers.Loading': 'Loading ...',
+  'triggers.reminder': 'This list shows ',
+  'triggers.reminder2': ' Columns "Finished At" and "Created At" are both sortable.',
+
+  // ---- Triggers- End ----
+
+  // ---- seating- start ----
+  'setting.setting': 'Settings ',
+  'setting.Name': 'Name ',
+  'setting.Description': 'Description ',
+  'setting.Feild': 'Feild ',
+  'setting.Metadata': 'Metadata: ',
+  'setting.Tags': 'Tags: ',
+  'setting.latitude': 'latitude: ',
+  'setting.longitude': 'longitude: ',
+  'setting.elevation': 'elevation: ',
+  'setting.makepublic': 'make public: ',
+  'setting.url': 'url: ',
+  'setting.videoId': 'videoId: ',
+  'setting.YouTube': ' YouTube: ',
+  'setting.Vimeo': ' Vimeo: ',
+  'setting.SaveChannel': ' Save Channel: ',
+  'setting.ClearFeed': ' Clear Feed: ',
+  'setting.DeleteChannel': 'Delete Channel: ',
+  'setting.Help': 'Help: ',
+  // ---- seating- End ----
+
+  // ---- API_KEY- START ----
+  'apikeys.Apikeys': 'Apikeys ',
+  'apikeys.WriteAPIKey': 'Write API Key ',
+  'apikeys.Key': 'Key ',
+  'apikeys.Generate New Write API Key': 'Generate New Write API Key ',
+  'apikeys.Read API Key': 'Read API Key ',
+  'apikeys.Note': 'Note ',
+  'apikeys.Save Notes': 'Save Notes ',
+  'apikeys.Delete API Key': 'Delete API Key ',
+  'apikeys.Generate Read API Key': 'Generate Read API Key ',
+  'apikeys.Help': ' Help ',
+  // ---- API_KEY- End ----
+
+
+  // ---- import/export- start ----
+  'importexport.Export': ' Export ',
+  'importexport.tishi': ' Download all of this Channels feeds in CSV format. ',
+  'importexport.From': ' From ',
+  'importexport.To': ' To ',
+  'importexport.Download': ' Download ',
+  'importexport.Help': ' Help ',
+
+  // ----  import/export- End ----
+
+
+
   null:null
 };
 

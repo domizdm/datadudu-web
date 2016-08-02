@@ -1,16 +1,16 @@
 <div ng-controller="ChannelsApiKeysCtrl">
   <div ng-if="form">
-    <div class="container-fluid table-apikey-style">
+    <div class="container-fluid table-apikey-style apikeys">
       <div class="row-fluid private-apikey" style="padding: 15px">
         <div class="col-md-6">
-          <h2>Apikeys</h2>
+          <h2 ng-bind-html="Lang['apikeys.Apikeys']"></h2>
           <hr>
           <table style="width: 100%">
             <tr>
-              <td colspan="2"><h3>Write API Key</h3></td>
+              <td colspan="2"><h3 ng-bind-html="Lang['apikeys.Write API Key']"></h3></td>
             </tr>
             <tr>
-              <td><label>Key:</label></td>
+              <td><label ng-bind-html="Lang['apikeys.Key']"></label></td>
               <td>
                 <pre>{{form.writeKey}}</pre>
               </td>
@@ -18,29 +18,28 @@
             <tr>
               <td></td>
               <td>
-                <button class="btn btn-warning" ng-click="generateWriteKey(form)">Generate New Write API Key</button>
+                <button class="btn btn-warning" ng-click="generateWriteKey(form)" ng-bind-html="Lang['apikeys.Generate New Write API Key']"></button>
               </td>
             </tr>
 
             <tr ng-repeat-start="item in form.readKeys">
-              <td colspan="2"><h3>Read API Key</h3></td>
+              <td colspan="2"><h3 ng-bind-html="Lang['apikeys.Read API Key']"></h3></td>
             </tr>
             <tr>
-              <td><label>Key:</label></td>
+              <td><label ng-bind-html="Lang['apikeys.Key']"></label></td>
               <td>
                 <pre>{{item.read_key}}</pre>
             </tr>
             <tr>
-              <td><label>Note:</label></td>
+              <td><label ng-bind-html="Lang['apikeys.Note']"></label></td>
               <td><textarea ng-model="item.note"></textarea></td>
             </tr>
             <tr ng-repeat-end>
               <td></td>
               <td>
-                <button class="btn btn-success" ng-click="saveNote(form.channel_id, item.read_key, item.note)">Save
-                  Notes
+                <button class="btn btn-success" ng-click="saveNote(form.channel_id, item.read_key, item.note)" ng-bind-html="Lang['apikeys.Save Notes']">
                 </button>
-                <button class="btn btn-danger" ng-click="deleteReadKey(form.channel_id, item.read_key)">Delete API Key
+                <button class="btn btn-danger" ng-click="deleteReadKey(form.channel_id, item.read_key)" ng-bind-html="Lang['apikeys.Delete API Key']">
                 </button>
               </td>
             </tr>
@@ -48,7 +47,7 @@
             <tr>
               <td></td>
               <td>
-                <button class="btn btn-warning" ng-click="generateReadKey(form.channel_id)">Generate Read API Key
+                <button class="btn btn-warning" ng-click="generateReadKey(form.channel_id)" ng-bind-html="Lang['apikeys.Generate Read API Key']">
                 </button>
               </td>
             </tr>
@@ -57,7 +56,7 @@
         </div>
 
         <div class="col-md-6">
-          <h2>Help</h2>
+          <h2 ng-bind-html="Lang['apikeys.Help']"></h2>
           <hr>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s,

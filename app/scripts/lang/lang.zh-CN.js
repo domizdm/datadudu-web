@@ -66,6 +66,7 @@ window.lang['zh-CN'] = {
   'rules-main.created': '创建时间',
   'rules-main.deleteall': '删除全部',
   'rules-main.delete': '删除 ',
+  'rules-main.edit': '编辑 ',
   // ---- rules End ----
 
   // ---- data-  start ----
@@ -100,11 +101,79 @@ window.lang['zh-CN'] = {
   'realtime.Frequency': '频率 ',
   'realtime.LiveData': '实时数据 ',
 
-
   // ---- data- End ----
 
+  // ---- Commands- Start ----
+  'commands.commands': '指令',
+  'commands.position': '位置',
+  'commands.command_id': '指令ID',
+  'commands.command_string': '指令字符',
+  'commands.Delete': '删除',
+  'commands.Delete All': '删除全部',
+  'commands.New Command': '新建指令',
+  'commands.Save': '保存',
+  'commands.Cancel': '取消',
+  'commands.Help': '帮助',
+  // ---- Commands- End ----
+
+  // ---- Triggers- start ----
+  'triggers.triggers': '预警触发',
+  'triggers.TriggerID': '预警触发 ID',
+  'triggers.Field': '存储单元',
+  'triggers.Log': '日志',
+  'triggers.Status': '状态',
+  'triggers.CreatedAt': '创建时间',
+  'triggers.Finished At': '完成时间',
+  'triggers.No Data': '没有数据',
+  'triggers.Loading': '加载中 ...',
+  'triggers.reminder': '本表单页可显示',
+  'triggers.reminder2': '个条目，可按照“完成时间”和“创建时间”排序。',
+  // ---- Triggers- End ----
+
+  // ---- seating- start ----
+  'setting.setting': '设置 ',
+  'setting.Name': '名字 ',
+  'setting.Description': '描述 ',
+  'setting.Feild': 'Feild ',
+  'setting.Metadata': '元数据: ',
+  'setting.Tags': '标签: ',
+  'setting.latitude': '界限: ',
+  'setting.longitude': '纬线: ',
+  'setting.elevation': '经线: ',
+  'setting.makepublic': 'make public: ',
+  'setting.url': 'url: ',
+  'setting.videoId': '视频ID: ',
+  'setting.YouTube': ' YouTube: ',
+  'setting.Vimeo': ' Vimeo: ',
+  'setting.SaveChannel': ' 保存 ',
+  'setting.ClearFeed': ' Clear Feed ',
+  'setting.DeleteChannel': '删除 ',
+  'setting.Help': '帮助 ',
+  // ---- seating- End ----
+
+  // ---- API_KEY- START ----
+  'apikeys.Apikeys': 'Api秘钥',
+  'apikeys.WriteAPIKey': '写入 API 秘钥',
+  'apikeys.Key': '秘钥',
+  'apikeys.Generate New Write API Key': '创建新的写入API秘钥 ',
+  'apikeys.Read API Key': '读取 API 秘钥 ',
+  'apikeys.Note': '记录 ',
+  'apikeys.Save Notes': '保存记录 ',
+  'apikeys.Delete API Key': '删除 API 秘钥 ',
+  'apikeys.Generate Read API Key': '创建 读取 API 秘钥 ',
+  'apikeys.Help': ' 帮助 ',
+  // ---- API_KEY- End ----
 
 
+  // ---- import/export- start ----
+  'importexport.Export': ' 输出 ',
+  'importexport.tishi': ' Download all of this Channels feeds in CSV format. ',
+  'importexport.From': ' 从 ',
+  'importexport.To': ' 到 ',
+  'importexport.Download': ' 下载 ',
+  'importexport.Help': ' 帮助 ',
+
+  // ----  import/export- End ----
   null:null
 };
 

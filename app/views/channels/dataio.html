@@ -1,30 +1,30 @@
 <div ng-controller="ChannelsDataIOCtrl">
-  <div class="container-fluid">
+  <div class="container-fluid importexport">
     <div class="row-fluid">
       <form>
         <div class="container-fluid col-md-6 col-sm-6 private-dataio">
-          <h3>Export</h3>
-          <p>Download all of this Channel's feeds in CSV format.</p>
+          <h3 ng-bind-html="Lang['importexport.Export']"></h3>
+          <p ng-bind-html="Lang['importexport.tishi']"></p>
           <br>
           <div class="row-fluid edit_date">
-            <div class="container-fluid col-sm-1"><label> From</label></div>
+            <div class="container-fluid col-sm-1"><label ng-bind-html="Lang['importexport.From']"> </label></div>
             <div class="col-md-12 col-sm-12">
               <div class='input-group date' datetimepicker="form.begin"></div>
             </div>
 
-            <div class="container-fluid col-sm-1" style="padding-left: 10px;"><label>To</label></div>
+            <div class="container-fluid col-sm-1" style="padding-left: 10px;"><label ng-bind-html="Lang['importexport.To']"></label></div>
 
             <div class="col-md-12 col-sm-12">
               <div class='input-group date' datetimepicker="form.end"></div>
             </div>
 
 
-            <div class="col-md-12 col-sm-12"><a class="btn btn-primary dataio-downbtn" ng-click="download(channel)">Download</a>
+            <div class="col-md-12 col-sm-12"><a class="btn btn-primary dataio-downbtn" ng-click="download(channel)" ng-bind-html="Lang['importexport.Download']"></a>
             </div>
 
           </div>
           <div class="col-md-12 col-sm-12">
-            <h2>Help</h2>
+            <h2 ng-bind-html="Lang['importexport.Help']"></h2>
             <hr>
 
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
