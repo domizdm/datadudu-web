@@ -58,30 +58,6 @@ angular.module('dataduduR3App')
         .then(function(form){
           $route.reload();
         }, function(){/*dismiss*/});
-
-      //channel.listAPIKeys({id:$scope.channel.channel_id})
-      //  .$promise
-      //  .then(function(resp){
-      //    var writeKey = resp.write_key;
-      //
-      //    $uibModal.open({
-      //        templateUrl: 'views/channels/particle/modalAddPoint.html',
-      //        controller: 'ChannelsAddPointCtrl',
-      //        resolve: {
-      //          fields: function(){
-      //            return $scope.channelsFields;
-      //          },
-      //          writeKey: function(){
-      //            return writeKey;
-      //          }
-      //        }
-      //      })
-      //      .result
-      //      .then(function(form){}, function(){/*dismiss*/});
-      //  })
-      //  .catch(function(err){
-      //    ngNotify.set(err.statusText, 'error');
-      //  });
     }
   };
 

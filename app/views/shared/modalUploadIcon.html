@@ -11,14 +11,14 @@
 
   <div class="alert">
     <div class="btn btn-default"
-         ngf-select ng-model="channel_icon" name="channel_icon" ngf-pattern="'image/*'"
-         ngf-accept="'image/*'" ngf-max-size="20MB"
+         ngf-select ng-model="iconFile" name="iconFile" ngf-pattern="'image/*'"
+         ngf-accept="'image/*'" ngf-max-size="maxSize" ngf-resize="resize"
          >Click to Choose Image...</div>
 
-    <img ngf-thumbnail="channel_icon" ng-if="!!channel_icon"
+    <img ngf-thumbnail="iconFile" ng-if="!!iconFile"
          ngf-size="{width: 120, height: 120, quality: 0.9}">
 
-    <span ng-if="!channel_icon">No Image File</span>
+    <span ng-if="!iconFile"><label class="text-muted">No Image File</label> (Max Size: {{maxSize}})</span>
   </div>
 
   <div ng-show="uploading">
@@ -32,7 +32,7 @@
   </span>
 
   <span ng-show="!uploading">
-    <button type="submit" class="btn btn-primary" type="button" ng-click="upload(channel_icon, form)">Upload</button>
+    <button type="submit" class="btn btn-primary" type="button" ng-click="upload(iconFile, form)">Upload</button>
   </span>
 
   <!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>-->
