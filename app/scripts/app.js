@@ -22,6 +22,7 @@ angular
   'ngNotify',
   'ui.bootstrap',
   'angularMoment',
+  'ngFileUpload',
   'ngTouch'
 ])
 .config(function ($routeProvider, $httpProvider, stConfig) {//, $locationProvider, utils
