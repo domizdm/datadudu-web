@@ -9,8 +9,55 @@
  */
 angular.module('dataduduR3App')
 .controller('ChannelUploadIconCtrl', function($scope, $q, $filter, $window, $timeout, $log,
-                                             config, $uibModal, $uibModalInstance, ngNotify,
-                                             channel){
+                                             config, $uibModal, $uibModalInstance, Upload, ngNotify,
+                                             channel, channelId){
+
+  $scope.channel_icon = null;
+  $scope.form = {};
+  $scope.uploading = false;
+  $scope.percentage = 0;
+
+  var uploader = null;
+
+  $scope.upload = function (file, form) {
+
+    if(!file) {
+      ngNotify.set('No image file selected.', 'error');
+      return;
+    }
+
+    var payload = _.extend({}, form);
+
+    $scope.percentage = 0;
+    $scope.uploading = true;
+
+    uploader = Upload.upload({
+      url: config.END_POINT + '/channels/' + channelId + '/upload_icon',
+      params: {_json: true},// =dont transform into jqlike
+      data: _.extend(payload, {'channel_icon': file})
+    });
+
+    uploader.then(function (resp) {
+
+      $uibModalInstance.close(form);
+
+      ngNotify.set('New icon uploaded.', 'success');
+
+    }, function (resp) {
+      if(resp.data != null) {
+        ngNotify.set(resp.data, 'error');
+      }
+    }, function (evt) {
+      var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+      $scope.percentage = progressPercentage;
+    }).finally(function(){
+      $scope.uploading = false;
+    });
+  };
+
+
+  // TODO: abort upload when dismiss
+  // upload.abort()
 
 
   //$scope.fields = [{key:'status', text:'Status'}];
@@ -125,6 +172,15 @@ angular.module('dataduduR3App')
   //};
 
   $scope.cancel = function () {
+    if(uploader != null && Upload.isUploadInProgress()) {
+
+      $log.log(uploader);
+
+      uploader.abort();
+
+      ngNotify.set('Icon upload has been aborted.', 'error');
+    }
+
     $uibModalInstance.dismiss('cancel');
   };
 });

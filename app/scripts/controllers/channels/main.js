@@ -47,10 +47,17 @@ angular.module('dataduduR3App')
       $uibModal.open({
           templateUrl: 'views/shared/modalUploadIcon.html',
           controller: 'ChannelUploadIconCtrl',
-          resolve: {}
+          backdrop: false,
+          resolve: {
+            channelId: function() {
+              return $scope.channel.channel_id;
+            }
+          }
         })
         .result
-        .then(function(form){}, function(){/*dismiss*/});
+        .then(function(form){
+          $route.reload();
+        }, function(){/*dismiss*/});
 
       //channel.listAPIKeys({id:$scope.channel.channel_id})
       //  .$promise
