@@ -1,4 +1,4 @@
-<div class="container-fluid main-devices" xmlns="http://www.w3.org/1999/html">
+<div class="container-fluid main-devices">
   <div class="row devices_header">
     <span class="device_develop hidden-xs"><b>设备开发</b></span>
     <input type="text" class="input-style" placeholder="请输入查询内容!" ng-model="searchText">
@@ -14,7 +14,7 @@
     <div class="devices_div">
       <img src="./images/icoimage/1.png" class="device_ico">
       <div class="text-left">
-        <span> <a style="text-decoration:underline;">{{device.name}}</a></span><span><img
+        <span> <a ng-href="#/channels/{{device.channel_id}}/private" style="text-decoration:underline;">{{device.name}}</a></span><span><img
         src="./images/icoimage/duduico2.png" style="margin-left: 18px"></span>
         <span><button type="button" class="btn btn-danger devices_del"><a
           ng-click="removeDevice(device.activation_code)" style="color: #ffffff">移除</a></button></span>

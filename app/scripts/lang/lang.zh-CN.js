@@ -123,7 +123,7 @@ window.lang['zh-CN'] = {
   'triggers.Log': '日志',
   'triggers.Status': '状态',
   'triggers.CreatedAt': '创建时间',
-  'triggers.Finished At': '完成时间',
+  'triggers.FinishedAt': '完成时间',
   'triggers.No Data': '没有数据',
   'triggers.Loading': '加载中 ...',
   'triggers.reminder': '本表单页可显示',

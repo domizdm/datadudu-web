@@ -125,7 +125,7 @@ window.lang['en-GB'] = {
   'triggers.Log': 'Log',
   'triggers.Status': 'Status',
   'triggers.CreatedAt': 'Created At',
-  'triggers.Finished At': 'Finished At',
+  'triggers.FinishedAt': 'Finished At',
   'triggers.No Data': ' No Data',
   'triggers.Loading': 'Loading ...',
   'triggers.reminder': 'This list shows ',
@@ -178,7 +178,11 @@ window.lang['en-GB'] = {
 
   // ----  import/export- End ----
 
+  // ---- triggersLog- start ----
 
+
+
+  // ----  triggersLog- End ----
 
   null:null
 };

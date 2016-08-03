@@ -1,0 +1,221 @@
+@font-face {
+  font-family: '微软雅黑';
+
+  font-style: normal;
+}
+/*登录页面*/
+/*登录头部导航样式*/
+@media (min-width: 768px){
+  .collapse {
+    display: block;
+  }
+}
+@media (min-width: 992px){
+  .topnav .navbar-nav {
+    float: right;
+    margin: 0;
+  }
+}
+
+@media (min-width: 992px){
+  .col-md-9 {
+    width: 70%;
+  }
+
+}
+/*bet important */
+
+@media (max-width: 768px) {
+
+  .topnav h2{margin-top: 0;}
+  .topnav a h2{padding-top: 20px;}
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .header-logo h2{visibility:hidden;}
+}
+@media (max-width: 768px){
+  .topnav .navbar-nav .open .dropdown-menu {float:left;}
+  .topnav .navbar-nav li a{
+    text-align: center;
+  }
+}
+.navbar{margin-bottom: 5px;}
+.topnav .header-nav {
+  padding-top: 5px;
+}
+
+.topnav h2 {
+  color: #0878BC;
+  line-height:15px;
+}
+
+.navbar-brand {
+  height: 81px;
+}
+
+.topnav .navbar-default .navbar-nav > li > a {
+  color: #616978;
+}
+
+.topnav .navbar-default .navbar-nav  li  a:hover {
+  color: #207CC4;
+  border-bottom: 2px solid #005EB4;
+}
+.topnav .navbar-header h2{padding-top: 5px;}
+.topnav .navbar-header a{text-decoration: none;}
+.topnav .header-nav li a {padding:5px 15px}
+.header-nav .dropdown_buttom{background-color: #F8F8F8}
+
+
+/*导航二级菜单样式*/
+.dropdown-menu li{float: left;}
+
+.topnav .navbar-nav>li>.dropdown-menu {
+  margin-top: 10px;
+
+}
+
+.navbar-right .dropdown-menu {
+  right: -450px;
+  left: auto;
+}
+@media (min-width: 768px){
+  .navbar-right .dropdown-menu {
+    right: -450px;
+    left: auto;
+  }
+}
+.topnav .dropdown-menu{
+  width:810px;
+  background-color: rgba(255,255,255,.15);
+}
+
+
+.topnav .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+  color: #555;
+  background-color: #F8F8F8;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+  border: none;
+  background-color: #eee;
+
+}
+
+.topnav .btn{border-radius:0;}
+
+.dropdown .dropdown-menu li{text-align: center;}
+.dropdown-menu span{color:#9fa0a0;}
+/*导航二级菜单样式*/
+
+/*header nav style end */
+/*登录头部导航样式*/
+
+.login-page, .register-page {
+  background: #f2f2f2;
+}
+.login_bottom{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  background-color:#ffffff;
+}
+.login_bottom span{text-align: center;}
+/*登录页面*/
+
+/*登陆之后头部样式开始*/
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav  li  a:hover {
+  color: #ffffff;
+}
+
+.top_nva_cn{
+  color: #ffffff;
+  background-color: #0277BD;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;;
+  background-color: #0277BD;
+}
+
+
+
+.cn_dropdown_menu{background-color:#0169B0 }
+
+.cn_dropdown .dropdown-menu > li > a {
+  color: #ffffff;
+}
+@media (max-width: 767px){
+  .fixed .content-wrapper, .fixed .right-side {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .list-header{margin-top: 60px;}
+
+}
+.cn_dropdown_menu li a:hover{background-color: #2578BD}
+
+.cn_dropdown .dropdown-menu{min-width: 100%;}
+.cn_dropdown_menu {width: 120px}
+.ms_dropdown-menu{background-color:#0277BD; min-width:0;}
+.ms_dropdown-menu li a:hover{background-color:#0069AF;}
+.ms_dropdown-menu li a{line-height: 33px;color: #ffffff}
+/*登陆之后头部样式结束*/
+/*footed start*/
+.footed{
+  color: #FFFFFF;
+  height: auto;
+  width: 100%;
+  background-color: #2b2b2b;
+}
+.footed .footedinfo{padding-top: 35px;margin-bottom: 220px;}
+.footed .footedmenu ul li, .footedinfo ul li{
+  list-style: none;
+}
+.footedinfo ul{display:inline;}
+.footedinfo .social-links li{float: left;margin-right: 6px;}
+.footed .footedmenu ul{padding:0}
+.footed .footedmenu{float: left;}
+.footed .footedmenu ul li a{color: #FFFFFF}
+.footed .copyrights{
+  padding-top: 10px;
+  height: 48px;
+  border-top: 1px solid #555555;
+
+}
+.footedmenu .fa-long-arrow-right{
+  color: #2481c3;
+  margin-right: 12px;
+
+}
+.footed h3 a{
+  color: #FFFFFF;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #2481c3;
+}
+.footed h3 a:hover{text-decoration: none;color: #2481c3}
+.footedinfo p i{margin-right: 10px;}
+/*footed end*/
+
+/*设备管理*/
+.tb2Header th{text-align: center;}
+.dataTable tbody td{text-align: center}
+/*设备管理*/
+/*侧边栏*/
+
+/*侧边栏*/
+
+/*数据列别页面样式开始*/
+@media (max-width: 998px) {
+  .channel_ctr{float: left;}
+}
+@media (min-width: 998px) {
+  .channel_ctr{float: right}
+}
+.up_ico{border-radius: 50px;}
+/*数据列别页面样式结束*/
+
