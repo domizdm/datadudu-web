@@ -8,7 +8,10 @@
     <div class="col-md-12 col-sm-12 device_mg_div">
       <div>
         <a ng-repeat="product in products" ng-href="#/productdetails/{{product.product_id}}">
-          <div class="col-md-3 products-div">{{product.name}}</div>
+          <div class="col-md-3 products-div">
+            <img src="{{product['icon_512x512']}}" style="max-width:64px;max-height:64px;" ng-if="product['icon_512x512']">
+            {{product.name}}
+          </div>
         </a>
       </div>
     </div>

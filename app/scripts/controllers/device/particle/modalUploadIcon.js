@@ -2,21 +2,22 @@
 
 /**
  * @ngdoc function
- * @name dataduduR3App.controller:ChannelUploadIconCtrl
+ * @name dataduduR3App.controller:DeviceUploadIconCtrl
  * @description
- * # ChannelUploadIconCtrl
+ * # DeviceUploadIconCtrl
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelUploadIconCtrl', function($scope, $q, $filter, $window, $timeout, $log,
+.controller('DeviceUploadIconCtrl', function($scope, $q, $filter, $window, $timeout, $log,
                                              config, $uibModal, $uibModalInstance, Upload, ngNotify,
-                                             channel, channelId){
+                                             productId){
 
   $scope.iconFile = null;
   $scope.form = {};
   $scope.uploading = false;
   $scope.percentage = 0;
   $scope.maxSize = '1MB';//MB
+  $scope.resize = {width:100, height:100};
 
   var uploader = null;
 
@@ -33,9 +34,9 @@ angular.module('dataduduR3App')
     $scope.uploading = true;
 
     uploader = Upload.upload({
-      url: config.END_POINT + '/channels/' + channelId + '/upload_icon',
+      url: config.END_POINT + '/products/' + productId,
       params: {_json: true},// =dont transform into jqlike
-      data: _.extend(payload, {'channel_icon': file})
+      data: _.extend(payload, {'icon_100x100': file})
     });
 
     uploader.then(function (resp) {
@@ -46,7 +47,7 @@ angular.module('dataduduR3App')
 
     }, function (resp) {
       if(resp.data != null) {
-        ngNotify.set(resp.data, 'error');
+        ngNotify.set(resp.data.desp, 'error');
       }
     }, function (evt) {
       var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);

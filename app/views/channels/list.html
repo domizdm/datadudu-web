@@ -32,19 +32,19 @@
           <td st-row-check="channel" st-row-check-attr="checkedFlag"></td>
           <td class="td-left">
             <div style="float: left;width: 170px">
-              <img src="./images/icoimage/channel_img.png" style="float: left">
-            <!--<div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">-->
-            <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+              <img src="{{channel.channel_icon}}" style="float: left;max-width:64px;max-height:64px;" ng-if="channel.channel_icon">
+              <!--<div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">-->
+              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
 
-            <!--<div ng-show="channel.name==''||channel.name=='null'||channel.name==null">-->
-              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
+              <!--<div ng-show="channel.name==''||channel.name=='null'||channel.name==null">-->
+                <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
             </div>
             <div class="channel_ctr">
-            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
             </div>
           </td>
           <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' Public': 'Private'}}</a></td>
