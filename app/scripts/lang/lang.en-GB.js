@@ -78,6 +78,8 @@ window.lang['en-GB'] = {
   'data-header.channel_author': 'Author:',
   'data-header.channel_access': 'Access:',
   'data-header.channel_tags': 'Tags:',
+  'data-header.public': 'Public:',
+  'data-header.Private': 'Private:',
   'data-header.ChannelStatus': 'Channel Status:',
   'data-header.Created': 'Created :',
   'data-header.Updated': 'Updated :',
@@ -179,7 +181,6 @@ window.lang['en-GB'] = {
   // ----  import/export- End ----
 
   // ---- New Channel- start ----
-
   'channel-create.NewChannel': 'New Channel ',
   'channel-create.Name': 'Name: ',
   'channel-create.Description': 'Description: ',
@@ -196,10 +197,45 @@ window.lang['en-GB'] = {
   'channel-create.Vimeo': '  Vimeo ',
   'channel-create.SaveChannel': 'Save Channel ',
   'channel-create.Help': 'Help ',
-
-
   // ----  New Channel- End ----
 
+  // ----  New/Edit Rules- start ----
+  'NewEdit_Rules.New/Edit Rules': 'New/Edit Rules ',
+  'NewEdit_Rules.Rules Name': 'Rules Name ',
+  'NewEdit_Rules.Selected Fields': 'Selected Fields: ',
+  'NewEdit_Rules.Condition Type': 'Condition Type:',
+  'NewEdit_Rules.Condition': 'Condition:',
+  'NewEdit_Rules.ChooseCondition': '--Choose Condition-- ',
+  'NewEdit_Rules.ConditionValue': 'Condition Value:',
+  'NewEdit_Rules.ActionFrequency': 'Action Frequency: ',
+  'NewEdit_Rules.Action Type': 'Action Type:',
+  'NewEdit_Rules.Action Value': 'Action Value:',
+  'NewEdit_Rules.Command String': 'Command String:',
+  'NewEdit_Rules.Frequency': 'Frequency:',
+  'NewEdit_Rules.Help': 'Help:',
+  'NewEdit_Rules.SaveRules': 'Save Rules',
+  'NewEdit_Rules.Cancel': 'Cancel',
+  // ---- New/Edit Rules- End ----
+
+  // ----新建关联设备- start ----
+  'devices_con.AddProductBatch': 'Add Product Batch',
+  'devices_con.EditProductBatch': 'Edit Product Batch',
+  'devices_con.con': 'Loremss Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
+  'devices_con.Name': 'Name',
+  'devices_con.Description': 'Description',
+  'devices_con.Field': 'Field',
+  'devices_con.Metadata': 'Metadata',
+  'devices_con.Privacy': 'Privacy',
+  'devices_con.Privacy_shuoming': 'Lorem Ipsum is simply dummy text of the printing',
+  'devices_con.PrivateDevice': 'Private Device',
+  'devices_con.PrivateDevice_shuoming': 'Lorem Ipsum is simply dummy text of the printing',
+  'devices_con.PublicDevice': 'Public Device',
+  'devices_con.PublicDevice_shuoming': 'Lorem Ipsum is simply dummy text of the printing',
+  'devices_con.AddBatch': 'Add Batch',
+  'devices_con.Cancel': 'Cancel',
+  'devices_con.UpdateBatch': 'Update Batch',
+
+  // ---- 新建关联设备- End ----
   null:null
 };
 
