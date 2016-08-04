@@ -174,6 +174,27 @@ window.lang['zh-CN'] = {
   'importexport.Help': ' 帮助 ',
 
   // ----  import/export- End ----
+  // ---- New Channel- start ----
+
+  'channel-create.NewChannel': '新建空间 ',
+  'channel-create.Name': '名字: ',
+  'channel-create.Description': '描述: ',
+  'channel-create.Feild': 'Feild: ',
+  'channel-create.Metadata': '元数据: ',
+  'channel-create.Tags': '标签: ',
+  'channel-create.latitude': '维度: ',
+  'channel-create.longitude': '经度: ',
+  'channel-create.elevation': '海拔: ',
+  'channel-create.makepublic': 'make public?: ',
+  'channel-create.url': 'url: ',
+  'channel-create.videoId': '视频ID: ',
+  'channel-create.YouTube': 'YouTube ',
+  'channel-create.Vimeo': '  Vimeo ',
+  'channel-create.SaveChannel': '保存 ',
+  'channel-create.Help': '帮助 ',
+
+  // ----  New Channel- End ----
+
   null:null
 };
 

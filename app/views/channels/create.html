@@ -1,54 +1,54 @@
 
 <div class="row channel-create" >
   <div class="col-md-6 channel-form">
-    <h2 class="ng-binding">New Channel</h2>
+    <h2 class="ng-binding" ng-bind-html="Lang['channel-create.NewChannel']"></h2>
     <hr>
 <form class="form-inline">
   <table>
 
-    <tr><td><label>Name:</label></td><td><input ng-model="channel.name" class="form-control"></td></tr>
-    <tr><td>Description:</td><td><textarea ng-model="channel.description" class="form-control"></textarea></td></tr>
+    <tr><td><label ng-bind-html="Lang['channel-create.Name']"></label></td><td><input ng-model="channel.name" class="form-control"></td></tr>
+    <tr><td ng-bind-html="Lang['channel-create.Description']"></td><td><textarea ng-model="channel.description" class="form-control"></textarea></td></tr>
     <tr ng-repeat="fidx in [1,2,3,4,5,6,7,8] track by $index" ng-init="$parent.channel['field1-enabled']=true">
-      <td>Feild {{fidx}}:</td>
+      <td ng-bind-html="Lang['channel-create.NewChannel']">Feild {{fidx}}:</td>
       <td>
         <input ng-model="$parent.channel['field'+fidx]" ng-disabled="!$parent.channel['field'+fidx+'-enabled']"
                class="form-control" placeholder="Fill in field name...">
         <input type="checkbox" ng-model="$parent.channel['field'+fidx+'-enabled']">
       </td>
     </tr>
-    <tr><td>Metadata:</td><td><textarea ng-model="channel.metadata" class="form-control"></textarea></td></tr>
-    <tr><td>Tags:</td><td><input ng-model="channel.tags" class="form-control"></td></tr>
-    <tr><td>latitude:</td><td><input ng-model="channel.latitude" class="form-control"></td></tr>
-    <tr><td>longitude:</td><td><input ng-model="channel.longitude" class="form-control"></td></tr>
-    <tr><td>elevation:</td><td><input ng-model="channel.elevation" type="number" class="form-control"></td></tr>
-    <tr><td>make public?</td><td><input ng-model="channel.public_flag" type="checkbox"></td></tr>
+    <tr><td ng-bind-html="Lang['channel-create.Metadata']"></td><td><textarea ng-model="channel.metadata" class="form-control"></textarea></td></tr>
+    <tr><td ng-bind-html="Lang['channel-create.Tags']"></td><td><input ng-model="channel.tags" class="form-control"></td></tr>
+    <tr><td ng-bind-html="Lang['channel-create.latitude']"></td><td><input ng-model="channel.latitude" class="form-control"></td></tr>
+    <tr><td ng-bind-html="Lang['channel-create.longitude']"></td><td><input ng-model="channel.longitude" class="form-control"></td></tr>
+    <tr><td ng-bind-html="Lang['channel-create.elevation']"></td><td><input ng-model="channel.elevation" type="number" class="form-control"></td></tr>
+    <tr><td ng-bind-html="Lang['channel-create.makepublic']"></td><td><input ng-model="channel.public_flag" type="checkbox"></td></tr>
     <tr><td>url:</td><td><input ng-model="channel.url" class="form-control"></td></tr>
     <tr>
-      <td>videoId:</td>
+      <td ng-bind-html="Lang['channel-create.videoId']"></td>
       <td>
         <input ng-model="channel.videoId" class="form-control">
 
         <label>
-          <input ng-model="channel.video_type" type="radio" value="youtube">
-          YouTube
+          <input ng-model="channel.video_type" type="radio" value="youtube" >
+          <span ng-bind-html="Lang['channel-create.YouTube']"></span>
         </label>
 
         <label>
-          <input ng-model="channel.video_type" type="radio" value="vimeo">
-          Vimeo
+          <input ng-model="channel.video_type" type="radio" value="vimeo" >
+          <span ng-bind-html="Lang['channel-create.Vimeo']"></span>
         </label>
       </td>
     </tr>
   </table>
 
   <div>
-    <button class="btn btn btn-success save-btn" ng-click="saveChannel(channel)">Save Channel</button>
+    <button class="btn btn btn-success save-btn" ng-click="saveChannel(channel)" ng-bind-html="Lang['channel-create.SaveChannel']"></button>
   </div>
 
 </form>
     </div>
   <div class="col-md-6">
-    <h2>Help</h2>
+    <h2 ng-bind-html="Lang['channel-create.Help']"></h2>
     <hr>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
     </div>

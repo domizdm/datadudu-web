@@ -33,10 +33,10 @@
           <td class="td-left">
             <div style="float: left;width: 170px">
               <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-circle" style="max-height:54px;max-width:54px; float: left">
-              <!--<div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">-->
-              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
 
-              <!--<div ng-show="channel.name==''||channel.name=='null'||channel.name==null">-->
+              <a  class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private"><b>{{channel.name==null? 'Unnamed Space':channel.name}}</b></a><br/>
+
+
                 <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
             </div>
             <div class="channel_ctr">

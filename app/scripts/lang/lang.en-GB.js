@@ -178,11 +178,27 @@ window.lang['en-GB'] = {
 
   // ----  import/export- End ----
 
-  // ---- triggersLog- start ----
+  // ---- New Channel- start ----
+
+  'channel-create.NewChannel': 'New Channel ',
+  'channel-create.Name': 'Name: ',
+  'channel-create.Description': 'Description: ',
+  'channel-create.Feild': 'Feild: ',
+  'channel-create.Metadata': 'Metadata: ',
+  'channel-create.Tags': 'Tags: ',
+  'channel-create.latitude': 'latitude: ',
+  'channel-create.longitude': 'longitude: ',
+  'channel-create.elevation': 'elevation: ',
+  'channel-create.makepublic': 'make public?: ',
+  'channel-create.url': 'url: ',
+  'channel-create.videoId': 'videoId: ',
+  'channel-create.YouTube': 'YouTube ',
+  'channel-create.Vimeo': '  Vimeo ',
+  'channel-create.SaveChannel': 'Save Channel ',
+  'channel-create.Help': 'Help ',
 
 
-
-  // ----  triggersLog- End ----
+  // ----  New Channel- End ----
 
   null:null
 };
