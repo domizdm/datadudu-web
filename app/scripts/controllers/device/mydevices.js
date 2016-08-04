@@ -2,7 +2,7 @@
 
 angular.module('dataduduR3App')
 .controller('MyDevicesCtrl', function($scope, $q, $filter, $route, $log, $location, $routeParams,
-                                           config, $uibModal, ngNotify, modalConfirm, product){
+                                           config, $uibModal, ngNotify, modalConfirm, Upload, product){
 
   $scope.devices = [];
 
@@ -80,5 +80,7 @@ angular.module('dataduduR3App')
           }, function(){/*dismiss*/});
       });
   };
+
+
 
 });

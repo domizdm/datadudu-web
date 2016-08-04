@@ -12,7 +12,7 @@
   </div>
   <div class="col-md-6 devices_body table-responsive" ng-repeat="device in devices">
     <div class="devices_div">
-      <img src="./images/icoimage/1.png" class="device_ico">
+      <img ng-src="{{channel.channel_icon}}"  src="./images/icoimage/1.png" class="img-circle device_ico"  style="max-height:88px;max-width:86px;">
       <div class="text-left">
         <span> <a ng-href="#/channels/{{device.channel_id}}/private" style="text-decoration:underline;">{{device.name}}</a></span><span><img
         src="./images/icoimage/duduico2.png" style="margin-left: 18px"></span>

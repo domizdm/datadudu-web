@@ -32,7 +32,7 @@
           <td st-row-check="channel" st-row-check-attr="checkedFlag"></td>
           <td class="td-left">
             <div style="float: left;width: 170px">
-              <img src="{{channel.channel_icon}}" style="float: left;max-width:64px;max-height:64px;" ng-if="channel.channel_icon">
+              <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-circle" style="max-height:54px;max-width:54px; float: left">
               <!--<div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">-->
               <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
 
