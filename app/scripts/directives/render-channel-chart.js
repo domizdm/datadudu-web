@@ -13,6 +13,7 @@ angular.module('dataduduR3App')
     restrict: 'AE',
     scope: {
       'title': '@renderChannelChartTitle',
+      'titlePrefix': '=renderChannelChartTitlePrefix',
       'color': '@renderChannelChartColor',
 
       'data': '=renderChannelChart',// data should be sorted before binding
@@ -97,7 +98,7 @@ angular.module('dataduduR3App')
           enabled: false
         },
         title: {
-          text: 'Chart ' + scope.title
+          text: scope.titlePrefix + scope.title
         },
         xAxis: {
           type: 'datetime',

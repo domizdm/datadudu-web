@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config, langTrans) {
+.controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config, moment, langTrans) {
   // 只在加载时记录下登陆状态, sign in/out时强制页面重载
   $scope.isLoggedIn = Auth.isLoggedIn();
   $scope.username = Auth.username();

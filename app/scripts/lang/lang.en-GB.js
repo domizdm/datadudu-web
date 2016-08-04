@@ -83,6 +83,8 @@ window.lang['en-GB'] = {
   'data-header.Updated': 'Updated :',
   'data-header.UsedSpace': 'Used Space :',
   'data-header.LastEntry ': 'Last Entry ID And Date :',
+  'data-header.access.public': 'Public',
+  'data-header.access.private': 'Private',
   'nav-data-header.PrivateView': 'Private View ',
   'nav-data-header.RealTime': 'Real Time',
   'nav-data-header.seating': 'Settings ',
@@ -94,6 +96,7 @@ window.lang['en-GB'] = {
   'nav-data-header.publicview': 'Public View ',
 
   'data-graph.DataCharts': 'Data Charts',
+  'data-graph.chart-title-prefix': 'Chart ',
   'data-graph.AddDataPoint': ' Add a Data Point',
   'data-graph.Type': 'Type ',
   'data-graph.From': 'From ',
@@ -104,6 +107,32 @@ window.lang['en-GB'] = {
   'realtime.LiveData': 'Live Data ',
 
   // ---- data- End ----
+
+  // ---- Date Enum ----
+  'data-graph.durations.all': 'All',
+  'data-graph.durations.60': '1 Hour',
+  'data-graph.durations.120': '2 Hours',
+  'data-graph.durations.240': '4 Hours',
+  'data-graph.durations.480': '8 Hours',
+  'data-graph.durations.1440': '1 Day',
+  'data-graph.durations.4320': '3 Days',
+  'data-graph.durations.10080': '7 Days',
+  'data-graph.durations.43200': '30 Days',
+
+  'data-graph.queryTypes.sample': 'Sample',
+  'data-graph.queryTypes.average': 'Average',
+  'data-graph.queryTypes.sum': 'Sum',
+
+  'data-graph.queryParams.10': '10 Minutes',
+  'data-graph.queryParams.15': '15 Minutes',
+  'data-graph.queryParams.20': '20 Minutes',
+  'data-graph.queryParams.30': '30 Minutes',
+  'data-graph.queryParams.60': '1 Hour',
+  'data-graph.queryParams.240': '4 Hours',
+  'data-graph.queryParams.720': '12 Hours',
+  'data-graph.queryParams.1440': '1 Day',
+  'data-graph.queryParams.daily': 'Daily',
+  // ---- Date Enum ----
 
   // ---- Commands- Start ----
   'commands.commands': 'Commands',

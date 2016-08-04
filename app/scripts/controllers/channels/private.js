@@ -13,15 +13,15 @@ angular.module('dataduduR3App')
   $scope.loading = false;
 
   $scope.durations = [
-    {label:'All Data', value:null},
-    {label:'1 hour', value:'60'},
-    {label:'2 hours', value:'120'},
-    {label:'4 hours', value:'240'},
-    {label:'8 hours', value:'480'},
-    {label:'1 day', value:'1440'},
-    {label:'3 days', value:'4320'},
-    {label:'7 days', value:'10080'},
-    {label:'30 days', value:'43200'}
+    {label:Auth.L('data-graph.durations.all'), value:null},
+    {label:Auth.L('data-graph.durations.60'), value:'60'},
+    {label:Auth.L('data-graph.durations.120'), value:'120'},
+    {label:Auth.L('data-graph.durations.240'), value:'240'},
+    {label:Auth.L('data-graph.durations.480'), value:'480'},
+    {label:Auth.L('data-graph.durations.1440'), value:'1440'},
+    {label:Auth.L('data-graph.durations.4320'), value:'4320'},
+    {label:Auth.L('data-graph.durations.10080'), value:'10080'},
+    {label:Auth.L('data-graph.durations.43200'), value:'43200'}
   ];
 
   var defaultDuration = $scope.durations[0];
@@ -29,22 +29,22 @@ angular.module('dataduduR3App')
   //defaultBegin.setMinutes(defaultBegin.getMinutes() - parseInt(defaultDuration.value, 10));
 
   $scope.queryTypes = [
-    {label:'Sample', value:'sample'},
-    {label:'Average', value:'average'},
-    {label:'Sum', value:'sum'},
+    {label:Auth.L('data-graph.queryTypes.sample'), value:'sample'},
+    {label:Auth.L('data-graph.queryTypes.average'), value:'average'},
+    {label:Auth.L('data-graph.queryTypes.sum'), value:'sum'},
   ];
 
   $scope.queryParams = [
     //10, 15, 20, 30, 60, 240, 720, 1440, "daily"
-    {label:'10 mins', value:'10'},
-    {label:'15 mins', value:'15'},
-    {label:'20 mins', value:'20'},
-    {label:'30 mins', value:'30'},
-    {label:'1 hours', value:'60'},
-    {label:'4 hours', value:'240'},
-    {label:'12 hours', value:'720'},
-    {label:'1 day', value:'1440'},
-    {label:'Daily', value:'daily'}
+    {label:Auth.L('data-graph.queryParams.10'), value:'10'},
+    {label:Auth.L('data-graph.queryParams.15'), value:'15'},
+    {label:Auth.L('data-graph.queryParams.20'), value:'20'},
+    {label:Auth.L('data-graph.queryParams.30'), value:'30'},
+    {label:Auth.L('data-graph.queryParams.60'), value:'60'},
+    {label:Auth.L('data-graph.queryParams.240'), value:'240'},
+    {label:Auth.L('data-graph.queryParams.720'), value:'720'},
+    {label:Auth.L('data-graph.queryParams.1440'), value:'1440'},
+    {label:Auth.L('data-graph.queryParams.daily'), value:'daily'}
   ];
 
   $scope.query = {
