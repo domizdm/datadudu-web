@@ -33,7 +33,7 @@
         </tr>
         <tr>
           <td><img class="table-ico" src="../images/icoimage/access.png"><span ng-bind-html="Lang['data-header.channel_access']"></span></td>
-          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? 'public' : 'private'}}</span>
+          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.public_flag==='true' ? Lang['data-header.access.public'] : Lang['data-header.access.private']}}</span>
           </td>
         </tr>
         <tr>

@@ -83,6 +83,8 @@ window.lang['zh-CN'] = {
   'data-header.Updated': '更新时间 :',
   'data-header.UsedSpace': ' 已用空间 :',
   'data-header.LastEntry': '最近一次更新',
+  'data-header.access.public': '公开',
+  'data-header.access.private': '私有',
   'nav-data-header.PrivateView': '图形化显示',
   'nav-data-header.RealTime': '实时数据 ',
   'nav-data-header.seating': '设置 ',
@@ -94,6 +96,7 @@ window.lang['zh-CN'] = {
   'nav-data-header.publicview': '数据共享设定 ',
 
   'data-graph.DataCharts': '数据图表',
+  'data-graph.chart-title-prefix': '图表 ',
   'data-graph.AddDataPoint': '添加数据点 ',
   'data-graph.Type': '类型 ',
   'data-graph.From': '起始时间 ',
@@ -104,6 +107,34 @@ window.lang['zh-CN'] = {
   'realtime.LiveData': '实时数据 ',
 
   // ---- data- End ----
+
+
+  // ---- Date Enum ----
+  'data-graph.durations.all': '所有',
+  'data-graph.durations.60': '1 小时',
+  'data-graph.durations.120': '2 小时',
+  'data-graph.durations.240': '4 小时',
+  'data-graph.durations.480': '8 小时',
+  'data-graph.durations.1440': '1 天',
+  'data-graph.durations.4320': '3 天',
+  'data-graph.durations.10080': '7 天',
+  'data-graph.durations.43200': '30 天',
+
+  'data-graph.queryTypes.sample': '采样',
+  'data-graph.queryTypes.average': '平均',
+  'data-graph.queryTypes.sum': '合计',
+
+  'data-graph.queryParams.10': '10 分钟',
+  'data-graph.queryParams.15': '15 分钟',
+  'data-graph.queryParams.20': '20 分钟',
+  'data-graph.queryParams.30': '30 分钟',
+  'data-graph.queryParams.60': '1 小时',
+  'data-graph.queryParams.240': '4 小时',
+  'data-graph.queryParams.720': '12 小时',
+  'data-graph.queryParams.1440': '1 天',
+  'data-graph.queryParams.daily': '每日',
+  // ---- Date Enum ----
+
 
   // ---- Commands- Start ----
   'commands.commands': '指令',
