@@ -653,9 +653,9 @@ table.myTable td, table.myTable th {
 }
 
 .signup-outer {
-  width: 800px;
-  height: auto;
-  padding: 35px 60px;
+
+  height: 800px;
+  padding: 135px 60px;
   background: #fff;
   box-shadow: 0 1px 7px 2px rgba(135, 158, 171, 0.1);
   margin: 10px auto;
@@ -694,6 +694,31 @@ table.myTable td, table.myTable th {
   background: #fff;
   box-shadow: 0 1px 7px 2px rgba(135, 158, 171, 0.1);
 }
+
+/*账户安全页面样式开始*/
+
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+   margin-left: 0;
+}
+.fa-asterisk{color: red;margin-right: 2px;font-size: 1px}
+
+/*账户安全页面样式结束*/
+
+/*费用中心*/
+/*账户查询*/
+.accountinquiry{background-color: #ffffff;padding-top: 73px;padding-left: 10px;height: 800px;padding-right: 30px;}
+.accountinquiry button{border-radius: 60px;}
+.accountinquiry_header{margin-left: 10px;margin-top: 18px;}
+.accountinquiry_header table thead tr td select{width: 100px;text-align: center}
+.accountinquiry_header table thead tr td label{width: 80px;text-align: center}
+.accountinquiry_body{margin-left: 10px;margin-top: 18px}
+.accountinquiry_body thead{background-color:#F5F5F5;margin-right: 15px}
+  /*账户查询*/
+  /*费用中心*/
+
+
+
 
 /*设备管理开始*/
 .main-devices{background-color: #ffffff;}

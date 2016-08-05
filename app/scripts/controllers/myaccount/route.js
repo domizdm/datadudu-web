@@ -23,6 +23,15 @@ angular.module('dataduduR3App')
       templateUrl: 'views/myaccount/editprofile.html',
       controller:'EditProfileCtrl'
     })
+    .when('/accountsafety',{
+      templateUrl: 'views/myaccount/accountsafety.html',
+      controller:'AccountSafetyCtrl'
+    })
+
+    .when('/account',{
+      templateUrl: 'views/myaccount/account.html',
+      controller:'AccountCtrl'
+    })
 
 });
 
