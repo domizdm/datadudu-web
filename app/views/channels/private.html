@@ -48,7 +48,7 @@
       </div>
 
       <div class="text-center text-muted" style="padding:50px;font-size:24px;" ng-show="!loading && !channelsFeeds[key].data.length">
-        <div>No data available for </div>
+        <div ><span ng-bind-html="Lang['realtime.no_data']"></span>  </div>
         <div>{{val.text}}</div>
       </div>
 

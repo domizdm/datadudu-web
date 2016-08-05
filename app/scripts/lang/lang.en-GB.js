@@ -107,6 +107,8 @@ window.lang['en-GB'] = {
   'data-graph.Refresh': 'Refresh ',
   'realtime.Frequency': 'Frequency: ',
   'realtime.LiveData': 'Live Data ',
+  'realtime.no_data': 'No data available for ',
+
 
   // ---- data- End ----
 

@@ -105,6 +105,7 @@ window.lang['zh-CN'] = {
   'data-graph.Refresh': '更新 ',
   'realtime.Frequency': '频率 ',
   'realtime.LiveData': '实时数据 ',
+  'realtime.no_data': '没有数据 ',
 
   // ---- data- End ----
 
