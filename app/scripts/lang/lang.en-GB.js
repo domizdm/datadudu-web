@@ -265,6 +265,30 @@ window.lang['en-GB'] = {
   'devices_con.UpdateBatch': 'Update Batch',
 
   // ---- 新建关联设备- End ----
+
+
+  // ----Edit DuduHTTP- start ----
+  'channel-form.Name': 'Name:',
+  'channel-form.APIKey': 'API Key:',
+  'channel-form.URL': 'URL:',
+  'channel-form.HTTPAuthUsername': 'HTTP Auth Username:',
+  'channel-form.HTTPAuthPassword:': 'HTTP Auth Password:',
+  'channel-form.Method': 'Method:',
+  'channel-form.ContentType': 'Content Type:',
+  'channel-form.HTTPVersion:': 'HTTP Version:',
+  'channel-form.Choose Edition': '--Choose Edition--',
+  'channel-form.Host': 'Host:',
+  'channel-form.Headers': 'Headers:',
+  'channel-form.Value': 'Value',
+  'channel-form.Remove': 'Remove',
+  'channel-form.addnewheader': 'add new header',
+  'channel-form.Body': 'Body:',
+  'channel-form.ParseString': 'Parse String:',
+  'channel-form.SaveThingHTTP': 'Save ThingHTTP',
+  'channel-form.Help': 'Help',
+
+  // ---- Edit DuduHTTP- End ----
+
   null:null
 };
 

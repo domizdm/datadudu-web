@@ -26,8 +26,7 @@
                   <div class='input-group date' datetimepicker="query.begin"></div>
                 </td>
                 <td><label ng-bind-html="Lang['data-graph.Scale']"></label></td>
-                <td><select class="form-control" ng-options="item.label for item in durations"
-                            ng-model="query.duration"></select></td>
+                <td><select class="form-control" ng-options="item.label for item in durations" ng-model="query.duration"></select></td>
                 <td>
                   <button class="btn btn-primary" ng-click="download(channel)" ng-bind-html="Lang['data-graph.Download']"></button>
                 </td>

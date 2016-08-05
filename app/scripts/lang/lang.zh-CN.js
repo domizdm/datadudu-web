@@ -265,6 +265,28 @@ window.lang['zh-CN'] = {
   'devices_con.UpdateBatch': '更新 Batch',
   // ---- 新建关联设备- End ----
 
+  // ----Edit DuduHTTP- start ----
+  'channel-form.Name': '名字:',
+  'channel-form.APIKey': 'API 秘钥:',
+  'channel-form.URL': '网址:',
+  'channel-form.HTTPAuthUsername': 'HTTP 授权用户名:',
+  'channel-form.HTTPAuthPassword:': 'HTTP 授权密码:',
+  'channel-form.Method': '方法:',
+  'channel-form.ContentType': ' 内容类型:',
+  'channel-form.HTTPVersion:': 'HTTP 版本:',
+  'channel-form.Choose Edition': '--选择版本--',
+  'channel-form.Host': '主机:',
+  'channel-form.Headers': '标题:',
+  'channel-form.Value': '值',
+  'channel-form.Remove': '移除',
+  'channel-form.addnewheader': '添加新标题',
+  'channel-form.Body': '内容:',
+  'channel-form.ParseString': '解析字符串:',
+  'channel-form.SaveThingHTTP': '保存 ThingHTTP',
+  'channel-form.Help': '帮助',
+
+  // ---- Edit DuduHTTP- End ----
+
   null:null
 };
 
