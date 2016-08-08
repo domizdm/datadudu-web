@@ -717,6 +717,12 @@ table.myTable td, table.myTable th {
   /*账户查询*/
   /*费用中心*/
 
+/*消息中心*/
+.messages-center{background-color: #ffffff;padding-top: 177px;padding-left: 10px;height: 800px;padding-right: 30px;}
+.messages-center .message-header{background-color: #F5F5F5}
+/*消息中心*/
+
+
 
 
 
