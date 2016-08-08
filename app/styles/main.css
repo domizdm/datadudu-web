@@ -92,9 +92,9 @@ input, select, textarea:focus {
   color: #ffffff;
 }
 
-.main-header .sidebar-toggle:hover {
-  color: #025F98;
-}
+/*.main-header .sidebar-toggle:hover {*/
+  /*color: #025F98;*/
+/*}*/
 
 .main-sidebar {
   background-color: #0277BD;
@@ -417,6 +417,10 @@ table.myTable td, table.myTable th {
 .usedspace-style {
   float: right;
   padding-right: 10px;
+}
+
+@media (max-width: 1186px) {
+  .space{display: none;}
 }
 
 .pagination {

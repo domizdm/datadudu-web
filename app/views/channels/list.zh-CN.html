@@ -10,7 +10,7 @@
         <button type="submit" class="btn btn-search hidden-xs">搜索</button>
         <a class="btn btn-default btn-new  " href="#/channels/new">新建空间</a>
         <a class="btn btn-default" href="" ng-click="shareChannels(getCheckedItems(channels))">分享到...</a>
-        <h5 class="usedspace-style " ><a class=" hidden-sm hidden-xs" style="color: #0c0c0c;margin-right: 5px">总体占用空间:</a>{{getAccountUsage() | bytes}} </h5>
+        <h5 class="usedspace-style hidden-sm hidden-xs " ><a class="space" style="color: #0c0c0c;margin-right: 5px">总体占用空间:</a>{{getAccountUsage() | bytes}} </h5>
       </form>
 
 
