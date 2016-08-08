@@ -1,54 +1,110 @@
 
-<nav class="navbar navbar-default navbar-fixed-top "style="background-color: #000000;">
-  <div class="container-fluid">
-    <div class="container">
-
-      <div class="col-md-6  navbar-header" >
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-nav">
-          <span class="sr-only">切换导航</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="" class="login-top-image"><h2>DataDudu</h2></a>
-        <!--<a class="login-top-image" href=""><img src="images/logo.png" alt="logo"></a>-->
-
-      </div>
+<div class="container-fluid topnav">
+  <div class="row">
+    <nav class="navbar navbar-default" role="navigation" >
+      <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#example-navbar-collapse">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-header">
 
 
-      <div class="col-md-6 login-top-right">
-          <ul class="collapse navbar-collapse" id="header-nav">
-            <li class="border-right">
-              <select class="language login-select" ng-model="appLanguage" ng-change="onChangeLanguage(appLanguage)">
-                <option value="zh-CN">中文</option>
-                <option value="en-GB">English</option>
-              </select>
-            </li>
-            <li class="active"><button type="button" class="btn btn-primary ">Sign In</button></li>
-            <li><button type="button"  class="btn btn-primary ">Sign Up</button></li>
-          </ul>
+        <div class="header-logo col-sm-12 heade-logo" style="width: 300px;padding-left: 30px">
+          <a class="" href="#" style="float: left;"><img src="../images/icoimage/index-log.png" style="padding:5px 5px 5px 0"></a>
+          <a class="" href="#" ><h2 >嘟嘟大数据</h2></a>
+
+        </div>
 
       </div>
-    </div>
+      <div class="collapse col-md-9  navbar-right " id="example-navbar-collapse" >
+        <ul class="nav navbar-nav  header-nav" style="margin-right: 20px">
+          <li>
+            <a href="">首页</a>
+          </li>
+          <li class="dropdown_buttom">
+            <a type="button" class="btn dropdown-toggle dudu_yingjian" id="dropdownMenu1" data-toggle="dropdown" style="">
+              嘟嘟智能硬件
+            </a>
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="" >
+
+                <a> <img src="../images/icoimage/dudu_tag.png"></a>
+                <span >智能标签</span>
+              </li>
+              <li role="">
+                <a> <img src="../images/icoimage/dudu_Switch.png"></a>
+                <span >智能开关</span>
+              </li>
+              <li role="">
+                <a> <img src="../images/icoimage/dudu_air.png"></a>
+                <span >空气智能检测</span>
+              </li>
+
+              <li role="">
+                <a > <img src="../images/icoimage/dudu_ir.png"></a>
+                <span >智能红外</span>
+              </li>
+              <li role="presentation">
+                <a> <img src="../images/icoimage/dudu_socket.png"></a>
+                <span >智能插座</span>
+              </li>
+              <li role="presentation">
+                <a> <img src="../images/icoimage/dudu_stage.png"></a>
+                <span >智能水位监测设备</span>
+              </li>
+            </ul>
+
+          </li>
+          <li>
+            <a href="http://console.datadudu.cn">管理控制台</a>
+          </li>
+          <li>
+            <a href="">计费方式</a>
+          </li>
+          <li>
+            <a href="">新闻活动</a>
+          </li>
+          <li>
+            <a href="">社区与文档</a>
+          </li>
+          <li>
+            <a href="">关于我们</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
-</nav>
+</div>
+
+
+<!--<div class="text-center" style="z-index:9999;position: absolute;margin-left:45%"><img src="../images/icoimage/login_img.png"></div>-->
 <div class="hold-transition login-page" style="position:fixed;width:100%;height:100%;">
   <div class="login-box">
-    <div class="login-logo">
-      <a href=""><b>Data</b>Dudu</a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-      <p class="login-box-msg" ng-bind-html="Lang['login.title']"></p>
 
+    <!-- /.login-logo -->
+
+    <div class="login-box-body">
       <form>
         <div class="form-group has-feedback">
-          <input type="username" class="form-control" placeholder="{{Lang['login.username']}}" ng-model="loginForm.username" required>
+          <input type="username" class="form-control" placeholder="用户名" ng-model="loginForm.username" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="{{Lang['login.password']}}" ng-model="loginForm.password" required>
+          <input type="password" class="form-control" placeholder="密码" ng-model="loginForm.password" required>
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 checkbox">
+            <label>
+              <input type="checkbox">记住密码</label>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 checkbox text-right" style="float: right;margin-top: 10px;">
+            <label>
+              <input type="checkbox">自动登录</label>
+          </div>
         </div>
         <div class="form-group">
           <div class="alert alert-danger small" ng-show="loginForm.message">{{loginForm.message}}</div>
@@ -61,13 +117,82 @@
           <!-- /.col -->
         </div>
       </form>
+
       <!-- /.social-auth-links -->
+    </div>
+    <div class="login_bottom" >
+      <span style="padding-right: 40px;color: "><a href="#">免费注册</a></span>
+      <span style="padding-left: 40px"><a href="#">找回密码</a></span>
     </div>
     <!-- /.login-box-body -->
   </div>
   <!-- /.login-box -->
 </div>
-<div class="navbar navbar-fixed-bottom text-center" style="background-color: #000000;color: #FFFFFF">
-  <h5>©Copyright 2016 DataDuDu.com. All rights reserved.
-  </h5>
+
+<!-- Footer start-->
+<div class="navbar navbar-fixed-bottom container-fluid footed">
+  <div>
+    <div class="row-fluid footedinfo">
+      <div class="col-md-1 col-sm-0 col-lg-2"></div>
+
+      <div class="col-md-4 col-sm-4 col-xs-12 col-lg-3">
+        <a class="" href="#" style="float: left;padding: 5px 10px 5px 0"><img
+          src="../images/icoimage/footer-logo.png"></a>
+        <h2 style="display: block">嘟嘟大数据</h2>
+        <!--<div class="col-md-2"><img src="./images/ico/footer-logo.png"></div>-->
+        <!--<div class="col-md-10"><h2>DATA DUDU</h2></div>-->
+        <span>领先的物联网数据存储及云服务平台</span>
+      </div>
+
+      <div class="col-md-3 col-sm-3 col-xs-12 col-lg-3">
+        <h3><a href="">快速链接 </a></h3>
+        <div class=" footedmenu" style="margin-right: 50px">
+          <ul>
+            <li><i class="fa fa-long-arrow-right"></i><a href="">首页</a></li>
+            <li><i class="fa fa-long-arrow-right"></i><a href="">关于我们</a></li>
+            <li><i class="fa fa-long-arrow-right"></i><a href="">加入我们</a></li>
+            <li><i class="fa fa-long-arrow-right"></i><a href="">团队</a></li>
+          </ul>
+        </div>
+
+        <div class=" footedmenu">
+          <ul>
+            <li><i class="fa fa-long-arrow-right"></i><a href="">关于隐私</a></li>
+            <li><i class="fa fa-long-arrow-right"></i><a href="">版权声明</a></li>
+            <li><i class="fa fa-long-arrow-right"></i><a href="">联系我们</a></li>
+
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 col-sm-5 col-xs-12 col-lg-3 text-left">
+        <h3><a href=""> 联系我们</a></h3>
+        <p><span class=""></span><i class="fa fa-phone"> </i>0411-86686675<br>
+          <span class="icon icon-phone"></span><i class="fa fa-envelope "> </i>info@cloudforce.cn<br>
+          <span class="icon icon-mobile"></span> <i class="fa fa-map-marker" style="margin-right: 17px"> </i>辽宁省大连市甘井子区虹港路23号六楼<br>
+        </p>
+
+        <ul class="social-links">
+          <li class=""><a href=""><img src="../images/icoimage/facebook.png"></a></li>
+          <li class=""><a href=""><img src="../images/icoimage/twitter.png"></a></li>
+          <li class=""><a href=""><img src="../images/icoimage/linkedin.png"></a></li>
+          <li class=""><a href=""><img src="../images/icoimage/googleplus.png"></a></li>
+          <li class=""><a href=""><img src="../images/icoimage/youtube.png"></a></li>
+        </ul>
+      </div>
+
+      <div class=" col-xs-1"></div>
+    </div>
+  </div>
+  <div class=" row-fluid ">
+
+    <div class="col-md-12 copyrights text-center">
+      <span style="color: #FFFFFF;">Copyrights © 2016 DATA DUDU | All rights reserved.</span>
+    </div>
+  </div>
 </div>
+<!-- Footer end-->
+<!-- jQuery -->
+<!-- Bootstrap Core JavaScript -->
+
