@@ -6,7 +6,7 @@
         <p class="text-muted"><span  ng-bind-html="Lang['triggers.reminder']"></span> {{mc.tableState.pagination.number}}
           <span  ng-bind-html="Lang['triggers.reminder2']"></span></p>
         <hr>
-        <div>
+        <div class="table-responsive">
           <table class="table" st-pipe="mc.callServer" st-table="mc.displayed">
             <thead style="background-color: #0277BD;color: #ffffff">
             <tr>
@@ -20,12 +20,12 @@
             </thead>
             <tbody ng-show="!mc.isLoading">
             <tr ng-repeat="row in mc.displayed">
-              <td style="width:100px;">{{row.trigger_id}}</td>
-              <td style="width:100px;">{{row.field}}</td>
-              <td style="max-width:200px;word-break: break-all;">{{row.log}}</td>
-              <td style="width:100px;">{{row.status}}</td>
-              <td style="width:180px;">{{row.created_at}}</td>
-              <td style="width:180px;">{{row.finished_at}}</td><!-- | date:'yyyy-MM-dd HH:mm:ss' -->
+              <td >{{row.trigger_id}}</td>
+              <td >{{row.field}}</td>
+              <td >{{row.log}}</td>
+              <td >{{row.status}}</td>
+              <td >{{row.created_at}}</td>
+              <td >{{row.finished_at}}</td><!-- | date:'yyyy-MM-dd HH:mm:ss' -->
             </tr>
             <tr ng-if="!mc.displayed.length">
               <td colspan="6" class="text-left">
@@ -46,6 +46,7 @@
             </tr>
             </tfoot>
           </table>
+
         </div>
       </div>
     </div>

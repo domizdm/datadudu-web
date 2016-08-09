@@ -87,6 +87,7 @@ window.lang['en-GB'] = {
   'data-header.LastEntry ': 'Last Entry ID And Date :',
   'data-header.access.public': 'Public',
   'data-header.access.private': 'Private',
+  'data-header.upload': 'change/upload',
   'nav-data-header.PrivateView': 'Private View ',
   'nav-data-header.RealTime': 'Real Time',
   'nav-data-header.seating': 'Settings ',
@@ -248,6 +249,18 @@ window.lang['en-GB'] = {
   'NewEdit_Rules.Cancel': 'Cancel',
   // ---- New/Edit Rules- End ----
 
+
+  // ----  Add Data Point- start ----
+  'AddDataPoint.Add DataPoint': 'Add Data Point',
+  'AddDataPoint.CreateAt': 'Create At',
+  'AddDataPoint.Latitude': 'Latitude',
+  'AddDataPoint.Longitude': 'Longitude',
+  'AddDataPoint.Elevation': 'Elevation',
+  'AddDataPoint.Status': 'Status',
+  'AddDataPoint.OK': 'ok',
+  'AddDataPoint.Cancel': 'Cancel',
+  // ----  Add Data Point- end ----
+
   // ----新建关联设备- start ----
   'devices_con.AddProductBatch': 'Add Product Batch',
   'devices_con.EditProductBatch': 'Edit Product Batch',
@@ -291,6 +304,62 @@ window.lang['en-GB'] = {
 
   // ---- Edit DuduHTTP- End ----
 
+  // ---- 设备管理-start----
+  'main-devices.development': 'Development',
+  'main-devices.search': 'Search',
+  'main-devices.new_products': 'A new batch of products',
+  'main-devices.sort': 'synthetically sorting',
+  'main-devices.popularity_sort': 'Popularity sorting',
+  'main-devices.CreateDate': 'CreateDate:',
+  'main-devices.Remove': 'Remove',
+  'main-devices.Activation_Time': 'Activation Time:',
+  'main-devices.products_id': 'Products ID:',
+  'main-devices.Activation_Code': ' Activation Code',
+  // ---- 设备管理- End----
+
+
+  //产品管理start
+  'main-devices.add': 'ADD',
+  'main-devices.SerialNumber': 'Serial Number:',
+  'main-devices.ActivedAt': 'Actived At',
+  'main-devices.AttachedAt': 'Attached At',
+  'main-devices.CreatedAt': 'Created At',
+  'main-devices.Devices': 'Devices',
+  'main-devices.shuoming': 'Press enter key to add multiple Serial Numbers',
+  'main-devices.myDevices': 'MyDevices',
+  'main-devices.context': 'Create a new device context',
+  'main-devices.Uploadlogo': 'Upload logo',
+  'main-devices.Serial_number': ' Serial number management',
+  'main-devices.company': 'Cloud Force',
+  //产品管理end
+
+
+  // ---- 账户管理- start----
+  'account.name': 'Name:',
+  'account.province': 'Province:',
+  'account.city': 'City:',
+  'account.postcode': 'Postcode:',
+  'account.Country': 'Country:',
+  'account.Email': 'Email:',
+  'account.Phone': 'Phone:',
+  'account.address': 'Address:',
+  'account.payment': 'Payment:',
+  'account.membership': 'Membership:',
+  'account.personage': 'Personage',
+  'account.organizations': 'Business/government (including enterprises, governments, institutions, groups and organizations)',
+  'account.save': 'Save',
+  'account.cancel': 'Cancel',
+  'account-main.EditAccount': 'Edit Account',
+
+  // ---- 账户管理- End----
+
+
+  // ---- 在线咨询- start----
+  'main-im.online': 'QQ Online',
+  'main-im.consultaion': 'consultaion',
+  'main-im.Aftermarket': 'Aftermarket',
+  'main-im.wechat': 'WeChat',
+  // ---- 在线咨询- End----
   null:null
 };
 

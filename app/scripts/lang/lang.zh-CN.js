@@ -85,6 +85,8 @@ window.lang['zh-CN'] = {
   'data-header.LastEntry': '最近一次更新',
   'data-header.access.public': '对所有人开放',
   'data-header.access.private': '仅对自己开放',
+  'data-header.upload': '更改/上传图片',
+
   'nav-data-header.PrivateView': '图形化显示',
   'nav-data-header.RealTime': '实时数据 ',
   'nav-data-header.seating': '设置 ',
@@ -247,6 +249,18 @@ window.lang['zh-CN'] = {
   'NewEdit_Rules.Cancel': '取消',
   // ---- New/Edit Rules- End ----
 
+
+  // ----  Add Data Point- start ----
+  'AddDataPoint.AddDataPoint': '添加数据要点',
+  'AddDataPoint.CreateAt': '创建于',
+  'AddDataPoint.Latitude': '维度',
+  'AddDataPoint.Longitude': '经度',
+  'AddDataPoint.Elevation': '海拔',
+  'AddDataPoint.Status': '状态',
+  'AddDataPoint.OK': '确认',
+  'AddDataPoint.Cancel': '取消',
+  // ----  Add Data Point- end ----
+
   // ----新建关联设备- start ----
   'devices_con.AddProductBatch': '添加产品 Batch',
   'devices_con.EditProductBatch': '编辑产品 Batch',
@@ -287,6 +301,61 @@ window.lang['zh-CN'] = {
   'channel-form.Help': '帮助',
 
   // ---- Edit DuduHTTP- End ----
+
+  // ---- 设备管理-start----
+  'main-devices.development': '设备开发',
+  'main-devices.search': '搜索',
+  'main-devices.new_products': '新建一批产品',
+  'main-devices.sort': '综合排序',
+  'main-devices.popularity_sort': '人气排序',
+  'main-devices.CreateDate': '创建时间:',
+
+  'main-devices.Remove': '移除',
+  'main-devices.Activation_Time': '激活时间:',
+  'main-devices.products_id': '产品ID:',
+  'main-devices.Activation_Code': '激活码',
+  // ---- 设备管理- End----
+
+  // ---- 产品管理- start----
+  'main-devices.add': '添加',
+  'main-devices.SerialNumber': '编号:',
+  'main-devices.ActivedAt': '激活于',
+  'main-devices.AttachedAt': '附加在',
+  'main-devices.CreatedAt': '创建于',
+  'main-devices.Devices': '设备',
+  'main-devices.shuoming': '按回车键添加多个序列号',
+  'main-devices.myDevices': '我的设备',
+  'main-devices.context': '创建一个关联设备',
+  'main-devices.Uploadlogo': '上传图标',
+  'main-devices.Serial_number': '序列号管理',
+  'main-devices.company': '大连云动力科技有限公司',
+  // ---- 产品管理- end----
+
+  // ---- 账户管理- start----
+  'account.name': '名字:',
+  'account.province': '省份:',
+  'account.city': '城市:',
+  'account.postcode': '邮编:',
+  'account.Country': '国家:',
+  'account.Email': '电子邮件:',
+  'account.Phone': '联系电话:',
+  'account.address': '联系地址:',
+  'account.payment': '支付方式:',
+  'account.membership': '会员身份:',
+  'account.personage': '个人',
+  'account.organizations': '企业/政府（含企业、政府、事业单位、团体、组织）',
+  'account.save': '保存',
+  'account.cancel': '取消 ',
+  'account-main.EditAccount': '编辑账户',
+
+  // ---- 账户管理- End----
+
+  // ---- 在线咨询- start----
+  'main-im.online': 'QQ在线咨询',
+  'main-im.consultaion': '售前咨询',
+  'main-im.Aftermarket': '售后咨询',
+  'main-im.wechat': '微信扫一扫',
+  // ---- 在线咨询- End----
 
   null:null
 };

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid data_warehouse" >
 
   <!--
    注意:
@@ -20,7 +20,7 @@
         <tr>
           <td rowspan="6" style="width:120px;" class="text-center">
             <img ng-src="{{channel.channel_icon}}" src="./images/icoimage/default.png" class="img-circle" style="max-height:100px;max-width:120px;">
-            <button type="button" class="btn btn-default up_ico" ng-click="openModalUploadIcon()"> 更新/上传图片</button>
+            <button type="button" class="btn btn-default up_ico" ng-click="openModalUploadIcon()" ng-bind-html="Lang['data-header.upload']"> </button>
           </td>
         </tr>
         <tr>

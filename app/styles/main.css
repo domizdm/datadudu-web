@@ -599,6 +599,9 @@ table.myTable td, table.myTable th {
 .private-rule {
   background-color: #FFFFFF;
 }
+@media (max-width: 768px) {
+   .data_warehouse{margin-top: 60px;}
+}
 
 .public-view-style {
   background-color: #FFFFFF;
@@ -650,6 +653,9 @@ table.myTable td, table.myTable th {
 .account-main {
   background-color: #FFFFFF;
   margin: 10px;
+}
+@media (max-width: 768px) {
+    .account-main{margin-top: 60px;}
 }
 
 .myaccount {
@@ -745,13 +751,17 @@ table.myTable td, table.myTable th {
 .devices_sort{ background-color: #FFFFFF;padding: 20px 61px;}
 .devices_sort span{margin-right: 10px;}
 .devices_sort span i{margin-right: 5px;}
-.devices_sor a:hover, a:active, a:focus{color: #0277BD;}
+/*.devices_sor a:hover, a:active, a:focus{color: #0277BD;}*/
 .devices_sor a{color:#000000 ;}
 .devices_body{padding: 5px 61px;}
 .devices_div{background-color: #F5F5F5;width: 100%;height:auto;}
 .devices_div p{margin: 0 0  2px 0;}
 .devices_del{margin-left: 54px;margin-top: 5px}
 .device_ico{float:left;margin-right: 5px;padding-top:20px;margin-bottom: 20px;padding-left: 10px;padding-right: 10px;}
+
+@media (max-width: 563px) {
+  .device_ico{display: none;}
+}
 .devices_div .create span{color:#828181;font-size: 12px;}
 @media (max-width: 768px) {
   .text-left{float: right;}
@@ -797,6 +807,9 @@ table.myTable td, table.myTable th {
   .devices_con{margin-top: 65px;}
 }
 
+@media (max-width: 768px) {
+  .productdetails{margin-top: 65px;}
+}
 .device_form {
   width: 100%;
   background: #FFFFFF;

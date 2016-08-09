@@ -3,6 +3,7 @@
     <h2 ng-bind="pageTitle"></h2>
     <hr>
     <form ng-submit="saveDuduHttp(form)" class="form-inline">
+      <div class="table-responsive">
       <table>
 
         <tr>
@@ -69,7 +70,7 @@
           <td><input ng-model="form.parse_string" type="number" class="form-control"></td>
         </tr>
       </table>
-
+      </div>
       <div>
         <button class="btn btn btn-success save-btn" type="submit" ng-bind-html="Lang['channel-form.SaveThingHTTP']"></button>
       </div>

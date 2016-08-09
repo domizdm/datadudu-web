@@ -1,6 +1,6 @@
 <div class="container-fluid main-devices">
 
-  <div class="row-fluid channel-main main-devices">
+  <div class="row-fluid channel-main main-devices productdetails">
     <div class="col-md-1 hidden-sm">
     </div>
     <div class=" col-md-10">
@@ -10,24 +10,24 @@
         <h3 class="product_title">
           <span style="width:120px;height:120px;display:inline-block;" class="text-center">
             <img ng-src="{{product['icon_100x100']}}" src="images/user.png" style="max-height:100px;max-width:100px;"><br>
-            <button class="btn btn-default up_ico"  style="font-size:12px;" ng-click="openModalUploadIcon()">上传/更换图标</button>
+            <button class="btn btn-default up_ico"  style="font-size:12px;" ng-click="openModalUploadIcon()" ng-bind-html="Lang['data-header.upload']"></button>
           </span>
 
           {{product.name || '&lt;Empty Name&gt;'}}
         </h3>
 
         <div style="font-size:18px;">
-          <a href="" ng-click="editProduct(product.product_id)"><span class="fa fa-pencil"></span>Edit</a>
+          <a href="" ng-click="editProduct(product.product_id)"><i class="fa fa-pencil"></i><span ng-bind-html="Lang['main-devices.edit']"></span></a>
           &nbsp;&nbsp;
-          <a href="" ng-click="deleteProduct(product.product_id)"><span class="fa fa-remove"></span>Delete</a>
+          <a href="" ng-click="deleteProduct(product.product_id)"><i class="fa fa-remove"></i><span ng-bind-html="Lang['main-devices.delete']"></span></a>
         </div>
 
-        <p>Private Product</p>
+
         <div class="device_detais">
-          <p class=""><span><strong>Product ID</strong></span>
+          <p class=""><span><strong ng-bind-html="Lang['main-devices.products_id']"></strong></span>
             {{product.product_id}}
           </p>
-          <p class="ng-binding"><span><strong>Product Secret</strong></span>
+          <p class="ng-binding"><span><strong ng-bind-html="Lang['main-devices.SerialNumber']"></strong></span>
             {{product.secret}}
           </p>
         </div>
@@ -36,11 +36,11 @@
         <div class="serial_out">
 
           <form name="form" class="">
-            <p>Press enter key to add multiple Serial Numbers </p>
+            <p ng-bind-html="Lang['main-devices.shuoming']"></p>
             <textarea type="text" class="form-control serial_txt" placeholder="Add Serial Number for this product"
                       ng-model="seriesText"></textarea>
             <button type="submit" class="btn btn_add btn-new  add_serial"
-                    ng-click="addDevices(product.product_id, seriesText)">Add
+                    ng-click="addDevices(product.product_id, seriesText)" ng-bind-html="Lang['main-devices.add']">
             </button>
           </form>
 
@@ -50,7 +50,7 @@
       <div class="device_form">
 
         <div class="table-responsive">
-          <h3>Devices</h3>
+          <h3 ng-bind-html="Lang['main-devices.Devices']"></h3>
           <div class="row-fluid">
             <div class="col-sm-6" style="margin-bottom: 3px;">
               <div class="input-group">
@@ -69,11 +69,11 @@
           <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead class="tb2Header">
             <tr role="row">
-              <th class="">Serial Number</th>
-              <th class="">Activation Code</th>
-              <th class="">Actived At</th>
-              <th class="">Attached At</th>
-              <th class="">Created At</th>
+              <th class="" ng-bind-html="Lang['main-devices.SerialNumber']"></th>
+              <th class="" ng-bind-html="Lang['main-devices.Activation_Code']"></th>
+              <th class="" ng-bind-html="Lang['main-devices.ActivedAt']"></th>
+              <th class="" ng-bind-html="Lang['main-devices.AttachedAt']"></th>
+              <th class="" ng-bind-html="Lang['main-devices.CreatedAt']"></th>
               <th></th>
             </tr>
             </thead>

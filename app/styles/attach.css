@@ -61,7 +61,7 @@
   color: #207CC4;
   border-bottom: 2px solid #005EB4;
 }
-.topnav .navbar-header h2{padding-top: 5px;}
+/*.topnav .navbar-header h2{padding-top: 5px;}*/
 .topnav .navbar-header a{text-decoration: none;}
 .topnav .header-nav li a {padding:5px 15px}
 .header-nav .dropdown_buttom{background-color: #F8F8F8}

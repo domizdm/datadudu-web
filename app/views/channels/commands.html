@@ -6,6 +6,7 @@
     <hr>
     <div ng-controller="ChannelsCommandsCtrl">
       <div ng-if="form">
+        <div class="table-responsive">
         <table class="table  table-bordered table-condensed">
           <thead>
           <tr>
@@ -26,6 +27,7 @@
           </tr>
           </tbody>
         </table>
+          </div>
         <div>
           <button class="btn btn-danger" ng-click="deleteAllCommands(form)" ng-bind-html="Lang['commands.Delete All']"></button>
         </div>
