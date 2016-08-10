@@ -360,9 +360,9 @@ table.myTable button {
   margin-bottom: 30px;
 }
 
-table.myTable td img, table.myTable th img {
-  padding-right: 5px;
-}
+/*table.myTable td img, table.myTable th img {*/
+  /*padding-right: 5px;*/
+/*}*/
 
 table.myTable td a, table.myTable th a {
   color: #000;
