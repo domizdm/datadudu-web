@@ -72,7 +72,7 @@ angular.module('dataduduR3App')
       // ref: http://www.highcharts.com/demo/dynamic-master-detail
       element.highcharts({
         chart: {
-          type: 'line',//spline
+          type: 'column',//spline
           animation: Highcharts.svg, // don't animate in old IE
           marginRight: 10,
           events: {
