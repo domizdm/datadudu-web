@@ -3,81 +3,82 @@
     <h2 ng-bind="pageTitle"></h2>
     <hr>
     <form ng-submit="saveDuduHttp(form)" class="form-inline">
+      <div class="table-responsive">
       <table>
 
         <tr>
-          <td>Name:</td>
+          <td ng-bind-html="Lang['channel-form.Name']"></td>
           <td><input ng-model="form.http_name" class="form-control"></td>
         </tr>
         <tr style="line-height: 50px">
-          <td>API Key:</td>
+          <td ng-bind-html="Lang['channel-form.APIKey']"></td>
           <td><label class="text-danger">{{form.api_key || 'N/A'}}</label>
         </tr>
         <tr>
-          <td>URL:</td>
+          <td ng-bind-html="Lang['channel-form.URL']"></td>
           <td><input ng-model="form.url" class="form-control" required/></td>
         </tr>
         <tr style="line-height: 50px">
-          <td>HTTP Auth Username:</td>
+          <td ng-bind-html="Lang['channel-form.HTTPAuthUsername']"></td>
           <td><input ng-model="form.auth_username" class="form-control" /></td>
         </tr>
         <tr style="line-height: 50px">
-          <td>HTTP Auth Password:</td>
+          <td ng-bind-html="Lang['channel-form.HTTPAuthPassword']"></td>
           <td><input ng-model="form.auth_password" class="form-control"></td>
         </tr>
         <tr style="line-height: 50px">
-          <td>Method:</td>
+          <td ng-bind-html="Lang['channel-form.Method']"></td>
           <td>
             <select class="form-control" ng-options="item.key as item.text for item in httpMethods" ng-model="form.method">
             </select>
           </td>
         </tr>
         <tr style="line-height: 50px">
-          <td>Content Type:</td>
+          <td ng-bind-html="Lang['channel-form.ContentType']"></td>
           <td><input ng-model="form.content_type" class="form-control"></td>
         </tr>
         <tr style="line-height: 50px">
-          <td>HTTP Version:</td>
+          <td ng-bind-html="Lang['channel-form.HTTPVersion']"></td>
           <td>
             <select class="form-control" ng-options="item.key as item.text for item in httpVersions" ng-model="form.version">
-              <option value="">--Choose Edition--</option>
+              <option value="" ng-bind-html="Lang['channel-form.Choose Edition']"></option>
             </select>
           </td>
         </tr>
         <tr style="line-height: 50px">
-          <td>Host</td>
+          <td ng-bind-html="Lang['channel-form.Host']"></td>
           <td><input ng-model="form.host" class="form-control"></td>
         </tr>
         <tr >
-          <td>Headers:</td>
+          <td ng-bind-html="Lang['channel-form.Headers']"></td>
           <td>
             <fieldset ng-repeat="item in form.headers track by $index" style="border:1px solid #ccc;padding:10px;margin:2px;">
-              <div>Name:<input ng-model="item.name" class="form-control"></div>
-              <div>Value:<input ng-model="item.value" class="form-control"></div><br/>
-              <div><button class="btn btn-info"><a href="" ng-click="removeHeader($index)">Remove</a></button></div>
+              <div ng-bind-html="Lang['channel-form.Name']"><input ng-model="item.name" class="form-control"></div>
+              <div ng-bind-html="Lang['channel-form.Value']"><input ng-model="item.value" class="form-control"></div><br/>
+              <div><button class="btn btn-info"><a href="" ng-click="removeHeader($index)" ng-bind-html="Lang['channel-form.Remove']"></a></button></div>
             </fieldset><br/>
 
-            <div><button class="btn btn-success"><a href="" ng-click="addNewHeader()">add new header</a></button></div><br/>
+            <div><button class="btn btn-success"><a href="" ng-click="addNewHeader()" ng-bind-html="Lang['channel-form.addnewheader']"></a></button></div><br/>
           </td>
         </tr>
         <tr style="line-height: 50px">
-          <td>Body</td>
+          <td ng-bind-html="Lang['channel-form.Body']"></td>
           <td><textarea ng-model="form.body" class="form-control"></textarea></td>
         </tr>
         <tr style="line-height: 50px">
-          <td>Parse String</td>
+          <td ng-bind-html="Lang['channel-form.ParseString']"></td>
           <td><input ng-model="form.parse_string" type="number" class="form-control"></td>
         </tr>
       </table>
-
+      </div>
       <div>
-        <button class="btn btn btn-success save-btn" type="submit">Save ThingHTTP</button>
+        <button class="btn btn btn-success save-btn" type="submit" ng-bind-html="Lang['channel-form.SaveThingHTTP']"></button>
       </div>
 
     </form>
   </div>
   <div class="col-md-6">
-    <h2>Help</h2>
+    <h2 ng-bind-html="Lang['channel-form.Help']"></h2>
     <hr>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
       standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a

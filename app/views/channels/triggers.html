@@ -1,8 +1,9 @@
 <div class="row channel-main-setting" ng-controller="ChannelsTriggersCtrl">
   <div class="col-md-12 triggers" style="padding-left: 10px;">
 
-    <div ng-if="!!channel">
-      <table class="table" st-pipe="mc.callServer" st-table="mc.displayed">
+    <div ng-if="!!channel" >
+      <div class="table-responsive">
+      <table class="table " st-pipe="mc.callServer" st-table="mc.displayed">
         <thead style="background-color: #0277BD;color: #ffffff">
         <tr>
           <th class="text-nowrap" ng-bind-html="Lang['triggers.TriggerID']"></th>
@@ -43,6 +44,7 @@
         </tfoot>
 
       </table>
+       </div>
       <span style="color: #3783C2" ng-bind-html="Lang['triggers.triggers']"></span>
       <hr/>
       <p class="text-muted"><span  ng-bind-html="Lang['triggers.reminder']"></span> {{mc.tableState.pagination.number}}

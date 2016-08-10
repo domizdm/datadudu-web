@@ -92,9 +92,9 @@ input, select, textarea:focus {
   color: #ffffff;
 }
 
-.main-header .sidebar-toggle:hover {
-  color: #025F98;
-}
+/*.main-header .sidebar-toggle:hover {*/
+  /*color: #025F98;*/
+/*}*/
 
 .main-sidebar {
   background-color: #0277BD;
@@ -360,9 +360,9 @@ table.myTable button {
   margin-bottom: 30px;
 }
 
-table.myTable td img, table.myTable th img {
-  padding-right: 5px;
-}
+/*table.myTable td img, table.myTable th img {*/
+  /*padding-right: 5px;*/
+/*}*/
 
 table.myTable td a, table.myTable th a {
   color: #000;
@@ -417,6 +417,10 @@ table.myTable td, table.myTable th {
 .usedspace-style {
   float: right;
   padding-right: 10px;
+}
+
+@media (max-width: 1186px) {
+  .space{display: none;}
 }
 
 .pagination {
@@ -595,6 +599,9 @@ table.myTable td, table.myTable th {
 .private-rule {
   background-color: #FFFFFF;
 }
+@media (max-width: 768px) {
+   .data_warehouse{margin-top: 60px;}
+}
 
 .public-view-style {
   background-color: #FFFFFF;
@@ -647,15 +654,18 @@ table.myTable td, table.myTable th {
   background-color: #FFFFFF;
   margin: 10px;
 }
+@media (max-width: 768px) {
+    .account-main{margin-top: 60px;}
+}
 
 .myaccount {
   margin-right: 40px;
 }
 
 .signup-outer {
-  width: 800px;
-  height: auto;
-  padding: 35px 60px;
+
+  height: 800px;
+  padding: 135px 60px;
   background: #fff;
   box-shadow: 0 1px 7px 2px rgba(135, 158, 171, 0.1);
   margin: 10px auto;
@@ -695,6 +705,37 @@ table.myTable td, table.myTable th {
   box-shadow: 0 1px 7px 2px rgba(135, 158, 171, 0.1);
 }
 
+/*账户安全页面样式开始*/
+
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+   margin-left: 0;
+}
+.fa-asterisk{color: red;margin-right: 2px;font-size: 1px}
+
+/*账户安全页面样式结束*/
+
+/*费用中心*/
+/*账户查询*/
+.accountinquiry{background-color: #ffffff;padding-top: 73px;padding-left: 10px;height: 800px;padding-right: 30px;}
+.accountinquiry button{border-radius: 60px;}
+.accountinquiry_header{margin-left: 10px;margin-top: 18px;}
+.accountinquiry_header table thead tr td select{width: 100px;text-align: center}
+.accountinquiry_header table thead tr td label{width: 80px;text-align: center}
+.accountinquiry_body{margin-left: 10px;margin-top: 18px}
+.accountinquiry_body thead{background-color:#F5F5F5;margin-right: 15px}
+  /*账户查询*/
+  /*费用中心*/
+
+/*消息中心*/
+.messages-center{background-color: #ffffff;padding-top: 177px;padding-left: 10px;height: 800px;padding-right: 30px;}
+.messages-center .message-header{background-color: #F5F5F5}
+/*消息中心*/
+
+
+
+
+
 /*设备管理开始*/
 .main-devices{background-color: #ffffff;}
 .devices_header {
@@ -710,13 +751,17 @@ table.myTable td, table.myTable th {
 .devices_sort{ background-color: #FFFFFF;padding: 20px 61px;}
 .devices_sort span{margin-right: 10px;}
 .devices_sort span i{margin-right: 5px;}
-.devices_sor a:hover, a:active, a:focus{color: #0277BD;}
+/*.devices_sor a:hover, a:active, a:focus{color: #0277BD;}*/
 .devices_sor a{color:#000000 ;}
 .devices_body{padding: 5px 61px;}
 .devices_div{background-color: #F5F5F5;width: 100%;height:auto;}
 .devices_div p{margin: 0 0  2px 0;}
 .devices_del{margin-left: 54px;margin-top: 5px}
 .device_ico{float:left;margin-right: 5px;padding-top:20px;margin-bottom: 20px;padding-left: 10px;padding-right: 10px;}
+
+@media (max-width: 563px) {
+  .device_ico{display: none;}
+}
 .devices_div .create span{color:#828181;font-size: 12px;}
 @media (max-width: 768px) {
   .text-left{float: right;}
@@ -746,16 +791,25 @@ table.myTable td, table.myTable th {
   height: 150px;
   margin: 10px;
   vertical-align: middle;
-  line-height: 150px;
+  /*line-height: 150px;*/
   text-align: center;
   background-color: #EEEEEE;
 }
 
-.products-div:hover {
-  background-color: #025F98;
-  color: #FFFFFF;
+/*.products-div:hover {*/
+  /*background-color: #025F98;*/
+  /*color: #FFFFFF;*/
+/*}*/
+.devices_con{margin-left: 20px;}
+
+.main-devices .device_mg_div button{border-radius: 50px;}
+@media (max-width: 768px) {
+  .devices_con{margin-top: 65px;}
 }
 
+@media (max-width: 768px) {
+  .productdetails{margin-top: 65px;}
+}
 .device_form {
   width: 100%;
   background: #FFFFFF;

@@ -10,7 +10,7 @@
         <button type="submit" class="btn btn-search hidden-xs">搜索</button>
         <a class="btn btn-default btn-new  " href="#/channels/new">新建空间</a>
         <a class="btn btn-default" href="" ng-click="shareChannels(getCheckedItems(channels))">分享到...</a>
-        <h5 class="usedspace-style " ><a class=" hidden-sm hidden-xs" style="color: #0c0c0c;margin-right: 5px">总体占用空间:</a>{{getAccountUsage() | bytes}} </h5>
+        <h5 class="usedspace-style hidden-sm hidden-xs " ><a class="space" style="color: #0c0c0c;margin-right: 5px">总体占用空间:</a>{{getAccountUsage() | bytes}} </h5>
       </form>
 
 
@@ -34,9 +34,9 @@
           <td st-row-check="channel" st-row-check-attr="checkedFlag"></td>
           <td class="td-left">
             <div style="float: left;width: 170px">
-            <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-circle" style="max-height:54px;max-width:54px; float: left">
+            <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-rounded" style="max-height:54px;max-width:54px; float: left">
             <!--<div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">-->
-              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private"><b>{{channel.name}}</b></a><br/>
+              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private"><b>{{channel.name==null? ' 未命名空间':channel.name}}</b></a><br/>
             <!--</div>-->
             <!--<div ng-show="channel.name==''||channel.name=='null'||channel.name==null">-->
               <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">空间编号:{{channel.channel_id}}</a>

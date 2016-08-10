@@ -26,8 +26,7 @@
                   <div class='input-group date' datetimepicker="query.begin"></div>
                 </td>
                 <td><label ng-bind-html="Lang['data-graph.Scale']"></label></td>
-                <td><select class="form-control" ng-options="item.label for item in durations"
-                            ng-model="query.duration"></select></td>
+                <td><select class="form-control" ng-options="item.label for item in durations" ng-model="query.duration"></select></td>
                 <td>
                   <button class="btn btn-primary" ng-click="download(channel)" ng-bind-html="Lang['data-graph.Download']"></button>
                 </td>
@@ -49,7 +48,7 @@
       </div>
 
       <div class="text-center text-muted" style="padding:50px;font-size:24px;" ng-show="!loading && !channelsFeeds[key].data.length">
-        <div>No data available for </div>
+        <div ><span ng-bind-html="Lang['realtime.no_data']"></span>  </div>
         <div>{{val.text}}</div>
       </div>
 

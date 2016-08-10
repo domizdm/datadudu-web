@@ -10,7 +10,7 @@
       <button type="submit" class="btn btn-search hidden-xs">Search</button>
       <a class="btn btn-default btn-new  " href="#/channels/new">New Channel</a>
       <a class="btn btn-default" href="" ng-click="shareChannels(getCheckedItems(channels))">Share To...</a>
-      <h5 class="usedspace-style hidden-sm hidden-xs " ><a class=" hidden-sm hidden-xs" style="color: #0c0c0c;margin-right: 5px">Total Used Space: </a>{{getAccountUsage() | bytes}}</h5>
+      <h5 class="usedspace-style hidden-sm hidden-xs" ><a class="space" style="color: #0c0c0c;margin-right: 5px">Total Used Space: </a>{{getAccountUsage() | bytes}}</h5>
     </form>
       </div>
     <div class="border-table table-list table-responsive">
@@ -32,11 +32,11 @@
           <td st-row-check="channel" st-row-check-attr="checkedFlag"></td>
           <td class="td-left">
             <div style="float: left;width: 170px">
-              <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-circle" style="max-height:54px;max-width:54px; float: left">
-              <!--<div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">-->
-              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+              <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-rounded" style="max-height:54px;max-width:54px; float: left">
 
-              <!--<div ng-show="channel.name==''||channel.name=='null'||channel.name==null">-->
+              <a  class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name==null? ' Unnamed Space':channel.name}}</a><br/>
+
+
                 <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
             </div>
             <div class="channel_ctr">

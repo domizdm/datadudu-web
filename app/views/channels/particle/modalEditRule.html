@@ -1,59 +1,59 @@
-<div class="">
+<div class="NewEdit_Rules">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
       &times;
     </button>
-    <h3 class="modal-title">New/Edit Rules</h3>
+    <h3 class="modal-title" ng-bind-html="Lang['NewEdit_Rules.New/Edit Rules']"></h3>
   </div>
 
   <div class="modal-body modal-add-rules" style="margin-left: 12px">
       <div class="col-md-8 ">
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Rules Name</label>
+          <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Rules Name']"></label>
           <input type="text" class="form-control" ng-model="form.rule_name" ng-model="form.rule_name">
         </div>
 
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Selected Fields:</label>
+          <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Selected Fields']"></label>
           <select class="form-control" ng-options="item.text for item in fields" ng-model="form.field"></select>
         </div>
 
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Condition Type:</label>
+          <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Condition Type']"></label>
           <select class="form-control" ng-options="item.text for item in types" ng-model="form.type"></select>
         </div>
 
         <form ng-if="form.type.key != 'no_data_check'">
           <div class="row">
-            <label class="col-sm-3 col-md-3 col-xs-3">Condition:</label>
+            <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Condition']"></label>
             <select class="form-control" ng-options="item.text for item in criterias[form.type.key]" ng-model="form.criteria">
-              <option value="">--Choose Condition--</option>
+              <option value="" ng-bind-html="Lang['NewEdit_Rules.ChooseCondition']"></option>
             </select>
           </div>
 
           <div class="row">
-            <label class="col-sm-3 col-md-3 col-xs-3">Condition Value:</label>
+            <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Condition Value']"></label>
             <input type="text" class="form-control" ng-model="form.condition">
           </div>
         </form>
 
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Action Frequency:</label>
+          <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Action Frequency']"></label>
           <select class="form-control" ng-options="item.text for item in acttion_freqs" ng-model="form.action_frequency"></select>
         </div>
 
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Action Type:</label>
+          <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Action Type']"></label>
           <select class="form-control" ng-options="item.text for item in action_types" ng-model="form.action_type"></select>
         </div>
 
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-xs-3">Action Value:</label>
+          <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Action Value']"></label>
           <input type="text" class="form-control" ng-model="form.action_value">
         </div>
 
         <div class="row" ng-if="form.action_type.key=='command'">
-          <label class="col-sm-3 col-md-3 col-xs-3">Command String:</label>
+          <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Command String']"></label>
           <input type="text" class="form-control" ng-model="form.action_sub_value">
         </div>
 
@@ -65,14 +65,14 @@
 
         <form ng-if="form.type.key == 'no_data_check'">
           <div class="row">
-            <label class="col-sm-3 col-md-3 col-xs-3">Frequency</label>
+            <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Frequency']"></label>
             <select class="form-control" ng-options="item.text for item in frequencies" ng-model="form.frequency"></select>
           </div>
         </form>
 
       </div>
       <div class="col-md-4">
-        <h2>Help</h2>
+        <h2 ng-bind-html="Lang['NewEdit_Rules.Help']"></h2>
         <hr>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
           industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -82,7 +82,7 @@
   </div>
 
   <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="ok()">Save Rules</button>
-    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="ok()" ng-bind-html="Lang['NewEdit_Rules.SaveRules']"></button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()"  ng-bind-html="Lang['NewEdit_Rules.Cancel']"></button>
   </div>
 </div>

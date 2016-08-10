@@ -76,13 +76,17 @@ window.lang['zh-CN'] = {
   'data-header.channel_author': '账户名:',
   'data-header.channel_access': '权限:',
   'data-header.channel_tags': '标签:',
+  'data-header.public': '对所有人开放:',
+  'data-header.Private': '仅对自开放:',
   'data-header.ChannelStatus': '空间状态:',
   'data-header.Created': '创建时间:',
   'data-header.Updated': '更新时间 :',
   'data-header.UsedSpace': ' 已用空间 :',
   'data-header.LastEntry': '最近一次更新',
-  'data-header.access.public': '公开',
-  'data-header.access.private': '私有',
+  'data-header.access.public': '对所有人开放',
+  'data-header.access.private': '仅对自己开放',
+  'data-header.upload': '更改/上传图片',
+
   'nav-data-header.PrivateView': '图形化显示',
   'nav-data-header.RealTime': '实时数据 ',
   'nav-data-header.seating': '设置 ',
@@ -103,6 +107,7 @@ window.lang['zh-CN'] = {
   'data-graph.Refresh': '更新 ',
   'realtime.Frequency': '频率 ',
   'realtime.LiveData': '实时数据 ',
+  'realtime.no_data': '没有数据 ',
 
   // ---- data- End ----
 
@@ -163,22 +168,22 @@ window.lang['zh-CN'] = {
 
   // ---- seating- start ----
   'setting.setting': '设置 ',
-  'setting.Name': '名字 ',
-  'setting.Description': '描述 ',
-  'setting.Feild': 'Feild ',
+  'setting.Name': '空间名字名字 ',
+  'setting.Description': '空间描述 ',
+  'setting.Feild': '数据单元 ',
   'setting.Metadata': '元数据: ',
-  'setting.Tags': '标签: ',
-  'setting.latitude': '界限: ',
-  'setting.longitude': '纬线: ',
-  'setting.elevation': '经线: ',
-  'setting.makepublic': 'make public: ',
-  'setting.url': 'url: ',
+  'setting.Tags': '空间标签: ',
+  'setting.latitude': '纬度: ',
+  'setting.longitude': '经度: ',
+  'setting.elevation': '海拔: ',
+  'setting.makepublic': '是否将开放给所有人?: ',
+  'setting.url': '网址: ',
   'setting.videoId': '视频ID: ',
   'setting.YouTube': ' YouTube: ',
   'setting.Vimeo': ' Vimeo: ',
   'setting.SaveChannel': ' 保存 ',
-  'setting.ClearFeed': ' Clear Feed ',
-  'setting.DeleteChannel': '删除 ',
+  'setting.ClearFeed': '清空传感器数据 ',
+  'setting.DeleteChannel': '清空所有数据 ',
   'setting.Help': '帮助 ',
   // ---- seating- End ----
 
@@ -205,6 +210,153 @@ window.lang['zh-CN'] = {
   'importexport.Help': ' 帮助 ',
 
   // ----  import/export- End ----
+  // ---- New Channel- start ----
+
+  'channel-create.NewChannel': '新建空间 ',
+  'channel-create.Name': '空间名字: ',
+  'channel-create.Description': '空间描述: ',
+  'channel-create.Feild': '数据单元: ',
+  'channel-create.Metadata': '元数据: ',
+  'channel-create.Tags': '空间标签: ',
+  'channel-create.latitude': '维度: ',
+  'channel-create.longitude': '经度: ',
+  'channel-create.elevation': '海拔: ',
+  'channel-create.makepublic': '是否开放给所有人?: ',
+  'channel-create.url': '网址: ',
+  'channel-create.videoId': '视频ID: ',
+  'channel-create.YouTube': 'YouTube ',
+  'channel-create.Vimeo': '  Vimeo ',
+  'channel-create.SaveChannel': '保存 ',
+  'channel-create.Help': '帮助 ',
+
+  // ----  New Channel- End ----
+
+  // ----  New/Edit Rules- start ----
+  'NewEdit_Rules.New/Edit Rules': '新建/编辑规则 ',
+  'NewEdit_Rules.Rules Name': '规则名字 ',
+  'NewEdit_Rules.Selected Fields': 'Selected Fields: ',
+  'NewEdit_Rules.Condition Type': '条件类型:',
+  'NewEdit_Rules.Condition': '条件:',
+  'NewEdit_Rules.ChooseCondition': '--选择条件-- ',
+  'NewEdit_Rules.ConditionValue': '条件值:',
+  'NewEdit_Rules.ActionFrequency': '动作频率: ',
+  'NewEdit_Rules.Action Type': '动作类型 :',
+  'NewEdit_Rules.Action Value': '动作值:',
+  'NewEdit_Rules.Command String': '命令字符:',
+  'NewEdit_Rules.Frequency': '频率:',
+  'NewEdit_Rules.Help': '帮助:',
+  'NewEdit_Rules.SaveRules': '保存',
+  'NewEdit_Rules.Cancel': '取消',
+  // ---- New/Edit Rules- End ----
+
+
+  // ----  Add Data Point- start ----
+  'AddDataPoint.AddDataPoint': '添加数据要点',
+  'AddDataPoint.CreateAt': '创建于',
+  'AddDataPoint.Latitude': '维度',
+  'AddDataPoint.Longitude': '经度',
+  'AddDataPoint.Elevation': '海拔',
+  'AddDataPoint.Status': '状态',
+  'AddDataPoint.OK': '确认',
+  'AddDataPoint.Cancel': '取消',
+  // ----  Add Data Point- end ----
+
+  // ----新建关联设备- start ----
+  'devices_con.AddProductBatch': '添加产品 Batch',
+  'devices_con.EditProductBatch': '编辑产品 Batch',
+  'devices_con.con': 'Loremss Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
+  'devices_con.Name': '名字',
+  'devices_con.Description': '描述',
+  'devices_con.Field': '数据单元',
+  'devices_con.Metadata': '元数据',
+  'devices_con.Privacy': '隐私',
+  'devices_con.Privacy_shuoming': 'Lorem Ipsum is simply dummy text of the printing',
+  'devices_con.PrivateDevice': '私人 设备',
+  'devices_con.PrivateDevice_shuoming': 'Lorem Ipsum is simply dummy text of the printing',
+  'devices_con.PublicDevice': '公开设备',
+  'devices_con.PublicDevice_shuoming': 'Lorem Ipsum is simply dummy text of the printing',
+  'devices_con.AddBatch': '添加 Batch',
+  'devices_con.Cancel': '取消',
+  'devices_con.UpdateBatch': '更新 Batch',
+  // ---- 新建关联设备- End ----
+
+  // ----Edit DuduHTTP- start ----
+  'channel-form.Name': '名字:',
+  'channel-form.APIKey': 'API 秘钥:',
+  'channel-form.URL': '网址:',
+  'channel-form.HTTPAuthUsername': 'HTTP 授权用户名:',
+  'channel-form.HTTPAuthPassword:': 'HTTP 授权密码:',
+  'channel-form.Method': '方法:',
+  'channel-form.ContentType': ' 内容类型:',
+  'channel-form.HTTPVersion:': 'HTTP 版本:',
+  'channel-form.Choose Edition': '--选择版本--',
+  'channel-form.Host': '主机:',
+  'channel-form.Headers': '标题:',
+  'channel-form.Value': '值',
+  'channel-form.Remove': '移除',
+  'channel-form.addnewheader': '添加新标题',
+  'channel-form.Body': '内容:',
+  'channel-form.ParseString': '解析字符串:',
+  'channel-form.SaveThingHTTP': '保存 ThingHTTP',
+  'channel-form.Help': '帮助',
+
+  // ---- Edit DuduHTTP- End ----
+
+  // ---- 设备管理-start----
+  'main-devices.development': '设备开发',
+  'main-devices.search': '搜索',
+  'main-devices.new_products': '新建一批产品',
+  'main-devices.sort': '综合排序',
+  'main-devices.popularity_sort': '人气排序',
+  'main-devices.CreateDate': '创建时间:',
+
+  'main-devices.Remove': '移除',
+  'main-devices.Activation_Time': '激活时间:',
+  'main-devices.products_id': '产品ID:',
+  'main-devices.Activation_Code': '激活码',
+  // ---- 设备管理- End----
+
+  // ---- 产品管理- start----
+  'main-devices.add': '添加',
+  'main-devices.SerialNumber': '编号:',
+  'main-devices.ActivedAt': '激活于',
+  'main-devices.AttachedAt': '附加在',
+  'main-devices.CreatedAt': '创建于',
+  'main-devices.Devices': '设备',
+  'main-devices.shuoming': '按回车键添加多个序列号',
+  'main-devices.myDevices': '我的设备',
+  'main-devices.context': '创建一个关联设备',
+  'main-devices.Uploadlogo': '上传图标',
+  'main-devices.Serial_number': '序列号管理',
+  'main-devices.company': '大连云动力科技有限公司',
+  // ---- 产品管理- end----
+
+  // ---- 账户管理- start----
+  'account.name': '名字:',
+  'account.province': '省份:',
+  'account.city': '城市:',
+  'account.postcode': '邮编:',
+  'account.Country': '国家:',
+  'account.Email': '电子邮件:',
+  'account.Phone': '联系电话:',
+  'account.address': '联系地址:',
+  'account.payment': '支付方式:',
+  'account.membership': '会员身份:',
+  'account.personage': '个人',
+  'account.organizations': '企业/政府（含企业、政府、事业单位、团体、组织）',
+  'account.save': '保存',
+  'account.cancel': '取消 ',
+  'account-main.EditAccount': '编辑账户',
+
+  // ---- 账户管理- End----
+
+  // ---- 在线咨询- start----
+  'main-im.online': 'QQ在线咨询',
+  'main-im.consultaion': '售前咨询',
+  'main-im.Aftermarket': '售后咨询',
+  'main-im.wechat': '微信扫一扫',
+  // ---- 在线咨询- End----
+
   null:null
 };
 
