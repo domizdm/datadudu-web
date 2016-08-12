@@ -8,6 +8,10 @@
         <tr>
           <td>User ID </td>
           <td>{{myAccount.username}}</td>
+          <a  class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name==null? ' Unnamed Space':channel.name}}</a><br/>
+
+
+          <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
         </tr>
         <tr>
           <td>Email </td>

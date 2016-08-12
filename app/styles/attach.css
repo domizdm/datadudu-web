@@ -5,11 +5,11 @@
 }
 /*登录页面*/
 /*登录头部导航样式*/
-@media (min-width: 768px){
-  .collapse {
-    display: block;
-  }
-}
+/*@media (min-width: 768px){*/
+  /*.top_daohang {*/
+    /*display: block;*/
+  /*}*/
+/*}*/
 @media (min-width: 992px){
   .topnav .navbar-nav {
     float: right;
@@ -68,7 +68,8 @@
 
 
 /*导航二级菜单样式*/
-.dropdown-menu li{float: left;}
+.dudu_yingjian li{text-align: center;}
+.topnav .dropdown-menu li{float: left;}
 
 .topnav .navbar-nav>li>.dropdown-menu {
   margin-top: 10px;

@@ -11,6 +11,7 @@
           <div class="nav-table-data">
             <ul class="nav navbar-nav">
               <table>
+                <tr>
                 <td><label ng-bind-html="Lang['data-graph.Type']"></label></td>
                 <td>
                   <select class="form-control" ng-options="item.label for item in queryTypes"
@@ -24,6 +25,7 @@
                 <td><label ng-bind-html="Lang['data-graph.From']"></label></td>
                 <td>
                   <div class='input-group date' datetimepicker="query.begin"></div>
+
                 </td>
                 <td><label ng-bind-html="Lang['data-graph.Scale']"></label></td>
                 <td><select class="form-control" ng-options="item.label for item in durations" ng-model="query.duration"></select></td>
@@ -36,6 +38,7 @@
                     <i class="fa fa-refresh" ng-show="loading" ng-class="{'fa-spin': loading}"></i>
                   </button>
                 </td>
+                </tr>
               </table>
             </ul>
           </div>
@@ -63,8 +66,6 @@
 
 </div>
 
-
-</div>
 
 
 
