@@ -84,7 +84,7 @@ window.lang['en-GB'] = {
   'data-header.Created': 'Created :',
   'data-header.Updated': 'Updated :',
   'data-header.UsedSpace': 'Used Space :',
-  'data-header.LastEntry ': 'Last Entry ID And Date :',
+  'data-header.LastEntry': 'Last Entry ID And Date :',
   'data-header.access.public': 'Public',
   'data-header.access.private': 'Private',
   'data-header.upload': 'change/upload',
@@ -307,6 +307,7 @@ window.lang['en-GB'] = {
   // ---- 设备管理-start----
   'main-devices.development': 'Development',
   'main-devices.search': 'Search',
+  'main-devices.placeholder': 'Please input the content of the query!',
   'main-devices.new_products': 'A new batch of products',
   'main-devices.sort': 'synthetically sorting',
   'main-devices.popularity_sort': 'Popularity sorting',

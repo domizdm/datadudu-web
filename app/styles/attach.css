@@ -5,11 +5,6 @@
 }
 /*登录页面*/
 /*登录头部导航样式*/
-/*@media (min-width: 768px){*/
-  /*.top_daohang {*/
-    /*display: block;*/
-  /*}*/
-/*}*/
 @media (min-width: 992px){
   .topnav .navbar-nav {
     float: right;
