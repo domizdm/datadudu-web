@@ -182,7 +182,7 @@ window.lang['zh-CN'] = {
   'setting.YouTube': ' YouTube: ',
   'setting.Vimeo': ' Vimeo: ',
   'setting.SaveChannel': ' 保存 ',
-  'setting.ClearFeed': '清空传感器数据 ',
+  'setting.ClearFeed': '彻底删除存储空间 ',
   'setting.DeleteChannel': '清空所有数据 ',
   'setting.Help': '帮助 ',
   // ---- seating- End ----
@@ -212,7 +212,7 @@ window.lang['zh-CN'] = {
   // ----  import/export- End ----
   // ---- New Channel- start ----
 
-  'channel-create.NewChannel': '新建空间 ',
+  'channel-create.NewChannel': '空间单元 ',
   'channel-create.Name': '空间名字: ',
   'channel-create.Description': '空间描述: ',
   'channel-create.Feild': '数据单元: ',
@@ -314,12 +314,14 @@ window.lang['zh-CN'] = {
   'main-devices.Remove': '移除',
   'main-devices.Activation_Time': '激活时间:',
   'main-devices.products_id': '产品ID:',
-  'main-devices.Activation_Code': '激活码',
+  'main-devices.Activation_Code': '激活码:',
   // ---- 设备管理- End----
 
   // ---- 产品管理- start----
   'main-devices.add': '添加',
-  'main-devices.SerialNumber': '编号:',
+  'main-devices.SerialNumber': '序列号:',
+  'main-devices.Number': '编号:',
+
   'main-devices.ActivedAt': '激活于',
   'main-devices.AttachedAt': '附加在',
   'main-devices.CreatedAt': '创建于',

@@ -315,13 +315,14 @@ window.lang['en-GB'] = {
   'main-devices.Remove': 'Remove',
   'main-devices.Activation_Time': 'Activation Time:',
   'main-devices.products_id': 'Products ID:',
-  'main-devices.Activation_Code': ' Activation Code',
+  'main-devices.Activation_Code': ' Activation Code:',
   // ---- 设备管理- End----
 
 
   //产品管理start
   'main-devices.add': 'ADD',
   'main-devices.SerialNumber': 'Serial Number:',
+  'main-devices.Number': 'Number:',
   'main-devices.ActivedAt': 'Actived At',
   'main-devices.AttachedAt': 'Attached At',
   'main-devices.CreatedAt': 'Created At',

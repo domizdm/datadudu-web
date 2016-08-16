@@ -757,7 +757,7 @@ table.myTable td, table.myTable th {
 .devices_div{background-color: #F5F5F5;width: 100%;height:auto;}
 .devices_div p{margin: 0 0  2px 0;}
 .devices_del{margin-left: 54px;margin-top: 5px}
-.device_ico{float:left;margin-right: 5px;padding-top:20px;margin-bottom: 20px;padding-left: 10px;padding-right: 10px;}
+.device_ico{float:left;margin-right: 5px;margin-top:20px;margin-bottom: 20px;padding-left: 10px;padding-right: 10px;}
 
 @media (max-width: 563px) {
   .device_ico{display: none;}
