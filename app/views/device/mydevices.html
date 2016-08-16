@@ -12,7 +12,7 @@
   </div>
   <div class="col-md-6 devices_body table-responsive" ng-repeat="device in devices">
     <div class="devices_div">
-      <img ng-src="{{channel.channel_icon}}" src="./images/icoimage/1.png"   class="img-circle device_ico "  style="max-height:88px;max-width:86px;">
+      <img ng-src="{{device.channel_icon}}" src="./images/icoimage/1.png"   class="img-circle device_ico "  style="max-height:88px;max-width:86px;">
       <!---->
       <div class="text-left">
         <span> <a ng-href="#/channels/{{device.channel_id}}/private" style="text-decoration:underline;">{{device.name}}</a></span><span><img src="./images/icoimage/duduico2.png" style="margin-left: 18px"></span>
@@ -20,15 +20,19 @@
           ng-click="removeDevice(device.activation_code)" style="color: #ffffff" ng-bind-html="Lang['main-devices.Remove']"></a></button></span>
         <p class="create">
           <span ><span ng-bind-html="Lang['main-devices.CreateDate']"></span>{{(device.attached_at | date:'yyyy-MM-dd') || 'Not Attached'}}</span>
-         <span> <span ng-bind-html="Lang['main-devices.Activation_Time']"></span>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</span></p>
-        <p ><span ng-bind-html="Lang['data-header.channel_id']"></span><a ng-href="#/channels/{{device.channel_id}}/private">{{device.channel_id}}</a></p>
-        <!--<p class=""><span><strong ng-bind-html="Lang['main-devices.products_id']"></strong></span>{{product.product_id}}</p>-->
-
-        <p class=""><span ng-bind-html="Lang['main-devices.products_id']"></span>{{product.product_id}}</p>
-
-        <p class="table-responsive" ><span class="table-responsive"><span ng-bind-html="Lang['main-devices.Activation_Code']"></span>{{device.activation_code}}</span></p>
-
-        <p class="ng-binding"><span ng-bind-html="Lang['main-devices.SerialNumber']"></span>{{product.secret}}</p>
+         <span> <span ng-bind-html="Lang['main-devices.Activation_Time']"></span>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</span>
+        </p>
+        <div class="table-responsive">
+        <table>
+          <tr>
+            <td>
+            <p ><span ng-bind-html="Lang['data-header.channel_id']"></span><a ng-href="#/channels/{{device.channel_id}}/private" class="table-responsive">{{device.channel_id}}</a></p>
+            </td></tr>
+         <tr> <td><p class=""><span ng-bind-html="Lang['main-devices.products_id']"></span>{{device.product_id}}</p></td></tr>
+          <tr><td><p class="" ><span ng-bind-html="Lang['main-devices.Activation_Code']"></span>{{device.activation_code}}</p></td></tr>
+          <tr><td><p class="ng-binding"><span ng-bind-html="Lang['main-devices.SerialNumber']"></span>{{device.serial}}</p></td></tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
