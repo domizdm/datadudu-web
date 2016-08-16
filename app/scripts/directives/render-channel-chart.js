@@ -23,6 +23,7 @@ angular.module('dataduduR3App')
     link: function postLink(scope, element, attrs) {
 
       var s0 = {
+        step: true,
         name: scope.title,
         turboThreshold: 10000,// do not exceed 10k
         color: scope.color,
