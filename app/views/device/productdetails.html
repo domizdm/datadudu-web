@@ -72,9 +72,7 @@
               <th class="" ng-bind-html="Lang['main-devices.Number']"></th>
               <th class="" ng-bind-html="Lang['main-devices.Activation_Code']"></th>
               <th class="" ng-bind-html="Lang['main-devices.ActivedAt']"></th>
-              <th class="" ng-bind-html="Lang['main-devices.AttachedAt']"></th>
               <th class="" ng-bind-html="Lang['main-devices.CreatedAt']"></th>
-              <th></th>
             </tr>
             </thead>
             <tbody>
@@ -82,7 +80,6 @@
               <td>{{device.serial}}</td>
               <td>{{device.activation_code}}</td>
               <td>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</td>
-              <td>{{(device.attached_at | date:'yyyy-MM-dd') || 'Not Attached'}}</td>
               <td>{{device.created_at | date:'yyyy-MM-dd'}}</td>
 
               <td>

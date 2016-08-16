@@ -314,17 +314,17 @@ window.lang['zh-CN'] = {
   'main-devices.Remove': '移除',
   'main-devices.Activation_Time': '激活时间:',
   'main-devices.products_id': '产品ID:',
-  'main-devices.Activation_Code': '激活码:',
+  'main-devices.Activation_Code': '激活码',
   // ---- 设备管理- End----
 
   // ---- 产品管理- start----
   'main-devices.add': '添加',
   'main-devices.SerialNumber': '序列号:',
-  'main-devices.Number': '编号:',
+  'main-devices.Number': '编号',
 
-  'main-devices.ActivedAt': '激活于',
+  'main-devices.ActivedAt': '激活时间',
   'main-devices.AttachedAt': '附加在',
-  'main-devices.CreatedAt': '创建于',
+  'main-devices.CreatedAt': '创建时间',
   'main-devices.Devices': '设备',
   'main-devices.shuoming': '按回车键添加多个序列号',
   'main-devices.myDevices': '我的设备',
