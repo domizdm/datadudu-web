@@ -36,6 +36,12 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "highcharts": {
+      "main": [
+        "highstock.js",
+        "modules/exporting.js"
+      ]
     }
   }
 }

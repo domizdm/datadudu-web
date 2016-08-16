@@ -339,8 +339,7 @@
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
 <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-<script src="bower_components/highcharts/highcharts.js"></script>
-<script src="bower_components/highcharts/highcharts-more.js"></script>
+<script src="bower_components/highcharts/highstock.js"></script>
 <script src="bower_components/highcharts/modules/exporting.js"></script>
 <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
 <!-- endbower -->
@@ -438,5 +437,19 @@
 <script src="scripts/lang/lang.en-GB.js"></script>
 <script src="scripts/lang/lang.zh-CN.js"></script>
 <!-- endbuild -->
+
+<script>
+(function (H) {
+  // Wrap getSegments to change gapSize functionality to work based on time (milliseconds)
+  H.wrap(H.Series.prototype, 'getSegments', function (proceed) {
+    var cPR = this.xAxis.closestPointRange;
+    this.xAxis.closestPointRange = 1;
+
+    proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+
+    this.xAxis.closestPointRange = cPR;
+  });
+}(Highcharts));
+</script>
 </body>
 </html>
