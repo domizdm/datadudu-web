@@ -35,10 +35,16 @@ angular.module('dataduduR3App')
     $route.reload();
   };
 
-  channel.list()
+  //channel.list()
+  //  .$promise
+  //  .then(function(resp){
+  //    $scope.channel = _.find(resp.channels, {channel_id: $routeParams.id});
+  //  });
+
+  channel.get({id: $routeParams.id})
     .$promise
     .then(function(resp){
-      $scope.channel = _.find(resp.channels, {channel_id: $routeParams.id});
+      $scope.channel = resp.channel;
     });
 
 
