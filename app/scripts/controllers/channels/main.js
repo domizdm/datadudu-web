@@ -8,7 +8,8 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $uibModal, $log, Auth, channel) {
+.controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $uibModal, $log, modalConfirm, ngNotify,
+                                          Auth, channel, share) {
 
   //channel页面导航显示、隐藏
   $scope.navhide = true;
@@ -64,6 +65,49 @@ angular.module('dataduduR3App')
         .then(function(form){
           $route.reload();
         }, function(){/*dismiss*/});
+    }
+  };
+
+
+  $scope.shareChannel = function(channel){
+
+    if($scope.channel != null) {
+      var channelIds = [channel.channel_id];
+      var channelNames = [channel.name];
+
+      $uibModal.open({
+          templateUrl: 'views/shared/modalChooseSingleAccount.html',
+          controller: 'SharedChooseSingleAccountCtrl',
+          resolve: {}
+        })
+        .result
+        .then(function(user){
+          if(user.user_id) {
+            var msg = ['Share this channel', channelNames.join(','), 'to', user.username,'?'].join(' ');
+
+            var payload = {
+              channels: channelIds,
+              to: user.user_id
+            };
+
+            // open modal to confirm
+            modalConfirm.open(msg)
+              .then(function(){
+                share.shareChannelsToUser({}, payload)
+                  .$promise
+                  .then(function(resp){
+                    ngNotify.set(Auth.L('share.shared-successfully'), 'success');
+                  })
+                  .catch(function(err){
+                    ngNotify.set(err.data.desp || err.statusText, 'error');
+                  });
+              })
+              .catch(function(){
+                $scope.shareChannel(channel);
+              });
+          }
+        }, function(){/*dismiss*/});
+
     }
   };
 
