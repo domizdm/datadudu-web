@@ -147,6 +147,8 @@ window.lang['zh-CN'] = {
   'commands.Delete': '删除',
   'commands.Delete All': '删除全部',
   'commands.New Command': '新建指令',
+  'commands.placeholder-position': '方位',
+  'commands.placeholder-command_string': '指令字符串',
   'commands.Save': '保存',
   'commands.Cancel': '取消',
   'commands.Help': '帮助',
@@ -168,7 +170,7 @@ window.lang['zh-CN'] = {
 
   // ---- seating- start ----
   'setting.setting': '设置 ',
-  'setting.Name': '空间名字名字 ',
+  'setting.Name': '空间名字 ',
   'setting.Description': '空间描述 ',
   'setting.Feild': '数据单元 ',
   'setting.Metadata': '元数据: ',
@@ -182,8 +184,8 @@ window.lang['zh-CN'] = {
   'setting.YouTube': ' YouTube: ',
   'setting.Vimeo': ' Vimeo: ',
   'setting.SaveChannel': ' 保存 ',
-  'setting.ClearFeed': '彻底删除存储空间 ',
-  'setting.DeleteChannel': '清空所有数据 ',
+  'setting.ClearFeed': '清空所有数据',
+  'setting.DeleteChannel': '彻底删除存储空间 ',
   'setting.Help': '帮助 ',
   // ---- seating- End ----
 
@@ -309,7 +311,7 @@ window.lang['zh-CN'] = {
   'main-devices.new_products': '新建一批产品',
   'main-devices.sort': '综合排序',
   'main-devices.popularity_sort': '人气排序',
-  'main-devices.CreateDate': '创建时间:',
+  'main-devices.CreateDate': '创建时间',
 
   'main-devices.Remove': '移除',
   'main-devices.Activation_Time': '激活时间:',
@@ -322,9 +324,12 @@ window.lang['zh-CN'] = {
   'main-devices.SerialNumber': '序列号:',
   'main-devices.Number': '编号',
 
+
+
   'main-devices.ActivedAt': '激活时间',
   'main-devices.AttachedAt': '附加在',
   'main-devices.CreatedAt': '创建时间',
+  'main-devices.activated-state': '未激活',
   'main-devices.Devices': '设备',
   'main-devices.shuoming': '按回车键添加多个序列号',
   'main-devices.myDevices': '我的设备',
@@ -360,6 +365,75 @@ window.lang['zh-CN'] = {
   'main-im.wechat': '微信扫一扫',
   // ---- 在线咨询- End----
 
+  // ---- 弹出框- START----
+
+  'modal-con.clean-data': '你确定要清空空间所有数据？',
+  'modal-con.ok': '确定',
+  'modal-con.cancel': '取消',
+  'modal-con.channel-updated': '存储空间已更新',
+  'modal-con.errors-happened': '发生错误',
+  'modal-con.channel-cleared': '已清空存储空间数据',
+  'modal-con.delete-channel': '你想要删除存储空间吗？',
+  'modal-con.channel-removed': '存储空间已经移除',
+
+  // ---- create channel- START----
+  'create-channel.create-channel': '存储空间已经创建',
+  'create-channel.errors-happened': '发生了错误',
+  // ---- create channel- END----
+
+  // ---- duduHttp- START----
+  'duduHttp.duduHttp-updated': 'DuduHttp保存成功',
+  'duduHttp.delete-duduhttp': '您想要删除此Dudu HTTP吗？',
+  // ---- duduHttp - END----
+
+  // ---- channel分享- START----
+  'share.no-select-channels': '没选择存储空间！',
+  'share.no-valid-user': '无效的用户',
+  'share.shared-successfully': '存储空间分享成功.',
+  'share.shared-warning': '你想分享存储空间',
+  'share.shared-to': '到',
+  'modal-share.choose-user': '选择用户',
+  'modal-share.Username': '用户名',
+  'modal-share.text-warning': '你应该从下拉列表中选择一个用户',
+  'modal-share.results': '没有找到想要的结果',
+  'modal-share.placeholder': '搜索用户至少输入3个有效字符串...',
+  // ---- channel分享- END----
+
+  // ---- private更新- START----
+  'private.update': '数据量超过单次返回的最大限定值,数据可能显示不全.建议缩小时间范围来分段进行查看.',
+  // ---- private更新- END----
+
+  // ---- API秘钥- START----
+  'api.generate-writekey': '你确定生成新的写入秘钥吗?',
+  'api.generate-readkey': '你确定生成新的可读秘钥吗?',
+  'api.new-readkey-generated': '新的可读秘钥已生成.',
+  'api.new-writekey-generated': '新的写入秘钥已生成.',
+  'api.note-updated': '笔记已更新',
+  'api.key-removed': '秘钥已移除',
+  'api.key-removed-Prompt': '你想删除这个秘钥',
+  // ---- API秘钥- END----
+
+  // ---- commands modal- START----
+  'commands.delete-all-commands': '你确定删除所有的指令吗?',
+  'commands.delete-commands': '你想删除这个指令码?',
+  'commands.new-command-add': '新的指令已添加.',
+  'commands.command-deleted': '指令已删除.',
+  'commands.commands-deleted': '指令已全部删除',
+  // ---- commands modal- END----
+
+  // ---- rule modal- START----
+  'rule.delete-all-rules': '你确定删除所有的规则吗？',
+  'rule.rules-deleted': '规则已删除',
+  // ---- rule modal- END----
+
+  // ---- 上传图标 modal- START----
+  'uploadicon.Upload-Icon': '上传图标',
+  'uploadicon.Upload-prompt': '选择图像文件,点击“上传”保存图标.',
+  'uploadicon.ClickChooseImage': '点击选择图片....',
+  'uploadicon.NoImage': '没有图片',
+  'uploadicon.MaxSize': '最大尺寸:',
+  // ---- 上传图标 modal- END----
+  // ---- 弹出框- END----
   null:null
 };
 

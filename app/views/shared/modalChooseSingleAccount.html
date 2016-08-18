@@ -1,19 +1,19 @@
-<div class="">
+<div class="modal-share">
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
     &times;
   </button>
-  <h3 class="modal-title">Choose User:</h3>
+  <h3 class="modal-title"  ng-bind-html="Lang['modal-share.choose-user']"></h3>
 </div>
 <div class="modal-body">
   <div class="form-horizontal">
     <div class="form-group">
-      <label class="col-sm-2">Username</label>
+      <label class="col-sm-2" ng-bind-html="Lang['modal-share.Username']"></label>
       <div class="col-sm-9">
         <!--<input class="form-control" ng-model="form.accounts" />-->
 
         <input type="text" ng-model="form.toUser"
-               placeholder="Type in at least 3 characters for searching users..."
+               placeholder="{{Lang['modal-share.placeholder']}}"
                uib-typeahead="user as user.username for user in searchAccounts($viewValue)"
                typeahead-loading="loadingAccounts"
                typeahead-no-results="noResults"
@@ -24,10 +24,10 @@
                class="form-control">
 
         <div ng-show="noResults">
-          <i class="glyphicon glyphicon-remove"></i> No Results Found
+          <i class="glyphicon glyphicon-remove"></i> <span ng-bind-html="Lang['modal-share.results']"></span>
         </div>
 
-        <p class="text-warning">You should choose a user from drop down list when it appears.</p>
+        <p class="text-warning"ng-bind-html="Lang['modal-share.text-warning']"></p>
       </div>
 
       <div class="col-sm-1">
@@ -39,7 +39,7 @@
   </div>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  <button class="btn btn-primary" type="button" ng-click="ok()"><span  ng-bind-html="Lang['modal-con.ok']"></span></button>
+  <button class="btn btn-warning" type="button" ng-click="cancel()"><span  ng-bind-html="Lang['modal-con.cancel']"></span></button>
 </div>
 </div>

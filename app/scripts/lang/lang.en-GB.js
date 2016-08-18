@@ -147,6 +147,9 @@ window.lang['en-GB'] = {
   'commands.Delete': 'Delete',
   'commands.Delete All': 'Delete All',
   'commands.New Command': 'New Command',
+  'commands.placeholder-position': 'position',
+  'commands.placeholder-command_string': 'command_string',
+
   'commands.Save': 'Save',
   'commands.Cancel': 'Cancel',
   'commands.Help': 'Help',
@@ -311,7 +314,7 @@ window.lang['en-GB'] = {
   'main-devices.new_products': 'A new batch of products',
   'main-devices.sort': 'synthetically sorting',
   'main-devices.popularity_sort': 'Popularity sorting',
-  'main-devices.CreateDate': 'CreateDate:',
+  'main-devices.CreateDate': 'CreateDate',
   'main-devices.Remove': 'Remove',
   'main-devices.Activation_Time': 'Activation Time:',
   'main-devices.products_id': 'Products ID:',
@@ -326,6 +329,8 @@ window.lang['en-GB'] = {
   'main-devices.ActivedAt': 'Actived At',
   'main-devices.AttachedAt': 'Attached At',
   'main-devices.CreatedAt': 'Created At',
+  'main-devices.activated-state': 'No Activated',
+
   'main-devices.Devices': 'Devices',
   'main-devices.shuoming': 'Press enter key to add multiple Serial Numbers',
   'main-devices.myDevices': 'MyDevices',
@@ -362,6 +367,79 @@ window.lang['en-GB'] = {
   'main-im.Aftermarket': 'Aftermarket',
   'main-im.wechat': 'WeChat',
   // ---- 在线咨询- End----
+
+
+  // ---- 弹出框- START----
+ 'modal-con.clean-data': 'Do you want to clear this channel?',
+ 'modal-con.ok': 'OK',
+ 'modal-con.cancel': 'Cancel',
+ 'modal-con.channel-updated': 'Channel Updated',
+ 'modal-con.errors-happened': 'Errors Happened',
+ 'modal-con.channel-cleared': 'Channel cleared',
+ 'modal-con.delete-channel': 'Do you want to delete this channel?',
+ 'modal-con.channel-removed': 'Channel removed',
+
+  // ---- create channel- START----
+  'create-channel.create-channel': 'Channel added',
+  'create-channel.errors-happened': 'Errors happened',
+  // ---- create channel- END----
+
+
+  // ---- duduHttp- START----
+  'duduHttp.duduHttp-updated': 'DuduHttp updated',
+  'duduHttp.delete-duduhttp': 'Do you want to delete this dudu http?',
+  // ---- duduHttp - END----
+
+  // ---- channel分享- START----
+  'share.no-select-channels': 'No channels selected!',
+  'share.no-valid-user': 'it is not a valid user',
+  'share.shared-successfully': 'Channel(s) shared successfully.',
+  'share.shared-warning': 'Do you want to share channel(s).',
+  'share.shared-to': 'to',
+  'modal-share.choose-user': 'Choose User',
+  'modal-share.Username': 'Username',
+  'modal-share.text-warning': 'You should choose a user from drop down list when it appears',
+  'modal-share.results': 'No Results Found',
+  'modal-share.placeholder': 'Type in at least 3 characters for searching users...',
+  // ---- channel分享- END----
+
+  // ---- private更新- START----
+  'private.update': 'Data exceeds limit. Graphs may be in truncated mode.',
+  // ---- private更新- END----
+
+  // ---- API秘钥- START----
+  'api.generate-writekey': 'Do you want to generate new write key?',
+  'api.generate-readkey': 'Do you want to generate new read key?',
+  'api.new-readkey-generated': 'New read key generated.',
+  'api.new-writekey-generated': 'New write key generated.',
+  'api.note-updated': 'Note updated',
+  'api.key-removed': 'Key removed',
+  'api.key-removed-Prompt': 'Do you want to delete this key ',
+  // ---- API秘钥- END----
+
+
+  // ---- commands modal- START----
+  'commands.delete-all-commands': 'Do you want to delete all commands?',
+  'commands.delete-commands': 'Do you want to delete this command?',
+  'commands.new-command-add': 'New command added.',
+  'commands.command-deleted': 'Command deleted.',
+  'commands.commands-deleted': 'Commands deleted.',
+  // ---- commands modal- END----
+
+  // ---- rule modal- START----
+  'rule.delete-all-rules': 'Do you want to delete all rules?',
+  'rule.rules-deleted': 'Rules deleted',
+  // ---- rule modal- END----
+
+  // ---- 上传图标 modal- START----
+  'uploadicon.Upload-Icon': 'Upload Icon',
+  'uploadicon.Upload-prompt': 'Choose image file and click "Upload" to save your icon.',
+  'uploadicon.ClickChooseImage': 'Click to Choose Image...',
+  'uploadicon.NoImage': 'No Image File',
+  'uploadicon.MaxSize': 'Max Size:',
+  // ---- 上传图标 modal- END----
+  // ---- 弹出框- END----
+
   null:null
 };
 

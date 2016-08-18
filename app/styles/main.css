@@ -748,8 +748,10 @@ table.myTable td, table.myTable th {
   .devices_header{margin-top: 50px;}
 }
 .main-devices .devices_header{border-bottom:2px solid  #F6F6F6;}
-.devices_sort{ background-color: #FFFFFF;padding: 20px 61px;}
+.devices_sort{ background-color: #FFFFFF;  padding: 20px 61px;}
 .devices_sort span{margin-right: 10px;}
+.devices_sort span a{color: #000000;}
+.devices_sort span a:hover{color: #0168B3;}
 .devices_sort span i{margin-right: 5px;}
 /*.devices_sor a:hover, a:active, a:focus{color: #0277BD;}*/
 .devices_sor a{color:#000000 ;}

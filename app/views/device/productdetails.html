@@ -73,19 +73,19 @@
               <th class="" ng-bind-html="Lang['main-devices.Activation_Code']"></th>
               <th class="" ng-bind-html="Lang['main-devices.ActivedAt']"></th>
               <th class="" ng-bind-html="Lang['main-devices.CreatedAt']"></th>
+              <th></th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="device in devices | filter:searchText track by $index">
               <td>{{device.serial}}</td>
               <td>{{device.activation_code}}</td>
-              <td>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</td>
+              <td>{{(device.activated_at | date:'yyyy-MM-dd') || Lang['main-devices.activated-state']}}</td>
               <td>{{device.created_at | date:'yyyy-MM-dd'}}</td>
 
               <td>
                 <a href="javascript:void(0)" class="btn btn-danger"
-                   ng-click="deleteDevice(device.activation_code)"><i style="margin-right:10px;"
-                                                                      class="fa fa-trash"></i>Delete</a>
+                   ng-click="deleteDevice(device.activation_code)"><i style="margin-right:10px;" class="fa fa-trash"></i><span ng-bind-html="Lang['main-devices.delete']"></span></a>
               </td>
             </tr>
             </tbody>

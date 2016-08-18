@@ -1,24 +1,24 @@
-<div>
+<div class="uploadicon">
 
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
     &times;
   </button>
-  <h3 class="modal-title">Upload Icon</h3>
+  <h3 class="modal-title" ng-bind-html="Lang['uploadicon.Upload-Icon']"></h3>
 </div>
 <div class="modal-body">
-  <p class="alert alert-info">Choose image file and click 'Upload' to save your icon.</p>
+  <p class="alert alert-info" ng-bind-html="Lang['uploadicon.Upload-prompt']"></p>
 
   <div class="alert">
     <div class="btn btn-default"
          ngf-select ng-model="iconFile" name="iconFile" ngf-pattern="'image/*'"
          ngf-accept="'image/*'" ngf-max-size="maxSize" ngf-resize="resize"
-         >Click to Choose Image...</div>
+         ><span  ng-bind-html="Lang['uploadicon.ClickChooseImage']"></span></div>
 
     <img ngf-thumbnail="iconFile" ng-if="!!iconFile"
          ngf-size="{width: 120, height: 120, quality: 0.9}">
 
-    <span ng-if="!iconFile"><label class="text-muted">No Image File</label> (Max Size: {{maxSize}})</span>
+    <span ng-if="!iconFile"><label class="text-muted" ng-bind-html="Lang['uploadicon.NoImage']"></label> (<span ng-bind-html="Lang['uploadicon.MaxSize']"></span> {{maxSize}})</span>
   </div>
 
   <div ng-show="uploading">

@@ -14,13 +14,10 @@
                 <tr>
                 <td><label ng-bind-html="Lang['data-graph.Type']"></label></td>
                 <td>
-                  <select class="form-control" ng-options="item.label for item in queryTypes"
-                          ng-model="query.type"></select>
+                  <select class="form-control" ng-options="item.label for item in queryTypes" ng-model="query.type"></select>
                 </td>
                 <td>
-                  <select class="form-control" ng-options="item.label for item in queryParams"
-                          ng-show="query.type.value=='average' || query.type.value=='sum'"
-                          ng-model="query.params"></select>
+                  <select class="form-control" ng-options="item.label for item in queryParams" ng-show="query.type.value=='average' || query.type.value=='sum'" ng-model="query.params"></select>
                 </td>
                 <td><label ng-bind-html="Lang['data-graph.From']"></label></td>
                 <td>

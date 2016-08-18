@@ -64,7 +64,7 @@ angular.module('dataduduR3App')
       .$promise
       .then(function(resp){
         $location.path('/duduHttp');
-        ngNotify.set('DuduHttp updated.', 'success');
+        ngNotify.set(Auth.L('duduHttp.duduHttp-updated'), 'success');
       })
       .catch(function(err){
         // TODO: more error info
