@@ -147,7 +147,7 @@ window.lang['zh-CN'] = {
   'commands.Delete': '删除',
   'commands.Delete All': '删除全部',
   'commands.New Command': '新建指令',
-  'commands.placeholder-position': '方位',
+  'commands.placeholder-position': '位置',
   'commands.placeholder-command_string': '指令字符串',
   'commands.Save': '保存',
   'commands.Cancel': '取消',
@@ -321,7 +321,7 @@ window.lang['zh-CN'] = {
 
   // ---- 产品管理- start----
   'main-devices.add': '添加',
-  'main-devices.SerialNumber': '序列号:',
+  'main-devices.Product key': '产品密钥:',
   'main-devices.Number': '编号',
 
 
@@ -423,7 +423,10 @@ window.lang['zh-CN'] = {
 
   // ---- rule modal- START----
   'rule.delete-all-rules': '你确定删除所有的规则吗？',
+  'rule.delete-rules': '你确定删除这条规则吗？',
   'rule.rules-deleted': '规则已删除',
+
+
   // ---- rule modal- END----
 
   // ---- 上传图标 modal- START----
@@ -432,7 +435,23 @@ window.lang['zh-CN'] = {
   'uploadicon.ClickChooseImage': '点击选择图片....',
   'uploadicon.NoImage': '没有图片',
   'uploadicon.MaxSize': '最大尺寸:',
+  'uploadicon.Upload': '上传',
+  'uploadicon.Cancel': '取消',
+  'uploadicon.Uploading': '上传中...',
+  'uploadicon.alert-warning': '上传中不要关闭此对话框!',
+  'uploadicon.NoSelectedImage': '没有选择图片文件.',
+  'uploadicon.IconUploaded': '新图片已上传.',
   // ---- 上传图标 modal- END----
+
+  // ---- mydevice modal- START----
+  'mydevice.RemoveReminder': '这个设备的所有收集的数据将被删除.你确定要删除此设备吗?',
+  'productdetails.AttachDevice': '附加设备',
+  'productdetails.ActivationCode': '激活码',
+  'productdetails.MyActivationCode': '我的激活码',
+  'productdetails.ProductBatches': '按产品批次',
+  'productdetails.placeholderCode': '在这里输入激活码..',
+
+  // ---- mydevice modal- END----
   // ---- 弹出框- END----
   null:null
 };

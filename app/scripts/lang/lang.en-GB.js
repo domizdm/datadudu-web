@@ -324,7 +324,7 @@ window.lang['en-GB'] = {
 
   //产品管理start
   'main-devices.add': 'ADD',
-  'main-devices.SerialNumber': 'Serial Number:',
+  'main-devices.Product key': 'Product key:',
   'main-devices.Number': 'Number:',
   'main-devices.ActivedAt': 'Actived At',
   'main-devices.AttachedAt': 'Attached At',
@@ -428,6 +428,7 @@ window.lang['en-GB'] = {
 
   // ---- rule modal- START----
   'rule.delete-all-rules': 'Do you want to delete all rules?',
+  'rule.delete-rules': 'Do you want to delete this rules?',
   'rule.rules-deleted': 'Rules deleted',
   // ---- rule modal- END----
 
@@ -437,7 +438,25 @@ window.lang['en-GB'] = {
   'uploadicon.ClickChooseImage': 'Click to Choose Image...',
   'uploadicon.NoImage': 'No Image File',
   'uploadicon.MaxSize': 'Max Size:',
+  'uploadicon.Upload': 'Upload',
+  'uploadicon.Cancel': 'Cancel',
+  'uploadicon.Uploading': 'Uploading...',
+  'uploadicon.alert-warning': 'Donot close this dialog while uploading.',
+  'uploadicon.NoSelectedImage': 'No image file selected.',
+  'uploadicon.IconUploaded': 'New icon uploaded.',
   // ---- 上传图标 modal- END----
+
+
+  // ---- mydevice modal- START----
+  'mydevice.RemoveReminder': 'Are you sure you want to remove this device? All collected data of this device would be removed.',
+  'productdetails.AttachDevice': 'Attach Device',
+  'productdetails.ActivationCode': 'Activation Code',
+  'productdetails.MyActivationCode': 'My Activation Code',
+  'productdetails.ProductBatches': 'By Product Batches',
+  'productdetails.placeholderCode': 'Enter Activation Code Here..',
+
+
+  // ---- mydevice modal- END----
   // ---- 弹出框- END----
 
   null:null

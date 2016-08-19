@@ -86,12 +86,12 @@ angular.module('dataduduR3App')
 
 
   $scope.deleteRule = function(rule) {
-    modalConfirm.open('Do you want to delete this rule?')
+    modalConfirm.open(Auth.L('rule.delete-rules'))
       .then(function(){
         channel.deleteRule({id: $scope.channel.channel_id, type_id: rule.rule_id})
           .$promise
           .then(function(resp){
-            ngNotify.set('Rule removed', 'success');
+            ngNotify.set(Auth.L('rule.rules-deleted'), 'success');
             $route.reload();
           })
           .catch(function(err){
@@ -110,7 +110,7 @@ angular.module('dataduduR3App')
         channel.deleteAllRules({id: $scope.channel.channel_id},{})
           .$promise
           .then(function(resp){
-            ngNotify.set(Auth.L('rule.rules-deleted'));
+            ngNotify.set(Auth.L('rule.rules-deleted'), 'success');
             $route.reload();
           })
           .catch(function(err){

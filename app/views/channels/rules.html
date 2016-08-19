@@ -5,15 +5,14 @@
     <div class="container-fluid">
 
       <div class="row-fluid rules-main" >
-        <div class="col-md-6 table-rules" >
-          <h2 ng-bind-html="Lang['rules-main.rules']">Rules</h2>
+        <div class="col-md-6 table-rules table-responsive" >
+          <h2 ng-bind-html="Lang['rules-main.rules']"></h2>
           <hr>
           <div class="col-md-12 new_chanel">
             <button class="btn btn-default " ng-click="openModalEditRule()" ng-bind-html="Lang['rules-main.newrules']"></button>
             <button ng-click="deleteAllRules()" class="btn btn-danger rule-del" ng-bind-html="Lang['rules-main.deleteall']"></button>
           </div>
           <br>
-          <div class="table-responsive">
           <table style="margin-top: 28px;" class="table table-bordered">
             <thead class="tb2Header">
             <tr>
@@ -53,7 +52,7 @@
             </tr>
             </tbody>
           </table>
-          </div>
+
         </div>
 
         <div class="col-md-6 table-rules" >

@@ -22,21 +22,21 @@
   </div>
 
   <div ng-show="uploading">
-    <p class="alert alert-warning">(Don't close this dialog while uploading.)</p>
+    <p class="alert alert-warning" ng-bind-html="Lang['uploadicon.alert-warning']"></p>
   </div>
 
 </div>
 <div class="modal-footer">
   <span ng-show="uploading">
-    Uploading...{{percentage}}%
+   <span ng-bind-html="Lang['uploadicon.Uploading']"></span>{{percentage}}%
   </span>
 
   <span ng-show="!uploading">
-    <button type="submit" class="btn btn-primary" type="button" ng-click="upload(iconFile, form)">Upload</button>
+    <button type="submit" class="btn btn-primary" type="button" ng-click="upload(iconFile, form)" ng-bind-html="Lang['uploadicon.Upload']" ></button>
   </span>
 
   <!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>-->
-  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  <button class="btn btn-warning" type="button" ng-click="cancel()" ng-bind-html="Lang['uploadicon.Cancel']" ></button>
 </div>
 
 </div>

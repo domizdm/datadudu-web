@@ -1,15 +1,13 @@
 <div class="">
   <div class="modal-header">
-    <h3 class="modal-title">Attach Device</h3>
+    <h3 class="modal-title" ng-bind-html="Lang['productdetails.AttachDevice']"></h3>
   </div>
 
   <div class="modal-body">
     <div class="row modal-attach">
       <ul class="nav nav-tabs">
-        <li ng-class="{active:currentTab=='tabByActivationCode'}" ng-click="changeTab('tabByActivationCode')"><a>My
-          Activation Code</a></li>
-        <li ng-class="{active:currentTab=='tabByProductId'}" ng-click="changeTab('tabByProductId')"><a>By Product
-          Batches</a></li>
+        <li ng-class="{active:currentTab=='tabByActivationCode'}" ng-click="changeTab('tabByActivationCode')"><a ng-bind-html="Lang['productdetails.MyActivationCode']"></a></li>
+        <li ng-class="{active:currentTab=='tabByProductId'}" ng-click="changeTab('tabByProductId')"><a ng-bind-html="Lang['productdetails.ProductBatches']"></a></li>
       </ul>
 
       <!-- Tab 1 Begin -->
@@ -18,10 +16,8 @@
           <div class="private-tab">
             <form name="form" role="form">
               <div class="form-group row">
-                <label class="col-sm-2 col-md-2">Activation Code</label>
-                <div class="col-sm-6"><input type="text" class="form-control"
-                                             placeholder="Enter Activation Code Here.."
-                                             ng-model="formByActivationCode.activationCode">
+                <label class="col-sm-2 col-md-2" ng-bind-html="Lang['productdetails.ActivationCode']"></label>
+                <div class="col-sm-6"><input type="text" class="form-control" placeholder="{{Lang['productdetails.placeholderCode']}}" ng-model="formByActivationCode.activationCode">
 
                 </div>
                 <div class="col-sm-2 col-md-2" style="margin-left:20px; ">

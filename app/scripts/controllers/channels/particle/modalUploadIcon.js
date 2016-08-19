@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelUploadIconCtrl', function($scope, $q, $filter, $window, $timeout, $log,
+.controller('ChannelUploadIconCtrl', function($scope, $q, $filter, $window, $timeout, $log,Auth,
                                              config, $uibModal, $uibModalInstance, Upload, ngNotify,
                                              channel, channelId){
 
@@ -23,7 +23,7 @@ angular.module('dataduduR3App')
   $scope.upload = function (file, form) {
 
     if(!file) {
-      ngNotify.set('No image file selected.', 'error');
+      ngNotify.set(Auth.L('uploadicon.NoSelectedImage'), 'error');
       return;
     }
 
@@ -42,7 +42,7 @@ angular.module('dataduduR3App')
 
       $uibModalInstance.close(form);
 
-      ngNotify.set('New icon uploaded.', 'success');
+      ngNotify.set(Auth.L('uploadicon.IconUploaded'), 'success');
 
     }, function (resp) {
       if(resp.data != null) {
