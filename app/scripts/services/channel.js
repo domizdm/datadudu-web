@@ -21,6 +21,12 @@ angular.module('dataduduR3App')
       method: 'GET'
     },
     /**
+     * http://api.datadudu.com/channels/CHANNEL_ID
+     */
+    get: {
+      method: 'GET'
+    },
+    /**
      *
      username  (string) – search by username (optional).
      tag (string) – search by tag (optional)

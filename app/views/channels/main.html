@@ -25,7 +25,11 @@
         </tr>
         <tr>
           <td><img class="table-ico" src="../images/icoimage/id.png"><span ng-bind-html="Lang['data-header.channel_id']"></span></td>
-          <td style="text-align: right"><span ng-class="{hidden:!channel}">{{channel.channel_id}}</span></td>
+          <td style="text-align: right">
+            <span ng-class="{hidden:!channel}">{{channel.channel_id}}
+              <button ng-click="shareChannel(channel)" class="btn btn-default btn-sm">Share to...</button>
+            </span>
+          </td>
         </tr>
         <tr>
           <td><img class="table-ico" src="../images/icoimage/author.png"><span ng-bind-html="Lang['data-header.channel_author']"></span></td>
