@@ -74,6 +74,8 @@ window.lang['en-GB'] = {
   // ---- data- start ----
   'data-header.channel_view': 'ChannelView',
   'data-header.show_hide': 'Show/Hide',
+  'data-header.ShareTo': 'Share to...',
+
   'data-header.channel_id': 'Channel ID:',
   'data-header.channel_author': 'Author:',
   'data-header.channel_access': 'Access:',

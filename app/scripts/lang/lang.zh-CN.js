@@ -72,6 +72,7 @@ window.lang['zh-CN'] = {
   // ---- data-  start ----
   'data-header.channel_view': '空间信息:',
   'data-header.show_hide': '显示/隐藏',
+  'data-header.ShareTo': '分享到...',
   'data-header.channel_id': '空间编号:',
   'data-header.channel_author': '账户名:',
   'data-header.channel_access': '权限:',
