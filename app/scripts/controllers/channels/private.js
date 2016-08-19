@@ -85,8 +85,8 @@ angular.module('dataduduR3App')
     }
 
     // if start/end is null, it would generate a Invalid Date - Date object
-    if(isNaN(query.begin)) delete query.begin;
-    if(isNaN(query.end)) delete query.end;
+    if(isNaN(begin)) delete query.begin;
+    if(isNaN(end)) delete query.end;
 
     return $q(function(resolve, reject){
       channel.fetchFeeds(query)
