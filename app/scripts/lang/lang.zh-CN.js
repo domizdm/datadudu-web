@@ -451,7 +451,23 @@ window.lang['zh-CN'] = {
   'productdetails.MyActivationCode': '我的激活码',
   'productdetails.ProductBatches': '按产品批次',
   'productdetails.placeholderCode': '在这里输入激活码..',
-
+  'productdetails.Submit': '提交',
+  'productdetails.Close': '关闭',
+  'productdetails.NotActivationCode': '激活码不能为空.',
+  'productdetails.MyProductBatches': '我的产品 Batches',
+  'productdetails.PublicProductBatches': '开放产品 Batches',
+  'productdetails.SelectProduct': '选择产品',
+  'productdetails.Select-Product': '--选择产品--',
+  'productdetails.ProductId': '产品ID',
+  'productdetails.SerialNumber': '序列号',
+  'productdetails.Search': '搜索',
+  'productdetails.placeholder-ProductId': '在此处输入产品ID..',
+  'productdetails.placeholder-SerialNumber': '在此处输入编号..',
+  'productdetails.placeholder-SearchProductByName': '通过名字搜索产品',
+  'productdetails.ProductName': '产品名字',
+  'productdetails.Secret': '秘钥',
+  'productdetails.Select': '选择',
+  'productdetails.ProductIdNotEmpty': '产品ID和数据单元不能为空.',
   // ---- mydevice modal- END----
   // ---- 弹出框- END----
   null:null

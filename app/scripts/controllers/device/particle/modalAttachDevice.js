@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('AttachDeviceCtrl', function($scope, $q, $filter, $window, $timeout, $log,
+.controller('AttachDeviceCtrl', function($scope, $q, $filter, $window, $timeout, $log, Auth,
                                              config, $uibModal, $uibModalInstance, ngNotify,
                                              product, privateProducts){
 
@@ -63,7 +63,7 @@ angular.module('dataduduR3App')
   $scope.attachByActivationCode = function(activationCode){
 
     if(!activationCode) {
-      ngNotify.set('Activation code should not be empty.', 'error');
+      ngNotify.set(Auth.L('productdetails.NotActivationCode'), 'error');
       return;
     }
 
@@ -85,7 +85,7 @@ angular.module('dataduduR3App')
   $scope.attachByProductId = function(productId, serial){
 
     if(!productId || !serial) {
-      ngNotify.set('Both product id and serial fields should not be empty.', 'error');
+      ngNotify.set(Auth.L('productdetails.ProductIdNotEmpty'), 'error');
       return;
     }
 
