@@ -74,6 +74,8 @@ window.lang['en-GB'] = {
   // ---- data- start ----
   'data-header.channel_view': 'ChannelView',
   'data-header.show_hide': 'Show/Hide',
+  'data-header.ShareTo': 'Share to...',
+
   'data-header.channel_id': 'Channel ID:',
   'data-header.channel_author': 'Author:',
   'data-header.channel_access': 'Access:',
@@ -454,6 +456,23 @@ window.lang['en-GB'] = {
   'productdetails.MyActivationCode': 'My Activation Code',
   'productdetails.ProductBatches': 'By Product Batches',
   'productdetails.placeholderCode': 'Enter Activation Code Here..',
+  'productdetails.Submit': 'Submit',
+  'productdetails.Close': 'Close',
+  'productdetails.NotActivationCode': 'Activation code should not be empty.',
+  'productdetails.MyProductBatches': 'My Product Batches',
+  'productdetails.PublicProductBatches': 'Public Product Batches',
+  'productdetails.SelectProduct': 'Select Product',
+  'productdetails.Select-Product': '--Select Product--',
+  'productdetails.ProductId': 'Product Id',
+  'productdetails.SerialNumber': 'Serial Number',
+  'productdetails.Search': 'Search',
+  'productdetails.placeholder-ProductId': 'Enter Product Id Here..',
+  'productdetails.placeholder-SerialNumber': 'Enter Serial Number Here..',
+  'productdetails.placeholder-SearchProductByName': 'Search Product By Name....',
+  'productdetails.ProductName': 'Product Name',
+  'productdetails.Secret': 'Secret',
+  'productdetails.Select': 'Select',
+  'productdetails.ProductIdNotEmpty': 'Both product id and serial fields should not be empty.',
 
 
   // ---- mydevice modal- END----

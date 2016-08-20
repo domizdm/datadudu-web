@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-sm-2 col-md-2" style="margin-left:20px; ">
                   <button type="submit" class="btn btn_add btn-new"
-                          ng-click="attachByActivationCode(formByActivationCode.activationCode)">Submit
+                          ng-click="attachByActivationCode(formByActivationCode.activationCode)" ng-bind-html="Lang['productdetails.Submit']">
                   </button>
                 </div>
               </div>
@@ -41,27 +41,27 @@
               <div class="col-sm-3">
                 <label>
                   <input type="radio" value="private" ng-change="onChangeDeviceType()"
-                         ng-model="formByProductId.deviceType">
-                  My Product Batches
+                         ng-model="formByProductId.deviceType"><span ng-bind-html="Lang['productdetails.MyProductBatches']"></span>
+
                 </label>
               </div>
               <div class="col-sm-3">
                 <label>
                   <input type="radio" value="public" ng-change="onChangeDeviceType()"
                          ng-model="formByProductId.deviceType">
-                  Public Product Batches
+                  <span ng-bind-html="Lang['productdetails.PublicProductBatches']"></span>
                 </label>
               </div>
             </div>
 
             <div class="form-group row">
-              <label class="col-sm-3 active_txt">Select Product</label>
+              <label class="col-sm-3 active_txt" ng-bind-html="Lang['productdetails.SelectProduct']"></label>
               <div class="col-sm-6">
                 <!-- Private Component Begin -->
                 <select ng-if="formByProductId.deviceType=='private'" class="form-control"
                         ng-change="onProductChange(formByProductId.product.product_id)"
                         ng-model="formByProductId.product" ng-options="item.name for item in privateProducts">
-                  <option value="">--Select Product---</option>
+                  <option value="" ng-bind-html="Lang['productdetails.Select-Product']"></option>
                 </select>
                 <!-- Private Component End -->
 
@@ -69,7 +69,7 @@
                 <input type="text" ng-if="formByProductId.deviceType=='public'"
                        ng-model="formByProductId.searchProductName"
                        class="form-control"
-                       placeholder="Search Product By Name....">
+                       placeholder="{{Lang['productdetails.placeholder-SearchProductByName']}}">
                 <!-- Public Component End -->
               </div>
 
@@ -77,33 +77,33 @@
               <div class="col-sm-3">
                 <button ng-click="onSearchProduct(formByProductId.searchProductName)"
                         ng-if="formByProductId.deviceType=='public'"
-                        class="btn btn-success"><i style="font-size:20px;" class="fa fa-search"></i>Search
+                        class="btn btn-success"><i style="font-size:20px;" class="fa fa-search"></i><span ng-bind-html="Lang['productdetails.Search']"></span>
                 </button>
               </div>
               <!-- Public Component End -->
             </div>
 
             <div class="form-group row">
-              <label class="col-sm-3 active_txt">Product Id</label>
+              <label class="col-sm-3 active_txt" ng-bind-html="Lang['productdetails.ProductId']"></label>
               <div class="col-sm-6"><input type="text"
                                            ng-model="formByProductId.productId"
                                            class="form-control"
-                                           placeholder="Enter Product Id Here..">
+                                           placeholder="{{Lang['productdetails.placeholder-ProductId']}}">
               </div>
               <div class="col-sm-3">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-3 active_txt">Serial Number</label>
+              <label class="col-sm-3 active_txt" ng-bind-html="Lang['productdetails.SerialNumber']"></label>
               <div class="col-sm-6"><input type="text"
                                            ng-model="formByProductId.serial"
                                            class="form-control"
-                                           placeholder="Enter Serial Number Here..">
+                                           placeholder="{{Lang['productdetails.placeholder-SerialNumber']}}">
               </div>
               <div class="col-sm-3">
                 <button type="submit"
                         class="btn btn_add btn-new add_serial"
-                        ng-click="attachByProductId(formByProductId.productId, formByProductId.serial)">Submit
+                        ng-click="attachByProductId(formByProductId.productId, formByProductId.serial)" ng-bind-html="Lang['productdetails.Submit']">
                 </button>
               </div>
             </div>
@@ -114,9 +114,9 @@
                        st-table="displayCollection">
                   <thead class="tblHeader">
                   <tr>
-                    <th>Product Id</th>
-                    <th>Product Name</th>
-                    <th>Secret</th>
+                    <th ng-bind-html="Lang['productdetails.ProductId']"></th>
+                    <th ng-bind-html="Lang['productdetails.ProductName']"></th>
+                    <th ng-bind-html="Lang['productdetails.Secret']"></th>
                     <th></th>
                   </tr>
                   </thead>
@@ -130,7 +130,8 @@
                         <input type="radio" ng-value="item"
                                ng-change="onProductChange(formByProductId.product.product_id)"
                                ng-model="formByProductId.product">
-                        Select
+                        <span ng-bind-html="Lang['productdetails.Select']"></span>
+
                       </label>
                     </td>
                   </tr>
@@ -153,6 +154,6 @@
   </div>
 
   <div class="modal-footer">
-    <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()" ng-bind-html="Lang['productdetails.Close']"></button>
   </div>
 </div>
