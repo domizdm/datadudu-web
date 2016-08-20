@@ -172,7 +172,7 @@ angular.module('dataduduR3App')
           // set time back
           // 如果有数据, 理论上第一个点的时间应该跟查询吻合
           var firstPoint = _.first(resp.raw.feeds);
-          if(firstPoint){
+          if(firstPoint && isNaN(begin)){//只有未选定的情况才回选
             var feedbackDate=new Date(new Date(firstPoint.created_at));
             $scope.query.begin = feedbackDate;
           }
