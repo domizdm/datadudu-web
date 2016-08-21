@@ -43,8 +43,17 @@ angular.module('dataduduR3App')
      */
     listChannelsOthersToMe: {
       method: 'GET',
-      _action: 'channels',
-      item: 'to-others'
+      params: {
+        _action: 'channels',
+        item: 'to-others'
+      }
+    },
+    listChannelAcl: {
+      method: 'GET',
+      params: {
+        _action: 'channels',
+        item: 'to-others'
+      }
     },
     /**
      * Share Channels

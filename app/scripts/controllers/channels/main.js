@@ -9,7 +9,7 @@
  */
 angular.module('dataduduR3App')
 .controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $uibModal, $log, modalConfirm, ngNotify,
-                                          Auth, channel, share) {
+                                          $location, Auth, channel, share) {
 
   //channel页面导航显示、隐藏
   $scope.navhide = true;
@@ -97,6 +97,10 @@ angular.module('dataduduR3App')
                   .$promise
                   .then(function(resp){
                     ngNotify.set(Auth.L('share.shared-successfully'), 'success');
+
+                    if(/^public$/.test($routeParams.subview)) {
+                      $route.reload();
+                    }
                   })
                   .catch(function(err){
                     ngNotify.set(err.data.desp || err.statusText, 'error');
