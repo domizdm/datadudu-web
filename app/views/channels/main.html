@@ -20,14 +20,14 @@
         <tr>
           <td rowspan="6" style="width:120px;" class="text-center">
             <img ng-src="{{channel.channel_icon}}" src="./images/icoimage/default.png" class="img-circle" style="max-height:100px;max-width:120px;">
-            <button type="button" class="btn btn-default up_ico" ng-click="openModalUploadIcon()" ng-bind-html="Lang['data-header.upload']"> </button>
+            <button type="button" class="btn btn-default up_ico" ng-click="openModalUploadIcon()" ng-bind-html="Lang['data-header.upload']" ng-if="isInAcl(channel)"> </button>
           </td>
         </tr>
         <tr>
           <td><img class="table-ico" src="../images/icoimage/id.png"><span ng-bind-html="Lang['data-header.channel_id']"></span></td>
           <td style="text-align: right">
             <span ng-class="{hidden:!channel}">{{channel.channel_id}}
-              <button ng-click="shareChannel(channel)" class="btn btn-default btn-sm" ng-bind-html="Lang['data-header.ShareTo']"></button>
+              <button ng-click="shareChannel(channel)" class="btn btn-default btn-sm" ng-bind-html="Lang['data-header.ShareTo']" ng-if="isInAcl(channel)"></button>
             </span>
           </td>
         </tr>
@@ -83,7 +83,7 @@
     <div class="col-md-12">
       <div class="nav-data" style="margin-bottom: 3px">
         <ul class="nav nav-tabs">
-          <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}">
+          <li ng-repeat="tab in tabs" ng-class="{active: routeParams.subview==tab.key}" ng-if="!tab.requireFullAcl || (tab.requireFullAcl && isInAcl(channel))">
             <a ng-href="#/channels/{{routeParams.id}}/{{tab.key}}" ng-click="reloadTab()">{{tab.text}}</a>
           </li>
         </ul>

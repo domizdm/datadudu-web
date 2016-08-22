@@ -28,5 +28,5 @@ angular.module('dataduduR3App')
         return 'views/channels/main.html';
       },
       controller: 'ChannelsMainCtrl'
-    })
+    });
 });

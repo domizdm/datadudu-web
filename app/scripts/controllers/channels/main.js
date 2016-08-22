@@ -23,13 +23,13 @@ angular.module('dataduduR3App')
     {key:'private',text:Auth.L('nav-data-header.PrivateView'),template:'views/channels/private.html'},
     {key:'realtime',text:Auth.L('nav-data-header.RealTime'),template:'views/channels/realtime.html'},
 
-    {key:'settings',text:Auth.L('nav-data-header.seating'),template:'views/channels/settings.html'},
-    {key:'apikeys',text:Auth.L('nav-data-header.apikey'),template:'views/channels/apikeys.html'},
-    {key:'commands',text:Auth.L('nav-data-header.commands'),template:'views/channels/commands.html'},
-    {key:'rules',text:Auth.L('nav-data-header.rules'),template:'views/channels/rules.html'},
+    {key:'settings',requireFullAcl:true,text:Auth.L('nav-data-header.seating'),template:'views/channels/settings.html'},
+    {key:'apikeys',requireFullAcl:true,text:Auth.L('nav-data-header.apikey'),template:'views/channels/apikeys.html'},
+    {key:'commands',requireFullAcl:true,text:Auth.L('nav-data-header.commands'),template:'views/channels/commands.html'},
+    {key:'rules',requireFullAcl:true,text:Auth.L('nav-data-header.rules'),template:'views/channels/rules.html'},
     {key:'dataio',text:Auth.L('nav-data-header.im_ex'),template:'views/channels/dataio.html'},
-    {key:'triggers',text:Auth.L('nav-data-header.triggers'),template:'views/channels/triggers.html'},
-    {key:'public',text:Auth.L('nav-data-header.publicview'),template:'views/channels/public.html'}
+    {key:'triggers',requireFullAcl:true,text:Auth.L('nav-data-header.triggers'),template:'views/channels/triggers.html'},
+    {key:'public',requireFullAcl:true,text:Auth.L('nav-data-header.publicview'),template:'views/channels/public.html'}
   ];
 
   $scope.reloadTab = function(){
@@ -68,8 +68,18 @@ angular.module('dataduduR3App')
     }
   };
 
+  $scope.isInAcl = function(channel) {
+    if(channel && channel.username==null) {
+      // FIXME: 因为当前API有bug,返回的username全为null,因此为了避免影响tabs的显示,先判断是否为null,fix后此段应不起作用
+      return true;
+    }
+    if(channel != null && Auth.username() != null && Auth.username() == channel.username) {
+      return true;
+    }
+    return false;
+  };
 
-  $scope.shareChannel = function(channel){
+  $scope.shareChannel = function(channel) {
 
     if($scope.channel != null) {
       var channelIds = [channel.channel_id];

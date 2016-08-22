@@ -8,6 +8,7 @@
              cellspacing="0" st-safe-src="duduhttps" st-table="displayCollection">
         <thead class="tblHeader">
         <tr>
+          <th><span>ID</span></th>
           <th><span ng-bind-html="Lang['main-devices.Newduduhttp']"></span></th>
           <th><span >Host</span></th>
           <th><span>URL</span></th>
@@ -20,6 +21,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="item in displayCollection">
+          <td>{{item.http_id}}</td>
           <td>{{item.http_name}}</td>
           <td>{{item.host}}</td>
           <td>{{item.url}}</td>
@@ -37,7 +39,7 @@
         </tbody>
         <tfoot>
         <tr>
-          <td colspan="8" class="text-center">
+          <td colspan="9" class="text-center">
             <div class="paging-style" st-pagination="" st-items-by-page="10"></div>
           </td>
         </tr>

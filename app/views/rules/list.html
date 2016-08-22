@@ -1,0 +1,64 @@
+<div class="main">
+  <div class="table-content duduhttp_table">
+    <div class="list-header">
+    </div>
+    <div class="border-table table-list table-responsive" style="padding-right: 10px">
+      <table class="table" st-pipe="mc.callServer" st-table="mc.displayed">
+        <thead class="tblHeader">
+        <tr>
+          <th><span>ID</span></th>
+          <th><span>rule_name</span></th>
+          <th><span>channel_id</span></th>
+          <th><span>condition</span></th>
+          <th><span>criteria</span></th>
+          <th><span>action_frequency</span></th>
+          <th><span>updated_at</span></th>
+          <th><span>created_at</span></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody ng-show="!mc.isLoading">
+        <tr ng-repeat="item in mc.displayed">
+          <td>{{item.rule_id}}</td>
+          <td>{{item.rule_name}}</td>
+          <td>{{item.channel_id}}</td>
+          <td>{{item.condition}}</td>
+          <td>{{item.criteria}}</td>
+          <td>{{item.action_frequency}}</td>
+          <td>{{item.updated_at}}</td>
+          <td>{{item.created_at}}</td>
+          <td>
+            <!--<a class="btn btn-default" ng-href="#/duduHttp/{{item.http_id}}" >Edit</a>-->
+            <a class="btn btn-default" ng-href="#/channels/{{item.channel_id}}/rules">Go to...</a>
+          </td>
+        </tr>
+        <tr ng-if="!mc.displayed.length">
+          <td colspan="9" class="text-left">
+            <p class="">No available data</p>
+          </td>
+        </tr>
+        </tbody>
+        <tbody ng-show="mc.isLoading">
+        <tr>
+          <td colspan="9" class="text-left">
+            <p class="">Loading...</p>
+          </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td class="text-center" st-pagination="" st-items-by-page="itemsByPage" colspan="9">
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
