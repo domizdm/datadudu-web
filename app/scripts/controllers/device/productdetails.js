@@ -123,7 +123,7 @@ angular.module('dataduduR3App')
           controller: 'DeviceUploadIconCtrl',
           backdrop: false,
           resolve: {
-            productId: function() {
+            productId: function(){
               return $scope.product.product_id;
             }
           }

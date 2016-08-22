@@ -13,13 +13,14 @@
   <div class="row-fluid  device_mg ">
     <div class="col-md-12 col-sm-12 device_mg_div">
           <div class="col-md-3 products-div" ng-repeat="product in products" >
-            <!--<img  src="../images/icoimage/default.png" style="max-width:64px;max-height:64px;" ng-if="product['icon_512x512']">-->
-            <img  ng-src="{{product['icon_100x100']}}" style="max-width:64px;max-height:64px;" ng-if="product['icon_512x512']">
+
+            <img  ng-src="{{product['icon_100x100']}}" style="max-width:32px;max-height:32px;" >
+            <!--ng-if="product['icon_512x512']"-->
             <a ng-href="#/productdetails/{{product.product_id}}">{{product.name}}</a><br/>
             <p ng-bind-html="Lang['main-devices.company']"></p>
-              <button  class="btn btn-default btn-sm" ng-click="openModalUploadIcon()" ng-bind-html="Lang['main-devices.Uploadlogo']"></button>
-              <button  class="btn btn-default btn-sm"  ng-bind-html="Lang['main-devices.edit']"></button>
-              <button  class="btn btn-default btn-sm" ng-bind-html="Lang['main-devices.Serial_number']"></button>
+            <button  class="btn btn-default btn-sm" ng-click="openModalUploadIcon()" ng-bind-html="Lang['main-devices.Uploadlogo']"></button>
+            <a href="" ng-click="editProduct(product.product_id)"> <button  class="btn btn-default btn-sm"  ng-bind-html="Lang['main-devices.edit']"></button></a>
+            <a href="#/productdetails/{{product.product_id}}"><button  class="btn btn-default btn-sm" ng-bind-html="Lang['main-devices.Serial_number']"></button></a>
             </div>
      </div>
     </div>

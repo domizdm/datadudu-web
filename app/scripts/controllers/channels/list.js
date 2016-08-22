@@ -59,7 +59,7 @@ angular.module('dataduduR3App')
         .result
         .then(function(user){
           if(user.user_id) {
-            var msg = [Auth.L('private.update'), channelNames.join(','), Auth.L('share.shared-to'), user.username,'?'].join(' ');
+            var msg = [Auth.L('share.shared-warning'), channelNames.join(','), Auth.L('share.shared-to'), user.username,'?'].join(' ');
 
             var payload = {
               channels: channelIds,

@@ -6,12 +6,18 @@
       <hr>
       <table class="table table-striped">
         <tr>
+          <td>Channel Name </td>
+          <td>{{channel.channel_name}}</td>
+        </tr>
+
+        <tr>
+          <td>Channel ID </td>
+          <td>{{channel.channel_id}}</td>
+        </tr>
+
+        <tr>
           <td>User ID </td>
           <td>{{myAccount.username}}</td>
-          <a  class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name==null? ' Unnamed Space':channel.name}}</a><br/>
-
-
-          <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
         </tr>
         <tr>
           <td>Email </td>

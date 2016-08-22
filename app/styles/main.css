@@ -789,6 +789,7 @@ table.myTable td, table.myTable th {
 }
 
 .products-div {
+  padding-top: 10px;
   color: #000000;
   height: 150px;
   margin: 10px;
