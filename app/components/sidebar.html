@@ -14,13 +14,14 @@
     <div class="sidebar-left" >
       <ul class="sidebar-menu ">
         <!-- Dudu开放平台 Begin -->
-        <li class="treeview" ng-if="!useDeviceDashboard">
+        <li class="treeview" ng-class="{active: activeNodeWhenIn(['channels','public','duduHttp','triggersLog'])}" ng-if="!useDeviceDashboard">
           <a class="active " ng-href="#/channels">
             <i class="fa fa-home"></i>
             <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.data_factory']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="#/channels" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
+            <li><a href="#/public" ><i class="fa fa-circle-o"  ></i><span>Public Channels</span></a></li>
             <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.dudu_http']"></span></a></li>
             <li><a href="#/channels/21/rules"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.data_rules']"></span></a></li>
             <li><a href="#/channels/21/commands"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.commands']"></span></a></li>
@@ -28,7 +29,7 @@
             <li><a href="#/triggersLog"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.triggers_log']"></span></a></li>
           </ul>
         </li>
-        <li class="treeview" ng-if="!useDeviceDashboard">
+        <li class="treeview" ng-class="{active: activeNodeWhenIn(['myproducts'])}" ng-if="!useDeviceDashboard">
           <a href="">
             <i class="fa fa-bookmark"></i>
             <span style="width:183px; height: 49px;"><span ng-bind-html="Lang['sidebar.product_management']"></span></span><i class="fa fa-angle-left pull-right"></i>
@@ -60,14 +61,14 @@
         </li>
         <!-- Dudu设备控制面板 End -->
 
-        <li class="">
+        <li class="" ng-class="{active: activeNodeWhenIn(['mydevice'])}">
           <a href="#/mydevice" >
             <i class="fa fa-desktop"></i>
             <span style="width:183px; height: 58px;"  ng-bind-html="Lang['sidebar.device_management']"></span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li class="treeview" ng-class="{active: activeNodeWhenIn(['account','accountsafety','myaccount'])}">
           <a href="#/myaccount">
             <i class="fa fa-user"></i>
             <span style="width:183px; height: 49px;" ng-bind-html="Lang['sidebar.account']"></span><i class="fa fa-angle-left pull-right"></i>
