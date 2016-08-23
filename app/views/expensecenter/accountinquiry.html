@@ -11,7 +11,7 @@
      </div>
 
     <div class="row accountinquiry_header table-responsive">
-      <table>
+      <table >
         <thead>
         <tr>
           <td>
@@ -70,12 +70,12 @@
 
 
     <div class="row accountinquiry_body table-responsive">
-      <table class="table table-bordered text-center">
+      <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
       <thead>
       <tr>
         <td>
           <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox1" value="option1"> <b>订单变化</b>
+          <input type="checkbox" id="inlineCheckbox1" value="option1"> <b>订单编号</b>
           </label></td>
         <td><b>产品</b></td>
         <td><b>类型</b></td>
@@ -86,12 +86,13 @@
         <td><b>操作</b></td>
       </tr>
       </thead>
-        <tbody>
-        <tr>
-          <td>Tanmay</td>
-          <td>Bangalore</td>
-          <td>560001</td>
-          <td>560001</td>
+        <tbody ng-show="!mc.isLoading">
+        <tr ng-repeat="x in mc.displayed">
+
+          <td>{{x.amount}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td>560001</td>
           <td>560001</td>
           <td>560001</td>
@@ -99,9 +100,11 @@
         </tr>
 
         </tbody>
+
       </table>
     </div>
   </div>
+
 </div>
 
 
