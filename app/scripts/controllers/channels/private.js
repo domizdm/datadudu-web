@@ -67,6 +67,7 @@ angular.module('dataduduR3App')
   var loadData = function(channelId, begin, scale, queryType, queryParams){
     var timezone = 'GMT+08:00';//FIXME: 目测server上不填timezone的情况下会自动减8?
     var serverFormat = 'yyyy-MM-dd HH:mm:ss';
+
     var begin = begin!=null ? new Date(begin) : null;
     var end = scale!=null ? new Date(begin) : null;
     if(end) {
@@ -172,7 +173,7 @@ angular.module('dataduduR3App')
           // set time back
           // 如果有数据, 理论上第一个点的时间应该跟查询吻合
           var firstPoint = _.first(resp.raw.feeds);
-          if(firstPoint && isNaN(begin)){//只有未选定的情况才回选
+          if(firstPoint && (begin==null || isNaN(begin))){//只有未选定的情况才回选
             var feedbackDate=new Date(new Date(firstPoint.created_at));
             $scope.query.begin = feedbackDate;
           }
