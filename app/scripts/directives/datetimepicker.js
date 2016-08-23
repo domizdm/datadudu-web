@@ -40,7 +40,9 @@ angular.module('dataduduR3App')
         datetimepicker.data('DateTimePicker').date(new Date());
       }
 
-      scope.$watch('datetime', function(newValue){
+      scope.$watch(function(){
+        return scope.datetime;
+      }, function(newValue){
         if(newValue) {
           $timeout(function(){
             var dp = datetimepicker.data('DateTimePicker');
