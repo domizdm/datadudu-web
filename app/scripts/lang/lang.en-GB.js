@@ -30,7 +30,7 @@ window.lang['en-GB'] = {
   'sidebar.public_profile': 'Public Profile',
   'sidebar.security_settings': 'Security Settings',
   'sidebar.expense_center': 'Expense Center',
-  'sidebar.account_inquiry': 'Account Inquiry',
+  'sidebar.ConsumerDetails': 'Consumer Details',
   'sidebar.order_management': 'Order Management',
   'sidebar.message_center': ' Message Center',
   'sidebar.full_message': ' Full Message',
@@ -321,6 +321,7 @@ window.lang['en-GB'] = {
   'main-devices.Activation_Time': 'Activation Time:',
   'main-devices.products_id': 'Products ID:',
   'main-devices.Activation_Code': ' Activation Code:',
+  'main-devices.SerialNumber': 'Serial Number:',
   // ---- 设备管理- End----
 
 

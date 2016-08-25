@@ -13,7 +13,7 @@ window.lang['zh-CN'] = {
 
   // ---- Sidebar Begin ----
   'sidebar.data_factory': '数据工厂',
-  'sidebar.data_warehouse': '数据仓库',
+  'sidebar.data_warehouse': '我的数据仓库',
   'sidebar.dudu_http': 'HTTP数据交互',
   'sidebar.data_rules': '数据规则',
   'sidebar.commands': '指令管理',
@@ -30,7 +30,7 @@ window.lang['zh-CN'] = {
   'sidebar.public_profile': 'Public Profile',
   'sidebar.security_settings': '安全设置',
   'sidebar.expense_center': '费用中心',
-  'sidebar.account_inquiry': '账户查询',
+  'sidebar.ConsumerDetails': '消费明细',
   'sidebar.order_management': '订单管理',
   'sidebar.message_center': ' 消息中心',
   'sidebar.full_message': ' 全部消息',
@@ -318,6 +318,9 @@ window.lang['zh-CN'] = {
   'main-devices.Activation_Time': '激活时间:',
   'main-devices.products_id': '产品ID:',
   'main-devices.Activation_Code': '激活码',
+  'main-devices.SerialNumber': '序列号:',
+
+
   // ---- 设备管理- End----
 
   // ---- 产品管理- start----

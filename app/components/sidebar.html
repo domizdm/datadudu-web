@@ -21,7 +21,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#/channels" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
-            <li><a href="#/to-me" ><i class="fa fa-circle-o"  ></i><span>From Others</span></a></li>
+            <li><a href="#/to-me" ><i class="fa fa-circle-o"  ></i><span>ta的数据仓库</span></a></li>
             <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.dudu_http']"></span></a></li>
             <li><a href="#/rules"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.data_rules']"></span></a></li>
             <li><a href="#/commands"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.commands']"></span></a></li>
@@ -89,7 +89,7 @@
             <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.expense_center']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/accountinquiry"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.account_inquiry']"></span></a></li>
+            <li><a href="#/consumerdetails"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.ConsumerDetails']"></span></a></li>
             <li><a href="#/ordermanagement"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.order_management']"></span></a></li>
           </ul>
         </li>
@@ -125,9 +125,9 @@
   }
 </script>
 
-<!--<script type="text/javascript">-->
-  <!--$('.sidebar-menu a,span').on('click',function(){-->
-    <!--var wd = $(this).text();-->
-    <!--var tit = $('.mychannel').text(wd);-->
-  <!--})-->
-<!--</script>-->
+<script type="text/javascript">
+  $('.sidebar-menu a,span').on('click',function(){
+    var wd = $(this).text();
+    var tit = $('.mychannel').text(wd);
+  })
+</script>

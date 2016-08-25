@@ -11,9 +11,9 @@
 angular.module('dataduduR3App')
 .config(function ($routeProvider) {
   $routeProvider
-    .when('/accountinquiry',{
-      templateUrl:  'views/expensecenter/accountinquiry.html',
-      controller:'AccountInquiryCtrl'
+    .when('/consumerdetails',{
+      templateUrl:  'views/expensecenter/consumerdetails.html',
+      controller:'ConsumerDetailsCtrl'
     })
     .when('/ordermanagement',{
       templateUrl: 'views/expensecenter/ordermanagement.html',

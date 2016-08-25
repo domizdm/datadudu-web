@@ -1,0 +1,133 @@
+<div class="container-fluid">
+  <div class="row-fluid accountinquiry" style="margin: 10px;">
+   <div class="">
+     <span>账户余额<i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>{{Object.account}}</span>
+     <span>
+       <button type="button" class="btn btn-default">充值</button>
+      <button type="button" class="btn btn-default">提现</button>
+       <button type="button" class="btn btn-default">转账</button>
+       <a href="" style="margin-left: 20px">查看</a>
+     </span>
+     </div>
+
+    <div class="row-fluid accountinquiry_header">
+      <!---->
+      <table >
+        <thead>
+        <tr>
+          <td>
+            <label class="pull-right">订单:</label>
+          </td>
+
+          <td >
+              <select class="form-control">
+                <option>所有产品</option>
+              </select>
+          </td>
+
+          <td><label class="pull-right">订单编号:</label></td>
+
+          <td>
+              <input class="form-control" type="text">
+          </td>
+
+          <td><label class="pull-right">交易类型:</label></td>
+
+          <td>
+              <select class="form-control">
+                <option>充值记录</option>
+                <option>消费记录</option>
+                <option>退款记录</option>
+              </select>
+          </td>
+
+          <td><label class="pull-right">时间范围:</label></td>
+          <td>
+            <!--<input class='input-group ' datetimepicker="query.begin">-->
+                <div class="form-group">
+                  <div class='input-group date' id='datetimepicker6'>
+                    <input type='text' class="form-control" />
+                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class='input-group date' id='datetimepicker7'>
+                    <input type='text' class="form-control" />
+                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                  </div>
+                </div>
+          </td>
+
+            <!--<td>-->
+              <!--<select class="form-control">-->
+                <!--<option></option>-->
+              <!--</select>-->
+            <!--</td>-->
+
+              <!--<td><label class="pull-right">至:</label></td>-->
+
+           <!--<td>-->
+              <!--<select class="form-control">-->
+                <!--<option></option>-->
+              <!--</select>-->
+          <!--</td>-->
+
+
+          <td><button type="button" class="btn btn-default">查询</button></td>
+          <td ><a href="">导出</a></td>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="row accountinquiry_body table-responsive">
+    <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
+      <thead>
+      <tr>
+        <td>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1">
+            <b> <b>交易编号</b></b>
+          </label>
+        </td>
+        <td><b>交易日期</b></td>
+        <td><b>资金流动</b></td>
+        <td><b>类型</b></td>
+        <td><b>产品及服务</b></td>
+        <td><b>账户余额(元)</b></td>
+
+      </tr>
+      </thead>
+      <tbody ng-show="!mc.isLoading">
+      <tr ng-repeat="x in mc.displayed">
+
+        <td>{{x.invoice_id}}</td>
+        <td>{{x.created_at}}</td>
+        <td ng-class="{true:'down',false:'rise'}[x.amount<0]"><strong>{{x.amount}}</strong></td>
+        <td>{{x.type}}</td>
+        <td>{{x.description}}</td>
+        <td>{{x.balance}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td class="text-center" st-pagination="" st-items-by-page="itemsByPage" colspan="6">
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+
+  </div>
+  </div>
+
+</div>
+
+
+
+
+
