@@ -74,6 +74,25 @@ angular.module('dataduduR3App')
         _action: 'channels',
         _json: true
       }
+    },
+    /**
+     * Remove Sharing of Channels
+
+     To remove a list of channels shared to others, send an HTTP DELETE to http://api.datadudu.cn/share/channels
+
+
+     Valid request parameters:
+     account_key or token_id (string) – account_key  or token_id for internal use, obtained through login API. (required)
+     JSON Body FIELDS:
+     <>·shared_ids (array): array of share_id that wish to remove
+     */
+    deleteShare: {
+      method: 'POST',
+      params: {
+        _action: 'channels',
+        _type: 'delete',
+        _json: true
+      }
     }
 
   });
