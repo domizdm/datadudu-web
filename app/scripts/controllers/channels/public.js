@@ -38,5 +38,30 @@ angular.module('dataduduR3App')
       });
   };
 
+  $scope.deleteShare = function(channel) {
+
+    var payload = _.extend({}, {share_ids:[channel.share_id]});
+
+    var msg = "Do you want to remove the access authority for " + channel.username + "?";
+
+    // open modal to confirm
+    modalConfirm.open(msg)
+      .then(function(){
+        share.deleteShare({}, payload)
+          .$promise
+          .then(function(resp){
+            ngNotify.set('The authority has been removed.', 'success');
+
+            $route.reload();
+          })
+          .catch(function(err){
+            ngNotify.set(err.data.desp || err.statusText, 'error');
+          });
+      })
+      .catch(function(){
+        ngNotify.set(Auth.L('modal-con.errors-happened'), 'error');
+      });
+  };
+
 
 });
