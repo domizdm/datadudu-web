@@ -54,15 +54,15 @@ angular.module('dataduduR3App')
           //console.log(resp);
           var itemsPerPage = resp.itemsPerPage;
           var totalItems = resp.totalItems;
-          console.log(itemsPerPage);
-          console.log(totalItems);
+          //console.log(itemsPerPage);
+          //console.log(totalItems);
 
           var numberOfPages = Math.ceil(totalItems / itemsPerPage);
 
           if(isNaN(numberOfPages)) numberOfPages = 0;
 
           ctrl.displayed = resp.transactions;
-          //console.log(resp.transactions);
+          console.log(resp.transactions);
 
           tableState.pagination.numberOfPages = numberOfPages;//set the number of pages so the pagination can update
           //console.log(numberOfPages);

@@ -107,9 +107,9 @@
       <tr ng-repeat="x in mc.displayed">
 
         <td>{{x.invoice_id}}</td>
-        <td>{{x.created_at}}</td>
-        <td ng-class="{true:'down',false:'rise'}[x.amount<0]"><strong>{{x.amount}}</strong></td>
-        <td>{{x.type}}</td>
+        <td>{{x.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</td>
+        <td ng-class="{true:'down',false:'rise'}[x.amount<0]"><strong>{{x.amount | currency:" ￥ " }}</strong></td>
+        <td >{{x.type=='expense'?'消费':'充值'}}</td>
         <td>{{x.description}}</td>
         <td>{{x.balance}}</td>
       </tr>

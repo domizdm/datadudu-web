@@ -1037,6 +1037,8 @@ label {
 .login-select{height: 33px;
   border-radius: 3px}
 /*login style end*/
-
+/*区分资金流动上升or减少*/
 .down{color: red;}
-.rise{color: green}
+.rise strong{color: green;padding-left: 11px}
+/*区分资金流动上升or减少*/
+

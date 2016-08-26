@@ -71,4 +71,11 @@ angular.module('dataduduR3App')
     angular.element('head>title').text('嘟嘟大数据管理控制台（专业版）');
   }
 
+  //$scope.getCurrentTitle = function(){
+  //  if(/channels/.test($location.path)){
+  //
+  //    return 'test'
+  //  }
+  //};
+
 });
