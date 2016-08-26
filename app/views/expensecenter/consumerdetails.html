@@ -3,7 +3,7 @@
    <div class="">
      <span>账户余额<i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>{{Object.account}}</span>
      <span>
-       <button type="button" class="btn btn-default">充值</button>
+       <a href="#/payment"><button type="button" class="btn btn-default">充值</button></a>
       <button type="button" class="btn btn-default">提现</button>
        <button type="button" class="btn btn-default">转账</button>
        <a href="" style="margin-left: 20px">查看</a>
@@ -111,7 +111,7 @@
         <td ng-class="{true:'down',false:'rise'}[x.amount<0]"><strong>{{x.amount | currency:" ￥ " }}</strong></td>
         <td >{{x.type=='expense'?'消费':'充值'}}</td>
         <td>{{x.description}}</td>
-        <td>{{x.balance}}</td>
+        <td>{{x.balance | currency:"￥"}}</td>
       </tr>
       </tbody>
       <tfoot>
