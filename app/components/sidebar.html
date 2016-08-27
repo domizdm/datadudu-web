@@ -68,14 +68,14 @@
           </a>
         </li>
 
-        <li class="treeview" ng-class="{active: activeNodeWhenIn(['account','accountsafety','myaccount'])}">
-          <a href="#/myaccount">
+        <li class="treeview" ng-class="{active: activeNodeWhenIn(['myprofile','accountsafety','myaccount'])}">
+          <a>
             <i class="fa fa-user"></i>
             <span style="width:183px; height: 49px;" ng-bind-html="Lang['sidebar.account']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
 
-            <li><a href="#/account" ng-click="path()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.personal_data']"></span></a></li>
+            <li><a href="#/myprofile" ng-click="path()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.personal_data']"></span></a></li>
             <li><a href="#/accountsafety"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.security_settings']"></span></a></li>
             <li><a href="#/myaccount"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_account']"></span></a></li>
             <!--<li><a href="#/editaccount" ng-click="path()"><i class="fa fa-circle-o"></i>编辑账户</a></li>-->
