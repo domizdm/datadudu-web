@@ -40,7 +40,7 @@ angular.module('dataduduR3App')
 
   $scope.deleteShare = function(channel) {
 
-    var payload = _.extend({}, {share_ids:[channel.share_id]});
+    var payload = _.extend({}, {shared_ids:[channel.share_id]});
 
     var msg = "Do you want to remove the access authority for " + channel.username + "?";
 
