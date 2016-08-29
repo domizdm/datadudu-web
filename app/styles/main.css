@@ -753,7 +753,7 @@ table.myTable td, table.myTable th {
 .we-modal-header .pay-close{color: #ffffff;font-size: 30px;z-index: 9999;}
 .wepay-body{padding:36px}
 .wepay-body span{padding-right:10px}
-.wepay-body p .pay-other,strong{padding-right: 115px}
+.wepay-body p .pay-other strong{padding-right: 115px}
 @media (min-width: 768px){
   .payment.modal-dialog {
     width: 400px;
