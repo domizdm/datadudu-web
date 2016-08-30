@@ -63,7 +63,7 @@ angular.module('dataduduR3App')
 
             var payload = {
               channels: channelIds,
-              to: user.user_id
+              share_to: user.user_id
             };
 
             // open modal to confirm
