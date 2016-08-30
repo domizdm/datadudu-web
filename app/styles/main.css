@@ -1,10 +1,11 @@
 body {
   background-color: #E9E9E9;
   /*font-family: 'robotoCondensed-light','Microsoft YaHei';*/
+  /*font-family: "robotoCondensed-light","Microsoft YaHei";*/
 }
 
 @font-face {
-  font-family: 'robotoCondensed-light','Microsoft YaHei';
+  font-family: 'robotoCondensed-light';
   src: url('fonts/RobotoCondensed-Light.ttf') format('truetype');
 
   font-weight: normal;
@@ -753,7 +754,8 @@ table.myTable td, table.myTable th {
 .we-modal-header .pay-close{color: #ffffff;font-size: 30px;z-index: 9999;}
 .wepay-body{padding:36px}
 .wepay-body span{padding-right:10px}
-.wepay-body p .pay-other,strong{padding-right: 115px}
+.wepay-body p .pay-other{font-size: 8px;}
+.wepay-body p .pay-other, .ScanCode{padding-right: 115px}
 @media (min-width: 768px){
   .payment.modal-dialog {
     width: 400px;
@@ -768,6 +770,15 @@ table.myTable td, table.myTable th {
 .encounter-problem{border:2px solid #0b65b6;padding: 10px ;margin-top: 10px;}
 
 .encounter-problem p{color: #0068b7}
+
+@media (min-width: 768px){
+  .ModalWeChatPay .modal-dialog{
+    width: 521px;
+    margin: 30px auto;
+  }
+
+}
+
 
 /*充值页面*/
 

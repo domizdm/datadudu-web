@@ -16,22 +16,22 @@
         <thead>
         <tr>
           <td>
-            <label class="pull-right">订单:</label>
+            <label class="pull-right">账单:</label>
           </td>
 
           <td >
               <select class="form-control">
-                <option>所有产品</option>
+                <option>所有账单</option>
               </select>
           </td>
 
-          <td><label class="pull-right">订单编号:</label></td>
-
+          <td><label class="pull-right">账单类型:</label></td>
           <td>
-              <input class="form-control" type="text">
+          <select class="form-control">
+            <option>所有类型</option>
+          </select>
           </td>
-
-          <td><label class="pull-right">交易类型:</label></td>
+          <td><label class="pull-right">支付状态:</label></td>
 
           <td>
               <select class="form-control">
@@ -109,7 +109,7 @@
         <td>{{x.invoice_id}}</td>
         <td>{{x.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</td>
         <td ng-class="{true:'down',false:'rise'}[x.amount<0]"><strong>{{x.amount | currency:" ￥ " }}</strong></td>
-        <td >{{x.type=='expense'?'消费':'充值'}}</td>
+        <td >{{x.type=='expense'?' 消费':'充值'}}</td>
         <td>{{x.description}}</td>
         <td>{{x.balance | currency:"￥"}}</td>
       </tr>
