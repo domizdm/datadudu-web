@@ -13,17 +13,17 @@
 
     <div class="ali-we ">
     <label class="checkbox-inline ">
-      <input class="" type="radio" name="optionsRadiosinline" id="optionsRadios2"  value="option2"> <img src="../images/icoimage/alipay.png">
+      <input type="radio" ng-model="form.bank_id" value="alipay"> <img src="../images/icoimage/alipay.png">
     </label>
       <label class="checkbox-inline">
-        <input  type="radio" name="optionsRadiosinline" id="optionsRadios3"  value="option3" > <img src="../images/icoimage/wechat.png">
+        <input type="radio" ng-model="form.bank_id" value="wechat" > <img src="../images/icoimage/wechat.png">
       </label>
     </div>
   </div>
 
 
   <div class="pay-money">
-    <span style="font-size: 17px;"><b>充值金额</b>:</span><input type="text"><span style="font-size: 17px;"><strong>元</strong></span>
+    <span style="font-size: 17px;"><b>充值金额</b>:</span><input ng-model="form.amount" type="text"><span style="font-size: 17px;"><strong>元</strong></span>
   </div>
 
   <div class="row">
@@ -50,7 +50,7 @@
 </div>
 <div class="table-responsive">
   <div class="row-fluid top-up ">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#WeChatModal">充值</button><span >请仔细核对充值金额，充错金额将无法退款。</span>
+    <button type="button" class="btn btn-primary" ng-click="sendChargeRequest(form)" data-toggle="modal" data-target="#WeChatModal">充值</button><span >请仔细核对充值金额，充错金额将无法退款。</span>
   </div>
 </div>
 
@@ -63,89 +63,4 @@
       <input  type="radio" name="optionsRadiosinline" id="optionsRadios10"  value="option3" data-toggle="modal" data-target="#WeChatFailModal">充值失败
     </label>
     </div>
-</div>
-
-<!-- 微信支付模态框（Modal） -->
-<div class="modal fade"  id="WeChatModal" tabindex="-1" role="dialog" aria-labelledby="WeChatModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="margin-top: 20%">
-    <div class="modal-content">
-      <div class="modal-header we-modal-header">
-        <button  type="button" class="close pay-close" data-dismiss="modal" aria-hidden="true">
-          &times;
-        </button>
-        <span class="modal-title">充值？？元</span>
-        <span class="overdue"><span class="time">120</span>秒后此二维码过期</span>
-      </div>
-
-      <div class="modal-body wepay-body text-center">
-      <div>
-        <p ><strong> 微信扫码充值</strong></p>
-        <span><img src="../images/icoimage/wepay.png"></span>
-        <span ><img src="../images/icoimage/wechatpay.png"></span>
-       <p><a class="pay-other">使用其他方式支付></a></p>
-      </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal -->
-</div>
-
-
-<!-- 微信支付充值成功页面模态框（Modal） -->
-<div class="modal fade"  id="WeChatSucceedsModal" tabindex="-1" role="dialog" aria-labelledby="WeChatSucceedModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="margin-top: 15%">
-    <div class="modal-content">
-      <div class="modal-header we-modal-header">
-        <button  type="button" class="close pay-close" data-dismiss="modal" aria-hidden="true">
-          &times;
-        </button>
-    </div>
-      <div class="modal-body wepay-body text-center" style="height: 250px">
-            <div class="col-md-4 col-sm-4 col-xs-4 text-right">
-              <span><img src="../images/icoimage/pay-succeed.png"></span>
-            </div>
-            <div class="col-md-8 col-sm-8 col-xs-8 text-left">
-            <h4>恭喜您，充值成功！</h4>
-            <p style="font-size: 8px;float: left">您已成功充值？？元<span>订单编号？？</span><span>查看账户<a href="#">账户查询</a></span></p>
-            </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal -->
-</div>
-
-
-<!-- 微信支付充值失败页面模态框（Modal） -->
-<div class="modal fade"  id="WeChatFailModal" tabindex="-1" role="dialog" aria-labelledby="WeChatFailModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="margin-top: 15%">
-    <div class="modal-content">
-      <div class="modal-header we-modal-header">
-        <button  type="button" class="close pay-close" data-dismiss="modal" aria-hidden="true">
-          &times;
-        </button>
-      </div>
-      <div class="modal-body wepay-body text-center" style="height: 450px">
-        <div class="col-md-3 col-sm-3 col-xs-3 text-center" style="padding-top: 8px">
-          <span><img src="../images/icoimage/pay-fail.png"></span>
-        </div>
-        <div class="col-md-9 col-sm-9 col-xs-9 text-left">
-          <h4>对不起，充值失败！</h4>
-          <p style="font-size: 8px;float: left"><span>如果您已付款，可能因交易激增导致交易单延迟处理（最长数秒至数分钟）。您可稍后<a >刷新本页</a>或前往<a>订单管理</a>查看支付情况。</span></p>
-        </div>
-
-        <div class="col-md-12 col-sm-12 col-xs-12 pay-warn">
-          <p><img src="../images/icoimage/warn.png"><span>以下订单尚未成功充值，请您尽快完成充值！</span></p>
-        </div>
-
-        <div class="col-md-12 col-sm-12 col-xs-12 continue-pay">
-          <span>订单编号：</span><span>充值金额：</span><button type="button" class="btn btn-default">点击充值</button>
-        </div>
-
-        <div class="col-md-12 col-sm-12 col-xs-12 encounter-problem text-left">
-          <p>付款遇到问题了？先看看是不是由于下面的原因：</p>
-          网上银行已扣款，订单仍显示“未付款”,可能由于银行的数据没有即时
-          传输，请不要担心，稍后刷新页面看看。如较长时间仍显示未付款，
-          可联系嘟嘟在线客服或拨打客服热线（000-000000）为您解决。
-        </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal -->
 </div>
