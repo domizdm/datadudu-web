@@ -27,7 +27,7 @@ angular.module('dataduduR3App')
     $scope.remain = newVal;
 
     if($scope.remain <0) {
-      $uibModalInstance.dismiss('closed');
+      $uibModalInstance.dismiss('timeout');
     }
   });
 

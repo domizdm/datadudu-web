@@ -21,15 +21,17 @@ angular.module('dataduduR3App')
     var ret = reason;
 
     if(/notpay/i.test(reason)) {
-      ret = 'Transaction not paid';
+      ret = '未支付';
     }else if(/closed/i.test(reason)) {
-      ret = 'Transaction closed';
+      ret = '已关闭';
     }else if(/revoked/i.test(reason)) {
-      ret = 'Transaction revoked';
+      ret = '已撤销（刷卡支付）';
     }else if(/payerror/i.test(reason)) {
-      ret = 'Transaction error';
+      ret = '支付问题';
     }else if(/cancel/i.test(reason)) {
-      ret = 'User canceled transaction dialog';
+      ret = 'User canceled transaction dialog before return.';
+    }else if(/timeout/i.test(reason)) {
+      ret = 'This transaction has been timeout.';
     }
 
     return ret;
