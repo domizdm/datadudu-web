@@ -1,0 +1,23 @@
+<div>
+  <div class="modal-header we-modal-header">
+    <button  type="button" class="close pay-close" aria-hidden="true" ng-click="cancel()">
+      &times;
+    </button>
+    <span class="modal-title">充值{{fields.amount}}元</span>
+    <span class="overdue"><span class="time">{{remain}}</span>秒后此二维码过期</span>
+  </div>
+
+  <div class="modal-body wepay-body text-center">
+    <div>
+      <p ><strong> 微信扫码充值</strong></p>
+      <div ng-if="tdc">
+        <span><img ng-src="{{tdc}}" src="images/icoimage/default.png"></span>
+        <span ><img src="../images/icoimage/wechatpay.png"></span>
+      </div>
+      <div ng-if="!tdc">
+        <span>Loading...</span>
+      </div>
+      <p><a class="pay-other">使用其他方式支付></a></p>
+    </div>
+  </div>
+</div>

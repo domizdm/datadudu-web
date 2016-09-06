@@ -1,0 +1,16 @@
+<div>
+  <div class="modal-header we-modal-header">
+    <button  type="button" class="close pay-close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+      &times;
+    </button>
+  </div>
+  <div class="modal-body wepay-body text-center" style="height: 250px">
+    <div class="col-md-4 col-sm-4 col-xs-4 text-right">
+      <span><img src="../images/icoimage/pay-succeed.png"></span>
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8 text-left">
+      <h4>恭喜您，充值成功！</h4>
+      <p style="font-size: 8px;float: left">您已成功充值{{getCurrentAmount()}}元<span>订单编号{{getCurrentInvoice()}}</span><span>查看账户<a ng-click="ok()">账户查询</a></span></p>
+    </div>
+  </div>
+</div>
