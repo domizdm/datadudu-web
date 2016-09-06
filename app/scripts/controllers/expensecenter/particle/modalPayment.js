@@ -46,11 +46,11 @@ angular.module('dataduduR3App')
       payment.sendWechatQuery({invoice_id: getCurrentInvoice()})
         .$promise
         .then(function(resp){
-          if(/SUCCESS/i.test(resp.result)) {
+          if(/SUCCESS/i.test(resp.code)) {
             // if succeed
             $uibModalInstance.close();
-          }else if(!/USERPAYING/i.test(resp.result) && !/NOTPAY/i.test(resp.result)) {
-            $uibModalInstance.dismiss(resp.result || 'unknown');
+          }else if(!/USERPAYING/i.test(resp.result) && !/NOTPAY/i.test(resp.code)) {
+            $uibModalInstance.dismiss(resp.code || 'unknown');
           }
         });
     }

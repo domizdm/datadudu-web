@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsRulesCtrl', function($scope, $q, $filter, $route, $log, $location, Auth,
+.controller('ChannelsRulesCtrl', function($scope, $q, $filter, $route, $log, $location, Auth, rule,
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
@@ -82,6 +82,18 @@ angular.module('dataduduR3App')
           ngNotify.set(err.statusText, 'error');
         });
     }
+  };
+
+  $scope.toggleRule = function(rule_id, status) {
+    rule.toggleRuleStatus({id:rule_id}, {rule_status:status})
+      .$promise
+      .then(function(resp){
+        ngNotify.set('Rule has been set to ' + status, 'success');
+        $route.reload();
+      })
+      .catch(function(err){
+        ngNotify.set(err.data.desp || err.statusText, 'error');
+      });
   };
 
 
