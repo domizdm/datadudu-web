@@ -62,7 +62,6 @@ angular.module('dataduduR3App')
           if(isNaN(numberOfPages)) numberOfPages = 0;
 
           ctrl.displayed = resp.transactions;
-          console.log(resp.transactions);
 
           tableState.pagination.numberOfPages = numberOfPages;//set the number of pages so the pagination can update
           //console.log(numberOfPages);

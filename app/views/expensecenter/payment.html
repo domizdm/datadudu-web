@@ -1,14 +1,15 @@
 <div class="container-fluid payment" xmlns="http://www.w3.org/1999/html">
   <div class="row-fluid" >
-    <span style="font-size: 17px;">余额  :  ¥0.00</span>
+    <span style="font-size: 17px;">余额 {{x.balance | currency:"￥"}}</span>
   </div>
 
-  <form action="http://api.datadudu.cn/payment/payment.php" class="alipayform" method="post" target="_blank">
+  <form action="http://api.datadudu.cn/payment/payment.php" class="alipayform" method="post" target="_blank" name="myForm" novalidate>
   <div class="row-fluid payment-way" >
     <!--<div class="checkbox  checkbox-circle">-->
     <!--<input id="checkbox8" class="styled" type="checkbox" checked="">-->
     <label >
-      <input class="" type="radio" name="optionsRadiosinline" id="optionsRadios11"  value="option11" style="margin-left:9px;margin-right: 12px;">
+      <!--<input class="" type="radio" name="optionsRadiosinline" id="optionsRadios11"  value="option11" style="margin-left:9px;margin-right: 12px;">-->
+      <input type="checkbox" checked="checked" value="" style="margin-left:9px;margin-right: 12px;">
     支付宝充值/微信充值
     </label>
     <!--</div>-->
@@ -18,18 +19,21 @@
       <span><input class="" type="radio" name="bank_id" id="optionsRadios2"  value="alipay" checked="checked" style="margin-right: 13px;vertical-align: middle"></span> <img src="../images/icoimage/alipay.png">
     </label>
       <label class="checkbox-inline">
-        <input  type="radio" name="optionsRadiosinline" id="optionsRadios3"  value="option3" style="margin-right: 13px;vertical-align: middle"> <img src="../images/icoimage/wechat.png">
+        <input  type="radio" name="bank_id" id="optionsRadios3"  value="option3" style="margin-right: 13px;vertical-align: middle"> <img src="../images/icoimage/wechat.png">
       </label>
     </div>
   </div>
 
-    <div class="element">
+    <div class="element" style="display: none">
         <input type="text" name="username" value="{{username}}">
-      <br>
-
     </div>
   <div class="pay-money einput">
-    <span style="font-size: 17px;">充值金额:</span><input type="text" name="amount"><span style="font-size: 17px;">元</span>
+    <span style="font-size: 17px;">充值金额:</span><input type="number" step="1" ng-pattern="/^(0\.\d+|[1-9]\d*|\d+\.\d+)$/" name="amount" ng-model="amount" value="{{DefaultMoney}}" required><span style="font-size: 17px;">元</span>
+    <span style="color:red" ng-show="myForm.amount.$dirty && myForm.amount.$invalid">
+      <span ng-show="myForm.amount.$error.required" style="font-size: 17px;">*请填写充值金额！</span>
+      <span ng-show="[amount.value<=0]" style="font-size: 17px;">{{amount.value}}*充值金额必须大于0！</span>
+    </span>
+
   </div>
 
   <div class="row">
@@ -55,48 +59,11 @@
   </div>
 </div>
 <div class="table-responsive">
-
   <div class="row-fluid top-up element ">
-    <button type="submit" class="btn btn-primary alisubmit" value="充值"  style="background-color: #0277bd">充值</button><span >请仔细核对充值金额，充错金额将无法退款。</span>
+    <button type="submit" class="btn btn-primary alisubmit" value="充值"  style="background-color: #0277bd" ng-disabled="myForm.amount.$dirty && myForm.amount.$invalid " data-target="#PayInfoModal">充值</button><span >请仔细核对充值金额，充错金额将无法退款。</span>
   </div>
 </div>
     </form>
-
-  <!--<form action="payment.php" class="alipayform" method="post" target="_blank">-->
-    <!--<form action="http://api.datadudu.cn/payment/payment.php" class="alipayform" method="post" target="_blank">-->
-    <!--<div class="element" style="margin-top:60px;">-->
-      <!--<div class="legend">支付通道 </div>-->
-    <!--</div>-->
-    <!--<div class="element">-->
-      <!--<div class="etitle">当前账户余额：XXXX元</div>-->
-    <!--</div>-->
-    <!--<div class="element">-->
-      <!--<div class="etitle">支付方式:</div>-->
-      <!--<br>-->
-      <!--<input type="radio" name="bank_id" value="alipay" checked="checked" >支付宝<br>-->
-      <!--<input type="radio" name="bank_id" value="wechat">微信支付<br>-->
-
-    <!--</div>-->
-
-
-    <!--<div class="element">-->
-      <!--<div class="etitle">用户名:</div>-->
-      <!--<div class="einput"><input type="text" name="username" value="wangmao"></div>-->
-      <!--<br>-->
-      <!--<div class="mark">输入用户名或直接传递</div>-->
-    <!--</div>-->
-    <!--<div class="element">-->
-      <!--<div class="etitle">付款金额:</div>-->
-      <!--<div class="einput"><input type="text" name="amount" value="0.01"></div>-->
-      <!--<br>-->
-      <!--<div class="mark">注意：付款金额(total_fee)，必填(格式如：1.00,请精确到分)</div>-->
-    <!--</div>-->
-
-    <!--<div class="element">-->
-      <!--<input type="submit" class="alisubmit" value ="确认支付">-->
-    <!--</div>-->
-  <!--</form>-->
-
 
 
   <div>
@@ -106,6 +73,9 @@
 
     <label class="checkbox-inline">
       <input  type="radio" name="optionsRadiosinline" id="optionsRadios10"  value="option3" data-toggle="modal" data-target="#WeChatFailModal">充值失败
+    </label>
+    <label class="checkbox-inline">
+      <input  type="radio" name="optionsRadiosinline" id="optionsRadios11"  value="option3" data-toggle="modal" data-target="#PayInfoModal">充值返回提示框
     </label>
     </div>
 </div>
@@ -190,6 +160,34 @@
           网上银行已扣款，订单仍显示“未付款”,可能由于银行的数据没有即时
           传输，请不要担心，稍后刷新页面看看。如较长时间仍显示未付款，
           可联系嘟嘟在线客服或拨打客服热线（000-000000）为您解决。
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+
+
+<div class="modal fade InfoPay"  id="PayInfoModal" tabindex="-1" role="dialog" aria-labelledby="PayInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 15%">
+    <div class="modal-content">
+      <div class="modal-header we-modal-header">
+        <button  type="button" class="close pay-close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <span class="modal-title" style="font-size:16px">请充值</span>
+      </div>
+      <div class="modal-body wepay-body text-center" style="height: 250px">
+        <div class="col-md-4 col-sm-4 col-xs-4 text-right">
+          <span><img src="../images/icoimage/meagesspay.png"></span>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8 text-left">
+          <h4 style="font-size: 16px;">请您在新打开的页面上完成充值。</h4>
+          <p style="font-size: 8px;float: left">充值完成前请不要关闭此窗口。<br/>完成充值后请根据您的情况点击下面的按钮：</p><br/><br/><br/>
+          <div>
+          <span><button type="button" class="btn btn-default">充值成功</button></span>
+          <span><button type="button" class="btn btn-default">充值失败</button></span>
+          </div>
+          <p style="margin-top: 10px;font-size: 8px;"><a href="" >使用其他充值方式></a></p>
         </div>
       </div>
     </div><!-- /.modal-content -->

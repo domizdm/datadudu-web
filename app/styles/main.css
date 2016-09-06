@@ -1,11 +1,10 @@
 body {
   background-color: #E9E9E9;
-  /*font-family: 'robotoCondensed-light','Microsoft YaHei';*/
-  /*font-family: "robotoCondensed-light","Microsoft YaHei";*/
+  /*font-family: 'robotoCondensed-light','华文楷体';*/
 }
 
 @font-face {
-  font-family: 'robotoCondensed-light';
+  font-family: 'robotoCondensed-light','华文楷体';
   src: url('fonts/RobotoCondensed-Light.ttf') format('truetype');
 
   font-weight: normal;
@@ -778,6 +777,7 @@ table.myTable td, table.myTable th {
   }
 
 }
+.InfoPay button{margin-left: 0;}
 
 
 /*充值页面*/
@@ -1100,3 +1100,206 @@ label {
 .rise strong{color: green;padding-left: 11px}
 /*区分资金流动上升or减少*/
 
+
+/*我的社区页面开始*/
+.mycommunity{background-color: #ffffff;width: 100%; height:auto; padding-left:10px;padding-right: 10px;padding-top: 19px;}
+@media (min-width: 1200px) {
+  .mycommunity{padding-left: 60px;}
+
+}
+@media (max-width: 992px) and (min-width: 768px){
+  .mycommunity{padding-left: 10px;}
+}
+@media (max-width: 768px) {
+  .mycommunity{padding-left: 10px;}
+}
+
+@media (max-width: 768px) {
+  .community_body{margin-left: 10px;}
+  .community_right{margin-left: 10px}
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .community_body{margin-left: 45px;}
+  .community_right{margin-left: 45px}
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .community_body{margin-left: 30px;}
+  .community_right{margin-left: 30px}
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .community_body{margin-right: 45px;}
+}
+.mycommunity_header{margin-bottom: 18px;}
+.mycommunity_header .device_star{margin-right: 10px;color:#0168B3;}
+.mycommunity_header .btn-search{margin-left: 15px;}
+@media (max-width: 768px) {
+  .mycommunity_header{margin-top: 50px;}
+}
+.mycommunity_header a{color:#000000;}
+.mycommunity_header a:hover{color:#0277bd;}
+.mycommunity_header .popularity{border-left:1px solid #828181;padding-left: 8px;padding-right: 8px;margin-left: 8px}
+.mycommunity_header .popularity i{margin-left:5px;margin-right: 10px;}
+.mycommunity_header .time{border-left:1px solid #828181;margin-right: 10px; padding-left: 8px;padding-right: 8px}
+.mycommunity_header .time i{margin-left:5px;margin-right: 10px;}
+/*.community_div{float: left;margin-bottom: 43px; min-width: 199px}*/
+.community_div{float: left;margin-bottom: 43px; padding-right: 0;}
+.community_div .community_div_img{width: 100%;height: auto;}
+.mycommunity .community_div{border: 4px solid #c9c9c9;margin-right:25px;}
+/*max-width: 199px;*/
+.community_div_info{padding-left: 10px;padding-top: 12px;}
+.community_div span{margin-left:6px;}
+.mycommunity .hot_tags_title{margin-bottom: 27px;font-size: 18px;color:#0277bd;}
+.mycommunity .hot_tags button { color: #ffffff; background-color: #0277bd;margin-right: 3px;margin-bottom:3px; border-radius: 4px;border: 0;}
+.mycommunity .hot_tags button a{font-size: 10px; color: #ffffff;}
+.find_dev_title{margin-bottom: 27px;margin-top:30px;font-size: 18px;color:#0277bd;}
+.find_dev img{float: left}
+.find_dev .title{color: #000000; margin-left: 13px;font-size: 15px;vertical-align:top;}
+.find_dev .name{color: #000000; margin-left: 13px;font-size: 8px;vertical-align:top;line-height: 5px}
+.find_dev_body{margin-bottom: 28px;}
+.start_user_div{margin-bottom: 18px;}
+.star_user_title{color:#0277bd;margin-bottom: 18px;}
+@media (max-width: 1200px) {
+  .find_dev_title{margin-top: 10px;}
+
+}
+.start_user_div .star{float: left;}
+.start_user_div span .img_sort{vertical-align:top;}
+.start_user_div span .name{color: #000000; margin-left:3px;font-size: 15px;vertical-align:top;}
+.start_user_div span .tags{font-size: 10px;margin-left: 3px;color: #000000;}
+
+/*我的社区页面结束*/
+
+/*我的关注页面开始*/
+.myattention{background-color: #ffffff;width: 100%; height:auto; padding-left:60px;padding-right: 33px;padding-top: 19px;}
+@media (max-width: 768px) {
+  .myattention{padding-right: 13px;}
+
+}
+
+@media (max-width: 768px) {
+  .myattention{padding-left: 10px;}
+}
+.myattention_header{margin-bottom: 18px;}
+.myattention_header .device_star{margin-right: 10px;color:#0168B3;}
+.myattention_header .btn-search{margin-left: 15px;}
+@media (max-width: 768px) {
+  .myattention_header{margin-top: 50px;}
+}
+.myattention_header a{color:#000000;}
+.myattention_header a:hover{color:#0277bd;}
+.myattention_header .popularity{border-left:1px solid #828181;padding-left: 8px;padding-right: 8px;margin-left: 8px}
+.myattention_header .popularity i{margin-left:5px;margin-right: 10px;}
+.myattention_header .time{border-left:1px solid #828181;margin-right: 10px; padding-left: 8px;padding-right: 8px}
+.myattention_header .time i{margin-left:5px;margin-right: 10px;}
+
+.myattention .hot_tags_title{margin-bottom: 27px;font-size: 18px;color:#0277bd;}
+.myattention .hot_tags button { color: #ffffff; background-color: #0277bd;margin-right: 3px;margin-bottom:3px; border-radius: 4px;border: 0;}
+.myattention .hot_tags button a{font-size: 10px; color: #ffffff;}
+
+
+.attention_div{float: left;margin-bottom: 43px; padding-right: 0;}
+.attention_div .attention_div_img{width: 100%;height: auto;}
+.myattention .attention_div{border: 4px solid #c9c9c9;}
+@media (min-width: 992px){
+  .myattention .attention_div{margin-right:4%;}
+}
+@media (min-width: 768px) and (max-width: 992px){
+  .myattention .attention_div{margin-right:8%;}
+}
+
+.attention_div_info{padding-left: 10px;padding-top: 12px;}
+.attention_div span{margin-left:6px;}
+
+@media (min-width: 1200px) {
+  .input-style{width: 30%}
+}
+@media (max-width: 1200px) {
+  .input-style{max-width: 150px}
+
+}
+/*我的关注页面结束*/
+
+
+/*热门标签页面开始*/
+.hot-tags{background-color: #ffffff;width: 100%; height:auto; padding-left:65px;padding-right: 35px;padding-top: 19px;}
+@media (max-width: 768px) {
+  .hot-tags{padding: 0 10px 0 10px;}
+  .tags-row-user p{ padding-right: 5px}
+
+
+}
+.hot-tags-header{margin-bottom: 18px;}
+.hot-tags-header .keyword{margin-right: 30px;color:#0168B3;}
+.hot-tags-header .hot-tag{color:#0168B3;margin-right: 13px;}
+.hot-tags-header .btn-search{margin-left: 15px;}
+@media (max-width: 768px) {
+  .hot-tags-header{margin-top: 50px;}
+}
+
+.hottags-tags {min-width: 574px; }
+.hottags-tags span a{margin-right:15px;}
+.hottags-tags span a:hover{background-color:#0068b7;color: #ffffff; }
+.input-header{min-width: 574px;margin-bottom: 9px;}
+.hot-tags-header a{color:#000000;}
+.hot-tags-header a:hover{color:#0277bd;}
+.hot-tags-header .popularity{border-left:1px solid #828181;padding-left: 8px;padding-right: 8px;margin-left: 8px}
+.hot-tags-header .popularity i{margin-left:5px;margin-right: 10px;}
+.hot-tags-header .time{border-left:1px solid #828181;margin-right: 10px; padding-left: 8px;padding-right: 8px}
+.hot-tags-header .time i{margin-left:5px;margin-right: 10px;}
+.hot-tag-sort{margin-left: 65px;margin-top: 13px}
+
+
+.input-tags {
+  background-color: #F6F6F6;
+  padding-left: 20px;
+  border-radius: 2px;
+  border: solid 1px #C0C0C0;
+  width: 36%;
+  height: 44px;
+}
+
+@media (min-width: 1200px) {
+  .input-tags{width: 80%}
+}
+@media (max-width: 992px) {
+  .input-tags{max-width: 150px}
+
+}
+.tags-row .tags-row-title{font-size: 18px;color: #0277bd}
+.hot-tags-body{padding:13px 0 13px 0;border-bottom: 1px solid #cfcfcf;border-top:1px solid #cfcfcf; }
+.tags-row p{margin-bottom: 0;}
+.tags-row p img{margin-right: 7px;}
+.hot-tags-body .tags-row-user{float: right;}
+.tags-row-user p{margin-bottom: 0;text-align: center;min-width: 108px;}
+.tags-row-user{padding-left: 0;}
+/*热门标签页面结束*/
+
+/*社区明星页面开始*/
+.community-star{background-color: #ffffff;width: 100%; height:auto; padding-left:65px;padding-right: 35px;padding-top: 19px;}
+
+@media (max-width: 768px) {
+  .community-star{padding: 0 10px 0 10px;}
+  .community-star-header{padding-top: 56px;}
+}
+.community-star .community-star-ico{float: left;margin-right: 14px;}
+.community-star-info{min-width: 230px;margin-bottom: 14px;}
+.community-star-info p{margin-bottom: 0;font-size: 14px;}
+
+.input-community-star {
+  background-color: #F6F6F6;
+  padding-left: 20px;
+  border-radius: 2px;
+  border: solid 1px #C0C0C0;
+  width: 80%;
+  height: 44px;
+}
+.community-star-sort{margin-top: 5px}
+.community-star-sort a{color:#000000;}
+.community-star-sort a:hover{color:#0277bd;}
+.community-star-sort .popularity{border-left:1px solid #828181;padding-left: 8px;padding-right: 8px;margin-left: 8px}
+.community-star-sort .popularity i{margin-left:5px;margin-right: 10px;}
+.community-star-sort .time{border-left:1px solid #828181;margin-right: 10px; padding-left: 8px;padding-right: 8px}
+.community-star-sort .time i{margin-left:5px;margin-right: 10px;}
+
+/*社区明星页面结束*/

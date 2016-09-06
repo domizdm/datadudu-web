@@ -22,6 +22,24 @@ angular.module('dataduduR3App')
     .when('/accountsafety',{
       templateUrl: 'views/myaccount/accountsafety.html',
       controller:'AccountSafetyCtrl'
-    });
+    })
+
+  .when('/mycommunity',{
+    templateUrl: 'views/myaccount/mycommunity.html',
+    controller:'MyCommunityCtrl'
+  })
+  .when('/myattention',{
+    templateUrl: 'views/myaccount/myattention.html',
+    controller:'MyAttentionCtrl'
+  })
+  .when('/hottags',{
+    templateUrl: 'views/myaccount/hottags.html',
+    controller:'MyAttentionCtrl'
+  })
+  .when('/communitystar',{
+    templateUrl: 'views/myaccount/communitystar.html',
+    controller:'CommunityStarCtrl'
+  });
+
 });
 
