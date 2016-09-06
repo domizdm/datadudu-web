@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsRulesCtrl', function($scope, $q, $filter, $route, $log, $location, Auth, rule,
+.controller('ChannelsRulesCtrl', function($scope, $q, $filter, $route, $log, $location, Auth,
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
@@ -84,8 +84,8 @@ angular.module('dataduduR3App')
     }
   };
 
-  $scope.toggleRule = function(rule_id, status) {
-    rule.toggleRuleStatus({id:rule_id}, {rule_status:status})
+  $scope.toggleRule = function(rule, status) {
+    channel.toggleRuleStatus({id:$scope.channel.channel_id, type_id: rule.rule_id}, {rule_status:status})
       .$promise
       .then(function(resp){
         ngNotify.set('Rule has been set to ' + status, 'success');

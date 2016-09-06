@@ -25,12 +25,6 @@ angular.module('dataduduR3App')
      */
     list: {
       method: 'GET'
-    },
-    toggleRuleStatus: {
-      method: 'POST',
-      params: {
-        _action: 'toggle'
-      }
     }
   });
 });

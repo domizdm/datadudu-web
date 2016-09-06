@@ -171,7 +171,7 @@ angular.module('dataduduR3App')
   // set up a interval to check
   var intervalPromise = $interval(function(){
     // no codes here, but it triggers an angular loop
-  }, 1000);
+  }, 400);
 
   $scope.$on('$destroy', function () {
     $interval.cancel(intervalPromise);
