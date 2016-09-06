@@ -39,6 +39,10 @@ angular.module('dataduduR3App')
   .when('/communitystar',{
     templateUrl: 'views/myaccount/communitystar.html',
     controller:'CommunityStarCtrl'
+  })
+  .when('/communitydevice',{
+    templateUrl: 'views/myaccount/communitydevice.html',
+    controller:'CommunityDeviceCtrl'
   });
 
 });

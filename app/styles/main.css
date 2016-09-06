@@ -1294,7 +1294,7 @@ label {
   width: 80%;
   height: 44px;
 }
-.community-star-sort{margin-top: 5px}
+.community-star-sort{margin-top: 5px;margin-bottom: 17px;}
 .community-star-sort a{color:#000000;}
 .community-star-sort a:hover{color:#0277bd;}
 .community-star-sort .popularity{border-left:1px solid #828181;padding-left: 8px;padding-right: 8px;margin-left: 8px}
@@ -1302,4 +1302,51 @@ label {
 .community-star-sort .time{border-left:1px solid #828181;margin-right: 10px; padding-left: 8px;padding-right: 8px}
 .community-star-sort .time i{margin-left:5px;margin-right: 10px;}
 
+.star-user-body{padding: 5px 10px;}
+.star-user-device{padding:11px 15px;background-color: #f5f5f5}
+.star-device-ico{float:left;margin-right: 5px;margin-top:20px;margin-bottom: 20px;padding-left: 10px;padding-right: 10px; max-height:100px;max-width:100px;}
+.star-user-device .user-device-info p{margin-bottom: 0;}
+.star-user-device .user-device-info p img{margin-right: 7px;}
+.user-device-info .title{font-size: 14px;}
+.user-device-info .addition {float: right;}
+.user-device-info .addition i{margin-right: 5px;}
+.user-device-info .addition .share{padding-right: 5px;border-right:1px solid #c9c9c9;margin-right: 5px; }
+@media (max-width: 563px) {
+  .star-device-ico{display: none;}
+}
 /*社区明星页面结束*/
+
+
+/*社区设备开始*/
+.community-device{background-color: #ffffff;width: 100%; height:auto; padding-left:65px;padding-right: 35px;padding-top: 19px;}
+
+@media (max-width: 768px) {
+  .community-device{padding: 0 10px 0 10px;}
+  .community-device-header{padding-top: 56px;}
+}
+.community-device-header .deviceico{margin-right: 18px;}
+.community-device-header .community-device-ico{border-right: 1px solid #c9c9c9;padding-right: 27px;float: left;margin-right: 28px;}
+
+@media (max-width: 992px) {
+  .community-device-header .community-device-ico{padding-right:5px;margin-right: 5px;}
+
+}
+.community-device-header .community-device-info{border-right: 1px solid #c9c9c9;padding-right: 27px;margin-right: 27px;float:left;}
+.community-device-tags {float: left;}
+.community-device-tags p{margin-bottom: 0;}
+
+@media (max-width: 992px) {
+  .community-device-header .community-device-info{padding-right: 5px;margin-right: 5px;}
+
+}
+.community-device-info p{margin-bottom: 0;}
+.community-device-header .share-aim{float: right;min-width: 125px;}
+.share-aim i{margin-right: 5px;}
+.share-aim .share{padding-right: 5px;border-right:1px solid #c9c9c9;margin-right: 5px;}
+.comment .comment-portrait{float: left;margin-right: 16px;}
+.publish .comment-portrait{float: left;margin-right: 16px;}
+.publish .reply a{float: left;margin-left: 15px;}
+.reply {vertical-align:bottom;}
+.publish p{margin-bottom: 0;font-size: 12px}
+.community-device-body .comment, .publish{margin-bottom: 20px;}
+/*社区设备结束*/

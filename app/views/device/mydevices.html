@@ -16,8 +16,7 @@
       <!---->
       <div class="text-left">
         <span> <a ng-href="#/channels/{{device.channel_id}}/private" style="text-decoration:underline;">{{device.name}}</a></span><span><img src="./images/icoimage/duduico2.png" style="margin-left: 18px"></span>
-        <span><button type="button" class="btn btn-danger devices_del"><a
-          ng-click="removeDevice(device.activation_code)" style="color: #ffffff" ng-bind-html="Lang['main-devices.Remove']"></a></button></span>
+        <span><button type="button" class="btn btn-danger devices_del"><a ng-click="removeDevice(device.activation_code)" style="color: #ffffff" ng-bind-html="Lang['main-devices.Remove']"></a></button></span>
         <p class="create">
           <span ><span ng-bind-html="Lang['main-devices.CreateDate']"></span>{{(device.attached_at | date:'yyyy-MM-dd') || 'Not Attached'}}</span>
          <span> <span ng-bind-html="Lang['main-devices.Activation_Time']"></span>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</span>
