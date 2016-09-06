@@ -20,13 +20,13 @@
 
         <div class="row">
           <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Condition Type']"></label>
-          <select class="form-control" ng-options="item.text for item in types" ng-model="form.type"></select>
+          <select class="form-control" ng-options="item.text for item in types" ng-model="form.rule_type"></select>
         </div>
 
-        <form ng-if="form.type.key != 'no_data_check'">
+        <form ng-if="form.rule_type.key != 'no_data_check'">
           <div class="row">
             <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Condition']"></label>
-            <select class="form-control" ng-options="item.text for item in criterias[form.type.key]" ng-model="form.criteria">
+            <select class="form-control" ng-options="item.text for item in criterias[form.rule_type.key]" ng-model="form.criteria">
               <option value="" ng-bind-html="Lang['NewEdit_Rules.ChooseCondition']"></option>
             </select>
           </div>
@@ -63,7 +63,7 @@
 
 
 
-        <form ng-if="form.type.key == 'no_data_check'">
+        <form ng-if="form.rule_type.key == 'no_data_check'">
           <div class="row">
             <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Frequency']"></label>
             <select class="form-control" ng-options="item.text for item in frequencies" ng-model="form.frequency"></select>

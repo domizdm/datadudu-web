@@ -84,6 +84,18 @@ angular.module('dataduduR3App')
     }
   };
 
+  $scope.toggleRule = function(rule, status) {
+    channel.toggleRuleStatus({id:$scope.channel.channel_id, type_id: rule.rule_id}, {rule_status:status})
+      .$promise
+      .then(function(resp){
+        ngNotify.set('Rule has been set to ' + status, 'success');
+        $route.reload();
+      })
+      .catch(function(err){
+        ngNotify.set(err.data.desp || err.statusText, 'error');
+      });
+  };
+
 
   $scope.deleteRule = function(rule) {
     modalConfirm.open(Auth.L('rule.delete-rules'))

@@ -48,6 +48,9 @@
               <td class="">{{rule.created_at | date:'yyyy-MM-dd'}}</td>
               <td style="text-align:center">
                 <button ng-click="deleteRule(rule)" class="btn btn-danger" ng-bind-html="Lang['rules-main.delete']"></button>
+
+                <button ng-click="toggleRule(rule,'enabled')" class="btn btn-success" ng-show="rule.rule_status=='disabled'">Enable</button>
+                <button ng-click="toggleRule(rule,'disabled')" class="btn btn-warning" ng-show="rule.rule_status=='enabled'">Disable</button>
               </td>
             </tr>
             </tbody>
