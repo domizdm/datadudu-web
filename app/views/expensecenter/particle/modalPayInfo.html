@@ -1,0 +1,27 @@
+<!-- 支付过后返回支付之前的页面弹出的提示框（Modal） -->
+<div class="modal fade InfoPay"  id="PayInfoModal" tabindex="-1" role="dialog" aria-labelledby="PayInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 15%">
+    <div class="modal-content">
+      <div class="modal-header we-modal-header">
+        <button  type="button" class="close pay-close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <span class="modal-title" style="font-size:16px">请充值</span>
+      </div>
+      <div class="modal-body wepay-body text-center" style="height: 250px">
+        <div class="col-md-4 col-sm-4 col-xs-4 text-right">
+          <span><img src="../images/icoimage/meagesspay.png"></span>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8 text-left">
+          <h4 style="font-size: 16px;">请您在新打开的页面上完成充值。</h4>
+          <p style="font-size: 8px;float: left">充值完成前请不要关闭此窗口。<br/>完成充值后请根据您的情况点击下面的按钮：</p><br/><br/><br/>
+          <div>
+            <span><button type="button" class="btn btn-default">充值成功</button></span>
+            <span><button type="button" class="btn btn-default">充值失败</button></span>
+          </div>
+          <p style="margin-top: 10px;font-size: 8px;"><a href="" >使用其他充值方式></a></p>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>

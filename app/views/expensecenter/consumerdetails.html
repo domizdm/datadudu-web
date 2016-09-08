@@ -1,11 +1,12 @@
 <div class="container-fluid">
   <div class="row-fluid accountinquiry" style="margin: 10px;">
    <div class="">
-     <span>账户余额<i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>{{Object.account}}</span>
+     <span>账户余额:<b><a href="javascript:void (0);">{{ mc['displayed'][0]['balance'] | currency:"￥"}}</a></b><i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>
+       </span>
      <span>
        <a href="#/payment"><button type="button" class="btn btn-default">充值</button></a>
-      <button type="button" class="btn btn-default">提现</button>
-       <button type="button" class="btn btn-default">转账</button>
+      <!--<button type="button" class="btn btn-default">提现</button>-->
+       <!--<button type="button" class="btn btn-default">转账</button>-->
        <a href="" style="margin-left: 20px">查看</a>
      </span>
      </div>

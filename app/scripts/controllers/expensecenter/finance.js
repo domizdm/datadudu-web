@@ -8,18 +8,18 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ConsumerDetailsCtrl', function ($scope, $log, $filter, finance, Auth, $timeout, ngNotify ) {
+.controller('ConsumerDetailsCtrl', function ($scope,  $log, $filter, finance, Auth, $timeout, ngNotify ) {
 
-  $(function () {
-    $('#datetimepicker6').datetimepicker();
-    $('#datetimepicker7').datetimepicker();
-    $("#datetimepicker6").on("dp.change",function (e) {
-      $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-    });
-    $("#datetimepicker7").on("dp.change",function (e) {
-      $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-    });
-  });
+  //$(function () {
+  //  $('#datetimepicker6').datetimepicker();
+  //  $('#datetimepicker7').datetimepicker();
+  //  $("#datetimepicker6").on("dp.change",function (e) {
+  //    $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+  //  });
+  //  $("#datetimepicker7").on("dp.change",function (e) {
+  //    $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+  //  });
+  //});
 
   var ctrl = this;
   $scope.mc = this;
