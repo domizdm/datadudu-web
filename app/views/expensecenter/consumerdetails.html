@@ -96,16 +96,16 @@
             <b> <b>交易编号</b></b>
           </label>
         </th>
-        <th st-sort="created_at"><b>交易日期</b></th>
-        <th><b>资金流动</b></th>
+        <th  ng-click="col='created_at';desc=!desc"><i class="fa fa-sort"></i><b>交易日期</b></th>
+        <th ng-click="col='amount';desc=!desc"><i class="fa fa-sort"></i><b>资金流动</b></th>
         <th><b>类型</b></th>
         <th><b>产品及服务</b></th>
-        <th><b>账户余额(元)</b></th>
+        <th ><b>账户余额(元)</b></th>
 
       </tr>
       </thead>
       <tbody ng-show="!mc.isLoading">
-      <tr ng-repeat="x in mc.displayed">
+      <tr ng-repeat="x in mc.displayed | orderBy:col:desc">
 
         <td>{{x.invoice_id}}</td>
         <td>{{x.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</td>
