@@ -14,7 +14,7 @@
     <div class="sidebar-left" >
       <ul class="sidebar-menu ">
         <!-- Dudu开放平台 Begin -->
-        <li class="treeview" ng-class="{active: activeNodeWhenIn(['channels','to-me','rules','commands','duduHttp','triggersLog'])}" ng-if="!useDeviceDashboard">
+        <li class="treeview" ng-class="{active: activeNodeWhenIn(['channels','to-me','to-others','rules','commands','duduHttp','triggersLog'])}" ng-if="!useDeviceDashboard">
           <a class="active " ng-href="#/channels">
             <i class="fa fa-home"></i>
             <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.data_factory']"></span><i class="fa fa-angle-left pull-right"></i>
@@ -22,6 +22,7 @@
           <ul class="treeview-menu">
             <li><a href="#/channels" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
             <li><a href="#/to-me" ><i class="fa fa-circle-o"  ></i><span>ta的数据仓库</span></a></li>
+            <li><a href="#/to-others" ><i class="fa fa-circle-o"  ></i><span>To Others</span></a></li>
             <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.dudu_http']"></span></a></li>
             <li><a href="#/rules"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.data_rules']"></span></a></li>
             <li><a href="#/commands"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.commands']"></span></a></li>

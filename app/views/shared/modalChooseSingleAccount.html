@@ -1,3 +1,10 @@
+<script type="text/ng-template" id="accountItemTemplate.part">
+  <a>
+    <img ng-src="{{match.model.avatar}}" src="images/icoimage/default.png" width="16">&nbsp;
+    <span style="color:#444;" ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+  </a>
+</script>
+
 <div class="modal-share">
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
@@ -21,13 +28,14 @@
                typeahead-min-length="3"
                typeahead-wait-ms="250"
                typeahead-editable="false"
+               typeahead-template-url="accountItemTemplate.part"
                class="form-control">
 
         <div ng-show="noResults">
           <i class="glyphicon glyphicon-remove"></i> <span ng-bind-html="Lang['modal-share.results']"></span>
         </div>
 
-        <p class="text-warning"ng-bind-html="Lang['modal-share.text-warning']"></p>
+        <p class="text-warning" ng-bind-html="Lang['modal-share.text-warning']"></p>
       </div>
 
       <div class="col-sm-1">
