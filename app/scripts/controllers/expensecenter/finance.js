@@ -10,16 +10,24 @@
 angular.module('dataduduR3App')
 .controller('ConsumerDetailsCtrl', function ($scope,  $log, $filter, finance, Auth, $timeout, ngNotify ) {
 
-  //$(function () {
-  //  $('#datetimepicker6').datetimepicker();
-  //  $('#datetimepicker7').datetimepicker();
-  //  $("#datetimepicker6").on("dp.change",function (e) {
-  //    $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-  //  });
-  //  $("#datetimepicker7").on("dp.change",function (e) {
-  //    $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-  //  });
-  //});
+  $(function () {
+    $('#date_from').datetimepicker();
+    $('#date_to').datetimepicker();
+    $("#date_from").on("dp.change",function (e) {
+      $('#date_to').data("DateTimePicker").minDate(e.date);
+    });
+    $("#date_to").on("dp.change",function (e) {
+      $('#date_from').data("DateTimePicker").maxDate(e.date);
+    });
+  });
+
+//  var abc = $http({method:"GET", url:"http://api.datadudu.cn/accounts/view"}).
+//  success(function(data, status, headers, config){
+//    //当异步请求成功返回响应时触发
+//  }).error(function(data, status, headers, config){
+//    //当发生异常时触发
+//  });
+//console.log(abc);
 
   var ctrl = this;
   $scope.mc = this;
@@ -73,5 +81,6 @@ angular.module('dataduduR3App')
     }, 0);
 
   };
+
 
 });

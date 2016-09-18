@@ -715,6 +715,37 @@ table.myTable td, table.myTable th {
 }
 .fa-asterisk{color: red;margin-right: 2px;font-size: 1px}
 
+.safety-setting {margin: 10px;}
+@media (max-width: 768px) {
+  .safety-setting{margin-top: 56px;}
+}
+
+@media (max-width: 992px) {
+  .level{margin-right: 0;}
+  .login-time{margin-right: 0;}
+  .safety-left{margin-bottom: 15px;padding-right: 0;}
+}
+.safety-setting .level{vertical-align: middle;padding: 60px 30px;background-color: #ffffff; }
+.level strong{font-size: 20px;}
+.level p{font-size: 15px;color: red;margin-top: 20px;}
+.safety-setting .safety-content{background-color: #ffffff;}
+.safety-setting .login-time{vertical-align: middle;padding: 60px 30px;background-color: #ffffff;margin-top:15px;}
+.safety-setting .safety-content{padding: 60px 30px;}
+/*.safety-content .safety-div{padding: auto 30px; border: 1px solid #dfdfdf;min-height: 118px; vertical-align: middle;}*/
+/*.safety-div .safefault{width:36%;max-width:32px;height:auto;}*/
+/*.safety-div .login-pass{margin-left:5px}*/
+.safety-content .safety-table tr{height: 118px;}
+
+.safety-content .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  border-top: 1px solid #dcdcdc;
+}
+.safety-table .safefault{margin-right: 10px}
+.safety-table tbody .safety-btn a{color: #ffffff;}
+.safety-table tbody p{margin-bottom: 0;}
+.safety-content table .text-le{min-width: 110px;}
+.safety-table tbody .confirm-btn a{color: #ffffff;}
+.safety-table tbody .confirm-btn{margin-top: 15px;}
+
 /*账户安全页面样式结束*/
 
 /*费用中心*/
