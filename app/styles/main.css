@@ -745,7 +745,27 @@ table.myTable td, table.myTable th {
 .safety-content table .text-le{min-width: 110px;}
 .safety-table tbody .confirm-btn a{color: #ffffff;}
 .safety-table tbody .confirm-btn{margin-top: 15px;}
+.safety-table .phone{border-radius: 3px;width: 45%;height: 36px;text-align: center;border: 1px solid #CCCCCC; }
+.safety-modal{font-size: 18px;margin-left: 10px;}
+.safety-modal-head{color: #ffffff; background-color: #0277bd}
+.safety-modal-content{margin-top: 40%;min-height: 210px;}
+.safety-modal-con{width: 420px}
+.safety-grade{border-radius: 100px;}
+.safety-input{margin-bottom: 10px;max-width: 210px;min-width: 210px;}
+.s_center {
+  margin-bottom: 10px;
+  max-width: 210px;
+  min-width: 210px;
+  width: auto;
+  padding: 0 22%;
 
+}
+.s_center option{
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .s_center{ padding:0;}
+}
 /*账户安全页面样式结束*/
 
 /*费用中心*/
@@ -757,6 +777,8 @@ table.myTable td, table.myTable th {
 .accountinquiry_header table thead tr td label{width: 80px;text-align: center}
 .accountinquiry_body{margin-left: 10px;margin-top: 18px}
 .accountinquiry_body thead{background-color:#F5F5F5;margin-right: 15px}
+
+
   /*账户查询*/
 
 /*充值页面*/
