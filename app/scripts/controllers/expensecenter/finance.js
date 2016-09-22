@@ -95,20 +95,10 @@ angular.module('dataduduR3App')
       url: 'http://api.datadudu.cn/accounts/view?token_id=" + $localStorage.me.token_id'
     }).success(function (data, status, headers, config) {
       $scope.mc['displayed'][0]['balance'] = data.account.balance;
-
+      ngNotify.set('余额以刷新！' ,'success');
     })
 
   };
 
-  $('#test1').on('click', function (){
-
-      layer.alert('余额刷新成功！', {
-        skin: 'layui-layer-lan'
-        ,closeBtn: 0
-        ,shift: 4 //动画类型
-
-    });
-    //layer.alert('余额已刷新', {icon: 6});
-  });
 
 });
