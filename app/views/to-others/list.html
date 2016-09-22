@@ -41,13 +41,13 @@
             </div>
           </td>
           <td>{{channel.username}}</td>
-          <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
+          <td>{{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
           <td>{{channel.usage | bytes}}</td>
           <td>
             <span ng-if="channel.device_id==null">No Device</span>
             <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
           </td>
-          <td><a href="">{{channel.created_at}}</a></td>
+          <td><a href="">{{channel.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</a></td>
         </tr>
         </tbody>
         <tfoot>

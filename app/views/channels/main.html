@@ -71,7 +71,7 @@
           </tr>
           <tr>
             <td><span ng-bind-html="Lang['data-header.LastEntry']"></span></td>
-            <td style="text-align: right">{{channel.last_entry_id}} : {{channel.last_entry_date}} (<span am-time-ago="channel.last_entry_date"></span>)</td>
+            <td style="text-align: right">{{channel.last_entry_id}} : {{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}} (<span am-time-ago="channel.last_entry_date"></span>)</td>
 
           </tr>
           </tbody>

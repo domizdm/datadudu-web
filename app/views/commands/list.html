@@ -21,8 +21,8 @@
           <td>{{item.command_string}}</td>
           <td>{{item.channel_id}}</td>
           <td>{{item.position}}</td>
-          <td>{{item.executed_at}}</td>
-          <td>{{item.created_at}}</td>
+          <td>{{item.executed_at | date:"yyyy-MM-dd hh:mm:ss"}}</td>
+          <td>{{item.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</td>
           <td>
             <!--<a class="btn btn-default" ng-href="#/duduHttp/{{item.http_id}}" >Edit</a>-->
             <a class="btn btn-default" ng-href="#/channels/{{item.channel_id}}/commands">Go to...</a>

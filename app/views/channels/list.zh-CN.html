@@ -52,13 +52,13 @@
           </td>
 
           <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 对所有人开放': '仅对自己开放'}}</a></td>
-          <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
+          <td>{{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
           <td>{{channel.usage | bytes}}</td>
           <td>
             <span ng-if="channel.device_id==null">无设备</span>
             <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
           </td>
-          <td><a href="">{{channel.created_at}}</a></td>
+          <td><a href="">{{channel.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</a></td>
         </tr>
         </tbody>
         <tfoot>
