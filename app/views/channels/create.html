@@ -8,7 +8,7 @@
 
     <tr><td><label ng-bind-html="Lang['channel-create.Name']"></label></td><td><input ng-model="channel.name" class="form-control"></td></tr>
     <tr><td ng-bind-html="Lang['channel-create.Description']"></td><td><textarea ng-model="channel.description" class="form-control"></textarea></td></tr>
-    <tr ng-repeat="fidx in [1,2,3,4,5,6,7,8] track by $index" ng-init="$parent.channel['field1-enabled']=true">
+    <tr ng-repeat="fidx in [1,2,3,4,5,6,7,8,9,10] track by $index" ng-init="$parent.channel['field1-enabled']=true">
       <td><span ng-bind-html="Lang['channel-create.NewChannel']"></span>{{fidx}}:</td>
       <td>
         <input ng-model="$parent.channel['field'+fidx]" ng-disabled="!$parent.channel['field'+fidx+'-enabled']" class="form-control" placeholder="Fill in field name...">

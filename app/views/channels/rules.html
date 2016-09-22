@@ -36,9 +36,7 @@
                   </a>
                 </h4>
 
-                <div class="btn-group btn-group-sm hidden-xs hidden-sm hidden-md btns">
-                  <button class="btn btn-default" ng-click="openModalEditRule(rule)" ><span ng-bind-html="Lang['rules-main.edit']"></span></button>
-                </div>
+
               </td>
               <td class="">{{rule.field}}</td>
               <td class="">{{rule.criteria}}</td>
@@ -50,7 +48,9 @@
                 <button ng-click="deleteRule(rule)" class="btn btn-danger" ng-bind-html="Lang['rules-main.delete']"></button>
 
                 <button ng-click="toggleRule(rule,'enabled')" class="btn btn-success" ng-show="rule.rule_status=='disabled'">Enable</button>
+                <button class="btn btn-default" ng-click="openModalEditRule(rule)" ><span ng-bind-html="Lang['rules-main.edit']"></span></button>
                 <button ng-click="toggleRule(rule,'disabled')" class="btn btn-warning" ng-show="rule.rule_status=='enabled'">Disable</button>
+
               </td>
             </tr>
             </tbody>
