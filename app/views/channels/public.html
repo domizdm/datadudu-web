@@ -4,7 +4,7 @@
 
     <table class="table table-bordered">
       <tr ng-repeat="item in shares">
-        <td>{{item.username}}</td><td><a ng-click="deleteShare(item)"><span class="fa fa-remove"></span></a></td>
+        <td><img src="{{item.avatar}}" style="max-width: 40px;max-height: 40px" class="img-rounded">{{item.username}}</td><td><a ng-click="deleteShare(item)"><span class="fa fa-remove"></span></a></td>
       </tr>
     </table>
   </div>
