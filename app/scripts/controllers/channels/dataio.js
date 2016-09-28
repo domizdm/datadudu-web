@@ -127,11 +127,6 @@ angular.module('dataduduR3App')
       ngNotify.set('Upload process has been aborted.', 'error');
     }
   };
-
-
-
-
-
   // <- Upload --
 
 });
