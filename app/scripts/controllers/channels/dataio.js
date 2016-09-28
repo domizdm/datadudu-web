@@ -79,7 +79,7 @@ angular.module('dataduduR3App')
   $scope.upload = function (file, form) {
 
     if(!file) {
-      ngNotify.set(Auth.L('uploadicon.NoSelectedImage'), 'error');
+      ngNotify.set('No file selected.', 'error');
       return;
     }
 
