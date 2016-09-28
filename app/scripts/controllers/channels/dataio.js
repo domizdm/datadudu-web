@@ -72,7 +72,7 @@ angular.module('dataduduR3App')
   $scope.importForm = {};
   $scope.uploading = false;
   $scope.percentage = 0;
-  $scope.maxSize = '1MB';//MB
+  $scope.maxSize = '10MB';//MB
 
   var uploader = null;
 
