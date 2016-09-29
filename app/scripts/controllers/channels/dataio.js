@@ -8,10 +8,11 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsDataIOCtrl', function($scope, $q, $filter, $route, $window, $log, $location, Auth,
+.controller('ChannelsDataIOCtrl', function($scope, $q, $filter, $route, $window, $log, $location, Auth, Upload,
                                             config, $uibModal, ngNotify, modalConfirm, channel, $httpParamSerializer){
 
 
+  // -- Download ->
   var today = new Date();
   var begin = new Date(today);
 
@@ -62,5 +63,70 @@ angular.module('dataduduR3App')
       $window.open(url, '_blank');
     }
   };
+  // <- Download --
+
+
+
+  // -- Upload ->
+  $scope.uploadFile = null;
+  $scope.importForm = {};
+  $scope.uploading = false;
+  $scope.percentage = 0;
+  $scope.maxSize = '10MB';//MB
+
+  var uploader = null;
+
+  $scope.upload = function (file, form) {
+
+    if(!file) {
+      ngNotify.set('No file selected.', 'error');
+      return;
+    }
+
+    var payload = _.extend({}, form);
+
+    $scope.percentage = 0;
+    $scope.uploading = true;
+
+    uploader = Upload.upload({
+      url: config.END_POINT + '/update.csv',
+      params: {
+        api_key: Auth.me().account.account_key,
+        _json: true
+      },// =dont transform into jqlike
+      data: _.extend(payload, {
+        'feeds': file,
+        'channel_id': $scope.channel.channel_id})
+    });
+
+    uploader.then(function (resp) {
+
+      ngNotify.set('File has been imported.', 'success');
+
+      $scope.uploadFile = null;
+
+    }, function (resp) {
+      if(resp.data != null) {
+        ngNotify.set(resp.data, 'error');
+      }
+    }, function (evt) {
+      var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+      $scope.percentage = progressPercentage;
+    }).finally(function(){
+      $scope.uploading = false;
+    });
+  };
+
+  $scope.cancel = function () {
+    if(uploader != null && Upload.isUploadInProgress()) {
+
+      $log.log(uploader);
+
+      uploader.abort();
+
+      ngNotify.set('Upload process has been aborted.', 'error');
+    }
+  };
+  // <- Upload --
 
 });
