@@ -93,9 +93,7 @@ angular.module('dataduduR3App')
         api_key: $scope.channel.write_key,
         _json: true
       },// =dont transform into jqlike
-      data: _.extend(payload, {
-        'feeds': file,
-        'channel_id': $scope.channel.channel_id})
+      data: _.extend(payload, {'feeds': file})
     });
 
     uploader.then(function (resp) {
