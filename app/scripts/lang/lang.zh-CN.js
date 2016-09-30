@@ -191,15 +191,15 @@ window.lang['zh-CN'] = {
   // ---- seating- End ----
 
   // ---- API_KEY- START ----
-  'apikeys.Apikeys': 'Api秘钥',
+  'apikeys.Apikeys': '写入数据权限API密钥',
   'apikeys.WriteAPIKey': '写入 API 秘钥',
   'apikeys.Key': '秘钥',
   'apikeys.Generate New Write API Key': '创建新的写入API秘钥 ',
-  'apikeys.Read API Key': '读取 API 秘钥 ',
+  'apikeys.Read API Key': '只读 API 秘钥 ',
   'apikeys.Note': '记录 ',
   'apikeys.Save Notes': '保存记录 ',
   'apikeys.Delete API Key': '删除 API 秘钥 ',
-  'apikeys.Generate Read API Key': '创建 读取 API 秘钥 ',
+  'apikeys.Generate Read API Key': '创建 只读 API 秘钥 ',
   'apikeys.Help': ' 帮助 ',
   // ---- API_KEY- End ----
 
