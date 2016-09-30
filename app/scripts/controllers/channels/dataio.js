@@ -66,7 +66,6 @@ angular.module('dataduduR3App')
   // <- Download --
 
 
-
   // -- Upload ->
   $scope.uploadFile = null;
   $scope.importForm = {};
@@ -91,12 +90,10 @@ angular.module('dataduduR3App')
     uploader = Upload.upload({
       url: config.END_POINT + '/update.csv',
       params: {
-        api_key: Auth.me().account.account_key,
+        api_key: $scope.channel.write_key,
         _json: true
       },// =dont transform into jqlike
-      data: _.extend(payload, {
-        'feeds': file,
-        'channel_id': $scope.channel.channel_id})
+      data: _.extend(payload, {'feeds': file})
     });
 
     uploader.then(function (resp) {
