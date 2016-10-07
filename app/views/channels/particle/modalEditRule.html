@@ -49,7 +49,11 @@
 
         <div class="row">
           <label class="col-sm-3 col-md-3 col-xs-3" ng-bind-html="Lang['NewEdit_Rules.Action Value']"></label>
-          <input type="text" class="form-control" ng-model="form.action_value">
+          <input ng-if="form.action_type.key!='command'" type="text" class="form-control" ng-model="form.action_value">
+
+          <select ng-if="form.action_type.key=='command'" class="form-control" ng-model="form.action_value" ng-options="item.channel_id as item.channel_id for item in channels">
+            <option value="">-- Choose Channels --</option>
+          </select>
         </div>
 
         <div class="row" ng-if="form.action_type.key=='command'">

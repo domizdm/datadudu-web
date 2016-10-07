@@ -26,6 +26,11 @@ angular.module('dataduduR3App')
     channel.list()
       .$promise
       .then(function(resp){
+        // usage is in string format, which will cause un-sortable
+        _.forEach(resp.channels, function(channel){
+          channel.usage = parseFloat(channel.usage);
+        });
+
         $scope.channels = resp.channels;
       })
 

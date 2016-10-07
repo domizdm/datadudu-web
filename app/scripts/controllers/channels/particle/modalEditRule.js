@@ -22,6 +22,12 @@ angular.module('dataduduR3App')
     }
   ));
 
+  channel.list()
+    .$promise
+    .then(function(resp){
+      $scope.channels = resp.channels;
+    });
+
   $scope.types = [
     {key: 'numeric', text:'Numeric'},
     {key: 'string', text:'String'},
