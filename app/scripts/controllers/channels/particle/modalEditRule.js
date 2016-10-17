@@ -8,12 +8,13 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsEditRuleCtrl', function($scope, $q, $filter, $window, $timeout, $log,
+.controller('ChannelsEditRuleCtrl', function($scope, $q, $filter, $window, $timeout, $log, Auth,
                                              config, $uibModal, $uibModalInstance, ngNotify,
                                              channel, fields, channelId, rule){
 
 
-  $scope.fields = [{key:'status', text:'Status'}];
+  //$scope.fields = [{key:'status', text:'Status'}];
+  $scope.fields = [{key:'status', text:Auth.L('NewEdit_Rules.Status')}];
   $scope.fields = _.concat($scope.fields, _.map(fields,
     function(v){
       var ret = {key: v.key};
@@ -29,19 +30,19 @@ angular.module('dataduduR3App')
     });
 
   $scope.types = [
-    {key: 'numeric', text:'Numeric'},
-    {key: 'string', text:'String'},
-    {key: 'no_data_check', text:'No Data Check'}
+    {key: 'numeric', text:Auth.L('NewEdit_Rules.Numeric')},
+    {key: 'string', text:Auth.L('NewEdit_Rules.String')},
+    {key: 'no_data_check', text:Auth.L('NewEdit_Rules.No Data Check')}
   ];
   $scope.acttion_freqs = [
-    {key: 'change_only', text:'Change Only'},
-    {key: 'always', text:'Always'}
+    {key: 'change_only', text:Auth.L('NewEdit_Rules.Change-Only')},
+    {key: 'always', text:Auth.L('NewEdit_Rules.Always')}
   ];
   $scope.action_types = [
-    {key: 'email', text:'Email'},
-    {key: 'sms', text:'Sms'},
-    {key: 'http', text:'Http'},
-    {key: 'command', text:'Command'}
+    {key: 'email', text:Auth.L('NewEdit_Rules.Email')},
+    {key: 'sms', text:Auth.L('NewEdit_Rules.Sms')},
+    {key: 'http', text:Auth.L('NewEdit_Rules.Http')},
+    {key: 'command', text:Auth.L('NewEdit_Rules.Command')}
   ];
   $scope.frequencies = [
     {key:'300',text:'5 Minutes'},

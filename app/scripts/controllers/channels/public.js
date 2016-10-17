@@ -42,7 +42,7 @@ angular.module('dataduduR3App')
 
     var payload = _.extend({}, {shared_ids:[channel.share_id]});
 
-    var msg = "Do you want to remove the access authority for " + channel.username + "?";
+    var msg = Auth.L('public-view.delete-warn') + channel.username + "?";
 
     // open modal to confirm
     modalConfirm.open(msg)

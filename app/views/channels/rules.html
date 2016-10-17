@@ -47,9 +47,9 @@
               <td style="text-align:center">
                 <button ng-click="deleteRule(rule)" class="btn btn-danger" ng-bind-html="Lang['rules-main.delete']"></button>
 
-                <button ng-click="toggleRule(rule,'enabled')" class="btn btn-success" ng-show="rule.rule_status=='disabled'">Enable</button>
+                <button ng-click="toggleRule(rule,'enabled')" class="btn btn-success" ng-show="rule.rule_status=='disabled'" ng-bind-html="Lang['rules-main.Enable']"></button>
                 <button class="btn btn-default" ng-click="openModalEditRule(rule)" ><span ng-bind-html="Lang['rules-main.edit']"></span></button>
-                <button ng-click="toggleRule(rule,'disabled')" class="btn btn-warning" ng-show="rule.rule_status=='enabled'">Disable</button>
+                <button ng-click="toggleRule(rule,'disabled')" class="btn btn-warning" ng-show="rule.rule_status=='enabled'" ng-bind-html="Lang['rules-main.Disable']"></button>
 
               </td>
             </tr>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-md-6 table-rules" >
-          <h2>Help</h2>
+          <h2  ng-bind-html="Lang['rules-main.help']"></h2>
           <hr>
 
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the

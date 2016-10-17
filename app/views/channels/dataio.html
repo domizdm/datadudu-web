@@ -35,15 +35,15 @@
         </div>
 
         <div class="container-fluid col-md-6 col-sm-6">
-          <h3>Data Import</h3>
+          <h3 ng-bind-html="Lang['DataImport.DataImport']"></h3>
           <div>
             <div>
               <div class="alert alert-warning">
-                File have to follow the following principles:<br>
+               <span ng-bind-html="Lang['DataImport.warn']"> </span><br>
                 <ul>
-                  <li>Requires a file in CSV format.</li>
-                  <li>Maximum number of rows 5000.</li>
-                  <li>Maximum file size: 10MB.</li>
+                  <li ng-bind-html="Lang['DataImport.warn1']">Requires a file in CSV format.</li>
+                  <li ng-bind-html="Lang['DataImport.warn2']">Maximum number of rows 5000.</li>
+                  <li ng-bind-html="Lang['DataImport.warn3']">Maximum file size: 10MB.</li>
                 </ul>
               </div>
 
@@ -51,9 +51,9 @@
                    ngf-select
                    ng-model="uploadFile" name="uploadFile" ngf-pattern="'text/*'" ngf-accept="'text/csv,text/txt'"
                    ngf-max-size="maxSize" ngf-resize="resize"
-              ><span  ng-bind-html="'Click to choose csv file'"></span></div>
+              ><span  ng-bind-html="Lang['DataImport.tishi1']"></span></div>
 
-              <span ng-if="!uploadFile"><label class="text-muted" ng-bind-html="'No file selected'"></label></span>
+              <span ng-if="!uploadFile"><label class="text-muted" ng-bind-html="Lang['DataImport.no-selected']"></label></span>
 
               <div ng-if="uploadFile">
                 <span ng-bind-html="'File:'"></span>
@@ -65,7 +65,7 @@
                 <span ng-show="!uploading">
                   <a href=""  ng-click="upload(uploadFile, importForm)">
                     <span class="glyphicon glyphicon-open"></span>
-                    <span>Start Import</span>
+                    <span ng-bind-html="Lang['DataImport.Start-Import']">Start Import</span>
                   </a>
                 </span>
               </div>

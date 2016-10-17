@@ -14,6 +14,8 @@ window.lang['zh-CN'] = {
   // ---- Sidebar Begin ----
   'sidebar.data_factory': '数据工厂',
   'sidebar.data_warehouse': '我的数据仓库',
+  'sidebar.ta': 'TA的数据仓库',
+  'sidebar.ToOthers': '分享到其他人',
   'sidebar.dudu_http': 'HTTP数据交互',
   'sidebar.data_rules': '数据规则',
   'sidebar.commands': '指令管理',
@@ -42,6 +44,23 @@ window.lang['zh-CN'] = {
   'myTable.previous': '上一页',
   'myTable.next': '下一页',
 
+  // ---- to-me Begin ----
+  'ToMe.all':'全部',
+  'ToMe.Search':'搜索',
+  'ToMe.name':'名字',
+  'ToMe.owner':'所有者',
+  'ToMe.LastUpdate':'最后一次更新时间',
+  'ToMe.UsedSpace':'已使用空间',
+  'ToMe.Device':'设备',
+  'ToMe.Created':'创建',
+  'ToMe.ChannelID':'空间ID',
+  'ToMe.Private':'私人的',
+  'ToMe.Charts':'图标',
+  'ToMe.importExport':'数据导入导出',
+  'ToMe.NoDevice':'没有设备',
+
+  // ---- to-me End ----
+
   // ---- duduhttp Begin ----
   'main-devices.Newduduhttp': '新建HTTP',
   'main-devices.name': '名称',
@@ -51,9 +70,23 @@ window.lang['zh-CN'] = {
   'main-devices.Method': '方法',
   'main-devices.edit': '编辑',
   'main-devices.delete': '删除',
+
   // ---- duduhttp End ----
 
 
+  // ---- 数据规则 Begin ----
+  'DataRules.ID': 'ID',
+  'DataRules.created_at': '创建时间',
+  'DataRules.updated_at': '更新时间',
+  'DataRules.action_frequency': '频率',
+  'DataRules.criteria': '标准',
+  'DataRules.condition': '条件',
+  'DataRules.channel_id': '空间ID',
+  'DataRules.rule_name': '规则名字',
+  'DataRules.GoTo': '跳转',
+  'DataRules.NoAvailableData': '没有有效的数据',
+
+// ---- 数据规则 End ----
   // ---- rules Begin ----
   'rules-main.rules': '规则',
   'rules-main.newrules': '新增规则',
@@ -66,6 +99,9 @@ window.lang['zh-CN'] = {
   'rules-main.created': '创建时间',
   'rules-main.deleteall': '删除全部',
   'rules-main.delete': '删除 ',
+  'rules-main.Enable': '开启 ',
+  'rules-main.Disable': '失效 ',
+  'rules-main.help': '帮助 ',
   'rules-main.edit': '编辑 ',
   // ---- rules End ----
 
@@ -169,6 +205,12 @@ window.lang['zh-CN'] = {
   'triggers.reminder2': '个条目，可按照“完成时间”和“创建时间”排序。',
   // ---- Triggers- End ----
 
+  // ---- public-view- start ----
+  'public-view.title': '此空间正在分享给: ',
+  'public-view.share': '此空间共享给任何人: ',
+  'public-view.delete-warn': '您是否删除访问权限: ',
+  // ---- public-view- End ----
+
   // ---- seating- start ----
   'setting.setting': '设置 ',
   'setting.Name': '空间名字 ',
@@ -211,6 +253,16 @@ window.lang['zh-CN'] = {
   'importexport.To': ' 到 ',
   'importexport.Download': ' 下载 ',
   'importexport.Help': ' 帮助 ',
+  'DataImport.DataImport': '数据导入 ',
+  'DataImport.warn': '文件必须遵循以下原则 ',
+  'DataImport.warn1': '导入CSV格式文件格式. ',
+  'DataImport.warn2': '数据最多不得超过5000条. ',
+  'DataImport.warn3': '数据最大为:10MB. ',
+  'DataImport.tishi1': '点击选择CSV文件 ',
+  'DataImport.no-selected': '没选择文件 ',
+  'DataImport.Start-Import': '开始上传 ',
+
+
 
   // ----  import/export- End ----
   // ---- New Channel- start ----
@@ -237,7 +289,18 @@ window.lang['zh-CN'] = {
   // ----  New/Edit Rules- start ----
   'NewEdit_Rules.New/Edit Rules': '新建/编辑规则 ',
   'NewEdit_Rules.Rules Name': '规则名字 ',
-  'NewEdit_Rules.Selected Fields': 'Selected Fields: ',
+  'NewEdit_Rules.Selected Fields': '选择领域: ',
+  'NewEdit_Rules.Status': '领域: ',
+  'NewEdit_Rules.Numeric': '数字 ',
+  'NewEdit_Rules.String': '字符串 ',
+  'NewEdit_Rules.No Data Check': '不检测数据 ',
+  'NewEdit_Rules.Change-Only': '变化的时候 ',
+  'NewEdit_Rules.Always': '一直 ',
+  'NewEdit_Rules.Email': '邮件',
+  'NewEdit_Rules.Sms': '存储管理服务',
+  'NewEdit_Rules.Http': '超文本传输协议',
+  'NewEdit_Rules.Command': '指令',
+
   'NewEdit_Rules.Condition Type': '条件类型:',
   'NewEdit_Rules.Condition': '条件:',
   'NewEdit_Rules.ChooseCondition': '--选择条件-- ',
@@ -302,6 +365,8 @@ window.lang['zh-CN'] = {
   'channel-form.ParseString': '解析字符串:',
   'channel-form.SaveThingHTTP': '保存 ThingHTTP',
   'channel-form.Help': '帮助',
+  'DuduHttp.EditDuduHTTP':'编辑DuduHTTP',
+
 
   // ---- Edit DuduHTTP- End ----
 

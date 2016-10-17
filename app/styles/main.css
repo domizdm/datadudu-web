@@ -308,7 +308,10 @@ input, select, textarea:focus {
 }
 
 .table-content .table-list table tbody {
-  background-color: #FFFFFF;
+   background-color: #FFFFFF;
+ }
+.table-content .table-list table tbody td {
+  position: relative;
 }
 
 .table-content .table-list table tfoot {
@@ -1403,3 +1406,7 @@ label {
 .publish p{margin-bottom: 0;font-size: 12px}
 .community-device-body .comment, .publish{margin-bottom: 20px;}
 /*社区设备结束*/
+.progress {
+
+  background-color: #CCCCCC;
+}

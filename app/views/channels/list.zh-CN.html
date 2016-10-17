@@ -20,10 +20,11 @@
         <thead class="tblHeader">
         <tr>
           <th style="width:40px;"></th>
-          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">存储空间</span></th>
-          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>权限</span></th>
-          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>最后一次更新</span></th>
-          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>占用空间</span></th>
+          <th st-sort="name" class="th-left"><span style="margin-left: 10px;">存储空间</span></th>
+          <th><span>权限</span></th>
+          <th st-sort="created_at"><span>最后一次更新</span></th>
+          <th st-sort="usage" ><span>占用空间</span></th>
+
           <th><span>关联设备</span></th>
           <th><span>创建时间</span></th>
         </tr>
@@ -53,7 +54,42 @@
 
           <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 对所有人开放': '仅对自己开放'}}</a></td>
           <td>{{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
-          <td>{{channel.usage | bytes}}</td>
+          <td style="min-width: 130px">{{channel.usage}}<br/>{{channel.size_out}}<br/>{{channel_info}}
+          <!--<td><a  onclick="emotion();"> 余量查询</a>{{channel.usage | bytes}}-->
+            <!--<div class="reminder" id="menu" onmouseout="javascript:mout=setTimeout('fnSmall()',2111);" onMouseOver="javascript:clearTimeout(mout);">-->
+
+              <!--<a href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom" title="当月流量剩余90%">当月数据下载量</a>-->
+              <div  data-toggle="tooltip" data-placement="bottom" title="{{channel.usage | bytes}}" class="progress progress-striped" style="height: 10px">
+                <div class="progress-bar progress-bar-success" role="progressbar"
+                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width:90%;height: 10px">
+                </div>
+              </div>
+              <!--<a href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom" title="存储空间剩余30%">存储数据量</a>-->
+              <div data-toggle="tooltip" data-placement="bottom" title="存储空间剩余30%" class="progress progress-striped" style="height: 10px">
+                <div class="progress-bar progress-bar-info" role="progressbar"
+                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 30%;height: 10px">
+                </div>
+              </div>
+              <!--<div class="progress">-->
+                <!--<div class="progress-bar progress-bar-warning" role="progressbar"-->
+                     <!--aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"-->
+                     <!--style="width: 20%;">-->
+                  <!--<span class="sr-only">20% 完成（警告）</span>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="progress">-->
+                <!--<div class="progress-bar progress-bar-danger" role="progressbar"-->
+                     <!--aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"-->
+                     <!--style="width: 10%;">-->
+                  <!--<span class="sr-only">10% 完成（危险）</span>-->
+                <!--</div>-->
+              <!--</div>-->
+
+
+            <!--</div>-->
+          </td>
           <td>
             <span ng-if="channel.device_id==null">无设备</span>
             <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
@@ -69,12 +105,46 @@
         </tr>
         </tfoot>
       </table>
-
-
-
     </div>
-
   </div>
   <!--表格内容END-->
-
 </div>
+<!--<script type="text/javascript">-->
+  <!--var w = 0;-->
+  <!--var h = 0;-->
+  <!--var mout;-->
+  <!--function emotion(){-->
+    <!--var oMenu = document.getElementById("menu");-->
+    <!--if(w <= 50){-->
+      <!--oMenu.style.display = "block";-->
+      <!--fnLarge();-->
+    <!--}-->
+    <!--else{-->
+      <!--fnSmall();-->
+    <!--}-->
+  <!--}-->
+  <!--function fnLarge(){-->
+    <!--var oMenu = document.getElementById("menu");-->
+    <!--if(w < 200){-->
+      <!--w += 50;-->
+      <!--h += 25;-->
+      <!--oMenu.style.width = w+"px";-->
+      <!--oMenu.style.height = h+"px";-->
+      <!--window.setTimeout("fnLarge()",10);-->
+    <!--}-->
+  <!--}-->
+  <!--function fnSmall(){-->
+    <!--var oMenu = document.getElementById("menu");-->
+    <!--if(w > 0){-->
+      <!--w -= 50;-->
+      <!--h -= 25;-->
+      <!--oMenu.style.width = w+"px";-->
+      <!--oMenu.style.height = h+"px";-->
+      <!--window.setTimeout("fnSmall()",5);-->
+    <!--}-->
+    <!--else{-->
+      <!--oMenu.style.display = "none";-->
+    <!--}-->
+  <!--}-->
+<!--</script>-->
+

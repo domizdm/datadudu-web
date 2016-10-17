@@ -14,6 +14,8 @@ window.lang['en-GB'] = {
   // ---- Sidebar Begin ----
   'sidebar.data_factory': 'Data factory',
   'sidebar.data_warehouse': 'Data Warehouse',
+  'sidebar.ta': 'TA Data Warehouse',
+  'sidebar.ToOthers': 'To Others',
   'sidebar.dudu_http': 'Dudu HTTP',
   'sidebar.data_rules': 'Data Rules',
   'sidebar.commands': 'Commands',
@@ -41,6 +43,22 @@ window.lang['en-GB'] = {
   'myTable.previous': 'Previous',
   'myTable.next': 'Next',
 
+  // ---- to-me Begin ----
+  'ToMe.all':'All',
+  'ToMe.Search':'Search',
+  'ToMe.name':'Name',
+  'ToMe.owner':'owner',
+  'ToMe.LastUpdate':'Last Update',
+  'ToMe.UsedSpace':'Used Space',
+  'ToMe.Device':'Device',
+  'ToMe.Created':'Created',
+  'ToMe.ChannelID':'ChannelID',
+  'ToMe.Private':'Private',
+  'ToMe.Charts':'Charts',
+  'ToMe.importExport':'Data Import Export',
+  'ToMe.NoDevice':'No Device',
+  // ---- to-me End ----
+
   // ---- Sidebar Begin ----
   'main-devices.Newduduhttp': 'New DuduHTTP',
   'main-devices.name': 'Name',
@@ -52,6 +70,20 @@ window.lang['en-GB'] = {
 
   // ---- Sidebar End ----
 
+
+  // ---- 数据规则 Begin ----
+  'DataRules.ID': 'ID',
+  'DataRules.created_at': 'created_at',
+  'DataRules.updated_at': 'updated_at',
+  'DataRules.action_frequency': 'action_frequency',
+  'DataRules.criteria': 'criteria',
+  'DataRules.condition': 'condition',
+  'DataRules.channel_id': 'channel_id',
+  'DataRules.rule_name': 'rule_name',
+  'DataRules.GoTo': 'GoTo',
+  'DataRules.NoAvailableData': 'No Available Data',
+
+// ---- 数据规则 End ----
 
   // ---- rules Begin ----
 
@@ -66,6 +98,9 @@ window.lang['en-GB'] = {
   'rules-main.created': 'Created',
   'rules-main.deleteall': 'Delete All',
   'rules-main.delete': 'Delete ',
+  'rules-main.Enable': 'Enable ',
+  'rules-main.Disable': 'Disable ',
+  'rules-main.help': 'Help ',
   'rules-main.edit': 'Edit ',
 
   // ---- rules End ----
@@ -172,6 +207,15 @@ window.lang['en-GB'] = {
 
   // ---- Triggers- End ----
 
+  // ---- public-view- start ----
+  'public-view.title': 'This channel is being shared to: ',
+  'public-view.share': 'This channel is not being shared to any one. ',
+  'public-view.delete-warn': '  Do you want to remove the access authority for ',
+
+  // ---- public-view- End ----
+
+
+
   // ---- seating- start ----
   'setting.setting': 'Settings ',
   'setting.Name': 'Name ',
@@ -214,6 +258,14 @@ window.lang['en-GB'] = {
   'importexport.To': ' To ',
   'importexport.Download': ' Download ',
   'importexport.Help': ' Help ',
+  'DataImport.DataImport': 'Data Import ',
+  'DataImport.warn': 'File have to follow the following principles: ',
+  'DataImport.warn1': 'Requires a file in CSV format. ',
+  'DataImport.warn2': 'Maximum number of rows 5000. ',
+  'DataImport.warn3': 'Maximum file size: 10MB. ',
+  'DataImport.tishi1': 'Click to choose csv file ',
+  'DataImport.no-selected': 'No file selected ',
+  'DataImport.Start-Import': 'Start Import ',
 
   // ----  import/export- End ----
 
@@ -240,6 +292,17 @@ window.lang['en-GB'] = {
   'NewEdit_Rules.New/Edit Rules': 'New/Edit Rules ',
   'NewEdit_Rules.Rules Name': 'Rules Name ',
   'NewEdit_Rules.Selected Fields': 'Selected Fields: ',
+  'NewEdit_Rules.Status': 'Status ',
+  'NewEdit_Rules.Numeric': 'Numeric ',
+  'NewEdit_Rules.String': 'String ',
+  'NewEdit_Rules.No Data Check': 'No Data Check ',
+  'NewEdit_Rules.Change-Only': 'Change Only ',
+  'NewEdit_Rules.Always': 'Always',
+  'NewEdit_Rules.Email': 'Email',
+  'NewEdit_Rules.Sms': 'Sms',
+  'NewEdit_Rules.Http': 'Http',
+  'NewEdit_Rules.Command': 'Command',
+
   'NewEdit_Rules.Condition Type': 'Condition Type:',
   'NewEdit_Rules.Condition': 'Condition:',
   'NewEdit_Rules.ChooseCondition': '--Choose Condition-- ',
@@ -306,6 +369,8 @@ window.lang['en-GB'] = {
   'channel-form.ParseString': 'Parse String:',
   'channel-form.SaveThingHTTP': 'Save ThingHTTP',
   'channel-form.Help': 'Help',
+  'DuduHttp.EditDuduHTTP':'Edit DuduHTTP',
+
 
   // ---- Edit DuduHTTP- End ----
 
