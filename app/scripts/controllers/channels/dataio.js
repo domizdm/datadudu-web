@@ -104,7 +104,7 @@ angular.module('dataduduR3App')
 
     }, function (resp) {
       if(resp.data != null) {
-        ngNotify.set(resp.data, 'error');
+        ngNotify.set(resp.data.desp, 'error');
       }
     }, function (evt) {
       var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
