@@ -1,3 +1,10 @@
+Environment Setup
+
+npm install
+npm install -g grunt-cli
+bower install
+
+
 # datadudu-r3
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
