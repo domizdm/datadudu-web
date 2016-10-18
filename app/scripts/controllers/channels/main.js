@@ -43,9 +43,14 @@ angular.module('dataduduR3App')
   //  });
 
   channel.get({id: $routeParams.id})
+
     .$promise
     .then(function(resp){
       $scope.channel = resp.channel;
+      channe11.channel_storage = parseInt(channel.usage)  /  parseInt(channel.size_storage) * 100 ;
+      channel1.channel_flow =parseInt(channel.traffic_out)  /  parseInt(channel.size_out) *100 ;
+
+
     });
 
 

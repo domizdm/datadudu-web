@@ -68,6 +68,21 @@
           <tr>
             <td><span ng-bind-html="Lang['data-header.UsedSpace']"></span></td>
             <!--<td style="text-align: right">{{channel.usage | bytes}}</td>-->
+            <td style="text-align: right">
+              <div  data-toggle="tooltip" data-placement="bottom" title="目前存储数据量:{{channel.usage | bytes}}" class="progress progress-striped" style="height: 10px">
+                <div class="progress-bar progress-bar-success" role="progressbar"
+                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width:{{channel1.channel_storage}}%;height: 10px">
+                </div>
+              </div>
+
+              <div data-toggle="tooltip" data-placement="bottom" title="当月流量下载量:{{channel.traffic_out | bytes}}" class="progress progress-striped" style="height: 10px">
+                <div class="progress-bar progress-bar-info" role="progressbar"
+                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                     style="width: {{channel1.channel_flow}}%;height: 10px">
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
             <td><span ng-bind-html="Lang['data-header.LastEntry']"></span></td>

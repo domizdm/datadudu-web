@@ -9,7 +9,8 @@
  */
 angular.module('dataduduR3App')
 .controller('ChannelsListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify) {
-  $scope.channel_info =typeof (channel.usage / channel.size_out * 100);
+  //$scope.channel_info =$log.log(channel.usage  / channel.size_storage *100);
+
   $scope.channels = null;
   $scope.channelsFiltered = null;
 
@@ -29,9 +30,7 @@ angular.module('dataduduR3App')
       .then(function(resp){
         // usage is in string format, which will cause un-sortable
         _.forEach(resp.channels, function(channel){
-          channel.usage = parseFloat(channel.usage);
         });
-
         $scope.channels = resp.channels;
       })
 
@@ -42,6 +41,7 @@ angular.module('dataduduR3App')
       });
   };
   $scope.reloadChannels();
+
 
 
   $scope.checkedFlag = 'isChecked';
