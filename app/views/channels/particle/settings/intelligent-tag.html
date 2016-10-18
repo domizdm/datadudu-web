@@ -1,0 +1,148 @@
+
+<div class="col-md-6 " style="padding-left: 10px;">
+  <h2  ng-bind-html="Lang['setting.setting']"></h2>
+  <hr>
+  <div>
+    <div ng-if="form">
+      <table style="width: 100%;">
+        <tr><td><label>Tempeture and Humility Sensor Task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_th" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Light Sensor Task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_light" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Magnetic Sensor Task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_mag" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Acceleration Sensor Task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_acc" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Body temperature measure task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_bt" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Noise measure task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_noise" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Power measure task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_battery" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Signal Measure task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_signal" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>Data Post task frequence</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.fn_dp" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+
+        <tr><td><label>数据发送LED提示</label></td></tr>
+        <tr>
+          <td>
+            <label>
+              <input ng-model="form.metadata.cg_data_led" type="radio" value="on">
+              ON
+            </label>
+
+            <label>
+              <input ng-model="form.metadata.cg_data_led" type="radio" value="off">
+              OFF
+            </label>
+          </td>
+        </tr>
+
+        <tr><td><label>加速度传感器自动采集数据所需要的最小加速度</label></td></tr>
+        <tr>
+          <td>
+            <span class="col-sm-4"><input type="number" min="0" ng-model="form.metadata.thres_acc_min" class="form-control"></span>
+            <span class="col-sm-8 text-muted">Foo for tooltip message here</span>
+          </td>
+        </tr>
+      </table>
+      <br/>
+      <div style="margin-bottom: 10px;">
+        <button class="btn btn btn-success save-btn" ng-click="saveChannel(form)">Save Channel</button>
+        <!--<button class="btn btn btn-warning save-btn" ng-click="clearFeed(form)">Clear Feed</button>-->
+        <button class="btn btn btn-danger save-btn" ng-click="deleteChannel(form)">Delete Channel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="col-md-6">
+  <h2>Help</h2>
+  <hr/>
+  <div>
+    <h4>ThinkSpeak Channal</h4>
+    <p>
+    <p>Lorem Ipsum has been the industry's standard dummy text ever since</p>
+    <p> the1500s,when an unknown printer took a galley of type and scrambled it to</p>
+    <p> make a type specimen book.It has survived not only five centuries, but also</p>
+    <p> the leap into electronic typesetting, remaining essentially unchanged.</p>
+    <h4>Channal Settings</h4>
+    <p>
+      <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+      <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+      <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+      <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+      <i class="fa fa-circle-o"></i> Lorem Ipsum is simply dummy text of the printing and typesetting.<br/>
+      <i class="fa fa-circle-o"></i>Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
+
+    <h4>Using the Channal</h4>
+    <p>
+    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <p> Lorem Ipsum has been the industry's standard dummy text ever since the</p>
+    <p> 1500s, when an unknown printer took a galley of type and scrambled it to</p>
+    <p> make a type specimen book. It has survived not only five centuries, but also </p>
+    <p> the leap into electronic typesetting, remaining essentially unchanged.
+
+    </p>
+
+  </div>
+
+
+</div>
+
+
