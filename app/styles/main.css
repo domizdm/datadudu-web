@@ -1227,7 +1227,7 @@ label {
 /*我的社区页面结束*/
 
 /*我的关注页面开始*/
-.myattention{background-color: #ffffff;width: 100%; height:auto; padding-left:60px;padding-right: 33px;padding-top: 19px;}
+.myattention{background-color: #ffffff;width: 100%; height:auto; padding-left:30px;padding-right: 33px;padding-top: 19px;}
 @media (max-width: 768px) {
   .myattention{padding-right: 13px;}
 
@@ -1256,13 +1256,9 @@ label {
 
 .attention_div{float: left;margin-bottom: 43px; padding-right: 0;}
 .attention_div .attention_div_img{width: 100%;height: auto;}
-.myattention .attention_div{border: 4px solid #c9c9c9;}
-@media (min-width: 992px){
-  .myattention .attention_div{margin-right:4%;}
-}
-@media (min-width: 768px) and (max-width: 992px){
-  .myattention .attention_div{margin-right:8%;}
-}
+.myattention .attention_div{border: 8px solid #ffffff;}
+.attentionDivBorder{border:1px solid #C0C0C0 }
+
 
 .attention_div_info{padding-left: 10px;padding-top: 12px;}
 .attention_div span{margin-left:6px;}

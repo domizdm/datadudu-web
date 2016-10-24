@@ -4,14 +4,14 @@
     <span class="col-md-12">
       <label>Settings Template:</label>
     </span>
-    <span class="col-md-12">
+    <div class="col-md-12">
       <select class="form-control" ng-options="item.text for item in duduTemplates" ng-model="templateType"></select>
-    </span>
+    </div>
   </div>
 
   <div class="col-md-12">
-    <ng-include src="templateType.settingsPage"></ng-include>
-  </div>
+  <ng-include src="templateType.settingsPage"></ng-include>
+</div>
 
 </div>
 

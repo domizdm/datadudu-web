@@ -15,72 +15,72 @@
       <ul class="sidebar-menu ">
         <!-- Dudu开放平台 Begin -->
         <li class="treeview" ng-class="{active: activeNodeWhenIn(['channels','to-me','to-others','rules','commands','duduHttp','triggersLog'])}" ng-if="!useDeviceDashboard">
-          <a class="active " ng-href="#/channels">
+          <a class="active " ng-click="reload()" ng-href="#/channels">
             <i class="fa fa-home"></i>
             <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.data_factory']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#/channels" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
-            <li><a href="#/to-me" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.ta']">ta的数据仓库</span></a></li>
-            <li><a href="#/to-others" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.ToOthers']">To Others</span></a></li>
-            <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.dudu_http']"></span></a></li>
-            <li><a href="#/rules"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.data_rules']"></span></a></li>
-            <li><a href="#/commands"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.commands']"></span></a></li>
-            <li><a href="#/triggersLog"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.data_analysis']"></span></a></li>
-            <li><a href="#/triggersLog"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.triggers_log']"></span></a></li>
+          <ul class="treeview-menu" >
+            <li><a href="#/channels" ng-click="reload()"><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
+            <li><a href="#/to-me"ng-click="reload()" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.ta']">ta的数据仓库</span></a></li>
+            <li><a href="#/to-others"  ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.ToOthers']">To Others</span></a></li>
+            <li><a href="#/duduHttp" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.dudu_http']"></span></a></li>
+            <li><a href="#/rules" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.data_rules']"></span></a></li>
+            <li><a href="#/commands" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.commands']"></span></a></li>
+            <li><a href="#/triggersLog" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.data_analysis']"></span></a></li>
+            <li><a href="#/triggersLog" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.triggers_log']"></span></a></li>
           </ul>
         </li>
         <li class="treeview" ng-class="{active: activeNodeWhenIn(['myproducts'])}" ng-if="!useDeviceDashboard">
-          <a href="">
+          <a href=""  ng-click="reload()" >
             <i class="fa fa-bookmark"></i>
-            <span style="width:183px; height: 49px;"><span ng-bind-html="Lang['sidebar.product_management']"></span></span><i class="fa fa-angle-left pull-right"></i>
+            <span style="width:183px; height: 49px;" ><span ng-bind-html="Lang['sidebar.product_management']"></span></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/myproducts"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_products']"></span></a></li>
-            <li><a href="#/myproducts"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.product_library']"></span></a></li>
+            <li><a href="#/myproducts" ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_products']"></span></a></li>
+            <li><a href="#/myproducts" ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.product_library']"></span></a></li>
           </ul>
         </li>
         <!-- Dudu开放平台 End -->
         <!-- Dudu设备控制面板 Begin -->
         <li class="treeview" ng-if="useDeviceDashboard">
-          <a href="">
+          <a href=""  ng-click="reload()">
             <i class="fa fa-bookmark-o"></i> <span style="width:183px; height: 49px;"> Data Factory</span> <i
             class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/duduHttp"><i class="fa fa-circle-o"></i>Dudu HTTP</a></li>
+            <li><a href="#/duduHttp"  ng-click="reload()"><i class="fa fa-circle-o"></i>Dudu HTTP</a></li>
           </ul>
         </li>
         <li class="treeview" ng-if="useDeviceDashboard">
-          <a href="">
+          <a href=""  ng-click="reload()">
             <i class="fa fa-desktop"></i>
             <span style="width:183px; height: 49px;">Devices</span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a ng-href="#/mydevice-dashboard"><i class="fa fa-circle-o"></i>My Devices</a></li>
+            <li><a ng-href="#/mydevice-dashboard"  ng-click="reload()"><i class="fa fa-circle-o"></i>My Devices</a></li>
           </ul>
         </li>
         <!-- Dudu设备控制面板 End -->
 
         <li class="" ng-class="{active: activeNodeWhenIn(['mydevice'])}">
-          <a href="#/mydevice" >
+          <a href="#/mydevice" ng-click="reload()" >
             <i class="fa fa-desktop"></i>
             <span style="width:183px; height: 58px;"  ng-bind-html="Lang['sidebar.device_management']"></span>
           </a>
         </li>
 
         <li class="treeview" ng-class="{active: activeNodeWhenIn(['myprofile','accountsafety','myaccount'])}">
-          <a>
+          <a  ng-click="reload()">
             <i class="fa fa-user"></i>
             <span style="width:183px; height: 49px;" ng-bind-html="Lang['sidebar.account']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
 
-            <li><a href="#/myprofile" ng-click="path()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.personal_data']"></span></a></li>
-            <li><a href="#/accountsafety"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.security_settings']"></span></a></li>
+            <li><a href="#/myprofile" ng-click="path()" ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.personal_data']"></span></a></li>
+            <li><a href="#/accountsafety" ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.security_settings']"></span></a></li>
             <!--<li><a href="#/myaccount"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_account']"></span></a></li>-->
-            <li><a href="#/mycommunity"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_account']"></span></a></li>
-            <li><a href="#/myattention"><i class="fa fa-circle-o"></i><span>我的关注</span></a></li>
+            <li><a href="#/mycommunity" ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.my_account']"></span></a></li>
+            <li><a href="#/myattention" ng-click="reload()"><i class="fa fa-circle-o"></i><span>我的关注</span></a></li>
 
             <!--<li><a href="#/editaccount" ng-click="path()"><i class="fa fa-circle-o"></i>编辑账户</a></li>-->
             <!--<li><a href=""><i class="fa fa-circle-o"></i>Public Profile</a></li>-->
@@ -88,26 +88,26 @@
         </li>
 
         <li class="">
-          <a href="" >
+          <a href=""  ng-click="reload()" >
             <i class="fa fa-database"></i>
             <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.expense_center']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/consumerdetails"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.ConsumerDetails']"></span></a></li>
-            <li><a href="#/ordermanagement"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.order_management']"></span></a></li>
-            <li><a href="#/payment"><i class="fa fa-circle-o"></i><span >快速充值</span></a></li>
+            <li><a href="#/consumerdetails"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.ConsumerDetails']"></span></a></li>
+            <li><a href="#/ordermanagement"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.order_management']"></span></a></li>
+            <li><a href="#/payment"  ng-click="reload()"><i class="fa fa-circle-o"></i><span >快速充值</span></a></li>
           </ul>
         </li>
 
         <li class="">
-          <a href="#/messagecenter" >
+          <a href="#/messagecenter" ng-click="reload()">
             <i class="fa fa-bullhorn"></i>
             <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.message_center']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#/messagecenter"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.full_message']"></span></a></li>
-            <li><a href="#/messagecenter"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.unread_message']"></span></a></li>
-            <li><a href="#/messagecenter"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.read_message']"></span></a></li>
+            <li><a href="#/messagecenter"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.full_message']"></span></a></li>
+            <li><a href="#/messagecenter"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.unread_message']"></span></a></li>
+            <li><a href="#/messagecenter"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.read_message']"></span></a></li>
           </ul>
         </li>
       </ul>

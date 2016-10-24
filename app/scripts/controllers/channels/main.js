@@ -35,7 +35,8 @@ angular.module('dataduduR3App')
   $scope.reloadTab = function(){
     $route.reload();
   };
-
+  //channe1.channel_storage = parseInt(channel.usage)  /  parseInt(channel.size_storage) * 100 ;
+  //channel.channel_flow =parseInt(channel.traffic_out)  /  parseInt(channel.size_out) *100 ;
   //channel.list()
   //  .$promise
   //  .then(function(resp){
@@ -43,13 +44,12 @@ angular.module('dataduduR3App')
   //  });
 
   channel.get({id: $routeParams.id})
-
     .$promise
     .then(function(resp){
-      $scope.channel = resp.channel;
-      channe11.channel_storage = parseInt(channel.usage)  /  parseInt(channel.size_storage) * 100 ;
-      channel1.channel_flow =parseInt(channel.traffic_out)  /  parseInt(channel.size_out) *100 ;
 
+      $scope.channel = resp.channel;
+      $scope.channel.channel_storage = parseInt(resp.channel.usage)  /  parseInt(resp.channel.size_storage) * 100 ;
+      $scope.channel.channel_flow =parseInt(resp.channel.traffic_in)  /  parseInt(resp.channel.size_ou) *100 ;
 
     });
 

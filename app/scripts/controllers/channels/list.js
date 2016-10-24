@@ -12,9 +12,11 @@ angular.module('dataduduR3App')
   //$scope.channel_info =$log.log(channel.usage  / channel.size_storage *100);
 
   $scope.channels = null;
-  $scope.channelsFiltered = null;
+  //$scope.channelsFiltered = null;
+  //$scope.usage = null;
 
   $scope.searchText = '';
+  $scope.channelNameList=null;
 
   $scope.$watch('channels', function(newVal){
     $scope.channelsFiltered = $filter('filter')($scope.channels, $scope.searchText);
@@ -28,9 +30,13 @@ angular.module('dataduduR3App')
     channel.list()
       .$promise
       .then(function(resp){
-        // usage is in string format, which will cause un-sortable
+        console.log(resp)
         _.forEach(resp.channels, function(channel){
+          channel.usage = parseFloat(channel.usage);
+          channel.channel_storage = parseInt(channel.usage)  /  parseInt(channel.size_storage) * 100;
+          channel.channel_flow =parseInt(channel.traffic_in)  /  parseInt(channel.size_out) *10000;
         });
+
         $scope.channels = resp.channels;
       })
 

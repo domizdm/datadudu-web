@@ -63,16 +63,17 @@
                 </div>
               </div>
 
-              <div data-toggle="tooltip" data-placement="bottom" title="当月流量下载量:{{channel.traffic_out | bytes}}" class="progress progress-striped" style="height: 10px">
+              <div data-toggle="tooltip" data-placement="bottom" title="当月流量下载量:{{channel.traffic_out | bytes }}" class="progress progress-striped" style="height: 10px">
                 <div class="progress-bar progress-bar-info" role="progressbar"
                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                     style="width: {{channel.channel_flow}}%;height: 10px">
+                     style="width: {{channel.channel_flow | number}}%;height: 10px">
+
                 </div>
               </div>
 
           </td>
           <td>
-            <span ng-if="channel.device_id==null">无设备</span>
+            <span ng-if="channel.device_id==null">无设备 </span>
             <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
           </td>
           <td><a href="">{{channel.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</a></td>
