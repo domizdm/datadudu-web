@@ -521,6 +521,22 @@ table.myTable td, table.myTable th {
     text-align: center;
   }
 }
+.headerLogo{
+  margin-left: 20px;
+  padding-top: 5px;
+}
+.main-header .logo{padding-left: 5px;}
+@media (min-width:768px) and (max-width:877px){
+  .navbar-header .logoLong{display:none; }
+}
+
+@media (min-width:877px) {
+  .navbar-header .logoShort{display:none; }
+}
+@media (max-width:768px) {
+  .navbar-header .logoShort{display:none; }
+}
+
 
 .navbar-custom-menu .user-header {
   background-color: #025F98;
