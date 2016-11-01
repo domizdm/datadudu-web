@@ -55,7 +55,8 @@
           <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 对所有人开放': '仅对自己开放'}}</a></td>
           <td>{{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
           <td style="min-width: 130px"><br/>
-
+            <!--{{channel.usage | bytes}}<br/>{{channel.size_storage | bytes}}<br>-->
+            <!--{{channel.traffic_in }}<br/>{{channel.size_out}}-->
               <div  data-toggle="tooltip" data-placement="bottom" title="目前存储数据量:{{channel.usage | bytes}}" class="progress progress-striped" style="height: 10px">
                 <div class="progress-bar progress-bar-success" role="progressbar"
                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
@@ -63,7 +64,7 @@
                 </div>
               </div>
 
-              <div data-toggle="tooltip" data-placement="bottom" title="当月流量下载量:{{channel.traffic_out | bytes }}" class="progress progress-striped" style="height: 10px">
+              <div data-toggle="tooltip" data-placement="bottom" title="当月流量下载量:{{channel.traffic_out | bytes}}" class="progress progress-striped" style="height: 10px">
                 <div class="progress-bar progress-bar-info" role="progressbar"
                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
                      style="width: {{channel.channel_flow | number}}%;height: 10px">
