@@ -107,7 +107,7 @@
 /*登录头部导航样式*/
 
 .login-page, .register-page {
-  background: #f2f2f2;
+  background: #E9E9E9;
 }
 .login_bottom{
   text-align: center;
@@ -162,22 +162,20 @@
 .ms_dropdown-menu li a{line-height: 33px;color: #ffffff}
 /*登陆之后头部样式结束*/
 /*footed start*/
-.footed{
+
+.footedinfo{
   color: #FFFFFF;
-  height: auto;
-  width: 100%;
   background-color: #2b2b2b;
 }
-.footed .footedinfo{padding-top: 35px;margin-bottom: 220px;}
-.footed .footedmenu ul li, .footedinfo ul li{
+ .footedmenu ul li, .footedinfo ul li{
   list-style: none;
 }
 .footedinfo ul{display:inline;}
 .footedinfo .social-links li{float: left;margin-right: 6px;}
-.footed .footedmenu ul{padding:0}
-.footed .footedmenu{float: left;}
-.footed .footedmenu ul li a{color: #FFFFFF}
-.footed .copyrights{
+.footedinfo .footedmenu ul{padding:0}
+.footedinfo .footedmenu{float: left;}
+.footedinfo .footedmenu ul li a{color: #FFFFFF}
+.footedinfo .copyrights{
   padding-top: 10px;
   height: 48px;
   border-top: 1px solid #555555;
@@ -188,12 +186,12 @@
   margin-right: 12px;
 
 }
-.footed h3 a{
+.footedinfo h3 a{
   color: #FFFFFF;
   padding-bottom: 3px;
   border-bottom: 2px solid #2481c3;
 }
-.footed h3 a:hover{text-decoration: none;color: #2481c3}
+.footedinfo h3 a:hover{text-decoration: none;color: #2481c3}
 .footedinfo p i{margin-right: 10px;}
 /*footed end*/
 
@@ -213,8 +211,7 @@
   .channel_ctr{float: right}
 }
 .up_ico{border-radius: 50px;}
+.login-page{margin-bottom: 120px;}
 /*数据列别页面样式结束*/
-
 /*费用中心*/
-
 /*费用中心*/
