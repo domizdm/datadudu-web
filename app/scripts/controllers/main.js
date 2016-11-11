@@ -45,7 +45,8 @@ angular.module('dataduduR3App')
       })
       .catch(function(err){
         // show login failed message
-        $scope.loginForm.message = (err && err.data && err.data.desp) || 'Unknown error';
+        //$scope.loginForm.message = (err && err.data && err.data.desp) || 'Unknown error';
+        $scope.loginForm.message = "登录名或登录密码不正确" || 'Unknown error';
       });
   };
 

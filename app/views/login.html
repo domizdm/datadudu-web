@@ -79,13 +79,13 @@
 </div>
 
 
-<!--<div class="text-center" style="z-index:9999;position: absolute;margin-left:45%"><img src="../images/icoimage/login_img.png"></div>-->
 <div class="row hold-transition login-page">
   <div class="login-box">
 
     <!-- /.login-logo -->
 
     <div class="login-box-body">
+      <div style="margin-bottom: 28px;font-size:20px;font-family: 微软雅黑"><b>账号密码登录</b></div>
       <form>
         <div class="form-group has-feedback">
           <input type="username" class="form-control" placeholder="用户名" ng-model="loginForm.username" required>
@@ -93,7 +93,7 @@
         </div>
         <div class="form-group has-feedback">
           <input type="password" class="form-control" placeholder="密码" ng-model="loginForm.password" required>
-          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <span class="fa fa-key form-control-feedback"></span>
         </div>
         <div class="row">
           <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 checkbox">
@@ -110,19 +110,17 @@
         </div>
         <div class="row">
           <!-- /.col -->
-          <div class="col-md-4 col-md-offset-8 col-xs-12">
-            <button type="submit" class="btn btn-primary btn-block btn-flat" ng-click="login(loginForm)">Sign In</button>
+          <div class="col-md-12  col-xs-12 text-center">
+            <button type="submit" class="btn btn-primary btn-block btn-flat loginBtn" ng-click="login(loginForm)">登录</button>
           </div>
           <!-- /.col -->
         </div>
+        <div class="login_bottom" >
+          <span style="padding-right: 80px;"><a href="http://console.ubibot.cn/register/">免费注册</a></span>
+          <span style="padding-left: 80px"><a href="http://console.ubibot.cn/register/forget-password.html">找回密码</a></span>
+        </div>
       </form>
-
     </div>
-    <div class="login_bottom" >
-      <span style="padding-right: 40px; "><a href="http://console.ubibot.cn/register/">免费注册</a></span>
-      <span style="padding-left: 40px"><a href="http://console.ubibot.cn/register/forget-password.html">找回密码</a></span>
-    </div>
-    <!-- /.login-box-body -->
   </div>
   <!-- /.login-box -->
 </div>

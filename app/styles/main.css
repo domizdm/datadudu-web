@@ -810,7 +810,7 @@ table.myTable td, table.myTable th {
 .ali-we{margin-top: 10px;margin-bottom: 10px;margin-left: 31px;}
 .payment .pay-money{margin-top: 14px;margin-bottom:10px;}
 .payment .pay-money input{border-radius:3px;height: 37px;margin-left: 10px;margin-right: 10px;background-color: #f6f6f6 }
-.radio, .checkbox {margin-top:0;margin-left: 3px;}
+.radio, .checkbox {margin-top:0;margin-left: 17px;}
 .checkbox-disabled{font-size: 8px;margin-left: 5px}
 
 .warm-prompt{background-color:#f6f6f6;height:auto;max-width:751px;min-width: 523px; border: 1px solid #dcdddd;padding-left: 30px;padding-top: 10px;padding-bottom: 10px;}

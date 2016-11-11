@@ -1,3 +1,4 @@
+body{font-family: 微软雅黑;}
 @font-face {
   font-family: '微软雅黑';
 
@@ -107,12 +108,12 @@
 /*登录头部导航样式*/
 
 .login-page, .register-page {
+
   background: #E9E9E9;
+  background: url(../images/icoimage/loginBG.png) no-repeat center center;
 }
 .login_bottom{
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 15px;
   margin-top: 15px;
   background-color:#ffffff;
 }
@@ -161,9 +162,42 @@
 .ms_dropdown-menu li a:hover{background-color:#0069AF;}
 .ms_dropdown-menu li a{line-height: 33px;color: #ffffff}
 /*登陆之后头部样式结束*/
+/*login 内容页面*/
+
+.login-box, .register-box{
+  width: 410px;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  margin-right: 50px;
+}
+
+@media (max-width: 768px) {
+  .login-box, .register-box{
+    margin: 7% auto;
+  }
+}
+.form-control-feedback{
+  left: 0;
+}
+.has-feedback .form-control{
+  padding-left: 40px;
+}
+.login-box-body, .register-box-body{
+  background: #fefefe;
+}
+.login-page .loginBtn{
+  font-size: 24px;
+  height: 50px;
+  background-color: #0277bd;
+  border-radius: 3px;}
+/*login 内容页面*/
+
+
 /*footed start*/
 
 .footedinfo{
+  padding-top: 60px;
+  height: 335px;
   color: #FFFFFF;
   background-color: #2b2b2b;
 }
@@ -176,6 +210,7 @@
 .footedinfo .footedmenu{float: left;}
 .footedinfo .footedmenu ul li a{color: #FFFFFF}
 .footedinfo .copyrights{
+  margin-top: 50px;
   padding-top: 10px;
   height: 48px;
   border-top: 1px solid #555555;
@@ -211,7 +246,7 @@
   .channel_ctr{float: right}
 }
 .up_ico{border-radius: 50px;}
-.login-page{margin-bottom: 120px;}
+
 /*数据列别页面样式结束*/
 /*费用中心*/
 /*费用中心*/
