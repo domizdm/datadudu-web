@@ -542,9 +542,9 @@ table.myTable td, table.myTable th {
   background-color: #025F98;
 }
 
-.navbar-custom-menu li a:hover {
-  background-color: #F5F5F5;
-}
+/*.navbar-custom-menu li a:hover {*/
+  /*background-color: #F5F5F5;*/
+/*}*/
 
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #F5F5F5;
@@ -1158,7 +1158,7 @@ label {
 .table-data-info table tbody tr td{padding:8px ;vertical-align: middle;}
 /*.table-data-info table{margin-bottom: 10px;}*/
 
-.duduhttp_table table.myTable td a, table.myTable th a{color: #FFFFFF;}
+.duduhttp_table table.myTable td a, table.myTable th a{color: #000000;}
 .channel-create .channel-form table tr{margin: 4px 0;}
 .channel-create button a {color: #FFFFFF}
 /*login style start*/

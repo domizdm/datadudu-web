@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row-fluid accountinquiry" style="margin: 10px;">
     <div class="">
-     <span>账户余额:<b><a href="javascript:void (0);">{{ mc['displayed'][0]['balance'] | currency:"￥"}}</a></b><i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>
+     <span>账户余额:<b><a href="javascript:void (0);" ng-model="accountBalance">{{ accountBalance | currency:"￥"}}</a></b><i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>
        <!---->
        </span>
      <span>
