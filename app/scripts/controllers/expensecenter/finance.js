@@ -49,6 +49,7 @@ angular.module('dataduduR3App')
         .$promise
         .then(function (resp) {
           $scope.accountBalance=resp.transactions[0].balance;
+
           console.log(resp)
           var itemsPerPage = resp.itemsPerPage;
           var totalItems = resp.totalItems;
@@ -81,5 +82,5 @@ angular.module('dataduduR3App')
 
   };
 
-
+  $scope.refresh();
 });
