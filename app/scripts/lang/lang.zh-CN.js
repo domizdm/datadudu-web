@@ -117,7 +117,7 @@ window.lang['zh-CN'] = {
   'data-header.Private': '仅对自开放:',
   'data-header.ChannelStatus': '空间状态:',
   'data-header.Created': '创建时间:',
-  'data-header.Updated': '更新时间 :',
+  'data-header.Updated': '当月流量下载量 :',
   'data-header.UsedSpace': ' 已用空间 :',
   'data-header.LastEntry': '最近一次更新',
   'data-header.access.public': '对所有人开放',

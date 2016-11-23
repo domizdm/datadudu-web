@@ -119,7 +119,7 @@ window.lang['en-GB'] = {
   'data-header.Private': 'Private:',
   'data-header.ChannelStatus': 'Channel Status:',
   'data-header.Created': 'Created :',
-  'data-header.Updated': 'Updated :',
+  'data-header.Updated': 'Monthly traffic downloads :',
   'data-header.UsedSpace': 'Used Space :',
   'data-header.LastEntry': 'Last Entry ID And Date :',
   'data-header.access.public': 'Public',
