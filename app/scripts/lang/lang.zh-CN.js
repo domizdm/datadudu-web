@@ -54,9 +54,9 @@ window.lang['zh-CN'] = {
   'ToMe.Device':'设备',
   'ToMe.Created':'创建',
   'ToMe.ChannelID':'空间ID',
-  'ToMe.Private':'私人的',
+  'ToMe.Private':'可视化图表',
   'ToMe.Charts':'图标',
-  'ToMe.importExport':'数据导入导出',
+  'ToMe.importExport':'数据导出',
   'ToMe.NoDevice':'没有设备',
 
   // ---- to-me End ----

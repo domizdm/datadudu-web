@@ -35,7 +35,7 @@ angular.module('dataduduR3App')
           channel.usage = parseFloat(channel.usage);
           channel.channel_storage = parseInt(channel.usage)  /  parseInt(channel.size_storage) * 100;
           channel.channel_flow =channel.traffic_out /  channel.size_out * 1000;
-          console.log(channel.channel_flow)
+          //console.log(channel.channel_flow)
         });
 
         $scope.channels = resp.channels;
