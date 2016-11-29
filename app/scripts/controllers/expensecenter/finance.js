@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ConsumerDetailsCtrl', function ($scope,  $log, $filter, finance, Auth, $timeout, ngNotify, $http, $localStorage) {
+.controller('ConsumerDetailsCtrl', function ($scope,  $log, $filter, finance, Auth, $timeout, ngNotify, account,$http, $localStorage) {
   $(function () {
     $('#date_from').datetimepicker();
     $('#date_to').datetimepicker();
@@ -71,14 +71,26 @@ angular.module('dataduduR3App')
 
 
   $scope.refresh = function () {
+
     //var re= $http.get("http://api.datadudu.cn/accounts/view?token_id=" + $localStorage.me.token_id);
-    $http({
-      method: 'GET',
-      url: 'http://api.datadudu.cn/accounts/view?token_id=" + $localStorage.me.token_id'
-    }).success(function (data, status, headers, config) {
-      $scope.accountBalance = data.account.balance;
-      ngNotify.set('余额已刷新！' ,'success');
-    })
+    //$http({
+    //  method: 'GET',
+    //  url: 'http://api.datadudu.cn/accounts/view?token_id=" + $localStorage.me.token_id'
+    //}).success(function (data, status, headers, config) {
+    //  $scope.accountBalance = data.account.balance;
+    //  ngNotify.set('余额已刷新！' ,'success');
+    //});
+    account.me()
+      .$promise
+      .then(function (resp) {
+        console.log(resp);
+        $scope.accountBalance = resp.account.balance;
+          ngNotify.set('余额已刷新！' ,'success');
+      }).catch(function (err) {
+
+    // TODO: show error message
+    $log.log(err);
+  });
 
   };
 

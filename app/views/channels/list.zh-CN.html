@@ -58,21 +58,25 @@
           <td style="min-width: 130px"><br/>
             <!--{{channel.usage | bytes}}<br/>{{channel.size_storage | bytes}}<br>-->
             <!--{{channel.traffic_in }}<br/>{{channel.size_out}}-->
-              <div  data-toggle="tooltip" data-placement="bottom" title="目前存储数据量:{{channel.usage | bytes}}" class="progress progress-striped" style="height: 10px">
-                <div class="progress-bar progress-bar-success" role="progressbar"
-                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                     style="width:{{channel.channel_storage}}%;height: 10px">
+            <div>
+              <i class="fa fa-folder-open"></i>
+              <div  data-toggle="tooltip" data-placement="bottom" title="目前存储数据量" class="progress progress-striped" style="height: 16px;min-width: 110px">
+                <div class="dataDisplay"><span>{{channel.usage | bytes}}/{{channel.size_storage | bytes}}</span></div>
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width:{{channel.channel_storage}}%;height: 16px">
                 </div>
               </div>
 
-              <div data-toggle="tooltip" data-placement="bottom" title="当月流量下载量:{{channel.traffic_out | bytes}}" class="progress progress-striped" style="height: 10px">
-                <div class="progress-bar progress-bar-info" role="progressbar"
-                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                     style="width: {{channel.channel_flow}}%;height: 10px">
-
-                </div>
               </div>
 
+            <div>
+            <i class="fa fa-cloud-download"></i>
+
+              <div data-toggle="tooltip" data-placement="bottom" title="当月流量下载量" class="progress progress-striped" style="height: 16px;min-width: 110px">
+                <div class="dataDisplay"><span>{{channel.traffic_out | bytes}}/{{channel.size_out | bytes}}</span></div>
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{channel.channel_flow}}%;height: 16px">
+                </div>
+              </div>
+          </div>
           </td>
           <td>
             <span ng-if="channel.device_id==null">无设备 </span>
@@ -93,42 +97,4 @@
   </div>
   <!--表格内容END-->
 </div>
-<!--<script type="text/javascript">-->
-  <!--var w = 0;-->
-  <!--var h = 0;-->
-  <!--var mout;-->
-  <!--function emotion(){-->
-    <!--var oMenu = document.getElementById("menu");-->
-    <!--if(w <= 50){-->
-      <!--oMenu.style.display = "block";-->
-      <!--fnLarge();-->
-    <!--}-->
-    <!--else{-->
-      <!--fnSmall();-->
-    <!--}-->
-  <!--}-->
-  <!--function fnLarge(){-->
-    <!--var oMenu = document.getElementById("menu");-->
-    <!--if(w < 200){-->
-      <!--w += 50;-->
-      <!--h += 25;-->
-      <!--oMenu.style.width = w+"px";-->
-      <!--oMenu.style.height = h+"px";-->
-      <!--window.setTimeout("fnLarge()",10);-->
-    <!--}-->
-  <!--}-->
-  <!--function fnSmall(){-->
-    <!--var oMenu = document.getElementById("menu");-->
-    <!--if(w > 0){-->
-      <!--w -= 50;-->
-      <!--h -= 25;-->
-      <!--oMenu.style.width = w+"px";-->
-      <!--oMenu.style.height = h+"px";-->
-      <!--window.setTimeout("fnSmall()",5);-->
-    <!--}-->
-    <!--else{-->
-      <!--oMenu.style.display = "none";-->
-    <!--}-->
-  <!--}-->
-<!--</script>-->
 

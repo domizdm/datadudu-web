@@ -143,6 +143,11 @@ input, select, textarea:focus {
   margin-right: 5px;
   font-size: 18px;
 }
+.fa-folder-open,.fa-cloud-download{
+  margin-right: 2px;
+  float: left;
+  color: #0277BC;
+}
 .channel-main-setting{padding: 15px;}
 .channel-main-setting .fa-circle-o {
   color: #0074BB;
@@ -327,6 +332,13 @@ input, select, textarea:focus {
   height: 44px;
   color: #ffffff;
   background-color: #0277BD;
+}
+.table-content table tbody td .dataDisplay{
+  color: #ffffff;
+  padding-left: 3px;
+  font-size: 3px;
+  position: absolute;
+  /*z-index: 9999;*/
 }
 
 /*分页样式部分*/
