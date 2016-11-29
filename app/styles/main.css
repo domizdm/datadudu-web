@@ -336,7 +336,7 @@ input, select, textarea:focus {
 .table-content table tbody td .dataDisplay{
   color: #ffffff;
   padding-left: 3px;
-  font-size: 3px;
+  font-size: 0.8em;
   position: absolute;
   /*z-index: 9999;*/
 }

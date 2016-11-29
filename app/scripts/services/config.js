@@ -9,8 +9,8 @@
  */
 
 var __config = {
-  END_POINT: 'http://api.datadudu.cn',
-  END_POINT_PAYMENT: 'http://console.datadudu.cn',
+  END_POINT: 'http://api.ubibot.cn',
+  END_POINT_PAYMENT: 'http://console.ubibot.cn',
   USE_DEVICE_DASHBOARD: false,
   DEFAULT_LANG: 'zh-CN',// en-GB, zh-CN
   lang: {}
