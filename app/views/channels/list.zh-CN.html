@@ -23,7 +23,7 @@
           <th st-sort="name" class="th-left"><span style="margin-left: 10px;"><a href="javascript:void(0)">存储空间</a></span></th>
           <th><span><a href="javascript:void(0)">权限</a></span></th>
           <th st-sort="created_at"><span><a href="javascript:void(0)">最后一次更新</a></span></th>
-          <th st-sort="usage" ><span><a href="javascript:void(0)">占用空间</a></span></th>
+          <th st-sort="usage" ><span><a href="javascript:void(0)">资源用量</a></span></th>
 
           <th><span><a href="javascript:void(0)">关联设备</a></span></th>
           <th><span><a href="javascript:void(0)">创建时间</a></span></th>
@@ -55,9 +55,7 @@
 
           <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 对所有人开放': '仅对自己开放'}}</a></td>
           <td>{{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
-          <td style="min-width: 130px"><br/>
-            <!--{{channel.usage | bytes}}<br/>{{channel.size_storage | bytes}}<br>-->
-            <!--{{channel.traffic_in }}<br/>{{channel.size_out}}-->
+          <td style="min-width: 130px">
             <div>
               <i class="fa fa-folder-open"></i>
               <div  data-toggle="tooltip" data-placement="bottom" title="目前存储数据量" class="progress progress-striped" style="height: 16px;min-width: 110px">
@@ -65,8 +63,7 @@
                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width:{{channel.channel_storage}}%;height: 16px">
                 </div>
               </div>
-
-              </div>
+             </div>
 
             <div>
             <i class="fa fa-cloud-download"></i>
@@ -76,7 +73,8 @@
                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{channel.channel_flow}}%;height: 16px">
                 </div>
               </div>
-          </div>
+            </div>
+
           </td>
           <td>
             <span ng-if="channel.device_id==null">无设备 </span>
@@ -86,11 +84,11 @@
         </tr>
         </tbody>
         <tfoot>
-        <tr>
-          <td colspan="5" class="text-center">
+          <tr>
+          <td colspan="7" class="text-center">
             <div class="paging-style" st-pagination="" st-items-by-page="10"></div>
           </td>
-        </tr>
+          </tr>
         </tfoot>
       </table>
     </div>

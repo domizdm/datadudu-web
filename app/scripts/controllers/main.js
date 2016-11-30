@@ -10,6 +10,10 @@
 angular.module('dataduduR3App')
 .controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config, moment, langTrans) {
   // 只在加载时记录下登陆状态, sign in/out时强制页面重载
+  $scope.LOADING = false;
+  $scope.ShowLoading = function() {
+    $scope.LOADING = !$scope.LOADING;
+  };
 
   $scope.isLoggedIn = Auth.isLoggedIn();
   $scope.username = Auth.username();
@@ -42,19 +46,17 @@ angular.module('dataduduR3App')
       .then(function(){
         // we should reload page to trigger AdminLTE re-layout
         $window.location.reload();
+        $scope.LOADING = true;
       })
       .catch(function(err){
         // show login failed message
         //$scope.loginForm.message = (err && err.data && err.data.desp) || 'Unknown error';
-        //$scope.loginForm.message = "登录名或登录密码不正确" || 'Unknown error';
-
-        //var errResp = $.parseJSON(err.responseText);
-
-        switch (err.errorCode) {
-          case 'permission_denied':
-            $scope.loginForm.message = (err && err.data && err.data.desp) || 'Unknown error';break;
-          case 'account_require_verify':
-            $scope.loginForm.message = "邮件未验证！" || 'Unknown error';break;
+        var errInformation = err.data;
+        switch (errInformation.errorCode) {
+          case "permission_denied":
+            $scope.loginForm.message = "登录名或密码不正确!" ;break;
+          case "account_require_verify":
+            $scope.loginForm.message = "邮件未验证！" ;break;
   }
 
 });
@@ -82,11 +84,5 @@ $scope.logout = function() {
     angular.element('head>title').text('轻松连大数据管理控制台（专业版）');
   }
 
-  //$scope.getCurrentTitle = function(){
-  //  if(/channels/.test($location.path)){
-  //
-  //    return 'test'
-  //  }
-  //};
 
 });
