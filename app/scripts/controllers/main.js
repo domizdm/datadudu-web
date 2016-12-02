@@ -47,6 +47,7 @@ angular.module('dataduduR3App')
         // we should reload page to trigger AdminLTE re-layout
         $window.location.reload();
         $scope.LOADING = true;
+
       })
       .catch(function(err){
         // show login failed message
@@ -83,6 +84,5 @@ $scope.logout = function() {
   }else{
     angular.element('head>title').text('轻松连大数据管理控制台（专业版）');
   }
-
 
 });

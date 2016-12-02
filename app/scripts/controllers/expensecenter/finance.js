@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ConsumerDetailsCtrl', function ($scope,  $log, $filter, finance, Auth, $timeout, ngNotify, account,$http, $localStorage) {
+.controller('ConsumerDetailsCtrl', function ($scope,  $log, $filter, finance, Auth, $timeout, ngNotify, account,$http, $localStorage ,$rootScope) {
   $(function () {
     $('#date_from').datetimepicker();
     $('#date_to').datetimepicker();
@@ -25,7 +25,6 @@ angular.module('dataduduR3App')
   this.displayed = [];
 
   this.callServer = function callServer(tableState) {
-
     ctrl.tableState = tableState || ctrl.tableState;
     ctrl.isLoading = true;
 
@@ -43,21 +42,17 @@ angular.module('dataduduR3App')
     }
 
     // set timeout 1000 for debug test
-    $timeout(function () {
+    $timeout(function (){
       finance.list(params)
-
         .$promise
         .then(function (resp) {
-          $scope.accountBalance=resp.transactions[0].balance;
-
-          console.log(resp)
+          //$rootScope.accountBalance=resp.transactions[0].balance;
+          //console.log(resp)
           var itemsPerPage = resp.itemsPerPage;
           var totalItems = resp.totalItems;
           var numberOfPages = Math.ceil(totalItems / itemsPerPage);
           if (isNaN(numberOfPages)) numberOfPages = 0;
-
           ctrl.displayed = resp.transactions;
-
           tableState.pagination.numberOfPages = numberOfPages;//set the number of pages so the pagination can update
           //console.log(numberOfPages);
           ctrl.isLoading = false;
@@ -70,29 +65,16 @@ angular.module('dataduduR3App')
   };
 
 
-  $scope.refresh = function () {
-
-    //var re= $http.get("http://api.datadudu.cn/accounts/view?token_id=" + $localStorage.me.token_id);
-    //$http({
-    //  method: 'GET',
-    //  url: 'http://api.datadudu.cn/accounts/view?token_id=" + $localStorage.me.token_id'
-    //}).success(function (data, status, headers, config) {
-    //  $scope.accountBalance = data.account.balance;
-    //  ngNotify.set('余额已刷新！' ,'success');
-    //});
+  $rootScope.refresh = function () {
     account.me()
       .$promise
       .then(function (resp) {
-        console.log(resp);
-        $scope.accountBalance = resp.account.balance;
+        $rootScope.accountBalance = resp.account.balance;
           ngNotify.set('余额已刷新！' ,'success');
       }).catch(function (err) {
 
-    // TODO: show error message
-    $log.log(err);
+
   });
-
   };
-
-  $scope.refresh();
+  $rootScope.refresh();
 });

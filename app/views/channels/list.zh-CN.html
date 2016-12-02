@@ -44,7 +44,7 @@
               </div>
             <!--</div>-->
             <div class="channel_ctr">
-            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">可视化图标</button></a>
+            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">可视化图表</button></a>
             <!--<a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">实时数据</button></a>-->
             <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">空间设置</button></a>
             <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API秘钥</button></a>
@@ -54,7 +54,7 @@
           </td>
 
           <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' 对所有人开放': '仅对自己开放'}}</a></td>
-          <td>{{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
+          <td>{{channel.last_entry_date | date:"yyyy-MM-dd HH:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
           <td style="min-width: 130px">
             <div>
               <i class="fa fa-folder-open"></i>
