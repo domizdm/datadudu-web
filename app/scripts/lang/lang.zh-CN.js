@@ -374,7 +374,7 @@ window.lang['zh-CN'] = {
   'main-devices.development': '设备开发',
   'main-devices.search': '搜索',
   'main-devices.placeholder': '请输入查询的内容!',
-  'main-devices.new_products': '新建一批产品',
+  'main-devices.new_products': '添加设备',
   'main-devices.sort': '综合排序',
   'main-devices.popularity_sort': '人气排序',
   'main-devices.CreateDate': '创建时间',
