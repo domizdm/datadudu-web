@@ -33,7 +33,7 @@ angular.module('dataduduR3App')
         console.log(resp)
         _.forEach(resp.channels, function(channel){
           channel.usage = parseFloat(channel.usage);
-          channel.channel_storage = parseInt(channel.usage)  /  parseInt(channel.size_storage) * 100;
+          channel.channel_storage = channel.usage  /  channel.size_storage * 100;
           channel.channel_flow =channel.traffic_out /  channel.size_out * 100;
           //console.log(channel.channel_flow)
         });
