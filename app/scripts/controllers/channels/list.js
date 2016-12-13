@@ -30,13 +30,15 @@ angular.module('dataduduR3App')
     channel.list()
       .$promise
       .then(function(resp){
-        console.log(resp)
         _.forEach(resp.channels, function(channel){
-          channel.usage = parseFloat(channel.usage);
-          channel.channel_storage = channel.usage  /  channel.size_storage * 100;
+          //console.log(channel);
+          //channel.usage = parseFloat(channel.usage);
+
+          channel.channel_storage = (parseFloat(channel.usage)  / parseFloat(channel.size_storage)) *100;
+
+
           channel.channel_flow =channel.traffic_out /  channel.size_out * 100;
-          //console.log(channel.channel_flow)
-        });
+      });
 
         $scope.channels = resp.channels;
       })

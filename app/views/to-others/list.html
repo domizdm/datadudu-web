@@ -41,7 +41,7 @@
             </div>
           </td>
           <td>{{channel.username}}</td>
-          <td>{{channel.last_entry_date | date:"yyyy-MM-dd hh:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
+          <td>{{channel.last_entry_date | date:"yyyy-MM-dd HH:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
           <td>{{channel.usage | bytes}}</td>
           <td>
             <span ng-if="channel.device_id==null" ng-bind-html="Lang['ToMe.NoDevice']">No Device</span>

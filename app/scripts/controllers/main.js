@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config, moment, langTrans) {
+.controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config, moment, langTrans ,ngNotify, finance, $filter, $timeout,account) {
   // 只在加载时记录下登陆状态, sign in/out时强制页面重载
   $scope.LOADING = false;
   $scope.ShowLoading = function() {
@@ -85,4 +85,16 @@ $scope.logout = function() {
     angular.element('head>title').text('轻松连大数据管理控制台（专业版）');
   }
 
+  $rootScope.refresh = function () {
+    account.me()
+      .$promise
+      .then(function (resp) {
+        $rootScope.accountBalance = resp.account.balance;
+        ngNotify.set('余额已刷新！' ,'success');
+      }).catch(function (err) {
+
+
+    });
+  };
+  $rootScope.refresh();
 });
