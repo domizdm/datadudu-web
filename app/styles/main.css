@@ -553,7 +553,7 @@ table.myTable td, table.myTable th {
 .navbar-custom-menu .user-header {
   background-color: #025F98;
 }
-
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]{margin-left: 0}
 /*.navbar-custom-menu li a:hover {*/
   /*background-color: #F5F5F5;*/
 /*}*/
