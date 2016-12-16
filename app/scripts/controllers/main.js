@@ -85,16 +85,32 @@ $scope.logout = function() {
     angular.element('head>title').text('轻松连大数据管理控制台（专业版）');
   }
 
-  $rootScope.refresh = function () {
+  //$rootScope.refresh = function () {
+  //  account.me()
+  //    .$promise
+  //    .then(function (resp) {
+  //      $rootScope.accountBalance = resp.account.balance;
+  //      ngNotify.set('余额已刷新！' ,'success');
+  //    }).catch(function (err) {
+  //
+  //
+  //  });
+  //};
+
+  $rootScope.refresh = function (flag) {
+
+    var tempFlag =  flag == undefined?true:false;
     account.me()
       .$promise
       .then(function (resp) {
         $rootScope.accountBalance = resp.account.balance;
-        ngNotify.set('余额已刷新！' ,'success');
-      }).catch(function (err) {
 
+        if (tempFlag){
+          ngNotify.set('余额已刷新！' ,'success');
+        }
 
-    });
+      }).catch(function (err) {});
   };
-  $rootScope.refresh();
+
+  $rootScope.refresh(false);
 });

@@ -65,16 +65,20 @@ angular.module('dataduduR3App')
   };
 
 
-  $rootScope.refresh = function () {
+  $rootScope.refresh = function (flag) {
+
+    var tempFlag =  flag == undefined?true:false;
     account.me()
       .$promise
       .then(function (resp) {
         $rootScope.accountBalance = resp.account.balance;
+
+        if (tempFlag){
           ngNotify.set('余额已刷新！' ,'success');
-      }).catch(function (err) {
+        }
 
-
-  });
+      }).catch(function (err) {});
   };
-  $rootScope.refresh();
+
+  $rootScope.refresh(false);
 });
