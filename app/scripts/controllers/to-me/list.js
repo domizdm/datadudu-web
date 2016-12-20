@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ToMeListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify) {
+.controller('ToMeListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify){
   $scope.channels = null;
   $scope.channelsFiltered = null;
 
@@ -27,6 +27,7 @@ angular.module('dataduduR3App')
       .$promise
       .then(function(resp){
         $scope.channels = resp.channels;
+
       })
 
       .catch(function(err){

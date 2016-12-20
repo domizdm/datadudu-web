@@ -32,7 +32,8 @@
               <a  class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name==null? ' Unnamed Space':channel.name}}</a><br/>
 
 
-                <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private" ng-bind-html="Lang['ToMe.ChannelID']">ChannelID:{{channel.channel_id}}</a><br/>
+                <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private"><span ng-bind-html="Lang['ToMe.ChannelID']"></span>{{channel.channel_id}}</a><br/>
+
             </div>
             <div class="channel_ctr">
               <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm" ng-bind-html="Lang['ToMe.Private']">Private</button></a>

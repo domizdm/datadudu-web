@@ -8,9 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify) {
-  //$scope.channel_info =$log.log(channel.usage  / channel.size_storage *100);
-
+.controller('ChannelsListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify){
   $scope.channels = null;
   //$scope.channelsFiltered = null;
   //$scope.usage = null;
@@ -37,7 +35,7 @@ angular.module('dataduduR3App')
           channel.channel_storage = (parseFloat(channel.usage)  / parseFloat(channel.size_storage)) *100;
 
 
-          channel.channel_flow =channel.traffic_out /  channel.size_out * 100;
+          channel.channel_flow =(parseFloat(channel.traffic_out) / parseFloat(channel.size_out)) * 100;
       });
 
         $scope.channels = resp.channels;

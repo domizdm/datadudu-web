@@ -52,7 +52,7 @@ window.lang['en-GB'] = {
   'ToMe.UsedSpace':'Used Space',
   'ToMe.Device':'Device',
   'ToMe.Created':'Created',
-  'ToMe.ChannelID':'ChannelID',
+  'ToMe.ChannelID':'ChannelID:',
   'ToMe.Private':'Private',
   'ToMe.Charts':'Charts',
   'ToMe.importExport':'Data Import Export',
