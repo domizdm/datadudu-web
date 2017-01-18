@@ -17,8 +17,10 @@ angular.module('dataduduR3App')
   //$scope.prompt = {label:Auth.L('modal-con.prompt')};
 
   $scope.duduTemplates = [
-    {key:'tag', text:'Intelligent Tag',settingsPage:'views/channels/particle/settings/intelligent-tag.html'},
+
     {key:'custom', text:'Custom',settingsPage:'views/channels/particle/settings/custom.html'},
+    {key:'tag', text:'Intelligent Tag',settingsPage:'views/channels/particle/settings/intelligent-tag.html'},
+
   ];
 
   $scope.$watch('channel', function(newVal){
@@ -43,11 +45,11 @@ angular.module('dataduduR3App')
           $scope.form.metadata = {};
         }
       }else{
-        try{
-          $scope.form.metadata = JSON.stringify($scope.form.metadata);
-        }catch(e){
-          $log.log('Stringify metadata failed. Fallback as an empty string.');
-        }
+        //try{
+        //  $scope.form.metadata = JSON.stringify($scope.form.metadata);
+        //}catch(e){
+        //  $log.log('Stringify metadata failed. Fallback as an empty string.');
+        //}
       }
     }else{
       // 如果为null,意味着channel未加载

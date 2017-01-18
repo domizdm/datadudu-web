@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row-fluid accountinquiry" style="margin: 10px;">
     <div class="">
-     <span>账户余额:<b><a href="javascript:void (0);" ng-model="accountBalance">{{ accountBalance | currency:"￥"}}</a></b><i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>
+     <span>账户余额:<b><a href="javascript:void (0);" ng-model="accountBalance">{{ accountBalance | currency:"￥"}}</a></b>
        <!---->
        </span>
      <span>
@@ -44,26 +44,34 @@
               <option>退款记录</option>
             </select>
           </td>
-
-          <td><label class="pull-right">时间范围:</label></td>
+          <td>
+            <label>
+            <input type="checkbox">按日期<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="按照账单生成时间的月份进行统计与查询。" style="color:#3488C7;"></i>
+            </label>
+          </td>
+          <td><label class="pull-right">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
           <td>
             <!--<input class='input-group ' datetimepicker="query.begin">-->
-            <td>
-            <div class="form-group " style="float: left;margin-bottom: 0">
-              <div class='input-group date' id='date_from'>
-                <input type='text' class="form-control"/>
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-              </div>
-            </div>
-            </td>
+            <td >
 
-          <td>
-            <div class="form-group" style="float: left;margin-bottom: 0">
-              <div class='input-group date' id='date_to'>
+            <div class="form-group " style="float: left;margin-bottom: 0;">
+              <div class='input-group date' id='date_from' style="width: 150px">
                 <input type='text' class="form-control"/>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
             </div>
+
+            </td>
+          <td><label style="width: 25px">至</label></td>
+          <td>
+
+            <div class="form-group" style="float: left;margin-bottom: 0">
+              <div class='input-group date' id='date_to' style="width: 150px">
+                <input type='text' class="form-control"/>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+
           </td>
 
           <td>
@@ -84,16 +92,16 @@
       <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
         <thead>
         <tr>
-          <th>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox1" value="option1">
-              <b> <b>交易编号</b></b>
-            </label>
-          </th>
           <th ng-click="col='created_at';desc=!desc"><i class="fa fa-sort"></i><b>交易日期</b></th>
-          <th ng-click="col='amount';desc=!desc"><i class="fa fa-sort"></i><b>资金流动</b></th>
-          <th><b>类型</b></th>
+          <th>
+            <!--<label class="checkbox-inline">-->
+              <input type="checkbox" id="inlineCheckbox1" value="option1">
+              <b><b>交易编号</b></b>
+            <!--</label>-->
+          </th>
           <th><b>产品及服务</b></th>
+          <th><b>类型</b></th>
+          <th ng-click="col='amount';desc=!desc"><i class="fa fa-sort"></i><b>资金流动</b></th>
           <th><b>账户余额(元)</b></th>
 
         </tr>
@@ -101,11 +109,12 @@
         <tbody ng-show="!mc.isLoading">
         <tr ng-repeat="x in mc.displayed | orderBy:col:desc">
 
-          <td>{{x.invoice_id}}</td>
           <td>{{x.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</td>
-          <td ng-class="{true:'down',false:'rise'}[x.amount<0]"><strong>{{x.amount | currency:" ￥ " }}</strong></td>
+          <td>{{x.invoice_id}}</td>
+          <td></td>
+          <!--{{x.description}}-->
           <td>{{x.type=='expense'?' 消费':'充值'}}</td>
-          <td>{{x.description}}</td>
+          <td ng-class="{true:'down',false:'rise'}[x.amount<0]"><strong>{{x.amount | currency:" ￥ " }}</strong></td>
           <td>{{x.balance | currency:"￥"}}</td>
         </tr>
         </tbody>

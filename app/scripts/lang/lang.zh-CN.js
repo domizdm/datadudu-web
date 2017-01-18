@@ -53,7 +53,7 @@ window.lang['zh-CN'] = {
   'ToMe.UsedSpace':'已使用空间',
   'ToMe.Device':'设备',
   'ToMe.Created':'创建',
-  'ToMe.ChannelID':'空间ID:',
+  'ToMe.ChannelID':'空间编号:',
   'ToMe.Private':'可视化图表',
   'ToMe.Charts':'图标',
   'ToMe.importExport':'数据导出',

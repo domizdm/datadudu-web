@@ -24,5 +24,20 @@ angular.module('dataduduR3App')
       controller:'PaymentCtrl'
     })
 
+    .when('/renew',{
+      templateUrl: 'views/expensecenter/renew.html',
+      controller:'RenewCtrl'
+    })
+
+    .when('/renewpayment',{
+      templateUrl: 'views/expensecenter/renewpayment.html',
+      controller:'RenewPaymentCtrl'
+    })
+
+    .when('/renewresult',{
+      templateUrl: 'views/expensecenter/renewresult.html',
+      controller:'RenewResultCtrl'
+    })
+
 });
 

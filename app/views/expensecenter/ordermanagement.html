@@ -1,21 +1,11 @@
 <div class="container-fluid">
   <div class="row-fluid accountinquiry" style="margin: 10px;">
-    <div class="">
-      <span>账户余额<i class="fa fa-question-circle" style="color:#3488C7;margin: 0 5px"></i>0.00元</span>
-     <span>
-       <button type="button" class="btn btn-default">充值</button>
-      <button type="button" class="btn btn-default">提现</button>
-       <button type="button" class="btn btn-default">转账</button>
-       <a href="" style="margin-left: 20px">查看</a>
-     </span>
-    </div>
-
     <div class="row accountinquiry_header table-responsive">
       <table>
         <thead>
         <tr>
           <td>
-            <label class="pull-right">产品:</label>
+            <label class="pull-right">产品</label>
           </td>
 
           <td >
@@ -40,20 +30,27 @@
             </select>
           </td>
 
-          <td><label class="pull-right">时间范围:</label></td>
+          <td><label class="pull-right">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
 
-          <td>
-            <select class="form-control">
-              <option></option>
-            </select>
+          <td >
+
+            <div class="form-group " style="float: left;margin-bottom: 0;">
+              <div class='input-group date' id='date_from' style="width: 150px">
+                <input type='text' class="form-control"/>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+
           </td>
-
-          <td><label class="pull-right">至:</label></td>
-
+          <td><label style="width: 25px">至</label></td>
           <td>
-            <select class="form-control">
-              <option></option>
-            </select>
+
+            <div class="form-group" style="float: left;margin-bottom: 0">
+              <div class='input-group date' id='date_to' style="width: 150px">
+                <input type='text' class="form-control"/>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
           </td>
 
 
@@ -77,14 +74,12 @@
             <label class="checkbox-inline">
               <input type="checkbox" id="inlineCheckbox1" value="option1"> <b>订单号</b>
             </label></td>
-          <td><b>产品</b></td>
-          <td><b>类型</b></td>
+          <td><b>交易编号</b></td>
+          <td><b>产品及服务</b></td>
           <td><b>创建时间</b></td>
           <td><b>支付/开通时间</b></td>
           <td><b>状态</b></td>
           <td><b>金额</b></td>
-          <td><b>操作</b></td>
-
         </tr>
         </thead>
         <tbody>
