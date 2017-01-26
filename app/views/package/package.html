@@ -1,0 +1,140 @@
+<div class="container-fluid package">
+
+  <div class="row-fluid">
+  <p>变更套餐</p><br/>
+   <p style="color: red;font-size:24px">正在使用：{{package.plan_desp}}</p>
+    <br/>
+    <p>产品名称：</p>
+    <p>空间编号：</p>
+    <br/>
+    <p>套餐详情：套餐费<span>10元/月</span>，包含<span>4GB</span>存储空间、40GB下载流量(超出后<span>0.7元/GB</span>)。</p>
+    <p>空间编号：流量仅计算数据流出量，数据流入量免费; 当流量超出套餐，可设置自动关闭数据功能。</p>
+    <br/>
+  </div>
+  <div class="row-fluid packageTable">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>套餐类型</th>
+        <th>存储空间</th>
+        <th>下载流量</th>
+        <th>费用</th>
+        <th>套餐管理</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="x in package">
+        <td>{{x.plan_desp}}</td>
+        <td>{{x.size_storage}}</td>
+        <td>{{x.size_out}}</td>
+        <td><span>{{x.price}}</span>元/月</td>
+        <td><button type="button" class="btn btn-default"><a>办理</a></button></td>
+      </tr>
+
+      <!--<tr>-->
+        <!--<td>Ubibot 2GB</td>-->
+        <!--<td>2GB</td>-->
+        <!--<td>20G</td>-->
+        <!--<td>5元/月</td>-->
+        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
+      <!--</tr>-->
+
+      <!--<tr>-->
+        <!--<td>Ubibot 4GB</td>-->
+        <!--<td>4GB</td>-->
+        <!--<td>40G</td>-->
+        <!--<td>10元/月</td>-->
+        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
+      <!--</tr>-->
+
+      <!--<tr>-->
+        <!--<td>Ubibot 8GB</td>-->
+        <!--<td>8GB</td>-->
+        <!--<td>80G</td>-->
+        <!--<td>20元/月</td>-->
+        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
+      <!--</tr>-->
+
+      <!--<tr>-->
+        <!--<td>Ubibot 16GB</td>-->
+        <!--<td>16GB</td>-->
+        <!--<td>160G</td>-->
+        <!--<td>40元/月</td>-->
+        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
+      <!--</tr>-->
+
+      <!--<tr>-->
+        <!--<td>Ubibot 32GB</td>-->
+        <!--<td>32GB</td>-->
+        <!--<td>320G</td>-->
+        <!--<td>80元/月</td>-->
+        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
+      <!--</tr>-->
+
+      </tbody>
+    </table>
+   </div>
+</div>
+
+
+<!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#packageChangeCancel">取消</button>-->
+<!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#packageChangeConfirm">确定</button>-->
+<!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#packageChangeAffirm">套餐变更</button>-->
+<!-- 模态框（套餐更改确认） -->
+<!--<div class="modal fade packageChangeAffirm" style="padding-top: 15%" id="packageChangeAffirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+  <!--<div class="modal-dialog">-->
+    <!--<div class="modal-content">-->
+      <!--<div class="modal-header">-->
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+      <!--</div>-->
+      <!--<div class="modal-body text-center">-->
+        <!--<p style="margin: 20px 0 20px 0">您确定将现有UbiBot 2GB套餐变更成 UbiBot 4GB吗？<br/>-->
+          <!--温馨提示：变更套餐次月生效，当月套餐内如有剩余流量不可转存至次月。<br/>-->
+        <!--</p>-->
+        <!--<p class="text-center">-->
+          <!--<button type="button" class="btn btn-default" style="margin-right: 40px">确认</button>-->
+          <!--<button type="button" class="btn btn-default"  data-dismiss="modal" style="margin-left: 40px">取消</button>-->
+        <!--</p>-->
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<div class="modal fade packageChangeCancel" style="padding-top: 15%" id="packageChangeCancel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+  <!--<div class="modal-dialog">-->
+    <!--<div class="modal-content">-->
+      <!--<div class="modal-header">-->
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+      <!--</div>-->
+      <!--<div class="modal-body text-center">-->
+        <!--<p><img src="../images/icoimage/pay-fail.png"><span>对不起，变更失败！</span></p>-->
+
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<div class="modal fade packageChangeConfirm" style="padding-top: 15%" id="packageChangeConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+  <!--<div class="modal-dialog">-->
+    <!--<div class="modal-content">-->
+      <!--<div class="modal-header">-->
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+      <!--</div>-->
+      <!--<div class="modal-body text-center">-->
+        <!--<p><img src="../images/icoimage/pay-succeed.png"><span>恭喜您，套餐更改成功！</span></p>-->
+
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+

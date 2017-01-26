@@ -1,0 +1,53 @@
+<div class="container-fluid renewPayment">
+
+  <div class="row-fluid">
+  <p>订单信息</p>
+    <div class="">
+      <div class="y-process y-process-3">
+        <span class="y-unit y-complete">确认订单</span>
+        <span class="y-arrow y-complete-current">
+            <span class="y-next"></span>
+            <span class="y-prev"></span>
+        </span>
+        <span class="y-unit y-current">支付</span>
+        <span class="y-arrow y-current-unit">
+            <span class="y-next"></span>
+            <span class="y-prev"></span>
+        </span>
+        <span class="y-unit">支付结果</span>
+      </div>
+    </div>
+    <br/>
+  </div>
+
+  <div class="row-fluid packageType">
+    <p><span>订单类型：</span> <span>订单编号</span></p>
+
+    <p>应付金额：<b style="color: red;font-size: 20px">¥100</b></p>
+
+    <p>支付方式</p>
+    <div class="row-fluid payment-way" style="border: 2px solid #0050AC;">
+      <div class="checkbox checkbox-info checkbox-circle">
+        <input id="checkbox8" class="styled" type="checkbox" checked="" >
+        <label >
+          余额/支付宝/微信
+        </label>
+      </div>
+
+      <div class="ali-we ">
+        <label class="checkbox-inline1 ">
+          <input type="radio" ng-model="" id="optionsRadios1" name="optionsRadios"  value=" balance" checked> 账户余额支付
+        </label>
+        <label class="checkbox-inline2 ">
+          <input type="radio" ng-model="" id="optionsRadios2" name="optionsRadios" value="alipay"> <img src="../images/icoimage/alipay.png">
+        </label>
+        <label class="checkbox-inline3">
+          <input type="radio" ng-model="" id="optionsRadios3" name="optionsRadios" value="wechat" > <img src="../images/icoimage/wechat.png">
+        </label>
+      </div>
+    </div>
+
+
+    <div class="packageTypeButton"><button type="button"  class="btn btn-primary"><a href="#/renewresult">立即支付</a></button><span>请仔细核对支付金额，提交之后无法退款</span></div>
+  </div>
+</div>
