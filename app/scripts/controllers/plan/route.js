@@ -11,9 +11,9 @@
 angular.module('dataduduR3App')
 .config(function ($routeProvider) {
   $routeProvider
-    .when('/package',{
-      templateUrl:  'views/package/package.html',
-      controller:'PackageCtrl'
+    .when('/plan',{
+      templateUrl:  'views/plan/plan.html',
+      controller:'PlanCtrl'
     })
 
 });

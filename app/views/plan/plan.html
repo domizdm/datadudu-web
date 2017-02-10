@@ -2,12 +2,12 @@
 
   <div class="row-fluid">
   <p>变更套餐</p><br/>
-   <p style="color: red;font-size:24px">正在使用：{{package.plan_desp}}</p>
+   <p style="color: red;font-size:24px">正在使用：</p>
     <br/>
     <p>产品名称：</p>
-    <p>空间编号：</p>
+    <p>空间编号：{{channel.channel_id}}</p>
     <br/>
-    <p>套餐详情：套餐费<span>10元/月</span>，包含<span>4GB</span>存储空间、40GB下载流量(超出后<span>0.7元/GB</span>)。</p>
+    <p>套餐详情：套餐费<span>{{saleQuote.price}}元/月</span>，包含<span>{{package.size_storage}}GB</span>存储空间、{{package.size_out}}GB下载流量(超出后<span>0.7元/GB</span>)。</p>
     <p>空间编号：流量仅计算数据流出量，数据流入量免费; 当流量超出套餐，可设置自动关闭数据功能。</p>
     <br/>
   </div>
@@ -24,53 +24,12 @@
       </thead>
       <tbody>
       <tr ng-repeat="x in package">
-        <td>{{x.plan_desp}}</td>
-        <td>{{x.size_storage}}</td>
-        <td>{{x.size_out}}</td>
+        <td>{{x.plan_code}}</td>
+        <td>{{x.size_storage | bytes}}</td>
+        <td>{{x.size_out | bytes}}</td>
         <td><span>{{x.price}}</span>元/月</td>
-        <td><button type="button" class="btn btn-default"><a>办理</a></button></td>
+        <td><button type="button" class="btn btn-default" onclick=""><a>办理</a></button></td>
       </tr>
-
-      <!--<tr>-->
-        <!--<td>Ubibot 2GB</td>-->
-        <!--<td>2GB</td>-->
-        <!--<td>20G</td>-->
-        <!--<td>5元/月</td>-->
-        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
-      <!--</tr>-->
-
-      <!--<tr>-->
-        <!--<td>Ubibot 4GB</td>-->
-        <!--<td>4GB</td>-->
-        <!--<td>40G</td>-->
-        <!--<td>10元/月</td>-->
-        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
-      <!--</tr>-->
-
-      <!--<tr>-->
-        <!--<td>Ubibot 8GB</td>-->
-        <!--<td>8GB</td>-->
-        <!--<td>80G</td>-->
-        <!--<td>20元/月</td>-->
-        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
-      <!--</tr>-->
-
-      <!--<tr>-->
-        <!--<td>Ubibot 16GB</td>-->
-        <!--<td>16GB</td>-->
-        <!--<td>160G</td>-->
-        <!--<td>40元/月</td>-->
-        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
-      <!--</tr>-->
-
-      <!--<tr>-->
-        <!--<td>Ubibot 32GB</td>-->
-        <!--<td>32GB</td>-->
-        <!--<td>320G</td>-->
-        <!--<td>80元/月</td>-->
-        <!--<td><button type="button" class="btn btn-default"><a>办理</a></button></td>-->
-      <!--</tr>-->
-
       </tbody>
     </table>
    </div>
