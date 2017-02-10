@@ -53,7 +53,11 @@
         <table class="table table-striped">
           <thead>
           <tr>
-            <td colspan="2"><label style="padding-bottom: 10px;"><span ng-bind-html="Lang['data-header.ChannelStatus']"></span></label> </td>
+            <td><label style="padding-bottom: 10px;"><span ng-bind-html="Lang['data-header.ChannelStatus']"></span></label> </td>
+            <td class="text-right">
+              <a href="" ng-click="siblingPrev(channel.channel_id)">上一个</a>
+              <a href="" ng-click="siblingNext(channel.channel_id)">下一个</a>
+            </td>
           </tr>
           </thead>
           <tbody  ng-show="navhide">

@@ -11,6 +11,8 @@ angular.module('dataduduR3App')
 .controller('ChannelsMainCtrl', function ($scope, $routeParams, $route, $uibModal, $log, modalConfirm, ngNotify,
                                           $location, Auth, channel, share) {
 
+  var ctrl = this;
+
   //channel页面导航显示、隐藏
   $scope.navhide = true;
   $scope.toggle = function() {
@@ -127,6 +129,34 @@ angular.module('dataduduR3App')
           }
         }, function(){/*dismiss*/});
 
+    }
+  };
+
+
+  // for sibling change
+  ctrl.channelsResource = channel.list();
+  $scope.siblingNext = function(channel_id) {
+    var channels = ctrl.channelsResource.channels;
+    if(channels) {
+      var current = _.findIndex(channels, {channel_id: channel_id});
+      var next = Math.min(current + 1, channels.length - 1);
+      var target = channels[next];
+
+      var params = angular.copy($routeParams);
+      params.id = target.channel_id;
+      $route.updateParams(params);
+    }
+  };
+  $scope.siblingPrev = function(channel_id) {
+    var channels = ctrl.channelsResource.channels;
+    if(channels) {
+      var current = _.findIndex(channels, {channel_id: channel_id});
+      var prev = Math.max(current - 1, 0);
+      var target = channels[prev];
+
+      var params = angular.copy($routeParams);
+      params.id = target.channel_id;
+      $route.updateParams(params);
     }
   };
 
