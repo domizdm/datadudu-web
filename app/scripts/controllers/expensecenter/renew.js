@@ -8,7 +8,12 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('RenewCtrl', function ($scope, $window, $interval, $log, $uibModal, $location,$localStorage,$http, $routeParams, ngNotify, config, Auth, payment) {
+.controller('RenewCtrl', function ($scope, $window, $interval, $log, $uibModal, $location,$localStorage,$http,
+                                   $routeParams, ngNotify, config, Auth, payment, CurrentEntity) {
+
+  $scope.channel = CurrentEntity.channel;
+
+  //$log.log(CurrentEntity);
 
   (function($) {
     $.fn.sliderDate = function(setting) {

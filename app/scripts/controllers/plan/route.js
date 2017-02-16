@@ -11,9 +11,20 @@
 angular.module('dataduduR3App')
 .config(function ($routeProvider) {
   $routeProvider
-    .when('/plan',{
+    .when('/plan/:channel_id',{
       templateUrl:  'views/plan/plan.html',
-      controller:'PlanCtrl'
+      controller:'PlanCtrl',
+      resolve: {
+        CurrentEntity: ['channel', '$route', '$injector', function(channel, $route, $injector) {
+          var $log = $injector.get('$log');
+          var channel_id = $route.current.params.channel_id;
+
+          return channel.get({id: channel_id}).$promise;
+        }],
+        AvailablePlans: ['plan', '$route', '$injector', function(plan, $route, $injector) {
+          return plan.list().$promise;
+        }]
+      }
     })
 
 });

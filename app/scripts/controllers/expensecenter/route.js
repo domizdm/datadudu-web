@@ -24,9 +24,17 @@ angular.module('dataduduR3App')
       controller:'PaymentCtrl'
     })
 
-    .when('/renew',{
+    .when('/renew/:channel_id',{
       templateUrl: 'views/expensecenter/renew.html',
-      controller:'RenewCtrl'
+      controller:'RenewCtrl',
+      resolve: {
+        CurrentEntity: ['channel', '$route', '$injector', function(channel, $route, $injector) {
+          var $log = $injector.get('$log');
+          var channel_id = $route.current.params.channel_id;
+
+          return channel.get({id: channel_id}).$promise;
+        }]
+      }
     })
 
     .when('/renewpayment',{
