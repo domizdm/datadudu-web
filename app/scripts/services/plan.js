@@ -18,7 +18,6 @@ angular.module('dataduduR3App')
 
      To share a list of channels to someone, send an HTTP GET of JSON to http://api.datadudu.cn/plan/list
 
-
      Valid request parameters:
      公开访问
      */
@@ -26,6 +25,38 @@ angular.module('dataduduR3App')
       method: 'GET',
       params: {
         _action: 'list'
+      }
+    },
+    /**
+     * 套餐升级变更（内部接口）
+
+     To share a list of channels to someone, send an HTTP GET of JSON to http://api.datadudu.cn/plan/upgrade
+
+     Valid request parameters:
+     account_key or token_id (string) – account_key  or token_id for internal use, obtained through login API. (required)
+     channel_id (int): channel_id (optional)
+     plan_code: 新套餐编号
+     */
+    upgrade: {
+      method: 'GET',
+      params: {
+        _action: 'upgrade'
+      }
+    },
+    /**
+     * 套餐升级价格查询（内部接口）
+
+     To share a list of channels to someone, send an HTTP GET of JSON to http://api.datadudu.cn/plan/upgrade_quote
+
+     Valid request parameters:
+     account_key or token_id (string) – account_key  or token_id for internal use, obtained through login API. (required)
+     channel_id (int): channel_id (optional)
+     plan_code: 新套餐编号
+     */
+    upgradeQuote: {
+      method: 'GET',
+      params: {
+        _action: 'upgrade_quote'
       }
     }
 

@@ -99,7 +99,7 @@ $scope.logout = function() {
 
   $rootScope.refresh = function (flag) {
 
-    var tempFlag =  flag == undefined?true:false;
+    var tempFlag =  flag === undefined?true:false;
     account.me()
       .$promise
       .then(function (resp) {

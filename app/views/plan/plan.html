@@ -28,7 +28,7 @@
         <td>{{x.size_storage | bytes}}</td>
         <td>{{x.size_out | bytes}}</td>
         <td><span>{{x.price}}</span>元/月</td>
-        <td><button type="button" class="btn btn-default" onclick=""><a>办理</a></button></td>
+        <td><button type="button" class="btn btn-default" ng-click="showApplyDialog(x.plan_code, channel.channel_id)"><a>办理</a></button></td>
       </tr>
       </tbody>
     </table>
