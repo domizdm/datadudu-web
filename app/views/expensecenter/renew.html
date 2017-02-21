@@ -21,11 +21,11 @@
   </div>
 
   <div class="row-fluid packageType">
-    <p>当前套餐：<span>{{renew.cost}}</span></p>
-    <p>产品类型：</p>
-    <p>产品名称：</p>
-    <p>空间编号：</p><br/>
-    <p>当前套餐到期时间：</p><br/>
+    <p>当前套餐：<span>{{channel.plan_code}}</span></p>
+    <p>产品类型：{{currentPlan.plan_desp}}</p>
+    <p>产品名称：{{channel.name}}</p>
+    <p>空间编号：{{channel.channel_id}}</p><br/>
+    <p>当前套餐到期时间：{{channel.plan_end | date: 'yyyy-MM-dd'}}</p><br/>
     <div class="purchaseTime">
       <div class="ContinueTime">续费时长：</div>
 
@@ -68,8 +68,8 @@
 
       </div>
     </div>
-    <p>支付金额：<b style="color: red;font-size: 20px">¥100</b></p>
+    <p>支付金额：<b style="color: red;font-size: 20px">{{cycle * currentPlan.price | currency:"￥"}}</b></p>
 
-    <div class="packageTypeButton"><button type="button"  class="btn btn-primary" ><a href="#/renewpayment">开始续费</a></button><span>请仔细核对续费时间，提交之后无法退款</span></div>
+    <div class="packageTypeButton"><a class="btn btn-primary" ng-href="#/renew/{{channel.channel_id}}/payment/{{cycle}}">开始续费</a><span>请仔细核对续费时间，提交之后无法退款</span></div>
   </div>
 </div>

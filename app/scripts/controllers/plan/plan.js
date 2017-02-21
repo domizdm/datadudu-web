@@ -8,13 +8,15 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('PlanCtrl', function ($scope, $window, $interval, $log, $uibModal, $location, $localStorage, $q,
+.controller('PlanCtrl', function ($rootScope, $scope, $window, $interval, $log, $uibModal, $location, $localStorage, $q,
                                   $routeParams, ngNotify, config, Auth, $http, plan, modalInfo, $route,
                                   CurrentEntity, AvailablePlans) {
 
   $scope.channel = CurrentEntity.channel;
 
   $scope.package = AvailablePlans.plans;
+
+  $scope.currentQuote = _.find(AvailablePlans.plans, {plan_code: $scope.channel.plan_code});
 
   var showingDialog = false;//prevent duplicate dialog
 
@@ -47,7 +49,10 @@ angular.module('dataduduR3App')
             if(resp.result == 'success') {
               modalInfo.open('恭喜您，套餐更改成功！')
                 .then(function(){
-                  // refresh
+                  // broadcast event for refreshing balance of account info
+                  // please receive this event in main-header controller
+                  $rootScope.$broadcast('ubibot::updateAccount');
+
                   $route.reload();
                 });
             }else{

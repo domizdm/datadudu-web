@@ -58,6 +58,22 @@ angular.module('dataduduR3App')
       params: {
         _action: 'upgrade_quote'
       }
+    },
+    /**
+     * 套餐续费执行（内部接口）
+
+     To share a list of channels to someone, send an HTTP GET of JSON to http://api.datadudu.cn/plan/extend
+
+     Valid request parameters:
+     account_key or token_id (string) – account_key  or token_id for internal use, obtained through login API. (required)
+     channel_id (int): channel_id (optional)
+     total_cycles (int): 周期数
+     */
+    extendPlan: {
+      method: 'GET',
+      params: {
+        _action: 'extend'
+      }
     }
 
   });

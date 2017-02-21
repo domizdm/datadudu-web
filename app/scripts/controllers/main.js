@@ -8,7 +8,8 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config, moment, langTrans ,ngNotify, finance, $filter, $timeout,account) {
+.controller('MainCtrl', function ($rootScope, $route, $routeParams, $log, $window, Auth, $scope, $location, config,
+                                  moment, langTrans ,ngNotify, finance, $filter, $timeout) {
   // 只在加载时记录下登陆状态, sign in/out时强制页面重载
   $scope.LOADING = false;
   $scope.ShowLoading = function() {
@@ -97,20 +98,31 @@ $scope.logout = function() {
   //  });
   //};
 
+  $scope.$on('ubibot::updateAccount', function(){
+    Auth.rebind()
+      .then(function(resp){
+        updateBalance(resp.account);
+      });
+  });
+
   $rootScope.refresh = function (flag) {
 
     var tempFlag =  flag === undefined?true:false;
-    account.me()
-      .$promise
-      .then(function (resp) {
-        $rootScope.accountBalance = resp.account.balance;
+
+    Auth.rebind()
+      .then(function(resp){
+        updateBalance(resp.account);
 
         if (tempFlag){
           ngNotify.set('余额已刷新！' ,'success');
         }
-
-      }).catch(function (err) {});
+      });
   };
 
   $rootScope.refresh(false);
+
+  function updateBalance(account) {
+    $rootScope.accountBalance = account.balance;
+  }
+
 });

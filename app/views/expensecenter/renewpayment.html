@@ -1,4 +1,4 @@
-<div class="container-fluid renewPayment">
+<div class="container-fluid renewPayment" ng-show="state=='pending'">
 
   <div class="row-fluid">
   <p>订单信息</p>
@@ -21,9 +21,9 @@
   </div>
 
   <div class="row-fluid packageType">
-    <p><span>订单类型：</span> <span>订单编号</span></p>
+    <p><span>订单类型：{{channel.plan_code}}</span> <span>订单编号: {{order.order_id}}</span></p>
 
-    <p>应付金额：<b style="color: red;font-size: 20px">¥100</b></p>
+    <p>应付金额：<b style="color: red;font-size: 20px">{{form.total_cycles * currentPlan.price  | currency:"￥"}}</b></p>
 
     <p>支付方式</p>
     <div class="row-fluid payment-way" style="border: 2px solid #0050AC;">
@@ -36,18 +36,26 @@
 
       <div class="ali-we ">
         <label class="checkbox-inline1 ">
-          <input type="radio" ng-model="" id="optionsRadios1" name="optionsRadios"  value=" balance" checked> 账户余额支付
+          <input type="radio" ng-model="form.type" id="optionsRadios1" name="optionsRadios"  value="balance" checked> 账户余额支付 {{balance | currency:"￥"}}
         </label>
         <label class="checkbox-inline2 ">
-          <input type="radio" ng-model="" id="optionsRadios2" name="optionsRadios" value="alipay"> <img src="../images/icoimage/alipay.png">
+          <input type="radio" ng-model="form.type" id="optionsRadios2" name="optionsRadios" value="alipay"> <img src="../images/icoimage/alipay.png">
         </label>
         <label class="checkbox-inline3">
-          <input type="radio" ng-model="" id="optionsRadios3" name="optionsRadios" value="wechat" > <img src="../images/icoimage/wechat.png">
+          <input type="radio" ng-model="form.type" id="optionsRadios3" name="optionsRadios" value="wechat" > <img src="../images/icoimage/wechat.png">
         </label>
       </div>
     </div>
 
 
-    <div class="packageTypeButton"><button type="button"  class="btn btn-primary"><a href="#/renewresult">立即支付</a></button><span>请仔细核对支付金额，提交之后无法退款</span></div>
+    <!--href="#/renewresult"-->
+    <div class="packageTypeButton"><a class="btn btn-primary" ng-click="extendPlan(form)" href="">立即支付</a><span>请仔细核对支付金额，提交之后无法退款</span></div>
   </div>
 </div>
+
+
+<div ng-show="state=='failure' || state=='success'">
+  <ng-include src="'views/expensecenter/renewresult.html'"></ng-include>
+</div>
+
+

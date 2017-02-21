@@ -33,19 +33,38 @@ angular.module('dataduduR3App')
           var channel_id = $route.current.params.channel_id;
 
           return channel.get({id: channel_id}).$promise;
+        }],
+        AvailablePlans: ['plan', '$route', '$injector', function(plan) {
+          return plan.list().$promise;
         }]
       }
     })
-
-    .when('/renewpayment',{
+    .when('/renew/:channel_id/payment/:cycle',{
       templateUrl: 'views/expensecenter/renewpayment.html',
-      controller:'RenewPaymentCtrl'
-    })
+      controller: 'RenewPaymentCtrl',
+      resolve: {
+        CurrentOrder: ['plan', '$route', '$injector', function(plan, $route, $injector){
+          var form = {
+            channel_id: $route.current.params.channel_id,
+            total_cycles: $route.current.params.cycle,
+            order: null,
+            debugInfo: null
+          };
 
-    .when('/renewresult',{
-      templateUrl: 'views/expensecenter/renewresult.html',
-      controller:'RenewResultCtrl'
-    })
+          return plan.extendPlan(form).$promise;
+
+        }],
+        CurrentEntity: ['channel', '$route', '$injector', function(channel, $route, $injector) {
+          var $log = $injector.get('$log');
+          var channel_id = $route.current.params.channel_id;
+
+          return channel.get({id: channel_id}).$promise;
+        }],
+        AvailablePlans: ['plan', '$route', '$injector', function(plan) {
+          return plan.list().$promise;
+        }]
+      }
+    });
 
 });
 

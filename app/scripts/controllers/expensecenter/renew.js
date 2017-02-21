@@ -9,9 +9,13 @@
  */
 angular.module('dataduduR3App')
 .controller('RenewCtrl', function ($scope, $window, $interval, $log, $uibModal, $location,$localStorage,$http,
-                                   $routeParams, ngNotify, config, Auth, payment, CurrentEntity) {
+                                   $routeParams, ngNotify, config, Auth, payment, CurrentEntity, AvailablePlans, plan) {
 
   $scope.channel = CurrentEntity.channel;
+
+  $scope.currentPlan = _.find(AvailablePlans.plans, {plan_code: $scope.channel.plan_code});
+
+  $scope.cycle = 1;
 
   //$log.log(CurrentEntity);
 
@@ -83,11 +87,14 @@ angular.module('dataduduR3App')
     }
   })(jQuery);
 
+  function onCycleUpdate(index) {
+    $scope.$evalAsync(function(){
+      $scope.cycle = index + 1;
+    });
+  }
+
   $(function(){
-    function a(index){
-      console.log(index+1);
-    }
-    $("#slider-date-1").sliderDate({callback:a});
+    $("#slider-date-1").sliderDate({callback:onCycleUpdate});
 
     function b(index){
       console.log(index+1);
@@ -101,29 +108,47 @@ angular.module('dataduduR3App')
   });
 
 
-  $scope.getTokenID=function() {
-    return $localStorage.me ? $localStorage.me.token_id : null;
+})
+.controller('RenewPaymentCtrl', function ($rootScope, $scope, $window, $interval, $log,
+                                          $uibModal, $location,$localStorage,$http,
+                                          $route, $routeParams, ngNotify, config, $timeout,
+                                          Auth, payment, CurrentEntity, AvailablePlans, plan) {
+
+  $scope.state = 'pending';
+
+  $scope.channel = CurrentEntity.channel;
+
+  $scope.currentPlan = _.find(AvailablePlans.plans, {plan_code: $scope.channel.plan_code});
+
+  $scope.balance = Auth.me().account.balance;
+
+  $scope.form = {
+    type: 'balance',
+    channel_id: $scope.channel.channel_id,
+    total_cycles: $routeParams.cycle,
+    order: null
   };
 
-$scope.getTokenID=function() {
-    return $localStorage.me ? $localStorage.me.token_id : null;
-  };
-  var url='http://api.datadudu.cn/plan/extend_quote?token_id='+$scope.getTokenID();
-  //console.log(url);
-  $http({
-    url:url,
-    method:'GET',
-    params:{
-      channel_id:'57',
-      total_cycles :'1'
-    }
-  }).success(function(response){
-  $scope.renew=response.quote;
-    console.log($scope.renew);
-//响应成功
-  }).error(function(data,header,config,status){
+  $scope.extendPlan = function(form){
+    plan.extendPlan(form)
+      .$promise
+      .then(function(resp) {
+        try{
+          // set response data back
+          form.order = resp.order;
+        }catch(e){}
 
-//处理响应失败
-  });
+        if(resp.result == 'success') {
+          $rootScope.$broadcast('ubibot::updateAccount');
+
+          $scope.state = 'success';
+        }else{
+          $scope.state = 'failure';
+        }
+      })
+      .catch(function(err){
+        $scope.state = 'failure';
+      });
+  };
 
 });

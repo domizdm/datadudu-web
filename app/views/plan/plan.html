@@ -7,7 +7,7 @@
     <p>产品名称：{{channel.name}}</p>
     <p>空间编号：{{channel.channel_id}}</p>
     <br/>
-    <p>套餐详情：套餐费<span>{{saleQuote.price}}元/月</span>，包含<span>{{package.size_storage}}GB</span>存储空间、{{package.size_out}}GB下载流量(超出后<span>0.7元/GB</span>)。</p>
+    <p>套餐详情：套餐费<span>{{currentQuote.price}}元/月</span>，包含<span>{{currentQuote.size_storage | bytes}}</span>存储空间、{{currentQuote.size_out | bytes}}下载流量(超出后<span>0.7元/GB</span>)。</p>
     <p>空间编号：流量仅计算数据流出量，数据流入量免费; 当流量超出套餐，可设置自动关闭数据功能。</p>
     <br/>
   </div>

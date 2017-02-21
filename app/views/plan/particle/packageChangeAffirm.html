@@ -6,7 +6,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
       </div>
       <div class="modal-body text-center">
-        <p style="margin: 20px 0 20px 0">您确定将现有套餐变更成 {{plan.plan_desp}} 吗？<br/>
+        <p style="margin: 20px 0 20px 0">您确定将现有套餐变更成 {{plan.plan_code}} 吗？<br/>
           <div ng-if="quote.result=='success'">Target Plan Quote: <span class="text-muted">{{quote.quote}}</span></div>
           <div ng-if="quote.result=='error'">Error: <span class="text-danger">{{quote.desp}}</span></div>
           温馨提示：变更套餐次月生效，当月套餐内如有剩余流量不可转存至次月。<br/>
