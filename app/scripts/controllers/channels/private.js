@@ -173,9 +173,25 @@ angular.module('dataduduR3App')
           // set time back
           // 如果有数据, 理论上第一个点的时间应该跟查询吻合
           var firstPoint = _.first(resp.raw.feeds);
-          if(firstPoint && (begin==null || isNaN(begin))){//只有未选定的情况才回选
-            var feedbackDate=new Date(new Date(firstPoint.created_at));
-            $scope.query.begin = feedbackDate;
+          var lastPoint = _.last(resp.raw.feeds);
+
+          if(firstPoint != null && lastPoint != null) {// 就算只有一个点也就是两点一致
+            var fDate = new Date(firstPoint.created_at);
+            var lDate = new Date(lastPoint.created_at);
+
+            var expectDate = null;
+            if(fDate <= lDate) {
+              expectDate = fDate;
+            }else if(fDate > lDate) {
+              expectDate = lDate;
+            }else{
+              // 当两个date都是NaN时会出现,
+              // left it null
+            }
+
+            if(expectDate && (begin==null || isNaN(begin))){//只有未选定的情况才回选
+              $scope.query.begin = expectDate;
+            }
           }
         })
         .catch(function(err){
