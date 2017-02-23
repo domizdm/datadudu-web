@@ -10,11 +10,27 @@
 angular.module('dataduduR3App')
 .controller('OrderManagementCtrl', function ($scope, $window, $interval, $log, $uibModal,
                                              $location, $localStorage, $timeout,
-                                   $routeParams, ngNotify, config, Auth, payment, plan) {
+                                             $routeParams, ngNotify, config, Auth, payment, plan) {
 
 
   var ctrl = this;
   $scope.mc = this;
+
+  var today = new Date(),
+    beginDay = new Date();
+  beginDay.setMonth(today.getMonth() - 1);
+  $scope.query = {
+    begin: beginDay,
+    end: today
+  };
+
+  $scope.reload = function() {
+    ctrl.callServer(ctrl.tableState);
+  };
+
+  $scope.exportData = function() {
+    $log.log('pending');
+  };
 
   this.displayed = [];
 
@@ -34,6 +50,16 @@ angular.module('dataduduR3App')
       itemsPerPage:number,
       pageNumber:pageNumber
     };
+
+    // TAG: additional query parameters -->
+    if($scope.query.begin && !isNaN($scope.query.begin)) {
+      params['bill_start'] = $scope.query.begin.getTime();
+    }
+
+    if($scope.query.end && !isNaN($scope.query.end)) {
+      params['bill_end'] = $scope.query.end.getTime();
+    }
+    // TAG: <-- additional query parameters
 
     if(tableState.sort.predicate){
       params.orderItem = tableState.sort.predicate;
