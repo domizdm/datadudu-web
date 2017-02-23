@@ -32,7 +32,7 @@
 
           <td><label class="pull-right">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
 
-          <td >
+          <td>
 
             <div class="form-group " style="float: left;margin-bottom: 0;">
               <div class='input-group date' id='date_from' style="width: 150px">
@@ -66,34 +66,44 @@
     </div>
 
 
-    <div class="row accountinquiry_body table-responsive">
-      <table class="table table-bordered text-center">
+    <div class="row accountinquiry_body table-responsive" ng-class="{'disabled-mask': mc.isLoading}">
+      <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
         <thead>
         <tr>
           <td>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox1" value="option1"> <b>订单号</b>
+              <input type="checkbox" id="inlineCheckbox1" value="option1"> <b>order_id</b>
             </label></td>
-          <td><b>交易编号</b></td>
-          <td><b>产品及服务</b></td>
-          <td><b>创建时间</b></td>
-          <td><b>支付/开通时间</b></td>
-          <td><b>状态</b></td>
-          <td><b>金额</b></td>
+          <td><b>order_status</b></td>
+          <td><b>order_type</b></td>
+          <td><b>plan_code</b></td>
+          <td><b>paid_at</b></td>
+          <td><b>plan_end</b></td>
+          <td><b>amount</b></td>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
 
+        <tbody>
+
+        <tr><td colspan="7" ng-show="mc.isLoading">加载中...</td></tr>
+
+        <tr ng-repeat="item in mc.displayed">
+          <td ng-bind="item.order_id"></td>
+          <td ng-bind="item.order_status"></td>
+          <td ng-bind="item.order_type"></td>
+          <td ng-bind="item.plan_code"></td>
+          <td ng-bind="item.paid_at"></td>
+          <td ng-bind="item.plan_end"></td>
+          <td ng-bind="item.amount"></td>
+        </tr>
         </tbody>
+
+        <tfoot>
+        <tr>
+          <td class="text-center" st-pagination="" st-items-by-page="itemsByPage" colspan="7">
+          </td>
+        </tr>
+        </tfoot>
       </table>
     </div>
   </div>

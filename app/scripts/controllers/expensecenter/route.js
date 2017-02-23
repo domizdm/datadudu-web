@@ -19,6 +19,10 @@ angular.module('dataduduR3App')
       templateUrl: 'views/expensecenter/ordermanagement.html',
       controller:'OrderManagementCtrl'
     })
+    .when('/bills-management',{
+      templateUrl: 'views/expensecenter/bills-management.html',
+      controller:'BillsManagementCtrl'
+    })
     .when('/payment',{
       templateUrl: 'views/expensecenter/payment.html',
       controller:'PaymentCtrl'

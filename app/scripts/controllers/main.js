@@ -19,7 +19,7 @@ angular.module('dataduduR3App')
   $scope.isLoggedIn = Auth.isLoggedIn();
   $scope.username = Auth.username();
   $scope.routeParams = $routeParams;
-  $scope.itemsByPage = 6;
+  $scope.itemsByPage = 10;//6
 
   // explode a language translation API
   $rootScope.T = langTrans.T;

@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row channel-main-setting">
+      <div class="col-md-12" style="padding-left: 10px;" ng-class="{'disabled-mask': mc.isLoading}">
+        <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
+          <thead>
+          <tr>
+            <td st-sort-default="reverse" st-sort="id"><b>id</b></td>
+            <td st-sort="bill_start"><b>bill_start</b></td>
+            <td st-sort="bill_end"><b>bill_end</b></td>
+            <td st-sort="size_storage"><b>size_storage</b></td>
+            <td st-sort="traffic_in"><b>traffic_in</b></td>
+            <td st-sort="traffic_out"><b>traffic_out</b></td>
+            <td st-sort="usage"><b>usage</b></td>
+          </tr>
+          </thead>
+
+          <tbody>
+
+          <tr><td colspan="7" ng-show="mc.isLoading">加载中...</td></tr>
+
+          <tr ng-repeat="item in mc.displayed">
+            <td ng-bind="item.id"></td>
+            <td ng-bind="item.bill_start"></td>
+            <td ng-bind="item.bill_end"></td>
+            <td ng-bind="item.size_storage"></td>
+            <td ng-bind="item.traffic_in"></td>
+            <td ng-bind="item.traffic_out"></td>
+            <td ng-bind="item.usage"></td>
+          </tr>
+          </tbody>
+
+          <tfoot>
+          <tr>
+            <td class="text-center" st-pagination="" st-items-by-page="itemsByPage" colspan="7">
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

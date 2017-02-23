@@ -87,14 +87,15 @@
           </ul>
         </li>
 
-        <li class="">
-          <a href=""  ng-click="reload()" >
+        <li class="" ng-class="{active: activeNodeWhenIn(['consumerdetails','ordermanagement','bills-management'])}">
+          <a href="" ng-click="reload()">
             <i class="fa fa-database"></i>
             <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.expense_center']"></span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="#/consumerdetails"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.ConsumerDetails']"></span></a></li>
             <li><a href="#/ordermanagement"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.order_management']"></span></a></li>
+            <li><a href="#/bills-management"  ng-click="reload()"><i class="fa fa-circle-o"></i><span>账单管理</span></a></li>
             <li><a href="#/payment"  ng-click="reload()"><i class="fa fa-circle-o"></i><span >快速充值</span></a></li>
             <li><a href="#/renew"  ng-click="reload()"><i class="fa fa-circle-o"></i><span >续费</span></a></li>
           </ul>
