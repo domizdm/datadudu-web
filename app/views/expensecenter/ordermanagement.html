@@ -1,94 +1,76 @@
 <div class="container-fluid">
-  <div class="row-fluid accountinquiry" style="margin: 10px;">
-    <div class="row accountinquiry_header table-responsive" style="overflow: visible;">
-      <table>
-        <thead>
-        <tr>
-          <!--<td>-->
-            <!--<label class="pull-right">产品</label>-->
-          <!--</td>-->
+  <div class="panel panel-default" style="margin: 10px;">
+    <div class="panel-body">
+      <div class="row-fluid accountinquiry_header"></div>
+        <div class="container-fluid">
+          <table>
+            <thead>
+            <tr>
+              <td><label class="pull-right">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
 
-          <!--<td >-->
-            <!--<select class="form-control">-->
-              <!--<option>所有产品</option>-->
-            <!--</select>-->
-          <!--</td>-->
-
-          <!--<td><label class="pull-right">订单类型:</label></td>-->
-
-          <!--<td>-->
-            <!--<select class="form-control">-->
-              <!--<option>所有类型</option>-->
-            <!--</select>-->
-          <!--</td>-->
-
-          <!--<td><label class="pull-right">支付状态:</label></td>-->
-
-          <!--<td>-->
-            <!--<select class="form-control">-->
-              <!--<option>所有状态</option>-->
-            <!--</select>-->
-          <!--</td>-->
-
-          <td><label class="pull-right">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
-
-          <td>
-              <div class='input-group date' datetimepicker="query.begin"></div>
-          </td>
-          <td><label style="width: 25px">至</label></td>
-          <td>
-              <div class='input-group date' datetimepicker="query.end"></div>
-          </td>
+              <td>
+                  <div class='input-group date' datetimepicker="query.begin"></div>
+              </td>
+              <td><label style="width: 25px">至</label></td>
+              <td>
+                  <div class='input-group date' datetimepicker="query.end"></div>
+              </td>
 
 
-          <td><button type="button" class="btn btn-default" ng-click="reload()">查询</button></td>
-          <td ><a href="" ng-click="exportData()">导出</a></td>
+              <td><button type="button" class="btn btn-default" ng-click="reload()">查询</button></td>
+              <td ><a href="" ng-click="exportData()">导出</a></td>
 
-        </tr>
-        </thead>
-        <tbody>
+            </tr>
+            </thead>
+            <tbody>
 
-        </tbody>
-      </table>
-    </div>
+            </tbody>
+          </table>
+        </div>
+
+        <br/>
 
 
-    <div class="row accountinquiry_body table-responsive" ng-class="{'disabled-mask': mc.isLoading}">
-      <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
-        <thead>
-        <tr>
-          <td st-sort-default="reverse" st-sort="order_id"><b>order_id</b></td>
-          <td st-sort="order_status"><b>order_status</b></td>
-          <td st-sort="order_type"><b>order_type</b></td>
-          <td st-sort="plan_code"><b>plan_code</b></td>
-          <td st-sort="paid_at"><b>paid_at</b></td>
-          <td st-sort="plan_end"><b>plan_end</b></td>
-          <td st-sort="amount"><b>amount</b></td>
-        </tr>
-        </thead>
+        <div class="row-fluid" ng-class="{'disabled-mask': mc.isLoading}">
+          <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
+            <thead>
+            <tr>
+              <td st-sort-default="reverse" st-sort="order_id"><b>order_id</b></td>
+              <td st-sort="order_status"><b>order_status</b></td>
+              <td st-sort="order_type"><b>order_type</b></td>
+              <td st-sort="plan_code"><b>plan_code</b></td>
+              <td st-sort="paid_at"><b>paid_at</b></td>
+              <td st-sort="plan_start"><b>plan_start</b></td>
+              <td st-sort="plan_end"><b>plan_end</b></td>
+              <td st-sort="amount"><b>amount</b></td>
+            </tr>
+            </thead>
 
-        <tbody>
+            <tbody>
 
-        <tr><td colspan="7" ng-show="mc.isLoading">加载中...</td></tr>
+            <tr><td colspan="7" ng-show="mc.isLoading">加载中...</td></tr>
 
-        <tr ng-repeat="item in mc.displayed">
-          <td ng-bind="item.order_id"></td>
-          <td ng-bind="item.order_status"></td>
-          <td ng-bind="item.order_type"></td>
-          <td ng-bind="item.plan_code"></td>
-          <td ng-bind="item.paid_at"></td>
-          <td ng-bind="item.plan_end"></td>
-          <td ng-bind="item.amount"></td>
-        </tr>
-        </tbody>
+            <tr ng-repeat="item in mc.displayed">
+              <td ng-bind="item.order_id"></td>
+              <td ng-bind-html="item.order_status | paidState"></td>
+              <td ng-bind="item.order_type"></td>
+              <td ng-bind="item.plan_code"></td>
+              <td ng-bind="item.paid_at | date:'yyyy-MM-dd HH:mm:ss' "></td>
+              <td ng-bind="item.plan_start | date:'yyyy-MM-dd HH:mm:ss' "></td>
+              <td ng-bind="item.plan_end | date:'yyyy-MM-dd HH:mm:ss' "></td>
+              <td ng-bind="item.amount | currency:'￥'"></td>
+            </tr>
+            </tbody>
 
-        <tfoot>
-        <tr>
-          <td class="text-center" st-pagination="" st-items-by-page="itemsByPage" colspan="7">
-          </td>
-        </tr>
-        </tfoot>
-      </table>
+            <tfoot>
+            <tr>
+              <td class="text-center" st-pagination="" st-items-by-page="itemsByPage" colspan="8">
+              </td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

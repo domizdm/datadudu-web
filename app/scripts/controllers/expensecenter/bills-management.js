@@ -54,10 +54,12 @@ angular.module('dataduduR3App')
     // TAG: additional query parameters -->
     if($scope.query.begin && !isNaN($scope.query.begin)) {
       params['bill_start'] = $scope.query.begin.getTime();
+      params['bill_start'] = Math.ceil(params['bill_start'] / 1000);
     }
 
     if($scope.query.end && !isNaN($scope.query.end)) {
       params['bill_end'] = $scope.query.end.getTime();
+      params['bill_end'] = Math.ceil(params['bill_end'] / 1000);
     }
     // TAG: <-- additional query parameters
 
