@@ -13,16 +13,27 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <div class="sidebar-left" >
       <ul class="sidebar-menu ">
-        <!-- Dudu开放平台 Begin -->
-        <li class="treeview" ng-class="{active: activeNodeWhenIn(['channels','to-me','to-others','rules','commands','duduHttp','triggersLog'])}" ng-if="!useDeviceDashboard">
+        <!-- 数据仓库 Begin -->
+        <li class="treeview" ng-class="{active: activeNodeWhenIn(['channels','to-me','to-others','groups'])}">
           <a class="active " ng-click="reload()" ng-href="#/channels">
             <i class="fa fa-home"></i>
-            <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.data_factory']"></span><i class="fa fa-angle-left pull-right"></i>
+            <span style="width:183px; height: 58px;">数据仓库</span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu" >
             <li><a href="#/channels" ng-click="reload()"><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
             <li><a href="#/to-me"ng-click="reload()" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.ta']">ta的数据仓库</span></a></li>
             <li><a href="#/to-others"  ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.ToOthers']">To Others</span></a></li>
+            <li><a href="#/groups" ng-click="reload()"><i class="fa fa-circle-o" ></i><span>分组管理</span></a></li>
+          </ul>
+        </li>
+        <!-- 数据仓库 End -->
+        <!-- Dudu开放平台 Begin -->
+        <li class="treeview" ng-class="{active: activeNodeWhenIn(['rules','commands','duduHttp','triggersLog'])}" ng-if="!useDeviceDashboard">
+          <a class="active " ng-click="reload()" ng-href="#/channels">
+            <i class="fa fa-home"></i>
+            <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.data_factory']"></span><i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu" >
             <li><a href="#/duduHttp" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.dudu_http']"></span></a></li>
             <li><a href="#/rules" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.data_rules']"></span></a></li>
             <li><a href="#/commands" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.commands']"></span></a></li>
