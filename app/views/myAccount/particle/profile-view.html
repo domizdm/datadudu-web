@@ -1,0 +1,161 @@
+<div class="text-muted">基本信息</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>头像:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span>
+      <img ng-src="{{form.avatar}}" src="images/user.png" style="max-width:80px;max-height:80px;"/>
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>姓名:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.lastname"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>国家:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.country"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>省份:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.state"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>城市:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.city"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>电子邮件:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.email"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>联系地址:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.address"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>个人信息:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.bio" style="white-space: pre-wrap;word-break: break-word;"></span>
+  </div>
+</div>
+
+
+<div class="row text-right">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <button type="submit" ng-click="changeMode('edit')" class="btn btn-primary " style="background-color: #0277BD">编辑/修改</button>
+  </div>
+</div>
+
+<hr>
+
+<div class="text-muted">其它信息</div>
+
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>用户名:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.username"></span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>账户密钥:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <div ng-bind="raw.account_key"></div>
+    <div>(<a ng-href="#/accountsafety" class="text-primary" style="text-decoration: underline;cursor:pointer;">前往安全中心重置Key</a>)</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>最近登陆IP:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.last_login_ip"></span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>最近登陆时间:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.last_login_time | date:'yyyy-MM-dd hh:mm:ss'"></span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>拥有空间数:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.num_channels"></span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>拥有设备数:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.num_devices"></span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-xs-3">
+    <label class="pull-right"><i class="fa fa-asterisk"
+                                 style="color: red;margin-right: 2px;font-size: 1px"></i>账号创建于:</label>
+  </div>
+  <div class="col-md-7 col-sm-9 col-xs-9">
+    <span ng-bind="raw.created_at | date:'yyyy-MM-dd hh:mm:ss'"></span>
+  </div>
+</div>
+
+

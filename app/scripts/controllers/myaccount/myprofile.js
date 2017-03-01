@@ -12,10 +12,14 @@ angular.module('dataduduR3App')
 .controller('MyProfileCtrl', function($scope, $q, $filter, $window, $timeout, $log, $http, $route,
                                         config, $uibModal, ngNotify, modalConfirm, Auth, account){
 
+  $scope.mode = ['view', 'edit'][0];
+
   $scope.loadAccountInfo = function() {
     Auth.rebind()
       .then(function(resp){
         $scope.form = _.extend($scope.form, Auth.me().account);
+
+        $scope.raw = Auth.me().account;
 
         //$scope.form.country = '中国';
         //$scope.form.state = '上海';
@@ -23,6 +27,11 @@ angular.module('dataduduR3App')
       });
   };
   $scope.loadAccountInfo();
+
+  $scope.changeMode = changeMode;
+  function changeMode(mode) {
+    $scope.mode = mode;
+  }
 
   $scope.saveAccount = function(form){
 
