@@ -47,17 +47,6 @@ angular.module('dataduduR3App')
       templateUrl: 'views/expensecenter/renewpayment.html',
       controller: 'RenewPaymentCtrl',
       resolve: {
-        CurrentOrder: ['plan', '$route', '$injector', function(plan, $route, $injector){
-          var form = {
-            channel_id: $route.current.params.channel_id,
-            total_cycles: $route.current.params.cycle,
-            order: null,
-            debugInfo: null
-          };
-
-          return plan.extendPlan(form).$promise;
-
-        }],
         CurrentEntity: ['channel', '$route', '$injector', function(channel, $route, $injector) {
           var $log = $injector.get('$log');
           var channel_id = $route.current.params.channel_id;
