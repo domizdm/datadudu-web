@@ -27,7 +27,6 @@ angular.module('dataduduR3App')
       templateUrl: 'views/expensecenter/payment.html',
       controller:'PaymentCtrl'
     })
-
     .when('/renew/:channel_id',{
       templateUrl: 'views/expensecenter/renew.html',
       controller:'RenewCtrl',
