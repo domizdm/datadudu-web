@@ -12,6 +12,9 @@ window.lang['zh-CN'] = {
   // ---- Login Page End ----
 
   // ---- Sidebar Begin ----
+
+  'sidebar.dataWarehouse': '数据仓库',
+  'sidebar.groupingManagement': '分组管理',
   'sidebar.data_factory': '数据工厂',
   'sidebar.data_warehouse': '我的数据仓库',
   'sidebar.ta': 'TA的数据仓库',
@@ -543,6 +546,35 @@ window.lang['zh-CN'] = {
   // ---- mydevice modal- END----
   // ---- 弹出框- END----
 
+
+  //订单管理开始
+  'billManagement.time': '时间',
+  'billManagement.to': '到',
+  'billManagement.query': '查询',
+  'billManagement.export': '导出',
+  'billManagement.Bill_Id': '订单编号',
+  'billManagement.order_status': '订单状态',
+  'billManagement.order_type': '订单类型',
+  'billManagement.plan_code': '套餐类型',
+  'billManagement.paid_at': '订单创建时间',
+  'billManagement.paid_end': '支付/开通时间',
+  'billManagement.account': '账户',
+  //订单管理结束
+
+  //账单管理开始
+  'check.time': '时间',
+  'check.to': '到',
+  'check.query': '查询',
+  'check.export': '导出',
+  'check.check_Id': '账单编号',
+  'check.start': '账单开始',
+  'check.bill_end': '账单结束',
+  'check.size_storage': '套餐存储限额',
+  'check.traffic_in': '当月数据传输量',
+  'check.traffic_out': '当月数据下载量',
+  'check.usage': '目前存储数据量',
+
+  //账单管理结束
 
   null:null
 };

@@ -7,18 +7,18 @@
           <table>
             <thead>
             <tr>
-              <td><label class="pull-right">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
+              <td><label class="pull-right"  ng-bind-html="Lang['check.time']">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
 
               <td>
                 <div class='input-group date' datetimepicker="query.begin"></div>
               </td>
-              <td><label style="width: 25px">至</label></td>
+              <td><label style="width: 25px"  ng-bind-html="Lang['check.to']">至</label></td>
               <td>
                 <div class='input-group date' datetimepicker="query.end"></div>
               </td>
 
-              <td><button type="button" class="btn btn-default" ng-click="reload()">查询</button></td>
-              <td ><a href="" ng-click="exportData()">导出</a></td>
+              <td><button type="button" class="btn btn-default" ng-click="reload()"  ng-bind-html="Lang['check.query']">查询</button></td>
+              <td ><a href="" ng-click="exportData()" ng-bind-html="Lang['check.export']">导出</a></td>
 
             </tr>
             </thead>
@@ -31,13 +31,13 @@
           <table class="table table-bordered text-center" st-pipe="mc.callServer" st-table="mc.displayed">
             <thead>
             <tr>
-              <td st-sort-default="reverse" st-sort="id"><b>id</b></td>
-              <td st-sort="bill_start"><b>bill_start</b></td>
-              <td st-sort="bill_end"><b>bill_end</b></td>
-              <td st-sort="size_storage"><b>size_storage</b></td>
-              <td st-sort="traffic_in"><b>traffic_in</b></td>
-              <td st-sort="traffic_out"><b>traffic_out</b></td>
-              <td st-sort="usage"><b>usage</b></td>
+              <td st-sort-default="reverse" st-sort="id"><b ng-bind-html="Lang['check.check_Id']">id</b></td>
+              <td st-sort="bill_start"><b ng-bind-html="Lang['check.start']">bill_start</b></td>
+              <td st-sort="bill_end"><b ng-bind-html="Lang['check.bill_end']">bill_end</b></td>
+              <td st-sort="size_storage"><b ng-bind-html="Lang['check.size_storage']">size_storage</b></td>
+              <td st-sort="traffic_in"><b ng-bind-html="Lang['check.traffic_in']">traffic_in</b></td>
+              <td st-sort="traffic_out"><b ng-bind-html="Lang['check.traffic_out']">traffic_out</b></td>
+              <td st-sort="usage"><b ng-bind-html="Lang['check.usage']">usage</b></td>
             </tr>
             </thead>
 

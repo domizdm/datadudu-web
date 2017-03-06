@@ -12,6 +12,8 @@ window.lang['en-GB'] = {
   // ---- Login Page End ----
 
   // ---- Sidebar Begin ----
+  'sidebar.groupingManagement': 'Group Management',
+  'sidebar.dataWarehouse': 'Data Warehouse',
   'sidebar.data_factory': 'Data factory',
   'sidebar.data_warehouse': 'Data Warehouse',
   'sidebar.ta': 'TA Data Warehouse',
@@ -547,6 +549,35 @@ window.lang['en-GB'] = {
 
   // ---- mydevice modal- END----
   // ---- 弹出框- END----
+
+  //订单管理开始
+  'billManagement.time': 'Time',
+  'billManagement.to': 'To',
+  'billManagement.query': 'Query',
+  'billManagement.export': 'Export',
+  'billManagement.Bill_Id': 'Order Id',
+  'billManagement.order_status': 'Order Status',
+  'billManagement.order_type': 'Order Type',
+  'billManagement.plan_code': 'Package Type',
+  'billManagement.paid_at': 'Order Create',
+  'billManagement.paid_end': 'Pay/Opening',
+  'billManagement.account': 'Account',
+  //订单管理结束
+
+  //账单管理开始
+  'check.time': 'Time',
+  'check.to': 'To',
+  'check.query': 'Query',
+  'check.export': 'Export',
+  'check.check_Id': 'Bill Id',
+  'check.start': 'Bill Start',
+  'check.bill_end': 'Bill End',
+  'check.size_storage': 'Package Storage Limit',
+  'check.traffic_in': 'Data Transmission',
+  'check.traffic_out': ' Data Downloads',
+  'check.usage': 'Store data',
+
+  //账单管理结束
 
   null:null
 };

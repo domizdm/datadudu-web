@@ -17,13 +17,13 @@
         <li class="treeview" ng-class="{active: activeNodeWhenIn(['channels','to-me','to-others','groups'])}">
           <a class="active " ng-click="reload()" ng-href="#/channels">
             <i class="fa fa-home"></i>
-            <span style="width:183px; height: 58px;">数据仓库</span><i class="fa fa-angle-left pull-right"></i>
+            <span style="width:183px; height: 58px;" ng-bind-html="Lang['sidebar.dataWarehouse']">数据仓库</span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu" >
             <li><a href="#/channels" ng-click="reload()"><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.data_warehouse']"></span></a></li>
             <li><a href="#/to-me"ng-click="reload()" ><i class="fa fa-circle-o"  ></i><span ng-bind-html="Lang['sidebar.ta']">ta的数据仓库</span></a></li>
             <li><a href="#/to-others"  ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.ToOthers']">To Others</span></a></li>
-            <li><a href="#/groups" ng-click="reload()"><i class="fa fa-circle-o" ></i><span>分组管理</span></a></li>
+            <li><a href="#/groups" ng-click="reload()"><i class="fa fa-circle-o" ></i><span ng-bind-html="Lang['sidebar.groupingManagement']">分组管理</span></a></li>
           </ul>
         </li>
         <!-- 数据仓库 End -->
@@ -106,9 +106,9 @@
           <ul class="treeview-menu">
             <li><a href="#/consumerdetails"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.ConsumerDetails']"></span></a></li>
             <li><a href="#/ordermanagement"  ng-click="reload()"><i class="fa fa-circle-o"></i><span ng-bind-html="Lang['sidebar.order_management']"></span></a></li>
-            <li><a href="#/bills-management"  ng-click="reload()"><i class="fa fa-circle-o"></i><span>账单管理</span></a></li>
-            <li><a href="#/payment"  ng-click="reload()"><i class="fa fa-circle-o"></i><span >快速充值</span></a></li>
-            <li><a href="#/renew"  ng-click="reload()"><i class="fa fa-circle-o"></i><span >续费</span></a></li>
+            <li><a href="#/bills-management"  ng-click="reload()"><i class="fa fa-circle-o"></i><span  ng-bind-html="Lang['sidebar.Bill_management']">账单管理</span></a></li>
+            <li><a href="#/payment"  ng-click="reload()"><i class="fa fa-circle-o"></i><span  ng-bind-html="Lang['sidebar.Quick_pay']">快速充值</span></a></li>
+            <!--<li><a href="#/renew"  ng-click="reload()"><i class="fa fa-circle-o"></i><span >续费</span></a></li>-->
           </ul>
         </li>
 
