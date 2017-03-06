@@ -22,7 +22,7 @@ angular.module('dataduduR3App')
     });
 
   $scope.deleteDuduHttp = function(httpId){
-    modalConfirm.open('Do you want to delete this dudu http?')
+    modalConfirm.open(Auth.L('duduHttp.delete-duduhttp'))
       .then(function(){
         duduHttp.deleteDuduHttp({id:httpId},{})
           .$promise

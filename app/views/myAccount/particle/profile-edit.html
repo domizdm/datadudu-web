@@ -1,0 +1,124 @@
+
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>头像:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+            <span>
+              <img ng-src="{{form.avatar}}" src="images/user.png" style="max-width:80px;max-height:80px;"/>
+              <br/>
+              <a ng-click="openModalUploadAvatar()">Upload Avatar</a>
+            </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>姓名:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <input type="text" ng-model="form.lastname"  class="form-control"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right"><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>国家:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <select ng-model="form.country" class="form-control" ng-options="countryKey as countryKey for (countryKey,countryVal) in cityOptions">
+          <option value="">-- Choose Country --</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right"><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>省份:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <select ng-model="form.state" class="form-control" ng-options="stateKey as stateKey for (stateKey,stateVal) in cityOptions[form.country]">
+          <option value="">-- Choose State --</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right"><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>城市:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <select ng-model="form.city" class="form-control" ng-options="city as city for city in cityOptions[form.country][form.state]">
+          <option value="">-- Choose City --</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>电子邮件:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <input type="text" ng-model="form.email"  class="form-control"/>
+      </div>
+    </div>
+
+    <!--<div class="row">-->
+    <!--<div class="col-sm-3 col-xs-3">-->
+    <!--<label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>联系电话:</label>-->
+    <!--</div>-->
+    <!--<div class="col-md-7 col-sm-9 col-xs-9">-->
+    <!--<input type="text" ng-model="form.mobile"  class="form-control"/>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>联系地址:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <input type="text" ng-model="form.address"  class="form-control"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>个人信息:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <textarea type="text" ng-model="form.bio" rows="5" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3 col-xs-3">
+        <label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>Password:</label>
+      </div>
+      <div class="col-md-7 col-sm-9 col-xs-9">
+        <input type="password" ng-model="form.password" placeholder="Type in your password to confirm..." class="form-control" required/>
+      </div>
+    </div>
+
+    <!--<div class="row">-->
+    <!--<div class="col-sm-3 col-xs-3">-->
+    <!--<label class="pull-right" ><i class="fa fa-asterisk" style="color: red;margin-right: 2px;font-size: 1px"></i>会员身份:</label>-->
+    <!--</div>-->
+    <!--<div class="col-md-9 col-sm-9 col-xs-9">-->
+    <!--<div>-->
+    <!--<label class="checkbox-inline">-->
+    <!--<input type="checkbox" id="inlineCheckbox1" value="option1"> 个人-->
+    <!--</label>-->
+    <!--<label class="checkbox-inline">-->
+    <!--<input type="checkbox" id="inlineCheckbox2" value="option2"> 企业/政府（含企业、政府、事业单位、团体、组织）-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="row text-right">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <button ng-click="changeMode('view')" class="btn btn-warning">取消</button>
+        <button type="submit" ng-click="saveAccount(form)" class="btn btn-primary " style="background-color: #0277BD">保存修改</button>
+      </div>
+    </div>

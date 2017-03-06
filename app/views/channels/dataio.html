@@ -1,30 +1,30 @@
 <div ng-controller="ChannelsDataIOCtrl">
-  <div class="container-fluid">
+  <div class="container-fluid importexport">
     <div class="row-fluid">
       <form>
         <div class="container-fluid col-md-6 col-sm-6 private-dataio">
-          <h3>Export</h3>
-          <p>Download all of this Channel's feeds in CSV format.</p>
+          <h3 ng-bind-html="Lang['importexport.Export']"></h3>
+          <p ng-bind-html="Lang['importexport.tishi']"></p>
           <br>
           <div class="row-fluid edit_date">
-            <div class="container-fluid col-sm-1"><label> From</label></div>
+            <div class="container-fluid col-sm-1"><label ng-bind-html="Lang['importexport.From']"> </label></div>
             <div class="col-md-12 col-sm-12">
               <div class='input-group date' datetimepicker="form.begin"></div>
             </div>
 
-            <div class="container-fluid col-sm-1" style="padding-left: 10px;"><label>To</label></div>
+            <div class="container-fluid col-sm-1" style="padding-left: 10px;"><label ng-bind-html="Lang['importexport.To']"></label></div>
 
             <div class="col-md-12 col-sm-12">
               <div class='input-group date' datetimepicker="form.end"></div>
             </div>
 
 
-            <div class="col-md-12 col-sm-12"><a class="btn btn-primary dataio-downbtn" ng-click="download(channel)">Download</a>
+            <div class="col-md-12 col-sm-12"><a class="btn btn-primary dataio-downbtn" ng-click="download(channel)" ng-bind-html="Lang['importexport.Download']"></a>
             </div>
 
           </div>
           <div class="col-md-12 col-sm-12">
-            <h2>Help</h2>
+            <h2 ng-bind-html="Lang['importexport.Help']"></h2>
             <hr>
 
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -35,7 +35,47 @@
         </div>
 
         <div class="container-fluid col-md-6 col-sm-6">
+          <h3 ng-bind-html="Lang['DataImport.DataImport']"></h3>
+          <div>
+            <div>
+              <div class="alert alert-warning">
+               <span ng-bind-html="Lang['DataImport.warn']"> </span><br>
+                <ul>
+                  <li ng-bind-html="Lang['DataImport.warn1']">Requires a file in CSV format.</li>
+                  <li ng-bind-html="Lang['DataImport.warn2']">Maximum number of rows 5000.</li>
+                  <li ng-bind-html="Lang['DataImport.warn3']">Maximum file size: 10MB.</li>
+                </ul>
+              </div>
 
+              <div class="btn btn-default"
+                   ngf-select
+                   ng-model="uploadFile" name="uploadFile" ngf-accept="'text/csv,text/txt'"
+                   ngf-max-size="maxSize" ngf-resize="resize"
+              ><span  ng-bind-html="Lang['DataImport.tishi1']"></span></div>
+
+              <span ng-if="!uploadFile"><label class="text-muted" ng-bind-html="Lang['DataImport.no-selected']"></label></span>
+
+              <div ng-if="uploadFile">
+                <span ng-bind-html="'File:'"></span>
+                <label class="text-muted" ng-bind-html="uploadFile.name"></label>
+
+                <span ng-bind-html="'Size:'"></span>
+                <label class="text-muted" ng-bind-html="uploadFile.size | bytes"></label>
+
+                <span ng-show="!uploading">
+                  <a href=""  ng-click="upload(uploadFile, importForm)">
+                    <span class="glyphicon glyphicon-open"></span>
+                    <span ng-bind-html="Lang['DataImport.Start-Import']">Start Import</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+
+            <div ng-show="uploading">
+              <span ng-bind-html="'Uploading: '"></span>{{percentage}}%
+            </div>
+          </div>
 
         </div>
       </form>

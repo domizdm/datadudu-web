@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="ChannelsRealtimeCtrl">
+<div class="container-fluid realtime" ng-controller="ChannelsRealtimeCtrl">
 
   <div class="col-md-12 col-sm-12">
     <div class="col-md-12">
@@ -6,11 +6,11 @@
         <div class="col-sm-12 col-md-12 text-right">
           <form class="form-inline">
         <span>
-          Frequency:
+         <span  ng-bind-html="Lang['realtime.Frequency']"></span>
           <select class="form-control" ng-options="item.label for item in frequencies" ng-model="liveFreq"></select>
         </span>
-        <span>
-          Live Data:
+        <span >
+          <span ng-bind-html="Lang['realtime.LiveData']"></span>
           <button class="btn btn-primary" ng-class="{'btn-danger' : !liveData, 'btn-success': liveData}"
                   ng-click="toggleLiveData()">{{liveData ? 'On' : 'Off'}}
           </button>
@@ -23,6 +23,7 @@
              render-channel-chart-scale="chartScale"
              render-channel-chart-color="{{pickColor($index)}}"
              render-channel-chart-api="chartsApi[$index]"
+             render-channel-chart-title-prefix="Lang['data-graph.chart-title-prefix']"
              render-channel-chart-title="{{val.text}}">
         </div>
       </div>

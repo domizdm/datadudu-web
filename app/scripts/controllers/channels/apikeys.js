@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsApiKeysCtrl', function($scope, $q, $filter, $route, $log, $location,
+.controller('ChannelsApiKeysCtrl', function($scope, $q, $filter, $route, $log, $location, Auth,
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
@@ -30,12 +30,12 @@ angular.module('dataduduR3App')
   });
 
   $scope.generateWriteKey = function(entity){
-    modalConfirm.open('Do you want to generate new write key?')
+    modalConfirm.open(Auth.L('api.generate-writekey'))
       .then(function(){
         channel.generateWriteKey({id:entity.channel_id},{})
           .$promise
           .then(function(resp){
-            ngNotify.set('New write key generated.', 'success');
+            ngNotify.set(Auth.L('api.new-writekey-generated'), 'success');
             $route.reload();
           })
           .catch(function(err){
@@ -57,7 +57,7 @@ angular.module('dataduduR3App')
     channel.updateReadKey({id:channel_id},reqBody)
       .$promise
       .then(function(resp){
-        ngNotify.set('Note updated.', 'success');
+        ngNotify.set(Auth.L('api.note-updated'), 'success');
         $route.reload();
       })
       .catch(function(err){
@@ -67,7 +67,7 @@ angular.module('dataduduR3App')
   };
 
   $scope.deleteReadKey = function(channel_id, key) {
-    modalConfirm.open('Do you want to delete this key '+key+'?')
+    modalConfirm.open(Auth.L('api.key-removed-Prompt')+key+'?')
       .then(function(){
         var reqBody = {
           read_key: key
@@ -76,7 +76,7 @@ angular.module('dataduduR3App')
         channel.deleteReadKey({id: channel_id}, reqBody)
           .$promise
           .then(function(resp){
-            ngNotify.set('Key removed', 'success');
+            ngNotify.set( Auth.L('api.key-removed'), 'success');
             $route.reload();
           })
           .catch(function(err){
@@ -90,12 +90,12 @@ angular.module('dataduduR3App')
   };
 
   $scope.generateReadKey = function(channel_id){
-    modalConfirm.open('Do you want to generate new read key?')
+    modalConfirm.open( Auth.L('api.generate-readkey'))
       .then(function(){
         channel.generateReadKey({id:channel_id},{})
           .$promise
           .then(function(resp){
-            ngNotify.set('New read key generated.', 'success');
+            ngNotify.set(Auth.L('api.new-readkey-generated'), 'success');
             $route.reload();
           })
           .catch(function(err){

@@ -8,11 +8,13 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify) {
+.controller('ChannelsListCtrl', function ($scope, $log, $filter, $uibModal, $route, modalConfirm, channel, share, Auth, ngNotify){
   $scope.channels = null;
-  $scope.channelsFiltered = null;
+  //$scope.channelsFiltered = null;
+  //$scope.usage = null;
 
   $scope.searchText = '';
+  $scope.channelNameList=null;
 
   $scope.$watch('channels', function(newVal){
     $scope.channelsFiltered = $filter('filter')($scope.channels, $scope.searchText);
@@ -26,6 +28,16 @@ angular.module('dataduduR3App')
     channel.list()
       .$promise
       .then(function(resp){
+        _.forEach(resp.channels, function(channel){
+          //console.log(channel);
+          //channel.usage = parseFloat(channel.usage);
+
+          channel.channel_storage = (parseFloat(channel.usage)  / parseFloat(channel.size_storage)) *100;
+
+
+          channel.channel_flow =(parseFloat(channel.traffic_out) / parseFloat(channel.size_out)) * 100;
+      });
+
         $scope.channels = resp.channels;
       })
 
@@ -36,6 +48,7 @@ angular.module('dataduduR3App')
       });
   };
   $scope.reloadChannels();
+
 
 
   $scope.checkedFlag = 'isChecked';
@@ -59,11 +72,11 @@ angular.module('dataduduR3App')
         .result
         .then(function(user){
           if(user.user_id) {
-            var msg = ['Do you want to share channel(s)', channelNames.join(','), 'to', user.username,'?'].join(' ');
+            var msg = [Auth.L('share.shared-warning'), channelNames.join(','), Auth.L('share.shared-to'), user.username,'?'].join(' ');
 
             var payload = {
               channels: channelIds,
-              to: user.user_id
+              share_to: user.user_id
             };
 
             // open modal to confirm
@@ -72,7 +85,7 @@ angular.module('dataduduR3App')
                 share.shareChannelsToUser({}, payload)
                   .$promise
                   .then(function(resp){
-                    ngNotify.set('Channel(s) shared successfully.', 'success');
+                    ngNotify.set(Auth.L('share.shared-successfully'), 'success');
 
                     $route.reload();
                   })
@@ -87,7 +100,7 @@ angular.module('dataduduR3App')
         }, function(){/*dismiss*/});
 
     }else{
-      ngNotify.set('No channels selected.', 'warn');
+      ngNotify.set(Auth.L('share.no-select-channels'), 'warn');
     }
   };
 

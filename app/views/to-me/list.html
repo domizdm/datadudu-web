@@ -1,0 +1,70 @@
+<div class="main">
+  <!--表格内容start-->
+  <div class="table-content">
+    <div class="list-header">
+    <form class="search form-search">
+      <select class="select-style">
+        <option value="" ng-bind-html="Lang['ToMe.all']">ALL</option>
+      </select>
+      <input type="text" class="input-style" placeholder="{{Lang['main-devices.placeholder']}}" ng-model="searchText">
+      <button type="submit" class="btn btn-search hidden-xs" ng-bind-html="Lang['ToMe.Search']">Search</button>
+    </form>
+      </div>
+    <div class="border-table table-list table-responsive">
+      <table class="table table-bordered table-striped table-condensed myTable" width="100%" border="0" cellpadding="0" cellspacing="0"  st-safe-src="channelsFiltered" st-table="displayCollection">
+        <thead class="tblHeader">
+        <tr>
+          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;" ng-bind-html="Lang['ToMe.name']">Name</span></th>
+          <th><span ng-bind-html="Lang['ToMe.owner']">Owner</span></th>
+          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span ng-bind-html="Lang['ToMe.LastUpdate']">Last Update</span></th>
+          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span  ng-bind-html="Lang['ToMe.UsedSpace']">Used Space</span></th>
+          <th><span ng-bind-html="Lang['ToMe.Device']">Device</span></th>
+          <th><span ng-bind-html="Lang['ToMe.Created']">Created</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="channel in displayCollection">
+          <!--<td><input type="checkbox" ng-model="channel.selected" name="form.selected[]" value="{{channel.channel_id}}"></td>-->
+          <td class="td-left">
+            <div style="float: left;width: 170px">
+              <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-rounded" style="max-height:54px;max-width:54px; float: left">
+
+              <a  class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name==null? ' Unnamed Space':channel.name}}</a><br/>
+
+
+                <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private"><span ng-bind-html="Lang['ToMe.ChannelID']"></span>{{channel.channel_id}}</a><br/>
+
+            </div>
+            <div class="channel_ctr">
+              <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm" ng-bind-html="Lang['ToMe.Private']">Private</button></a>
+              <!--<a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm" ng-bind-html="Lang['ToMe.Charts']">Charts</button></a>-->
+              <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm" ng-bind-html="Lang['ToMe.importExport']">Data import/Export</button></a>
+            </div>
+          </td>
+          <td>{{channel.username}}</td>
+          <td>{{channel.last_entry_date | date:"yyyy-MM-dd HH:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
+          <td>{{channel.usage | bytes}}</td>
+          <td>
+            <span ng-if="channel.device_id==null" ng-bind-html="Lang['ToMe.NoDevice']">No Device</span>
+            <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
+          </td>
+          <td><a href="">{{channel.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="6" class="text-center">
+            <div class="paging-style" st-pagination="" st-items-by-page="10"></div>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+
+
+
+    </div>
+
+  </div>
+  <!--表格内容END-->
+
+</div>

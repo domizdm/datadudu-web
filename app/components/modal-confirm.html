@@ -1,20 +1,22 @@
-
+<div class="modal-con">
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  ng-click="cancel()">
     &times;
   </button>
   <h3 class="modal-title" id="myModalLabel">
-    Confirm
+
   </h3>
 </div>
 <div class="modal-body">
   <div class="row">
     <span class="col-sm-10 col-sm-offset-1">
       {{message}}
+
     </span>
   </div>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  <button class="btn btn-primary" type="button" ng-click="ok()"><span ng-bind-html="Lang['modal-con.ok']"></span></button>
+  <button class="btn btn-warning" type="button" ng-click="cancel()"><span ng-bind-html="Lang['modal-con.cancel']"></span></button>
+</div>
 </div>

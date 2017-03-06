@@ -1,48 +1,41 @@
 <div class="container-fluid main-devices">
-
-  <div class="row-fluid col-md-12 device_mg">
-    <h2>My Devices <a ng-click="openModalAttachDevice()" class="btn btn_add btn-new ng-binding add_serial"><i
-      class="fa fa-plus"></i> Attach a Device</a></h2>
-
-    <div class="col-md-12 col-sm-12 device_mg table-responsive">
-      <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
-        <thead class="tb2Header">
-        <tr role="row">
-          <th class="">Channel Id</th>
-          <th class="">Serial Number</th>
-          <th class="">Product Name</th>
-          <th class="">Product Id</th>
-          <th class="">Activation Code</th>
-          <!--<th class="">Created At</th>-->
-          <th class="">Attached At</th>
-          <th class="">Activated At</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="device in devices">
-          <td><a ng-href="#/channels/{{device.channel_id}}/private">{{device.channel_id}}</a></td>
-          <td>{{device.serial}}</td>
-          <td>{{device.name}}</td>
-          <td>{{device.product_id}}</td>
-          <td>{{device.activation_code}}</td>
-          <!--<td>{{device.created_at | date:'yyyy-MM-dd'}}</td>-->
-          <td>{{(device.attached_at | date:'yyyy-MM-dd') || 'Not Attached'}}</td>
-          <td>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</td>
-          <td>
-            <!--<a href="" class="btn btn-danger" ng-click="detachDevice(device.activation_code)"><i style="font-size:20px;"-->
-                                                                                                 <!--class="fa fa-close"></i>-->
-              <!--Detach</a>-->
-
-            <a href="" class="btn btn-danger" ng-click="removeDevice(device.activation_code)"><i style="font-size:20px;"
-                                                                                                 class="fa fa-close"></i>
-              Remove</a>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+  <div class="row devices_header">
+    <span class="device_develop hidden-xs"><b ng-bind-html="Lang['main-devices.development']"></b></span>
+    <input type="text" class="input-style" placeholder="{{Lang['main-devices.placeholder']}}" ng-model="searchText">
+    <button type="submit" class="btn btn-search hidden-xs"><span ng-bind-html="Lang['main-devices.search']"></span></button>
+    <a class="btn btn-default btn-new" ng-click="openModalAttachDevice()" ng-bind-html="Lang['main-devices.new_products']"></a>
+  </div>
+  <div class="row devices_sort">
+    <span><i class="fa fa-sort"></i><a ng-bind-html="Lang['main-devices.sort']"></a></span>
+    <span style="border-left:1px solid #828181"><i class="fa fa-sort" style="margin-left: 5px"></i><a ng-bind-html="Lang['main-devices.popularity_sort']" ></a></span>
+    <span style="border-left:1px solid #828181"><i class="fa fa-sort" style="margin-left: 5px"></i><a ng-bind-html="Lang['main-devices.CreateDate']"></a></span>
+  </div>
+  <div class="col-md-6 devices_body table-responsive" ng-repeat="device in devices">
+    <div class="devices_div">
+      <img ng-src="{{device.channel_icon}}" src="./images/icoimage/1.png"   class="img-circle device_ico "  style="max-height:88px;max-width:86px;">
+      <!---->
+      <div class="text-left">
+        <span> <a ng-href="#/channels/{{device.channel_id}}/private" style="text-decoration:underline;">{{device.name}}</a></span><span><img src="./images/icoimage/duduico2.png" style="margin-left: 18px"></span>
+        <span><button type="button" class="btn btn-danger devices_del"><a ng-click="removeDevice(device.activation_code)" style="color: #ffffff" ng-bind-html="Lang['main-devices.Remove']"></a></button></span>
+        <p class="create">
+          <span ><span ng-bind-html="Lang['main-devices.CreateDate']"></span>{{(device.attached_at | date:'yyyy-MM-dd') || 'Not Attached'}}</span>
+         <span> <span ng-bind-html="Lang['main-devices.Activation_Time']"></span>{{(device.activated_at | date:'yyyy-MM-dd') || 'Not Activated'}}</span>
+        </p>
+        <div class="table-responsive">
+        <table>
+          <tr>
+            <td>
+            <p ><span ng-bind-html="Lang['data-header.channel_id']"></span><a ng-href="#/channels/{{device.channel_id}}/private" class="table-responsive">{{device.channel_id}}</a></p>
+            </td></tr>
+         <tr> <td><p class=""><span ng-bind-html="Lang['main-devices.products_id']"></span>{{device.product_id}}</p></td></tr>
+          <tr><td><p class="" ><span ng-bind-html="Lang['main-devices.Activation_Code']"></span>{{device.activation_code}}</p></td></tr>
+          <tr><td><p class="ng-binding"><span ng-bind-html="Lang['main-devices.SerialNumber']"></span>{{device.serial}}</p></td></tr>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 

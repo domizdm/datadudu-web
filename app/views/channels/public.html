@@ -1,6 +1,16 @@
-<div class="public-view-style" style="border: 1px solid #EEEEEE; padding: 15px">
-  <h3>This channel is not public.</h3>
+<div class="public-view-style" style="border: 1px solid #EEEEEE; padding: 15px" ng-controller="ChannelsPublicCtrl">
+  <div ng-if="shares.length">
+    <h3 ng-bind-html="Lang['public-view.title']">This channel is being shared to:</h3>
 
-  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <table class="table table-bordered">
+      <tr ng-repeat="item in shares">
+        <td><img src="{{item.avatar}}" style="max-width: 40px;max-height: 40px" class="img-rounded">{{item.username}}</td><td><a ng-click="deleteShare(item)"><span class="fa fa-remove"></span></a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div ng-if="!shares.length">
+    <h3 ng-bind-html="Lang['public-view.share']">This channel is not being shared to any one.</h3>
+  </div>
 </div>
 

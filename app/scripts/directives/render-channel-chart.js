@@ -13,6 +13,7 @@ angular.module('dataduduR3App')
     restrict: 'AE',
     scope: {
       'title': '@renderChannelChartTitle',
+      'titlePrefix': '=renderChannelChartTitlePrefix',
       'color': '@renderChannelChartColor',
 
       'data': '=renderChannelChart',// data should be sorted before binding
@@ -22,6 +23,7 @@ angular.module('dataduduR3App')
     link: function postLink(scope, element, attrs) {
 
       var s0 = {
+        step: true,
         name: scope.title,
         turboThreshold: 10000,// do not exceed 10k
         color: scope.color,
@@ -71,7 +73,7 @@ angular.module('dataduduR3App')
       // ref: http://www.highcharts.com/demo/dynamic-master-detail
       element.highcharts({
         chart: {
-          type: 'line',//spline
+          type: 'line',//spline,column
           animation: Highcharts.svg, // don't animate in old IE
           marginRight: 10,
           events: {
@@ -93,11 +95,16 @@ angular.module('dataduduR3App')
             }
           }
         },
+        plotOptions: {
+          line: {
+            gapSize: 10000
+          }
+        },
         credits: {
           enabled: false
         },
         title: {
-          text: 'Chart ' + scope.title
+          text: scope.titlePrefix + scope.title
         },
         xAxis: {
           type: 'datetime',

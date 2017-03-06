@@ -1,0 +1,32 @@
+<div>
+  <div class="modal-header we-modal-header">
+    <button  type="button" class="close pay-close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+      &times;
+    </button>
+  </div>
+  <div class="modal-body wepay-body text-center" style="height: 450px">
+    <div class="col-md-3 col-sm-3 col-xs-3 text-center" style="padding-top: 8px">
+      <span><img src="../images/icoimage/pay-fail.png"></span>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-9 text-left">
+      <h4>对不起，充值失败！</h4>
+      <p style="font-size: 8px;float: left"><span>如果您已付款，可能因交易激增导致交易单延迟处理（最长数秒至数分钟）。您可稍后<a >刷新本页</a>或前往<a>订单管理</a>查看支付情况。</span></p>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 pay-warn">
+      <p><img src="../images/icoimage/warn.png"><span>以下订单尚未成功充值，请您尽快完成充值！</span></p>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 continue-pay">
+      <div>原因: {{parseReason(getReason())}}</div>
+      <span>订单编号：{{getCurrentInvoice() || 'N/A'}}</span><span>充值金额：{{getCurrentAmount()}}</span><button type="button" class="btn btn-default" ng-click="retry()">点击充值</button>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 encounter-problem text-left">
+      <p>付款遇到问题了？先看看是不是由于下面的原因：</p>
+      网上银行已扣款，订单仍显示“未付款”,可能由于银行的数据没有即时
+      传输，请不要担心，稍后刷新页面看看。如较长时间仍显示未付款，
+      可联系嘟嘟在线客服或拨打客服热线（000-000000）为您解决。
+    </div>
+  </div>
+</div>

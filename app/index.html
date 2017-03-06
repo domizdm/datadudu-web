@@ -8,7 +8,7 @@
   <meta http-equiv="pragma" content="no-cache"/>
   <base href="/">
 
-  <title>DATA DUDU</title>
+  <title>轻松连 - 控制面板</title>
 
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
@@ -21,10 +21,13 @@
   <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
   <!-- endbower -->
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/indexstyle.css">
+  <link rel="stylesheet" href="styles/attach.css">
+  <link rel="stylesheet" href="styles/loaderdemo.css">
+  <link rel="stylesheet" href="styles/loaders.css">
   <!-- endbuild -->
 </head>
 
@@ -33,92 +36,14 @@
 <ng-include ng-show="!isLoggedIn" src="'views/login.html'"></ng-include>
 
 <div class="wrapper" ng-if="isLoggedIn">
-  <header class="main-header" style="height: 50px;">
-    <!-- Logo -->
-    <a href="#/" class="logo">
-      <span class="logo-mini"><img src="./images/title-smail.png"></span>
-      <span class="logo-lg"><img src="./images/title.png"></span>
-    </a>
-    <nav class="navbar  navbar-default">
-      <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button" id="switch" onclick="mySwitch()" >
-        <span class="sr-only" >Toggle navigation</span>
-      </a>
-      <span class="mychannel hidden-xs" >My Channels</span>
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li><a href=""><i class="fa fa-life-ring" style="margin-right: 2px"></i><span
-            style="border-right: 1px solid; padding-right: 15px;">Support</span></a></li>
-          <li><a href=""><i class="fa fa-mobile-phone" style="margin-right:5px"></i><span
-            style="border-right: 1px solid; padding-right: 15px;">Mobile Version</span></a></li>
-          <li><a><img src="../images/icoimage/help.png" style="margin-right: 5px;margin-bottom: 10px;"><span
-            style="border-right: 1px solid; padding-right: 15px;">help</span></a></li>
-          <li class="dropdown messages-menu">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">
-                  <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
-                    <li><!-- start message -->
-                      <a href="#">
-                        <div class="pull-left">
-                          <img src="./images/user.png" class="img-circle" alt="User Image">
-                        </div>
-                        <h4>
-                          Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                        </h4>
-                        <p>Why not buy a new awesome theme?</p>
-                      </a>
-                    </li>
-                  </ul>
-                  <div class="slimScrollBar"
-                       style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div>
-                  <div class="slimScrollRail"
-                       style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
-                </div>
-              </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
-            </ul>
-          <li><span style="line-height: 48px"><img src="./images/icoimage/interval.png"></span></li>
-          </li>
+  <!-- Header Navigation -->
+  <ng-include src="T('components/main-header','html')"></ng-include>
 
-          <li>
-
-            <a>
-              <select class="language" ng-model="appLanguage" ng-change="onChangeLanguage(appLanguage)">
-                <option value="zh-CN">中文</option>
-                <option value="en-GB">English</option>
-              </select>
-            </a>
-          </li>
-
-          <li class=" dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-
-              <p><span><img src="./images/icoimage/interval.png"></span> <b>{{username}}</b><i class="fa fa-sort-desc"
-                                                                                               style="margin-left: 3px;"></i>
-              </p>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#" ng-click="logout()" style="line-height: 33px"><i class="fa fa-sign-out fa-lg"></i><b>Sign
-                Out</b></a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-    </nav>
-  </header>
   <!-- Left side column. contains the logo and sidebar -->
   <ng-include src="'components/sidebar.html'" ng-controller="SidebarCtrl"></ng-include>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" >
 
     <!-- Main content -->
     <section class="content">
@@ -324,17 +249,17 @@
 </div>
 <!-- ./wrapper -->
 
-
 <!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!--<script>-->
+  <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+      <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+    <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+  <!--})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');-->
 
-  ga('create', 'UA-16151109-7', 'auto');
-  ga('send', 'pageview');
-</script>
+
+  <!--ga('create', 'UA-16151109-7', 'auto');-->
+  <!--ga('send', 'pageview');-->
+<!--</script>-->
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
@@ -359,9 +284,9 @@
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
 <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-<script src="bower_components/highcharts/highcharts.js"></script>
-<script src="bower_components/highcharts/highcharts-more.js"></script>
+<script src="bower_components/highcharts/highstock.js"></script>
 <script src="bower_components/highcharts/modules/exporting.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
 <!-- endbower -->
 <script src="bower_components/moment/locale/en-gb.js"></script>
 <script src="bower_components/moment/locale/zh-cn.js"></script>
@@ -379,7 +304,11 @@
 <script src="scripts/controllers/myaccount/route.js"></script>
 <script src="scripts/controllers/myaccount/myaccount.js"></script>
 <script src="scripts/controllers/myaccount/editaccount.js"></script>
-<script src="scripts/controllers/myaccount/editprofile.js"></script>
+<script src="scripts/controllers/myaccount/myprofile.js"></script>
+<script src="scripts/controllers/myaccount/communitydevice.js"></script>
+<script src="scripts/controllers/myaccount/communitystar.js"></script>
+<script src="scripts/controllers/myaccount/accountsafety.js"></script>
+
 
 <script src="scripts/controllers/device/route.js"></script>
 <script src="scripts/controllers/device/myproducts.js"></script>
@@ -392,6 +321,7 @@
 <script src="scripts/controllers/device/addproducts.js"></script>
 <script src="scripts/controllers/device/productdetails.js"></script>
 <script src="scripts/controllers/device/particle/modalAttachDevice.js"></script>
+<script src="scripts/controllers/device/particle/modalUploadIcon.js"></script>
 
 <script src="scripts/controllers/channels/route.js"></script>
 <script src="scripts/controllers/channels/list.js"></script>
@@ -400,6 +330,7 @@
 <script src="scripts/controllers/channels/realtime.js"></script>
 <script src="scripts/controllers/channels/particle/modalAddPoint.js"></script>
 <script src="scripts/controllers/channels/particle/modalEditRule.js"></script>
+<script src="scripts/controllers/channels/particle/modalUploadIcon.js"></script>
 <script src="scripts/controllers/channels/settings.js"></script>
 <script src="scripts/controllers/channels/apikeys.js"></script>
 <script src="scripts/controllers/channels/commands.js"></script>
@@ -407,11 +338,37 @@
 <script src="scripts/controllers/channels/dataio.js"></script>
 <script src="scripts/controllers/channels/triggers.js"></script>
 <script src="scripts/controllers/channels/create.js"></script>
+<script src="scripts/controllers/channels/public.js"></script>
+
+<script src="scripts/controllers/to-me/route.js"></script>
+<script src="scripts/controllers/to-me/list.js"></script>
+
+<script src="scripts/controllers/to-others/route.js"></script>
+<script src="scripts/controllers/to-others/list.js"></script>
 
 <script src="scripts/controllers/duduHttp/route.js"></script>
 <script src="scripts/controllers/duduHttp/list.js"></script>
 <script src="scripts/controllers/duduHttp/create.js"></script>
 <script src="scripts/controllers/duduHttp/edit.js"></script>
+
+<script src="scripts/controllers/groups/route.js"></script>
+<script src="scripts/controllers/groups/group-list.js"></script>
+
+<script src="scripts/controllers/expensecenter/route.js"></script>
+
+<script src="scripts/controllers/messagecenter/route.js"></script>
+
+<script src="scripts/controllers/plan/route.js"></script>
+<script src="scripts/controllers/plan/plan.js"></script>
+<script src="scripts/controllers/plan/particle/modalPlanApplyConfirm.js"></script>
+
+
+
+<script src="scripts/controllers/rules/route.js"></script>
+<script src="scripts/controllers/rules/list.js"></script>
+
+<script src="scripts/controllers/commands/route.js"></script>
+<script src="scripts/controllers/commands/list.js"></script>
 
 <script src="scripts/controllers/triggers/route.js"></script>
 <script src="scripts/controllers/triggers/logs.js"></script>
@@ -426,25 +383,64 @@
 <script src="scripts/services/request-normalize-interceptor.js"></script>
 <script src="scripts/services/auth.js"></script>
 <script src="scripts/services/dudu-http.js"></script>
+<script src="scripts/services/rule.js"></script>
+<script src="scripts/services/command.js"></script>
+<script src="scripts/services/finance.js"></script>
+<script src="scripts/services/payment.js"></script>
+<script src="scripts/services/plan.js"></script>
 <script src="scripts/services/authorization-interceptor.js"></script>
 
 <script src="scripts/providers/lang-trans-provider.js"></script>
 
 <script src="scripts/filters/bytes.js"></script>
 <script src="scripts/filters/timezone.js"></script>
+<script src="scripts/filters/paid-state.js"></script>
 <script src="scripts/directives/datetimepicker.js"></script>
 <script src="scripts/directives/render-channel-chart.js"></script>
 <script src="scripts/directives/st-row-check.js"></script>
+<script src="scripts/directives/image-on-load.js"></script>
 
 <script src="scripts/controllers/shared/modalChooseSingleAccount.js"></script>
+<script src="scripts/controllers/shared/modalUploadAvatar.js"></script>
+<script src="scripts/controllers/shared/paginationLocale.js"></script>
 
 <script src="scripts/services/modal-confirm.js"></script>
+<script src="scripts/services/modal-info.js"></script>
+
+<script src="scripts/controllers/expensecenter/finance.js"></script>
+<script src="scripts/controllers/expensecenter/payment.js"></script>
+<script src="scripts/controllers/expensecenter/renew.js"></script>
+<script src="scripts/controllers/expensecenter/order-management.js"></script>
+<script src="scripts/controllers/expensecenter/bills-management.js"></script>
+<script src="scripts/controllers/expensecenter/particle/modalPayment.js"></script>
+<script src="scripts/controllers/expensecenter/particle/modalPaymentFailed.js"></script>
+<script src="scripts/controllers/expensecenter/particle/modalPaymentSucceed.js"></script>
 
 
 
-<script src="scripts/lang/lang.en-GB.js"></script>
-<script src="scripts/lang/lang.zh-CN.js"></script>
+
 
 <!-- endbuild -->
+
+
+
+<!-- build:js({.tmp,app}) scripts/locale.js -->
+<script src="scripts/lang/lang.en-GB.js"></script>
+<script src="scripts/lang/lang.zh-CN.js"></script>
+<!-- endbuild -->
+
+<script>
+(function (H) {
+  // Wrap getSegments to change gapSize functionality to work based on time (milliseconds)
+  H.wrap(H.Series.prototype, 'getSegments', function (proceed) {
+    var cPR = this.xAxis.closestPointRange;
+    this.xAxis.closestPointRange = 1;
+
+    proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+
+    this.xAxis.closestPointRange = cPR;
+  });
+}(Highcharts));
+</script>
 </body>
 </html>

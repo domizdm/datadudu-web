@@ -36,11 +36,14 @@ angular.module('dataduduR3App')
     return ret;
   };
 
+  var LangTrans = function() {};
+  LangTrans.prototype.T = this.T;
+
   this.$get = [function () {
 
     // let's assume that the UnicornLauncher constructor was also changed to
     // accept and use the useTinfoilShielding argument
     //return new UnicornLauncher(apiToken, useTinfoilShielding);
-    return null;
+    return new LangTrans();
   }];
 });

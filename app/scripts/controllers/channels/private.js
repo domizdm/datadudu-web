@@ -13,15 +13,15 @@ angular.module('dataduduR3App')
   $scope.loading = false;
 
   $scope.durations = [
-    {label:'All Data', value:null},
-    {label:'1 hour', value:'60'},
-    {label:'2 hours', value:'120'},
-    {label:'4 hours', value:'240'},
-    {label:'8 hours', value:'480'},
-    {label:'1 day', value:'1440'},
-    {label:'3 days', value:'4320'},
-    {label:'7 days', value:'10080'},
-    {label:'30 days', value:'43200'}
+    {label:Auth.L('data-graph.durations.all'), value:null},
+    {label:Auth.L('data-graph.durations.60'), value:'60'},
+    {label:Auth.L('data-graph.durations.120'), value:'120'},
+    {label:Auth.L('data-graph.durations.240'), value:'240'},
+    {label:Auth.L('data-graph.durations.480'), value:'480'},
+    {label:Auth.L('data-graph.durations.1440'), value:'1440'},
+    {label:Auth.L('data-graph.durations.4320'), value:'4320'},
+    {label:Auth.L('data-graph.durations.10080'), value:'10080'},
+    {label:Auth.L('data-graph.durations.43200'), value:'43200'}
   ];
 
   var defaultDuration = $scope.durations[0];
@@ -29,22 +29,22 @@ angular.module('dataduduR3App')
   //defaultBegin.setMinutes(defaultBegin.getMinutes() - parseInt(defaultDuration.value, 10));
 
   $scope.queryTypes = [
-    {label:'Sample', value:'sample'},
-    {label:'Average', value:'average'},
-    {label:'Sum', value:'sum'},
+    {label:Auth.L('data-graph.queryTypes.sample'), value:'sample'},
+    {label:Auth.L('data-graph.queryTypes.average'), value:'average'},
+    {label:Auth.L('data-graph.queryTypes.sum'), value:'sum'},
   ];
 
   $scope.queryParams = [
     //10, 15, 20, 30, 60, 240, 720, 1440, "daily"
-    {label:'10 mins', value:'10'},
-    {label:'15 mins', value:'15'},
-    {label:'20 mins', value:'20'},
-    {label:'30 mins', value:'30'},
-    {label:'1 hours', value:'60'},
-    {label:'4 hours', value:'240'},
-    {label:'12 hours', value:'720'},
-    {label:'1 day', value:'1440'},
-    {label:'Daily', value:'daily'}
+    {label:Auth.L('data-graph.queryParams.10'), value:'10'},
+    {label:Auth.L('data-graph.queryParams.15'), value:'15'},
+    {label:Auth.L('data-graph.queryParams.20'), value:'20'},
+    {label:Auth.L('data-graph.queryParams.30'), value:'30'},
+    {label:Auth.L('data-graph.queryParams.60'), value:'60'},
+    {label:Auth.L('data-graph.queryParams.240'), value:'240'},
+    {label:Auth.L('data-graph.queryParams.720'), value:'720'},
+    {label:Auth.L('data-graph.queryParams.1440'), value:'1440'},
+    {label:Auth.L('data-graph.queryParams.daily'), value:'daily'}
   ];
 
   $scope.query = {
@@ -67,6 +67,7 @@ angular.module('dataduduR3App')
   var loadData = function(channelId, begin, scale, queryType, queryParams){
     var timezone = 'GMT+08:00';//FIXME: 目测server上不填timezone的情况下会自动减8?
     var serverFormat = 'yyyy-MM-dd HH:mm:ss';
+
     var begin = begin!=null ? new Date(begin) : null;
     var end = scale!=null ? new Date(begin) : null;
     if(end) {
@@ -85,8 +86,8 @@ angular.module('dataduduR3App')
     }
 
     // if start/end is null, it would generate a Invalid Date - Date object
-    if(isNaN(query.begin)) delete query.begin;
-    if(isNaN(query.end)) delete query.end;
+    if(isNaN(begin)) delete query.begin;
+    if(isNaN(end)) delete query.end;
 
     return $q(function(resolve, reject){
       channel.fetchFeeds(query)
@@ -133,7 +134,7 @@ angular.module('dataduduR3App')
 
           // handle response with 'is_truncated=true', data will be reduced by server
           if(resp.is_truncated==true){
-            ngNotify.set('Data exceeds limit. Graphs may be in truncated mode.', 'warn');
+            ngNotify.set(Auth.L('private.update'), 'warn');
           }
 
           resolve({channelsFeeds: channelsMap, raw: resp, end:new Date(resp.end)});
@@ -167,16 +168,30 @@ angular.module('dataduduR3App')
       loadData(channel.channel_id, begin, scale, $scope.query.type.value, $scope.query.params.value)
         .then(function(resp){
           $scope.loading = false;
-
           $scope.channelsFeeds = resp.channelsFeeds;
           //$log.log($scope.channelsFeeds);
-
           // set time back
           // 如果有数据, 理论上第一个点的时间应该跟查询吻合
           var firstPoint = _.first(resp.raw.feeds);
-          if(firstPoint){
-            var feedbackDate=new Date(new Date(firstPoint.created_at));
-            $scope.query.begin = feedbackDate;
+          var lastPoint = _.last(resp.raw.feeds);
+
+          if(firstPoint != null && lastPoint != null) {// 就算只有一个点也就是两点一致
+            var fDate = new Date(firstPoint.created_at);
+            var lDate = new Date(lastPoint.created_at);
+
+            var expectDate = null;
+            if(fDate <= lDate) {
+              expectDate = fDate;
+            }else if(fDate > lDate) {
+              expectDate = lDate;
+            }else{
+              // 当两个date都是NaN时会出现,
+              // left it null
+            }
+
+            if(expectDate && (begin==null || isNaN(begin))){//只有未选定的情况才回选
+              $scope.query.begin = expectDate;
+            }
           }
         })
         .catch(function(err){

@@ -1,17 +1,18 @@
 <div class="container-fluid ">
 
-  <div class="row-fluid" style="padding: 15px">
+  <div class="row-fluid commands" style="padding: 15px">
   <div class="col-md-6 table-commands-style">
-    <h2>Commands</h2>
+    <h2 ng-bind-html="Lang['commands.commands']"></h2>
     <hr>
     <div ng-controller="ChannelsCommandsCtrl">
       <div ng-if="form">
+        <div class="table-responsive">
         <table class="table  table-bordered table-condensed">
           <thead>
           <tr>
-            <th>position</th>
-            <th>command_id</th>
-            <th>command_string</th>
+            <th  ng-bind-html="Lang['commands.position']"></th>
+            <th ng-bind-html="Lang['commands.command_id']"></th>
+            <th ng-bind-html="Lang['commands.command_string']"></th>
             <th></th>
           </tr>
           </thead>
@@ -21,31 +22,32 @@
             <td>{{command.command_id}}</td>
             <td>{{command.command_string}}</td>
             <td>
-              <button class="btn btn-danger" ng-click="deleteCommand(form, command.command_id)">Delete</button>
+              <button class="btn btn-danger" ng-click="deleteCommand(form, command.command_id)" ng-bind-html="Lang['commands.Delete']"></button>
             </td>
           </tr>
           </tbody>
         </table>
+          </div>
         <div>
-          <button class="btn btn-danger" ng-click="deleteAllCommands(form)">Delete All</button>
+          <button class="btn btn-danger" ng-click="deleteAllCommands(form)" ng-bind-html="Lang['commands.Delete All']"></button>
         </div>
         <br/>
         <div ng-if="!showNewCommand">
-          <button class="btn btn-success" ng-click="toggleShowNewCommand()">New Command</button>
+          <button class="btn btn-success" ng-click="toggleShowNewCommand()" ng-bind-html="Lang['commands.New Command']"></button>
         </div><br/>
 
         <div ng-if="showNewCommand" ng-controller="ChannelsAddNewCommandCtrl">
-          <input type="text" class="form-control" placeholder="position" ng-model="newCommand.position"><br/>
-          <input type="text" class="form-control" placeholder="command_string" ng-model="newCommand.command_string"><br/>
-          <button class="btn btn-success" ng-click="addNewCommand(form, newCommand)">Save</button>
-          <button class="btn btn-danger" ng-click="toggleShowNewCommand()">Cancel</button>
+          <input type="text" class="form-control" placeholder="{{Lang['commands.placeholder-position']}}" ng-model="newCommand.position"><br/>
+          <input type="text" class="form-control" placeholder="{{Lang['commands.placeholder-command_string']}}" ng-model="newCommand.command_string"><br/>
+          <button class="btn btn-success" ng-click="addNewCommand(form, newCommand)" ng-bind-html="Lang['commands.Save']"></button>
+          <button class="btn btn-danger" ng-click="toggleShowNewCommand()" ng-bind-html="Lang['commands.Cancel']"></button>
         </div>
 
       </div>
     </div>
   </div>
   <div class="col-md-6 col-sm-6">
-    <h2>Help</h2>
+    <h2 ng-bind-html="Lang['commands.Help']"></h2>
     <hr>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
       standard dummy text ever since the 1500s,</p>

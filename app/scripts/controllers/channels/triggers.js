@@ -43,7 +43,7 @@ angular.module('dataduduR3App')
           var itemsPerPage = resp.itemsPerPage;
           var totalItems = resp.totalItems;
 
-          var numberOfPages = totalItems / itemsPerPage;
+          var numberOfPages = Math.ceil(totalItems / itemsPerPage);
           if(isNaN(numberOfPages)) numberOfPages = 0;
 
           ctrl.displayed = resp.triggers;

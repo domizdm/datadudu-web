@@ -22,6 +22,7 @@ angular
   'ngNotify',
   'ui.bootstrap',
   'angularMoment',
+  'ngFileUpload',
   'ngTouch'
 ])
 .config(function ($routeProvider, $httpProvider, stConfig) {//, $locationProvider, utils
@@ -55,12 +56,18 @@ angular
       redirectTo: '/'
     });
 })
-.run(function(amMoment){
+.run(function(amMoment, Auth){
   // 有bug
   //moment.tz.setDefault('UTC');
 
   //moment.locale('en-gb');//zh-cn
-  amMoment.changeLocale('en-gb');
+
+
+  if(Auth.language() == 'zh-CN') {
+    amMoment.changeLocale('zh-cn');
+  }else{
+    amMoment.changeLocale('en-gb');
+  }
 
   Highcharts.setOptions({
     global: {

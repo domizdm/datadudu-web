@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsCommandsCtrl', function($scope, $q, $filter, $route, $log, $location,
+.controller('ChannelsCommandsCtrl', function($scope, $q, $filter, $route, $log, $location,Auth,
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
@@ -35,12 +35,12 @@ angular.module('dataduduR3App')
   });
 
   $scope.deleteCommand = function(entity, commandId) {
-    modalConfirm.open('Do you want to delete this command?')
+    modalConfirm.open(Auth.L('commands.delete-commands'))
       .then(function(){
         channel.deleteCommand({id:entity.channel_id,type_id:commandId},{})
           .$promise
           .then(function(resp){
-            ngNotify.set('Command deleted', 'success');
+            ngNotify.set(Auth.L('commands.command-deleted'), 'success');
             $route.reload();
           })
           .catch(function(err){
@@ -54,12 +54,12 @@ angular.module('dataduduR3App')
   };
 
   $scope.deleteAllCommands = function(entity) {
-    modalConfirm.open('Do you want to delete all commands?')
+    modalConfirm.open(Auth.L('commands.delete-all-commands'))
       .then(function(){
         channel.deleteAllCommands({id:entity.channel_id},{})
           .$promise
           .then(function(resp){
-            ngNotify.set('Commands deleted', 'success');
+            ngNotify.set(Auth.L('commands.commands-deleted'), 'success');
             $route.reload();
           })
           .catch(function(err){
@@ -73,7 +73,7 @@ angular.module('dataduduR3App')
   };
 
 })
-.controller('ChannelsAddNewCommandCtrl', function($scope, $q, $filter, $route, $log, $location,
+.controller('ChannelsAddNewCommandCtrl', function($scope, $q, $filter, $route, $log, $location,Auth,
                                              config, $uibModal, ngNotify, modalConfirm, channel){
   $scope.newCommand = {};
 
@@ -81,7 +81,7 @@ angular.module('dataduduR3App')
     channel.addCommand({id:entity.channel_id},form)
       .$promise
       .then(function(resp){
-        ngNotify.set('New command added.', 'success');
+        ngNotify.set( Auth.L('commands.new-command-add'), 'success');
         $route.reload();
       })
       .catch(function(err){

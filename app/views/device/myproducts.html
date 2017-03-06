@@ -1,18 +1,30 @@
 <div class="container-fluid main-devices">
-
-  <div class="row-fluid col-md-12 device_mg ">
-<div class="container-fluid">
-    <div class="row-fluid col-md-6 col-sm-5 col-xs-6"><h3>Development Devices</h3></div>
-   <div class="row-fluid col-md-6 col-sm-5 col-xs-6" style="margin-top: 10px"> <a href="#/addproducts" class="btn btn_add btn-new ng-binding add_serial"><i class="fa fa-plus"></i>Add Products Batch</a></div>
-</div>
-    <div class="col-md-12 col-sm-12 device_mg_div">
-      <div>
-        <a ng-repeat="product in products" ng-href="#/productdetails/{{product.product_id}}">
-          <div class="col-md-3 products-div">{{product.name}}</div>
-        </a>
-      </div>
-    </div>
+  <div class="row devices_header">
+    <span class="device_develop hidden-xs"><b ng-bind-html="Lang['main-devices.myDevices']"></b></span>
+    <input type="text" class="input-style" placeholder="{{Lang['main-devices.placeholder']}}" ng-model="searchText">
+    <button type="submit" class="btn btn-search hidden-xs" ng-bind-html="Lang['main-devices.search']"></button>
+    <a href="#/addproducts" class="btn btn_add btn-new ng-binding add_serial"><i class="fa fa-plus"></i><span ng-bind-html="Lang['main-devices.context']"></span></a>
   </div>
+  <div class="row devices_sort">
+    <span><i class="fa fa-sort"></i><a ng-bind-html="Lang['main-devices.sort']"></a></span>
+    <span style="border-left:1px solid #828181"><i class="fa fa-sort" style="margin-left: 5px"></i><a ng-bind-html="Lang['main-devices.popularity_sort']"></a></span>
+    <span style="border-left:1px solid #828181"><i class="fa fa-sort" style="margin-left: 5px"></i><a ng-bind-html="Lang['main-devices.CreateDate']"></a></span>
+  </div>
+  <div class="row-fluid  device_mg ">
+    <div class="col-md-12 col-sm-12 device_mg_div">
+          <div class="col-md-3 products-div" ng-repeat="product in products" >
+
+            <img  ng-src="{{product['icon_100x100']}}" style="max-width:32px;max-height:32px;" >
+            <!--ng-if="product['icon_512x512']"-->
+            <a ng-href="#/productdetails/{{product.product_id}}">{{product.name}}</a><br/>
+            <p ng-bind-html="Lang['main-devices.company']"></p>
+            <button  class="btn btn-default btn-sm" ng-click="openModalUploadIcon()" ng-bind-html="Lang['main-devices.Uploadlogo']"></button>
+            <a href="" ng-click="editProduct(product.product_id)"> <button  class="btn btn-default btn-sm"  ng-bind-html="Lang['main-devices.edit']"></button></a>
+            <a href="#/productdetails/{{product.product_id}}"><button  class="btn btn-default btn-sm" ng-bind-html="Lang['main-devices.Serial_number']"></button></a>
+            </div>
+     </div>
+    </div>
 </div>
+
 
 

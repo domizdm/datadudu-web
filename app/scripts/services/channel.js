@@ -9,7 +9,7 @@
  */
 angular.module('dataduduR3App')
 .service('channel', function ($resource, config) {
-  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:_type/:type_id', {
+  return $resource(config.END_POINT+'/:controller/:_action/:item/:id/:_type/:type_id/:_extra', {
     id: '@_id',
     controller: 'channels'
   },{
@@ -18,6 +18,12 @@ angular.module('dataduduR3App')
      account_key or token_id (string) - account_key  is User's account key; token_id  is obtained through login API (required).
      */
     list: {
+      method: 'GET'
+    },
+    /**
+     * http://api.datadudu.com/channels/CHANNEL_ID
+     */
+    get: {
       method: 'GET'
     },
     /**
@@ -328,6 +334,25 @@ angular.module('dataduduR3App')
       params: {
         _type: 'rules'
         //type_id: ''
+      }
+    },
+    /**
+     * Update a Rule Status (enable or disable rule)
+
+     To add a channel rule, send an HTTP PUT to http://api.datadudu.cn/channels/CHANNEL_ID/rules/RULE_ID/rule_status
+     replacing CHANNEL_ID with the ID of your channel, and RULE_ID with ID of the rule.
+
+     Valid request parameters:
+     account_key or token_id (string) –account_key  or token_id for internal use, obtained through login API. (required)
+     JSON Body FIELDS:
+
+     rule_status(string): “enabled” or “disabled”
+     */
+    toggleRuleStatus: {
+      method: 'PUT',
+      params: {
+        _type: 'rules',
+        _extra: 'rule_status'
       }
     },
     /**

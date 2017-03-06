@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('dataduduR3App')
-.controller('MyDevicesCtrl', function($scope, $q, $filter, $route, $log, $location, $routeParams,
-                                           config, $uibModal, ngNotify, modalConfirm, product){
+.controller('MyDevicesCtrl', function($scope, $q, $filter, $route, $log, $location, $routeParams,Auth,
+                                           config, $uibModal, ngNotify, modalConfirm, Upload, product){
 
   $scope.devices = [];
 
@@ -40,7 +40,7 @@ angular.module('dataduduR3App')
 
   $scope.removeDevice = function(activation_code) {
 
-    modalConfirm.open('Are you sure you want to remove this device? All collected data of this device would be removed.')
+    modalConfirm.open(Auth.L('mydevice.RemoveReminder'))
       .then(function(){
         product.deleteDevice({id: activation_code}, {})
           .$promise
@@ -80,5 +80,7 @@ angular.module('dataduduR3App')
           }, function(){/*dismiss*/});
       });
   };
+
+
 
 });

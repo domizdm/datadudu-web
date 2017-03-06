@@ -23,7 +23,7 @@ angular.module('dataduduR3App')
     if(newVal) {
       $scope.form = _.extend({}, $scope.channel);
 
-      // 实际上因为每次点击tab都会重新加载route,所以会此点击都会重置为默认值
+      // 实际上因为每次点击tab都会重新加载route,所以每次点击都会重置为默认值
       // set template type to default when channel changed
       $scope.templateType = $scope.sensorTemplates[0];
     }

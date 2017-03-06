@@ -8,7 +8,7 @@
  * Service in the dataduduR3App.
  */
 angular.module('dataduduR3App')
-.service('Auth', function ($q, $log, $localStorage, account) {
+.service('Auth', function ($q, $log, $localStorage, account, config) {
 
   return {
     login: function(username, password) {
@@ -46,8 +46,8 @@ angular.module('dataduduR3App')
     print: function() {// for debug
       $log.log($localStorage.me);
     },
-    language: function(lang){// setter and getter for language
-      var defaultLang = 'en-GB';
+    language: function(lang) {// setter and getter for language
+      var defaultLang = config.DEFAULT_LANG;
 
       if(!lang) {
         lang = $localStorage.lang ? $localStorage.lang : defaultLang;
@@ -55,6 +55,9 @@ angular.module('dataduduR3App')
 
       $localStorage.lang = lang;
       return lang;
+    },
+    L:function(key) {
+      return config.lang[this.language()][key];
     },
     me: function() {
       return $localStorage.me;

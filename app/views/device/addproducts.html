@@ -1,19 +1,18 @@
 <div class="container-fluid main-devices">
 
   <div class="row-fluid ">
-    <div class="device_inner main-devices">
-      <h2 ng-if="!editMode">Add Product Batch</h2>
-      <h2 ng-if="editMode">Edit Product Batch</h2>
+    <div class="device_inner devices_con">
+      <h2 ng-if="!editMode" ng-bind-html="Lang['devices_con.AddProductBatch']"></h2>
+      <h2 ng-if="editMode" ng-bind-html="Lang['devices_con.EditProductBatch']"></h2>
 
-      <p>Loremss Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s,</p>
+      <p ng-bind-html="Lang['devices_con.con']"></p>
 
       <div class="device_form">
         <div class="device_cont">
 
           <div class="form-group">
 
-            <label class="col-sm-3 col-md-1">Name</label>
+            <label class="col-sm-3 col-md-1" ng-bind-html="Lang['devices_con.Name']"></label>
 
             <div class="col-sm-9">
               <input type="text" class="form-control" ng-model="form.name"/>
@@ -21,14 +20,14 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 col-md-1">Description</label>
+            <label class="col-sm-3 col-md-1" ng-bind-html="Lang['devices_con.Description']"></label>
             <div class="col-sm-9">
               <textarea type="text" class="form-control" ng-model="form.description"></textarea>
             </div>
           </div>
 
           <div class="form-group" ng-repeat="fidx in [1,2,3,4,5,6,7,8] track by $index" ng-init="$parent.form['field1-enabled']=true">
-            <label class="col-sm-3 col-md-1">Field {{fidx}}</label>
+            <label class="col-sm-3 col-md-1"><span ng-bind-html="Lang['devices_con.Field']"></span> {{fidx}}</label>
 
             <div class="col-sm-6">
               <input type="text" class="form-control"
@@ -43,41 +42,41 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 col-md-1">Metadata</label>
+            <label class="col-sm-3 col-md-1" ng-bind-html="Lang['devices_con.Metadata']"></label>
             <div class="col-sm-9">
               <textarea type="text" class="form-control" ng-model="form.metadata"></textarea>
             </div>
           </div>
 
-          <p class="privacy_titlle"><strong>Privacy</strong>
-            <small>Lorem Ipsum is simply dummy text of the printing</small>
+          <p class="privacy_titlle"><strong ng-bind-html="Lang['devices_con.Privacy']"></strong>
+            <small ng-bind-html="Lang['devices_con.Privacy_shuoming']"></small>
           </p>
 
           <div class="radio">
-            <label><input type="radio" value="false" ng-model="form.public_flag">Private Device</label>
-            <small>Lorem Ipsum is simply dummy text of the printing</small>
+            <label><input type="radio" value="false" ng-model="form.public_flag" ng-bind-html="Lang['devices_con.PrivateDevice']"></label>
+            <small ng-bind-html="Lang['devices_con.PrivateDevice_shuoming']"></small>
           </div>
 
           <div class="radio">
-            <label><input type="radio" value="true" ng-model="form.public_flag">Public Device</label>
-            <small>Lorem Ipsum is simply dummy text of the printing</small>
+            <label><input type="radio" value="true" ng-model="form.public_flag" ng-bind-html="Lang['devices_con.PublicDevice']"></label>
+            <small ng-bind-html="Lang['devices_con.PublicDevice_shuoming']"></small>
           </div>
 
           <div class="form-group" style="margin-top:10px;">
-            <a href="" ng-click="addProduct(form)" class="btn btn-success " ng-disabled="loading" ng-if="!editMode">
-              <i style="margin-right:10px;" class="fa fa-plus"></i>Add Batch
+            <a href="" ng-click="addProduct(form)" class="btn btn-success " ng-disabled="loading" ng-if="!editMode" >
+              <i style="margin-right:10px;" class="fa fa-plus"></i><span ng-bind-html="Lang['devices_con.AddBatch']"></span>
             </a>
             <a ng-href="#/myproducts" class="btn btn-danger " ng-if="!editMode">
               <i style="margin-right:10px;" class="fa fa-trash"></i>
-              <i style="margin-right:10px;" class="fa fa-remove"></i>Cancel
+              <i style="margin-right:10px;" class="fa fa-remove"></i><span ng-bind-html="Lang['devices_con.Cancel']"></span>
             </a>
 
             <a href="" ng-click="updateProduct(form)" class="btn btn-success " ng-disabled="loading" ng-if="editMode">
-              <i style="margin-right:10px;" class="fa fa-save"></i>Update Batch
+              <i style="margin-right:10px;" class="fa fa-save"></i><span ng-bind-html="Lang['devices_con.UpdateBatch']"></span>
             </a>
             <a ng-href="#/productdetails/{{form.product_id}}" class="btn btn-danger " ng-if="editMode">
               <i style="margin-right:10px;" class="fa fa-trash"></i>
-              <i style="margin-right:10px;" class="fa fa-remove"></i>Cancel
+              <i style="margin-right:10px;" class="fa fa-remove"></i><span ng-bind-html="Lang['devices_con.Cancel']"></span>
             </a>
           </div>
 
@@ -88,4 +87,4 @@
 
   </div>
 </div>
-</div>
+

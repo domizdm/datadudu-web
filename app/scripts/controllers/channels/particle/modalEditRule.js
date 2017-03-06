@@ -8,12 +8,13 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsEditRuleCtrl', function($scope, $q, $filter, $window, $timeout, $log,
+.controller('ChannelsEditRuleCtrl', function($scope, $q, $filter, $window, $timeout, $log, Auth,
                                              config, $uibModal, $uibModalInstance, ngNotify,
                                              channel, fields, channelId, rule){
 
 
-  $scope.fields = [{key:'status', text:'Status'}];
+  //$scope.fields = [{key:'status', text:'Status'}];
+  $scope.fields = [{key:'status', text:Auth.L('NewEdit_Rules.Status')}];
   $scope.fields = _.concat($scope.fields, _.map(fields,
     function(v){
       var ret = {key: v.key};
@@ -22,20 +23,32 @@ angular.module('dataduduR3App')
     }
   ));
 
+  channel.list()
+    .$promise
+    .then(function(resp){
+      $scope.channels = resp.channels;
+    });
+
   $scope.types = [
-    {key: 'numeric', text:'Numeric'},
-    {key: 'string', text:'String'},
-    {key: 'no_data_check', text:'No Data Check'}
+    {key: 'numeric', text:Auth.L('NewEdit_Rules.Numeric')},
+    {key: 'string', text:Auth.L('NewEdit_Rules.String')},
+    {key: 'no_data_check', text:Auth.L('NewEdit_Rules.No Data Check')}
   ];
   $scope.acttion_freqs = [
-    {key: 'change_only', text:'Change Only'},
-    {key: 'always', text:'Always'}
+    {key: 'change_only', text:Auth.L('NewEdit_Rules.Change-Only')},
+    {key: 'always', text:Auth.L('NewEdit_Rules.Always')}
   ];
   $scope.action_types = [
-    {key: 'email', text:'Email'},
-    {key: 'sms', text:'Sms'},
-    {key: 'http', text:'Http'},
-    {key: 'command', text:'Command'}
+    {key: 'email', text:Auth.L('NewEdit_Rules.Email')},
+    {key: 'sms', text:Auth.L('NewEdit_Rules.Sms')},
+    {key: 'http', text:Auth.L('NewEdit_Rules.Http')},
+    {key: 'command', text:Auth.L('NewEdit_Rules.Command')}
+  ];
+  $scope.frequencies = [
+    {key:'300',text:'5 Minutes'},
+    {key:'600',text:'10 Minutes'},
+    {key:'1800',text:'30 Minutes'},
+    {key:'3600',text:'1 Hour'}
   ];
 
   $scope.criterias = {
@@ -65,16 +78,16 @@ angular.module('dataduduR3App')
     rule_id: rule ? rule.rule_id : null,
     rule_name: rule ? rule.rule_name : '',
     field: rule ? _.find($scope.fields, {key:rule.field}) : $scope.fields[0],
-    type: rule ? _.find($scope.types, {key:rule.type}) : $scope.types[0],
+    rule_type: rule ? _.find($scope.types, {key:rule.rule_type}) : $scope.types[0],
     action_type: rule ? _.find($scope.action_types, {key:rule.action_type}) : $scope.action_types[0],
     action_value: rule ? rule.action_value : '',
     action_frequency: rule ? _.find($scope.acttion_freqs, {key:rule.action_frequency}) : $scope.acttion_freqs[0],
     action_sub_value: rule ? rule.action_sub_value : '',
-    criteria: rule ? _.find($scope.criterias[rule.type], {key:rule.criteria}) : null,
+    criteria: rule ? _.find($scope.criterias[rule.rule_type], {key:rule.criteria}) : null,
     condition: rule ? rule.condition : '',
-    frequency: rule ? parseFloat(rule.frequency) : 0
+    // if not found, means it's a corrupt data, fall back to default 0
+    frequency: rule ? (_.find($scope.frequencies, {key:rule.frequency}) || $scope.frequencies[0]) : $scope.frequencies[0],
   };
-
 
 
   $scope.ok = function () {
@@ -86,11 +99,11 @@ angular.module('dataduduR3App')
         action_sub_value: $scope.form.action_sub_value,
         rule_name: $scope.form.rule_name,
         field: $scope.form.field ? $scope.form.field.key : null,
-        type: $scope.form.type ? $scope.form.type.key : null,
+        rule_type: $scope.form.rule_type ? $scope.form.rule_type.key : null,
         action_frequency: $scope.form.action_frequency ? $scope.form.action_frequency.key : null,
         criteria: $scope.form.criteria ? $scope.form.criteria.key : null,
         condition: $scope.form.condition,
-        frequency: $scope.form.frequency || 0
+        frequency: $scope.form.frequency ? $scope.form.frequency.key : null
       };
 
     if(form.rule_id != null) {// add new rule

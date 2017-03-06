@@ -2,7 +2,7 @@
   <!--表格内容start-->
   <div class="table-content">
     <div class="list-header">
-    <form class="search form-search ">
+    <form class="search form-search">
       <select class="select-style">
         <option value="">ALL</option>
       </select>
@@ -10,7 +10,7 @@
       <button type="submit" class="btn btn-search hidden-xs">Search</button>
       <a class="btn btn-default btn-new  " href="#/channels/new">New Channel</a>
       <a class="btn btn-default" href="" ng-click="shareChannels(getCheckedItems(channels))">Share To...</a>
-      <h5 class="usedspace-style hidden-sm hidden-xs " >Total Used Space: {{getAccountUsage() | bytes}}</h5>
+      <h5 class="usedspace-style hidden-sm hidden-xs" ><a class="space" style="color: #0c0c0c;margin-right: 5px">Total Used Space: </a>{{getAccountUsage() | bytes}}</h5>
     </form>
       </div>
     <div class="border-table table-list table-responsive">
@@ -18,12 +18,12 @@
         <thead class="tblHeader">
         <tr>
           <th style="width:40px;"></th>
-          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;">Name</span></th>
-          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span>Last Update</span></th>
-          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span>Public or Private</span></th>
-          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span>Used Space</span></th>
-          <th><span>Device</span></th>
-          <th><span>Created</span></th>
+          <th st-sort="name" class="th-left"><i class="fa fa-sort"></i><span style="margin-left: 10px;"><a href="javascript:void(0)">Name</a></span></th>
+          <th><i class="fa fa-sort" style="margin-right: 10px"></i><span><a href="javascript:void(0)">Public or Private</a></span></th>
+          <th st-sort="created_at"><i class="fa fa-sort" style="margin-right: 10px"></i><span><a href="javascript:void(0)">Last Update</a></span></th>
+          <th st-sort="usage" ><i class="fa fa-sort" style="margin-right: 10px"></i><span><a href="javascript:void(0)">Used Space</a></span></th>
+          <th><span><a href="javascript:void(0)">Device</a></span></th>
+          <th><span><a href="javascript:void(0)">Created</a></span></th>
         </tr>
         </thead>
         <tbody>
@@ -31,26 +31,31 @@
           <!--<td><input type="checkbox" ng-model="channel.selected" name="form.selected[]" value="{{channel.channel_id}}"></td>-->
           <td st-row-check="channel" st-row-check-attr="checkedFlag"></td>
           <td class="td-left">
-            <div ng-hide="channel.name==''||channel.name=='null'||channel.name==null">
-            <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name}}</a><br/>
+            <div style="float: left;width: 170px">
+              <img  ng-src="{{channel.channel_icon}}"  src="./images/icoimage/default.png" class="img-rounded" style="max-height:54px;max-width:54px; float: left">
+
+              <a  class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">{{channel.name==null? ' Unnamed Space':channel.name}}</a><br/>
+
+
+                <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
             </div>
-            <div ng-show="channel.name==''||channel.name=='null'||channel.name==null">
-              <a class="channel-name" ng-href="#/channels/{{channel.channel_id}}/private">ChannelID:{{channel.channel_id}}</a><br/>
+            <div class="channel_ctr">
+              <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
+              <!--<a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>-->
+              <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/rules"><button class="btn btn-default btn-sm">Rules</button></a>
+              <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
             </div>
-            <a ng-href="#/channels/{{channel.channel_id}}/private"><button class="btn btn-default btn-sm">Privete</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/realtime"><button class="btn btn-default btn-sm">Charts</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/settings"><button class="btn btn-default btn-sm">Settings</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/apikeys"><button class="btn btn-default btn-sm">API key</button></a>
-            <a ng-href="#/channels/{{channel.channel_id}}/dataio"><button class="btn btn-default btn-sm">Data import/Export</button></a>
           </td>
-          <td>{{channel.last_entry_date}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
           <td><a href=""><i class="fa fa-group" ng-show="channel.public_flag=='true'"></i> <i class="fa fa-lock" ng-show="channel.public_flag=='false'"></i>{{channel.public_flag=='true'? ' Public': 'Private'}}</a></td>
+          <td>{{channel.last_entry_date | date:"yyyy-MM-dd HH:mm:ss"}}(<span am-time-ago="channel.last_entry_date"></span>)</td>
           <td>{{channel.usage | bytes}}</td>
           <td>
             <span ng-if="channel.device_id==null">No Device</span>
             <span ng-if="channel.device_id!=null"><img src="../images/icoimage/duduico2.png"></span>
           </td>
-          <td><a href="">{{channel.created_at}}</a></td>
+          <td><a href="">{{channel.created_at | date:"yyyy-MM-dd hh:mm:ss"}}</a></td>
         </tr>
         </tbody>
         <tfoot>
@@ -61,8 +66,6 @@
         </tr>
         </tfoot>
       </table>
-
-
 
     </div>
 

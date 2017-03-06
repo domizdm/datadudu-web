@@ -1,0 +1,17 @@
+<div class="container-fluid account-main">
+  <div class="row-fluid" style="margin: 10px;">
+    <div class="signup-outer" ng-show="mode=='edit'">
+      <form name="validatedForm">
+        <ng-include src="'views/myAccount/particle/profile-edit.html'"></ng-include>
+      </form>
+    </div>
+
+    <div class="signup-outer container-fluid" ng-show="mode=='view'">
+      <ng-include src="'views/myAccount/particle/profile-view.html'"></ng-include>
+    </div>
+  </div>
+</div>
+
+
+
+

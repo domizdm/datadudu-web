@@ -15,14 +15,35 @@ angular.module('dataduduR3App')
       templateUrl:  'views/myaccount/myaccount.html',
       controller:'MyAccountCtrl'
     })
-    .when('/editaccount',{
-      templateUrl: 'views/myaccount/editaccount.html',
-      controller:'EditAccountCtrl'
+    .when('/myprofile',{
+      templateUrl: 'views/myaccount/myprofile.html',
+      controller:'MyProfileCtrl'
     })
-    .when('/editprofile',{
-      templateUrl: 'views/myaccount/editprofile.html',
-      controller:'EditProfileCtrl'
+    .when('/accountsafety',{
+      templateUrl: 'views/myaccount/accountsafety.html',
+      controller:'AccountSafetyCtrl'
     })
+
+  .when('/mycommunity',{
+    templateUrl: 'views/myaccount/mycommunity.html',
+    controller:'MyCommunityCtrl'
+  })
+  .when('/myattention',{
+    templateUrl: 'views/myaccount/myattention.html',
+    controller:'MyAttentionCtrl'
+  })
+  .when('/hottags',{
+    templateUrl: 'views/myaccount/hottags.html',
+    controller:'MyAttentionCtrl'
+  })
+  .when('/communitystar',{
+    templateUrl: 'views/myaccount/communitystar.html',
+    controller:'CommunityStarCtrl'
+  })
+  .when('/communitydevice',{
+    templateUrl: 'views/myaccount/communitydevice.html',
+    controller:'CommunityDeviceCtrl'
+  });
 
 });
 

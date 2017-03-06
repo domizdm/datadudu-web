@@ -65,7 +65,7 @@ angular.module('dataduduR3App')
           .then(function(resp){
             ngNotify.set('Product deleted.', 'success');
 
-            $route.reload();
+            $location.path('/myproducts');
           })
           .catch(function(err){
             ngNotify.set(err.statusText, 'error');
@@ -92,7 +92,6 @@ angular.module('dataduduR3App')
       return;
     }
 
-
     var devices = [];
     _.each(seriesText.split('\n'), function(v){
       var trimedValue = v.trim();
@@ -115,6 +114,25 @@ angular.module('dataduduR3App')
       .catch(function(err){
         ngNotify.set(err.statusText, 'error');
       });
+  };
+
+  $scope.openModalUploadIcon = function(){
+    if($scope.product) {
+      $uibModal.open({
+          templateUrl: 'views/shared/modalUploadIcon.html',
+          controller: 'DeviceUploadIconCtrl',
+          backdrop: false,
+          resolve: {
+            productId: function(){
+              return $scope.product.product_id;
+            }
+          }
+        })
+        .result
+        .then(function(form){
+          $route.reload();
+        }, function(){/*dismiss*/});
+    }
   };
 
 });

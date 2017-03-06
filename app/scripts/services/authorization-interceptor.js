@@ -11,7 +11,7 @@ angular.module('dataduduR3App')
 .factory('AuthorizationInterceptor', function ($q, $log, $localStorage, config) {
   return {
     request: function(cfg) {
-      if($localStorage.me && cfg.url.indexOf(config.END_POINT)===0) {
+      if($localStorage.me && (cfg.url.indexOf(config.END_POINT)===0 || cfg.url.indexOf(config.END_POINT_PAYMENT)===0)) {
         cfg.params = cfg.params ? cfg.params : {};
         cfg.params.token_id = $localStorage.me.token_id;
       }

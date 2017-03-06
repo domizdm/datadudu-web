@@ -8,7 +8,7 @@
  * Controller of the dataduduR3App
  */
 angular.module('dataduduR3App')
-.controller('ChannelsRulesCtrl', function($scope, $q, $filter, $route, $log, $location,
+.controller('ChannelsRulesCtrl', function($scope, $q, $filter, $route, $log, $location, Auth,
                                             config, $uibModal, ngNotify, modalConfirm, channel){
 
   $scope.form = null;
@@ -84,14 +84,26 @@ angular.module('dataduduR3App')
     }
   };
 
+  $scope.toggleRule = function(rule, status) {
+    channel.toggleRuleStatus({id:$scope.channel.channel_id, type_id: rule.rule_id}, {rule_status:status})
+      .$promise
+      .then(function(resp){
+        ngNotify.set('Rule has been set to ' + status, 'success');
+        $route.reload();
+      })
+      .catch(function(err){
+        ngNotify.set(err.data.desp || err.statusText, 'error');
+      });
+  };
+
 
   $scope.deleteRule = function(rule) {
-    modalConfirm.open('Do you want to delete this rule?')
+    modalConfirm.open(Auth.L('rule.delete-rules'))
       .then(function(){
         channel.deleteRule({id: $scope.channel.channel_id, type_id: rule.rule_id})
           .$promise
           .then(function(resp){
-            ngNotify.set('Rule removed', 'success');
+            ngNotify.set(Auth.L('rule.rules-deleted'), 'success');
             $route.reload();
           })
           .catch(function(err){
@@ -105,12 +117,12 @@ angular.module('dataduduR3App')
   };
 
   $scope.deleteAllRules = function() {
-    modalConfirm.open('Do you want to delete all rules?')
+    modalConfirm.open(Auth.L('rule.delete-all-rules'))
       .then(function(){
         channel.deleteAllRules({id: $scope.channel.channel_id},{})
           .$promise
           .then(function(resp){
-            ngNotify.set('Rules deleted', 'success');
+            ngNotify.set(Auth.L('rule.rules-deleted'), 'success');
             $route.reload();
           })
           .catch(function(err){

@@ -37,6 +37,7 @@ angular.module('dataduduR3App')
                                          config, $uibModal, $uibModalInstance, ngNotify,
                                          message){
 
+
   $scope.message = message;
 
   $scope.ok = function () {
