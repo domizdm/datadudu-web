@@ -10,7 +10,7 @@
 angular.module('dataduduR3App')
 .controller('BillsManagementCtrl', function ($scope, $window, $interval, $log, $uibModal, $location,
                                              $localStorage, $http, $timeout,
-                                             $routeParams, ngNotify, config, Auth, payment, plan) {
+                                             $routeParams, ngNotify, config, Auth, payment, plan, channel) {
 
 
   var ctrl = this;
@@ -18,11 +18,14 @@ angular.module('dataduduR3App')
 
   var today = new Date(),
     beginDay = new Date();
-  beginDay.setMonth(today.getMonth() - 1);
+  beginDay.setYear(today.getYear() - 1);
   $scope.query = {
+    channel_id: null,
     begin: beginDay,
     end: today
   };
+
+  $scope.channelsResource = channel.list();
 
   $scope.reload = function() {
     ctrl.callServer(ctrl.tableState);
@@ -30,6 +33,11 @@ angular.module('dataduduR3App')
 
   $scope.exportData = function() {
     $log.log('pending');
+  };
+
+  $scope.chooseChannel = function(channel_id) {
+    $scope.query.channel_id = channel_id;
+    $scope.reload();
   };
 
   this.displayed = [];
@@ -47,6 +55,7 @@ angular.module('dataduduR3App')
     var pageNumber = Math.floor(start / number);
 
     var params = {
+      channel_id: $scope.query.channel_id,
       itemsPerPage:number,
       pageNumber:pageNumber
     };

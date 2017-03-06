@@ -34,6 +34,10 @@ body {
 
 }
 
+.text-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 @media (max-width: 991px){
   .navbar-custom-menu>.navbar-nav>li>.dropdown-menu {

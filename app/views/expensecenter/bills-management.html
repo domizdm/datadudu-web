@@ -3,26 +3,62 @@
     <div class="panel-body">
       <div class="row-fluid accountinquiry_header">
 
+        <div class="text-muted">
+          选择空间查看具体账单<hr>
+        </div>
+
         <div class="container-fluid">
-          <table>
-            <thead>
+          <table class="table table-striped" width="100%" st-safe-src="channelsResource.channels" st-table="displayCollection">
+            <thead class="tblHeader">
             <tr>
-              <td><label class="pull-right">时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:</label></td>
-
-              <td>
-                <div class='input-group date' datetimepicker="query.begin"></div>
-              </td>
-              <td><label style="width: 25px">至</label></td>
-              <td>
-                <div class='input-group date' datetimepicker="query.end"></div>
-              </td>
-
-              <td><button type="button" class="btn btn-default" ng-click="reload()">查询</button></td>
-              <td ><a href="" ng-click="exportData()">导出</a></td>
-
+              <th><span>ID</span></th>
+              <th><span>Name</span></th>
+              <th><span>Plan Code</span></th>
+              <th><span>Last Entry Date</span></th>
+              <th><span></span></th>
             </tr>
             </thead>
+            <tbody>
+            <tr ng-repeat="channel in displayCollection">
+              <td ng-bind="channel.channel_id"></td>
+              <td ng-bind="channel.name"></td>
+              <td ng-bind="channel.plan_code"></td>
+              <td ng-bind="channel.last_entry_date | date:'yyyy-MM-dd'"></td>
+              <td><a href="" ng-click="chooseChannel(channel.channel_id)" class="text-link">查看此空间账单</a></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <td colspan="5" class="text-center">
+                <div class="paging-style" st-pagination="" st-items-by-page="10"></div>
+              </td>
+            </tr>
+            </tfoot>
           </table>
+        </div>
+
+        <div class="text-muted">
+          账单列表<hr>
+        </div>
+
+        <div class="container-fluid form-inline">
+          <label class="form-group">
+            Channel ID:
+            <input class="form-control form-inline" placeholder="留空为所有空间" ng-model="query.channel_id" />
+          </label>
+
+          <label class="form-group">
+            时间<i class="fa fa-question-circle tooltip-test" data-toggle="tooltip" title="支持自然月内的查询，超过12个月的记录查询请联系客服。" style="color:#3488C7;"></i>:
+            <div class='input-group date' datetimepicker="query.begin"></div>
+          </label>
+
+          <label class="form-group">
+            至
+            <div class='input-group date' datetimepicker="query.end"></div>
+          </label>
+
+          <button type="button" class="btn btn-default" ng-click="reload()">查询</button>
+          <!--<a href="" ng-click="exportData()">导出</a>-->
         </div>
 
         <br>
